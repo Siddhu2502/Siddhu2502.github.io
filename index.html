@@ -19,7 +19,7 @@
 </head>
 
 <body style="background: rgb(39,38,46);">
-    <nav class="navbar navbar-light navbar-expand-md py-3" style="background: rgb(45,44,56);position: relative;" data-bs-target="#navcol-2" data-bs-smooth-scroll="true">
+    <nav class="navbar navbar-light navbar-expand-md py-3" style="background: rgb(45,44,56);padding: 0px 0px;" data-bs-target="#navcol-2" data-bs-smooth-scroll="true">
         <div class="container"><a class="navbar-brand d-flex align-items-center" href="index.html#" target="_parent"><span class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-bezier">
                         <path fill-rule="evenodd" d="M0 10.5A1.5 1.5 0 0 1 1.5 9h1A1.5 1.5 0 0 1 4 10.5v1A1.5 1.5 0 0 1 2.5 13h-1A1.5 1.5 0 0 1 0 11.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm10.5.5A1.5 1.5 0 0 1 13.5 9h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM6 4.5A1.5 1.5 0 0 1 7.5 3h1A1.5 1.5 0 0 1 10 4.5v1A1.5 1.5 0 0 1 8.5 7h-1A1.5 1.5 0 0 1 6 5.5v-1zM7.5 4a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z"></path>
                         <path d="M6 4.5H1.866a1 1 0 1 0 0 1h2.668A6.517 6.517 0 0 0 1.814 9H2.5c.123 0 .244.015.358.043a5.517 5.517 0 0 1 3.185-3.185A1.503 1.503 0 0 1 6 5.5v-1zm3.957 1.358A1.5 1.5 0 0 0 10 5.5v-1h4.134a1 1 0 1 1 0 1h-2.668a6.517 6.517 0 0 1 2.72 3.5H13.5c-.123 0-.243.015-.358.043a5.517 5.517 0 0 0-3.185-3.185z"></path>
@@ -33,8 +33,8 @@
             </div>
         </div>
     </nav>
-    <header id="Intro">
-        <div class="container">
+    <header id="Intro" style="padding: 0px;">
+        <div class="container" style="padding: 0px;padding-top: 70px;padding-bottom: 0px;">
             <div class="row" style="height: 115px;margin: 65px;padding: 0px;background: #27262e;position: static;">
                 <div class="col">
                     <div>
@@ -44,7 +44,7 @@
             </div>
         </div>
     </header>
-    <section id="Projects">
+    <section id="Projects" style="padding: 45px;">
         <div class="container bg-dark py-5">
             <div class="row">
                 <div class="col-md-8 col-xl-6 text-center mx-auto">
@@ -57,15 +57,15 @@
                         <div class="card shadow-sm" style="background: rgb(39,38,46);">
                             <div class="card-body px-4 py-5 px-md-5" style="background: #27262e;text-align: center;border-radius: 33px;">
                                 <h5 class="fw-bold card-title" style="color: var(--bs-card-bg);">Autoencoder</h5>
-                                <p class="text-muted card-text mb-4">Autoencoders which learns to reconstruct its input and denoise them using dimensionality<br>reduction and feature extraction</p><button class="btn btn-primary shadow" type="button">Learn more</button>
+                                <p class="text-muted card-text mb-4">Autoencoders which learns to reconstruct its input and denoise them using dimensionality<br>reduction and feature extraction</p><a class="btn btn-primary shadow" role="button" href="Projects/autoencoder.html">Learn more</a>
                             </div>
                         </div>
                     </div>
                     <div class="col mb-5">
                         <div class="card shadow-sm" style="background: rgb(39,38,46);">
-                            <div class="card-body px-4 py-5 px-md-5" style="background: #27262e;text-align: center;border-radius: 33px;position: absolute;">
-                                <h5 class="fw-bold card-title" style="color: var(--bs-card-bg);">Image Recognition TF</h5>
-                                <p class="text-muted card-text mb-4">A basic implementation of classification of Cats and Dogs using TensorFlow library (custom testing available)&nbsp;</p><a class="btn btn-primary text-center shadow" role="button" href="untitled.html" target="_blank">Learn more</a>
+                            <div class="card-body px-4 py-5 px-md-5" style="background: #27262e;text-align: center;border-radius: 33px;">
+                                <h5 class="fw-bold card-title" style="color: var(--bs-card-bg);">Image Recognition TF<br></h5>
+                                <p class="text-muted card-text mb-4">A basic implementation of classification of Cats and Dogs using TensorFlow library (custom testing available)&nbsp;</p><a class="btn btn-primary shadow" role="button" href="Projects/Image%20Recognition%20TF.html" target="_blank">Learn more</a>
                             </div>
                         </div>
                     </div>
@@ -73,7 +73,7 @@
                         <div class="card shadow-sm" style="background: rgb(39,38,46);">
                             <div class="card-body px-4 py-5 px-md-5" style="background: #27262e;text-align: center;border-radius: 33px;">
                                 <h5 class="fw-bold card-title" style="color: var(--bs-card-bg);">Digit Recognizer</h5>
-                                <p class="text-muted card-text mb-4">Digit recognition using TensorFlow involving training model to recognizing and classifying handwritten digits from images<br></p><button class="btn btn-primary shadow" type="button">Learn more</button>
+                                <p class="text-muted card-text mb-4">Digit recognition using TensorFlow involving training model to recognizing and classifying handwritten digits from images<br></p><a class="btn btn-primary shadow" role="button" href="Projects/Digit%20Recognizer.html">Learn more</a>
                             </div>
                         </div>
                     </div>
@@ -81,7 +81,7 @@
                         <div class="card shadow-sm" style="background: rgb(39,38,46);">
                             <div class="card-body px-4 py-5 px-md-5" style="background: #27262e;text-align: center;border-radius: 33px;">
                                 <h5 class="fw-bold card-title" style="color: var(--bs-card-bg);">Maze Generator and Solver</h5>
-                                <p class="text-muted card-text mb-4"><span style="color: var(--tw-prose-body); background-color: rgba(68,70,84,var(--tw-bg-opacity));">Maze Generator that creates structure of interconnected paths and dead ends. </span><br><span style="color: var(--tw-prose-body); background-color: rgba(68,70,84,var(--tw-bg-opacity));">Maze Solver that finds a solution to navigate&nbsp;</span><br></p><button class="btn btn-primary shadow" type="button">Learn more</button>
+                                <p class="text-muted card-text mb-4"><span style="color: var(--tw-prose-body); background-color: rgba(68,70,84,var(--tw-bg-opacity));">Maze Generator that creates structure of interconnected paths and dead ends. </span><br><span style="color: var(--tw-prose-body); background-color: rgba(68,70,84,var(--tw-bg-opacity));">Maze Solver that finds a solution to navigate&nbsp;</span><br></p><a class="btn btn-primary shadow" role="button" href="Projects/Maze%20Generator%20and%20Solver.html">Learn more</a>
                             </div>
                         </div>
                     </div>
@@ -131,6 +131,7 @@
     </footer>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/animation.js"></script>
 </body>
 
 </html>

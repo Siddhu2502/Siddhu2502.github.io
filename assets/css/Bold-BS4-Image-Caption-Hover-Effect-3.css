@@ -83,3 +83,24 @@
   background: rgba(0, 0, 0, 0.8);
 }
 
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: top 0.5s;
+  z-index: 1;
+}
+
+body.scrolling element.style {
+  top: -74px;
+}
+
+body.scrolling .navbar {
+  top: -74px;
+}
+
+body.scrolling .navbar {
+  top: -74px;
+}
+
