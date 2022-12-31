@@ -15,7 +15,7 @@ A small portfolio website made with bootstrap
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/Siddhu2502/Siddhu2502.github.io
 ```
 
 Go to the project directory
