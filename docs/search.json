@@ -4,147 +4,7 @@
     "href": "posts/welcome/index.html",
     "title": "Welcome To My Blog",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
-  },
-  {
-    "objectID": "project_posts/Maths thing/index.html",
-    "href": "project_posts/Maths thing/index.html",
-    "title": "Post With Code",
-    "section": "",
-    "text": "The goal of this project is to compare three approaches to control a Quadcopter in the task of navigating to multiple waypoints without crashing\n\nHuman Agents: A human directly controlls the drone and drives it to the destination using keyboard input\nPID: The Quadcopter is navigated autonomously using the feedback loop mechanism of the PID controller\nReinforcement Learning Agent: This being the crux of the project using 2 reinforcement learning algorithms DQN (Q learning and SAC). Detailed explanation about Q learning is what is being concentrated more on the project.\n\nQuadcoptes are generally controlled either by humans or by use of algorithms derived by control theory. PID controllers are often used to control the motor power of each propeller and by sensing information the balace is maintainted using feedback loop mechanism\nUsing reinforcement learning learning will be the next step in the evolution of autonomous vehicles. Given the state of the vehicle and the environment, the agent will learn to take actions that will maximize the reward. The agent will learn to navigate to the destination without crashing."
-  },
-  {
-    "objectID": "project_posts/Maths thing/index.html#physics",
-    "href": "project_posts/Maths thing/index.html#physics",
-    "title": "Post With Code",
-    "section": "Physics",
-    "text": "Physics\nAt each step of the simulation, the agents have to provide values between -0.003 and 0.083 (values chosen arbitrarily) for the thrust of their left and right rotors. The thrust is then converted to a force vector that is applied to the drone. The drone is then moved according to the force vector and the physics of the environment. The physics of the environment is as follows:\nStep 1: Calculate acceleration\n\\[\n\\begin{aligned}\n& \\ddot{x}=\\frac{-\\left(T_L+T_\\gamma\\right) \\sin (\\theta)}{m} \\\\\n& \\ddot{y}=\\frac{-\\left(T_L+T_\\gamma\\right) \\cos (\\theta)}{m} \\\\\n& \\ddot{\\theta}=\\frac{\\left(T_r-T_L\\right) \\cdot L}{m}\n\\end{aligned}\n\\]\nEquations for acceleration \\(( \\ddot{x}, \\ddot{y}, \\ddot{\\theta} )\\): \\(\\ddot{x} = \\frac{T_L + T_R}{m} \\cos(\\theta)\\) \\(\\ddot{y} = \\frac{T_L + T_R}{m} \\sin(\\theta)\\) \\(\\ddot{\\theta} = \\frac{l}{I} (T_R - T_L)\\)\nDefinitions of variables:\n\n\\(\\ddot{x}, \\ddot{y}\\): acceleration on the x and y axes.\n\\((\\ddot{\\theta})\\): angular acceleration.\n\\((T_L, T_R)\\): input thrust for the left and right propellers.\n\\((\\theta)\\): angle of the drone with respect to the z-axis.\n\\((m)\\): mass of the drone.\n\\((g)\\): acceleration due to gravity.\n\\((l):\\) distance between the center of mass and the propeller\n\nStep 2: Derive the speed and the position.\n\\[\n\\begin{aligned}\n& \\dot{x}(t-1)=\\ddot{x} \\cdot d t+\\dot{x}(t) \\\\\n& x(t+1)=\\dot{x} \\cdot d t+x(t\n\\end{aligned}\n\\]"
-  },
-  {
-    "objectID": "project_posts/Maths thing/index.html#scoring",
-    "href": "project_posts/Maths thing/index.html#scoring",
-    "title": "Post With Code",
-    "section": "Scoring",
-    "text": "Scoring\nThe simulation runs at 60fps for 100 seconds (can be modified). The agent should reach the destination without crashing. If the agents goes out of the field of the simulation, it is considered as a crash. The agent respawns with a penalty wait time of 3 seconds per crash (this is a bad thing in competitive environments)."
-  },
-  {
-    "objectID": "project_posts/Maths thing/index.html#human-agent",
-    "href": "project_posts/Maths thing/index.html#human-agent",
-    "title": "Post With Code",
-    "section": "Human Agent",
-    "text": "Human Agent\nThe human agent is simulated in a near Earth environment with the thrust being constant and the human controls by using his keyboard.\nThe values are:\n\nThrust initialization: \\(T_L = 0.04 \\quad \\text{and} \\quad T_R = 0.04\\)\nUP (incrementing \\(T_L\\) and \\(T_R\\) by 0.04): \\(T_L = T_L + 0.04 \\quad \\text{and} \\quad T_R = T_R + 0.04\\)\nDOWN (decrementing \\(T_L\\) and \\(T_R\\) by 0.04): \\(T_L = T_L - 0.04 \\quad \\text{and} \\quad T_R = T_R - 0.04\\)\nLEFT: \\(T_L = T_L - 0.003 \\quad \\text{and} \\quad T_R = T_R + 0.04\\)\nRIGHT: \\(T_L = T_L + 0.004 \\quad \\text{and} \\quad T_R = T_R - 0.03\\)"
-  },
-  {
-    "objectID": "project_posts/Maths thing/index.html#pid-agent",
-    "href": "project_posts/Maths thing/index.html#pid-agent",
-    "title": "Post With Code",
-    "section": "PID Agent",
-    "text": "PID Agent\nFor the PID agent we assume the error for the position from the target it has to reach and the location of the drone and move it vertically or rotate it at certain angle to move at different position\n\nThe vertical distance from the drone to target is sent to PID which outputs a optimal vertical speed\nThe horizontal distance is used to modify the thrust of each rotor to move it in the left or right direction same as the HUMAN Agent the rotation logic remains same\n\n—- PUT IMAGE HERE ——-"
-  },
-  {
-    "objectID": "project_posts/Maths thing/index.html#reinforcement-learning-agent",
-    "href": "project_posts/Maths thing/index.html#reinforcement-learning-agent",
-    "title": "Post With Code",
-    "section": "Reinforcement learning Agent",
-    "text": "Reinforcement learning Agent\nThe environment in which the drone trains is called as DRONEENV and we use openAI gym for creating the agent. The observations are made easy for the agent to understand. For observation the agents is given the following information (current position and the speed to move is determined by the following inputs)\n\nangle_to_up : angle between the drone and the up vector (to observe gravity)\nvelocity : velocity of the drone\nangle_velocity : angle of the velocity vector\ndistance_to_target : distance to the target\nangle_to_target : angle between the drone and the target\nangle_target_and_velocity : angle between the to_target vector and the velocity vector\ndistance_to_target : distance to the target\n\nBefore going deeper into this we must know some basic concepts of Reinforcement Learning\n\nIntroduction\nReinforcement learning is an area of Machine Learning. It is about taking suitable action to maximize reward in a particular situation. It is employed by various software and machines to find the best possible behavior or path it should take in a specific situation. Reinforcement learning differs from supervised learning in a way that in supervised learning the training data has the answer key with it so the model is trained with the correct answer itself whereas in reinforcement learning, there is no answer but the reinforcement agent decides what to do to perform the given task. In the absence of a training dataset, it is bound to learn from its experience.\nReinforcement Learning (RL) is the science of decision making. It is about learning the optimal behavior in an environment to obtain maximum reward. In RL, the data is accumulated from machine learning systems that use a trial-and-error method. Data is not part of the input that we would find in supervised or unsupervised machine learning.\nWe have 4 main components when it comes to reinforcement learning.\n\nReward\n\nThe rewards are scalar quantity which is a single number which can range from [−N,N] and sometimes it can have multiple outcomes so choosing them is the job of the agent\nThe reward should be outside the control of the agent which means that the reward should come from the environment in which the agent is training this will make sure that the agent wont be able to simply add more reward\nThe reward depends on the domain\nHaving singular scalar value is good as its easy to estimate the model performance\nReward should be bounded that is from -N to N\nRewards must be given for each epoch or every single iteration\n\n\n\nPolicy\nA policy is a rule that determines how an agent chooses an action in each state. It can be deterministic or stochastic, depending on whether the agent always selects the same action or randomly picks an action according to some probability distribution. Policy is a conditional probability which is given by \\(\\pi \\left( a| s\\right) =P( A_{t}= a| s_{t}= s)\\) -&gt; The following equation stands for the probablity that the agent will take action ‘A’ given that at time t the state is ‘S’\n\n\nReturn\nReturn is a measure of the total reward that an agent can expect to receive in the future, starting from a given state or state-action pair. It is often used as a target for learning the value functions that estimate how good a state or an action is. There are different ways to define return, depending on how the rewards are discounted or summed up. One common way is to use the discounted return, which is given by the formula:\n\\[\nG_t = R_{t+1} + \\gamma R_{t+2} + \\gamma^2 R_{t+3} + \\dots = \\sum_{k=0}^\\infty \\gamma^k R_{t+k+1}\n\\]\n\nwhere \\(G_t\\) is the return at time step \\(t\\), \\(R_{t+k+1}\\) is the reward received at time step \\(t+k+1\\), and \\(\\gamma\\) is a discount factor between 0 and 1 that determines how much the agent values the future rewards.\nAgent which uses only the first term is called as near-sighted agent.\n\n\n\nValue Function\nThe value function \\(V^\\pi(s)\\) is the expected value of the return \\(G_t\\) when the agent follows the policy \\(\\pi\\) and starts from the state \\(s\\).\n\\[\nV^\\pi(s) = \\mathbb{E}_\\pi \\left\\{ G_t \\mid S_t = s \\right\\}\n\\]\nThe expectation \\(\\mathbb{E}_\\pi\\) is taken over the distribution of the possible trajectories that the agent can experience under the policy \\(\\pi\\). The value function represents how good or desirable a state is for the agent, and it can be used to evaluate or improve the policy."
-  },
-  {
-    "objectID": "project_posts/Maths thing/index.html#p",
-    "href": "project_posts/Maths thing/index.html#p",
-    "title": "Post With Code",
-    "section": "P",
-    "text": "P"
-  },
-  {
-    "objectID": "project_posts/Maths thing/index.html#p-i",
-    "href": "project_posts/Maths thing/index.html#p-i",
-    "title": "Post With Code",
-    "section": "P-I",
-    "text": "P-I"
-  },
-  {
-    "objectID": "project_posts/Maths thing/index.html#p-d",
-    "href": "project_posts/Maths thing/index.html#p-d",
-    "title": "Post With Code",
-    "section": "P-D",
-    "text": "P-D"
-  },
-  {
-    "objectID": "project_posts/Maths thing/index.html#p-i-d",
-    "href": "project_posts/Maths thing/index.html#p-i-d",
-    "title": "Post With Code",
-    "section": "P-I-D",
-    "text": "P-I-D"
-  },
-  {
-    "objectID": "project_posts/Maths thing/index.html#formulation",
-    "href": "project_posts/Maths thing/index.html#formulation",
-    "title": "Post With Code",
-    "section": "Formulation",
-    "text": "Formulation\nIn our research, we make certain assumptions to simplify the calculations and make them more static. The primary assumption is given by the following equations:\n\\[\n\\begin{aligned}\n& P(S_{t+1}=S^{\\prime}, R_{t+1}=v \\mid S_t=S, A_t=a) -&gt; {1} \\\\\n& P(S^{\\prime}, R \\mid S, a) -&gt; {2}\n\\end{aligned}\n\\]\nHere, \\(P(S^{\\prime}, R \\mid S, a)\\) represents the stationary assumption.\nTo obtain the output, we need:\n\n\\(S\\), which represents the set of states, also known as the state space.\n\\(A\\), which represents the set of actions.\n\\(\\gamma\\), which is used when we are considering discounted returns.\n\nInstead of using a single joint distribution given by the equation, we can break down the equation into two parts:\n\nTransition probabilities \\(P\\left(s^{\\prime} \\mid s, A\\right)\\)\nExpected reward \\(E\\left(r \\mid s, a, s^{\\prime}\\right)\\)\n\nWe write it down to break down the joint distribution. Here, only \\(E\\left(r \\mid s, a, s^{\\prime}\\right)\\) is enough as we are optimizing rewards.\nThe formulation of Markov Decision Process (MDP) is given by the Bellman equation:\n\\[\nS, A, P\\left(s^{\\prime} \\mid S, A\\right), E\\left(r \\mid s, a, S^{\\prime}\\right)\n\\]\n\nThe Bellman Equation\nThe Bellman equation is central to the theory of MDPs. It provides a recursive formulation for the value function of a policy in an MDP. The value function represents the expected return (accumulated rewards) for an agent starting in a particular state and following a specific policy thereafter.\nThe Bellman equation for MDPs can be expressed in two forms: one for the state-value function V(s) and another for the action-value function Q(s, a):\n\\[\n\\begin{aligned}\n& V(s) = \\max_a \\left\\{R(s,a) + \\gamma \\sum P(s'|s,a) V(s')\\right\\}  -&gt; {3} \\\\\n& Q(s,a) = R(s,a) + \\gamma \\sum P(s'|s,a) \\max_{a'} Q(s',a')  -&gt; {4}\n\\end{aligned}\n\\]\nIn these equations:\n\nV(s) is the value of state s under a policy.\nQ(s, a) is the value of taking action a in state s under a policy.\nR(s, a) is the immediate reward received after transitioning from state s with action a.\nP(s'|s, a) is the transition probability of landing in state s' when action a is taken in state s.\nγ is the discount factor which determines the present value of future rewards.\n\nThe Bellman equation essentially states that the value of a state (or state-action pair) is equal to the immediate reward plus the discounted expected value of the next state (or state-action pair). This recursive nature of the Bellman equation allows us to solve MDPs using dynamic programming methods."
-  },
-  {
-    "objectID": "project_posts/Maths thing/index.html#value-iteration",
-    "href": "project_posts/Maths thing/index.html#value-iteration",
-    "title": "Post With Code",
-    "section": "Value Iteration",
-    "text": "Value Iteration\n\nValue function become useful when the Markov property holds true because we assume value to state regardless of how we came to that particular state\nIf Markov property is not met how we arrived at the state will influence what will happen in future\nIn the Value iteration approach we wont need the past states\n\nValue iteration is a powerful approach that eliminates the need for past states in the computation of the value function. This method is widely employed in reinforcement learning and dynamic programming."
-  },
-  {
-    "objectID": "project_posts/Maths thing/index.html#theorem",
-    "href": "project_posts/Maths thing/index.html#theorem",
-    "title": "Post With Code",
-    "section": "Theorem",
-    "text": "Theorem\nLet \\(v^0 \\in V\\) and \\(\\varepsilon &gt; 0\\) be given. We derive the sequence \\(\\{v^n\\}\\) from \\(v^{n+1} = LV^n\\), where \\(LV = \\max_{\\pi}\\{r + \\gamma P^{\\pi}v\\}\\). Here, \\(r\\) represents the reward, \\(\\gamma\\) is the discount factor, and \\(P^{\\pi}\\) is the transition probability under policy \\(\\pi\\).\n\nTheorem Statement\nThen:\n\n\\(v^n\\) converges in the norm to \\(v^*\\).\nFor all finite \\(N\\) at which the conditions \\[\n\\|v^{n+1} - v^n\\| &lt; \\varepsilon \\times \\frac{(1-r)}{2r}\n\\] hold for all \\(n &gt; N\\).\nThe policy \\(\\pi\\) is defined by \\[\n\\pi(s) = \\underset{a}{\\operatorname{argmax}}\\{E(r \\mid s, a) + \\gamma \\sum_{s'} p(s' \\mid s, a) \\cdot v^{n+1}(s')\\}\n\\].\n\\(\\|v^{n+1} - v^*\\| \\leq \\varepsilon / 2\\) when the condition \\(\\|v_\\pi - v^*\\| = \\varepsilon\\) is met, where \\(v_\\pi\\) is \\(\\varepsilon\\)-optimal.\n\nThe sequence \\(\\{v^n\\}\\) is derived through the recursive equation \\[\nv^{n+1} = LV^n\n\\], where \\(L\\) represents the Bellman operator. The operator \\(L\\) is defined as \\[\nLV = \\max_{\\pi}\\{r + \\gamma P^{\\pi}v\\}\n\\], capturing the maximum expected sum of rewards under any policy.\nIn the theorem, \\(\\varepsilon\\) is used to set a threshold for the difference between consecutive values in the sequence \\(\\{v^n\\}\\) during the iterative process of value iteration. Specifically, condition (b) states that for all finite \\(N\\), if \\[\n\\|v^{n+1} - v^n\\| &lt; \\varepsilon \\times \\frac{(1-\\gamma)}{2\\gamma}\n\\] holds for all \\(n &gt; N\\), then the sequence is considered to have converged.\nThe theorem asserts the convergence of the sequence \\(v^n\\) to the optimal value function \\(v^*\\) under the conditions outlined in points (a) through (d). The proof involves analyzing the difference between consecutive values in the sequence and establishing convergence criteria."
-  },
-  {
-    "objectID": "project_posts/Maths thing/index.html#introduction-2",
-    "href": "project_posts/Maths thing/index.html#introduction-2",
-    "title": "Post With Code",
-    "section": "Introduction",
-    "text": "Introduction"
-  },
-  {
-    "objectID": "project_posts/Maths thing/index.html#formulation-1",
-    "href": "project_posts/Maths thing/index.html#formulation-1",
-    "title": "Post With Code",
-    "section": "Formulation",
-    "text": "Formulation"
-  },
-  {
-    "objectID": "project_posts/Maths thing/index.html#simple-overview",
-    "href": "project_posts/Maths thing/index.html#simple-overview",
-    "title": "Post With Code",
-    "section": "Simple overview",
-    "text": "Simple overview"
-  },
-  {
-    "objectID": "blogs.html",
-    "href": "blogs.html",
-    "title": "Blogs",
-    "section": "",
-    "text": "Post With Code\n\n\n\n\n\n\n\n\n\n\n\n\nJan 4, 2024\n\n\nSiddharth D\n\n\n12 min\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\n\n\n\nJan 1, 2024\n\n\nSiddharth D\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Siddharth D",
-    "section": "",
-    "text": "My Personal Website\n\n\n\n\nWelcome to My Personal Website!\n\n\n\n\nAbout Me\n\n\nProjects\n\n\nBlogs\n\n\nContact\n\n\n\n\n\n\n\nAbout This Site\n\n\nThis is my personal website where you can learn more about me, see my projects, read my blogs, and get in touch with me.\n\n\n\n\n\n© 2024 My Personal Website"
-  },
-  {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "Projects",
-    "section": "",
-    "text": "Post With Code\n\n\n\n\n\n\n\n\n\n\n\n\nJan 4, 2024\n\n\nSiddharth D\n\n\n12 min\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "contact.html",
-    "href": "contact.html",
-    "title": "Contact",
-    "section": "",
-    "text": "About this blog"
+    "text": "This is the first post of my blog. Welcome!\nHello guys welcome to my portfolio website. Looking forward to have a great time with you all."
   },
   {
     "objectID": "about.html#experience",
@@ -161,114 +21,163 @@
     "text": "Tech Stack and Workflow\n\nBackend Development: Django, Flask, RestAPI\nMachine Learning: TensorFlow, PyTorch, Scikit-learn\nComputer Vision: OpenCV, Roboflow, Dlib\nCloud Platforms: Microsoft Azure\nContainerization: Docker\nProgramming Languages: Python, Scala, Java (basic knowledge), MATLAB\nCompetitive Programming: Proficient in Python (Leetcode, Codechef)"
   },
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
+    "section": "",
+    "text": "Hello! If you wish to contact me, please use the following methods:"
+  },
+  {
+    "objectID": "contact.html#email",
+    "href": "contact.html#email",
+    "title": "Contact",
+    "section": "Email",
+    "text": "Email\nYou can reach me at: dsiddharth25@gmail.com"
+  },
+  {
+    "objectID": "contact.html#phone",
+    "href": "contact.html#phone",
+    "title": "Contact",
+    "section": "Phone",
+    "text": "Phone\nYou can call me at: +91 73311-37182"
+  },
+  {
+    "objectID": "contact.html#social-media",
+    "href": "contact.html#social-media",
+    "title": "Contact",
+    "section": "Social Media",
+    "text": "Social Media\n\nLinkedIn\nWhatsapp\n\nNote: Please allow me 24-48 hours to respond to your messages. Thank you for understanding!"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "QuadCopter Reinforcement learning Bot\n\n\n\n\n\n\n\n\n\n\n\n\nJan 5, 2024\n\n\nSiddharth D\n\n\n12 min\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Siddharth D",
+    "section": "",
+    "text": "My Personal Website\n\n\n\n\nWelcome to My Personal Website!\n\n\n\n\nAbout Me\n\n\nProjects\n\n\nBlogs\n\n\nContact\n\n\n\n\n\n\n\nAbout This Site\n\n\nThis is my personal website where you can learn more about me, see my projects, read my blogs, and get in touch with me.\n\n\n\n\n\n© 2024 My Personal Website"
+  },
+  {
+    "objectID": "blogs.html",
+    "href": "blogs.html",
+    "title": "Blogs",
+    "section": "",
+    "text": "Welcome To My Blog\n\n\n\n\n\n\n\n\n\n\n\n\nJan 1, 2024\n\n\nSiddharth D\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "project_posts/Maths thing/index.html",
+    "href": "project_posts/Maths thing/index.html",
+    "title": "QuadCopter Reinforcement learning Bot",
     "section": "",
     "text": "The goal of this project is to compare three approaches to control a Quadcopter in the task of navigating to multiple waypoints without crashing\n\nHuman Agents: A human directly controlls the drone and drives it to the destination using keyboard input\nPID: The Quadcopter is navigated autonomously using the feedback loop mechanism of the PID controller\nReinforcement Learning Agent: This being the crux of the project using 2 reinforcement learning algorithms DQN (Q learning and SAC). Detailed explanation about Q learning is what is being concentrated more on the project.\n\nQuadcoptes are generally controlled either by humans or by use of algorithms derived by control theory. PID controllers are often used to control the motor power of each propeller and by sensing information the balace is maintainted using feedback loop mechanism\nUsing reinforcement learning learning will be the next step in the evolution of autonomous vehicles. Given the state of the vehicle and the environment, the agent will learn to take actions that will maximize the reward. The agent will learn to navigate to the destination without crashing."
   },
   {
-    "objectID": "posts/post-with-code/index.html#physics",
-    "href": "posts/post-with-code/index.html#physics",
-    "title": "Post With Code",
+    "objectID": "project_posts/Maths thing/index.html#physics",
+    "href": "project_posts/Maths thing/index.html#physics",
+    "title": "QuadCopter Reinforcement learning Bot",
     "section": "Physics",
     "text": "Physics\nAt each step of the simulation, the agents have to provide values between -0.003 and 0.083 (values chosen arbitrarily) for the thrust of their left and right rotors. The thrust is then converted to a force vector that is applied to the drone. The drone is then moved according to the force vector and the physics of the environment. The physics of the environment is as follows:\nStep 1: Calculate acceleration\n\\[\n\\begin{aligned}\n& \\ddot{x}=\\frac{-\\left(T_L+T_\\gamma\\right) \\sin (\\theta)}{m} \\\\\n& \\ddot{y}=\\frac{-\\left(T_L+T_\\gamma\\right) \\cos (\\theta)}{m} \\\\\n& \\ddot{\\theta}=\\frac{\\left(T_r-T_L\\right) \\cdot L}{m}\n\\end{aligned}\n\\]\nEquations for acceleration \\(( \\ddot{x}, \\ddot{y}, \\ddot{\\theta} )\\): \\(\\ddot{x} = \\frac{T_L + T_R}{m} \\cos(\\theta)\\) \\(\\ddot{y} = \\frac{T_L + T_R}{m} \\sin(\\theta)\\) \\(\\ddot{\\theta} = \\frac{l}{I} (T_R - T_L)\\)\nDefinitions of variables:\n\n\\(\\ddot{x}, \\ddot{y}\\): acceleration on the x and y axes.\n\\((\\ddot{\\theta})\\): angular acceleration.\n\\((T_L, T_R)\\): input thrust for the left and right propellers.\n\\((\\theta)\\): angle of the drone with respect to the z-axis.\n\\((m)\\): mass of the drone.\n\\((g)\\): acceleration due to gravity.\n\\((l):\\) distance between the center of mass and the propeller\n\nStep 2: Derive the speed and the position.\n\\[\n\\begin{aligned}\n& \\dot{x}(t-1)=\\ddot{x} \\cdot d t+\\dot{x}(t) \\\\\n& x(t+1)=\\dot{x} \\cdot d t+x(t\n\\end{aligned}\n\\]"
   },
   {
-    "objectID": "posts/post-with-code/index.html#scoring",
-    "href": "posts/post-with-code/index.html#scoring",
-    "title": "Post With Code",
+    "objectID": "project_posts/Maths thing/index.html#scoring",
+    "href": "project_posts/Maths thing/index.html#scoring",
+    "title": "QuadCopter Reinforcement learning Bot",
     "section": "Scoring",
     "text": "Scoring\nThe simulation runs at 60fps for 100 seconds (can be modified). The agent should reach the destination without crashing. If the agents goes out of the field of the simulation, it is considered as a crash. The agent respawns with a penalty wait time of 3 seconds per crash (this is a bad thing in competitive environments)."
   },
   {
-    "objectID": "posts/post-with-code/index.html#human-agent",
-    "href": "posts/post-with-code/index.html#human-agent",
-    "title": "Post With Code",
+    "objectID": "project_posts/Maths thing/index.html#human-agent",
+    "href": "project_posts/Maths thing/index.html#human-agent",
+    "title": "QuadCopter Reinforcement learning Bot",
     "section": "Human Agent",
     "text": "Human Agent\nThe human agent is simulated in a near Earth environment with the thrust being constant and the human controls by using his keyboard.\nThe values are:\n\nThrust initialization: \\(T_L = 0.04 \\quad \\text{and} \\quad T_R = 0.04\\)\nUP (incrementing \\(T_L\\) and \\(T_R\\) by 0.04): \\(T_L = T_L + 0.04 \\quad \\text{and} \\quad T_R = T_R + 0.04\\)\nDOWN (decrementing \\(T_L\\) and \\(T_R\\) by 0.04): \\(T_L = T_L - 0.04 \\quad \\text{and} \\quad T_R = T_R - 0.04\\)\nLEFT: \\(T_L = T_L - 0.003 \\quad \\text{and} \\quad T_R = T_R + 0.04\\)\nRIGHT: \\(T_L = T_L + 0.004 \\quad \\text{and} \\quad T_R = T_R - 0.03\\)"
   },
   {
-    "objectID": "posts/post-with-code/index.html#pid-agent",
-    "href": "posts/post-with-code/index.html#pid-agent",
-    "title": "Post With Code",
+    "objectID": "project_posts/Maths thing/index.html#pid-agent",
+    "href": "project_posts/Maths thing/index.html#pid-agent",
+    "title": "QuadCopter Reinforcement learning Bot",
     "section": "PID Agent",
     "text": "PID Agent\nFor the PID agent we assume the error for the position from the target it has to reach and the location of the drone and move it vertically or rotate it at certain angle to move at different position\n\nThe vertical distance from the drone to target is sent to PID which outputs a optimal vertical speed\nThe horizontal distance is used to modify the thrust of each rotor to move it in the left or right direction same as the HUMAN Agent the rotation logic remains same\n\n—- PUT IMAGE HERE ——-"
   },
   {
-    "objectID": "posts/post-with-code/index.html#reinforcement-learning-agent",
-    "href": "posts/post-with-code/index.html#reinforcement-learning-agent",
-    "title": "Post With Code",
+    "objectID": "project_posts/Maths thing/index.html#reinforcement-learning-agent",
+    "href": "project_posts/Maths thing/index.html#reinforcement-learning-agent",
+    "title": "QuadCopter Reinforcement learning Bot",
     "section": "Reinforcement learning Agent",
     "text": "Reinforcement learning Agent\nThe environment in which the drone trains is called as DRONEENV and we use openAI gym for creating the agent. The observations are made easy for the agent to understand. For observation the agents is given the following information (current position and the speed to move is determined by the following inputs)\n\nangle_to_up : angle between the drone and the up vector (to observe gravity)\nvelocity : velocity of the drone\nangle_velocity : angle of the velocity vector\ndistance_to_target : distance to the target\nangle_to_target : angle between the drone and the target\nangle_target_and_velocity : angle between the to_target vector and the velocity vector\ndistance_to_target : distance to the target\n\nBefore going deeper into this we must know some basic concepts of Reinforcement Learning\n\nIntroduction\nReinforcement learning is an area of Machine Learning. It is about taking suitable action to maximize reward in a particular situation. It is employed by various software and machines to find the best possible behavior or path it should take in a specific situation. Reinforcement learning differs from supervised learning in a way that in supervised learning the training data has the answer key with it so the model is trained with the correct answer itself whereas in reinforcement learning, there is no answer but the reinforcement agent decides what to do to perform the given task. In the absence of a training dataset, it is bound to learn from its experience.\nReinforcement Learning (RL) is the science of decision making. It is about learning the optimal behavior in an environment to obtain maximum reward. In RL, the data is accumulated from machine learning systems that use a trial-and-error method. Data is not part of the input that we would find in supervised or unsupervised machine learning.\nWe have 4 main components when it comes to reinforcement learning.\n\nReward\n\nThe rewards are scalar quantity which is a single number which can range from [−N,N] and sometimes it can have multiple outcomes so choosing them is the job of the agent\nThe reward should be outside the control of the agent which means that the reward should come from the environment in which the agent is training this will make sure that the agent wont be able to simply add more reward\nThe reward depends on the domain\nHaving singular scalar value is good as its easy to estimate the model performance\nReward should be bounded that is from -N to N\nRewards must be given for each epoch or every single iteration\n\n\n\nPolicy\nA policy is a rule that determines how an agent chooses an action in each state. It can be deterministic or stochastic, depending on whether the agent always selects the same action or randomly picks an action according to some probability distribution. Policy is a conditional probability which is given by \\(\\pi \\left( a| s\\right) =P( A_{t}= a| s_{t}= s)\\) -&gt; The following equation stands for the probablity that the agent will take action ‘A’ given that at time t the state is ‘S’\n\n\nReturn\nReturn is a measure of the total reward that an agent can expect to receive in the future, starting from a given state or state-action pair. It is often used as a target for learning the value functions that estimate how good a state or an action is. There are different ways to define return, depending on how the rewards are discounted or summed up. One common way is to use the discounted return, which is given by the formula:\n\\[\nG_t = R_{t+1} + \\gamma R_{t+2} + \\gamma^2 R_{t+3} + \\dots = \\sum_{k=0}^\\infty \\gamma^k R_{t+k+1}\n\\]\n\nwhere \\(G_t\\) is the return at time step \\(t\\), \\(R_{t+k+1}\\) is the reward received at time step \\(t+k+1\\), and \\(\\gamma\\) is a discount factor between 0 and 1 that determines how much the agent values the future rewards.\nAgent which uses only the first term is called as near-sighted agent.\n\n\n\nValue Function\nThe value function \\(V^\\pi(s)\\) is the expected value of the return \\(G_t\\) when the agent follows the policy \\(\\pi\\) and starts from the state \\(s\\).\n\\[\nV^\\pi(s) = \\mathbb{E}_\\pi \\left\\{ G_t \\mid S_t = s \\right\\}\n\\]\nThe expectation \\(\\mathbb{E}_\\pi\\) is taken over the distribution of the possible trajectories that the agent can experience under the policy \\(\\pi\\). The value function represents how good or desirable a state is for the agent, and it can be used to evaluate or improve the policy."
   },
   {
-    "objectID": "posts/post-with-code/index.html#p",
-    "href": "posts/post-with-code/index.html#p",
-    "title": "Post With Code",
+    "objectID": "project_posts/Maths thing/index.html#p",
+    "href": "project_posts/Maths thing/index.html#p",
+    "title": "QuadCopter Reinforcement learning Bot",
     "section": "P",
     "text": "P"
   },
   {
-    "objectID": "posts/post-with-code/index.html#p-i",
-    "href": "posts/post-with-code/index.html#p-i",
-    "title": "Post With Code",
+    "objectID": "project_posts/Maths thing/index.html#p-i",
+    "href": "project_posts/Maths thing/index.html#p-i",
+    "title": "QuadCopter Reinforcement learning Bot",
     "section": "P-I",
     "text": "P-I"
   },
   {
-    "objectID": "posts/post-with-code/index.html#p-d",
-    "href": "posts/post-with-code/index.html#p-d",
-    "title": "Post With Code",
+    "objectID": "project_posts/Maths thing/index.html#p-d",
+    "href": "project_posts/Maths thing/index.html#p-d",
+    "title": "QuadCopter Reinforcement learning Bot",
     "section": "P-D",
     "text": "P-D"
   },
   {
-    "objectID": "posts/post-with-code/index.html#p-i-d",
-    "href": "posts/post-with-code/index.html#p-i-d",
-    "title": "Post With Code",
+    "objectID": "project_posts/Maths thing/index.html#p-i-d",
+    "href": "project_posts/Maths thing/index.html#p-i-d",
+    "title": "QuadCopter Reinforcement learning Bot",
     "section": "P-I-D",
     "text": "P-I-D"
   },
   {
-    "objectID": "posts/post-with-code/index.html#formulation",
-    "href": "posts/post-with-code/index.html#formulation",
-    "title": "Post With Code",
+    "objectID": "project_posts/Maths thing/index.html#formulation",
+    "href": "project_posts/Maths thing/index.html#formulation",
+    "title": "QuadCopter Reinforcement learning Bot",
     "section": "Formulation",
     "text": "Formulation\nIn our research, we make certain assumptions to simplify the calculations and make them more static. The primary assumption is given by the following equations:\n\\[\n\\begin{aligned}\n& P(S_{t+1}=S^{\\prime}, R_{t+1}=v \\mid S_t=S, A_t=a) -&gt; {1} \\\\\n& P(S^{\\prime}, R \\mid S, a) -&gt; {2}\n\\end{aligned}\n\\]\nHere, \\(P(S^{\\prime}, R \\mid S, a)\\) represents the stationary assumption.\nTo obtain the output, we need:\n\n\\(S\\), which represents the set of states, also known as the state space.\n\\(A\\), which represents the set of actions.\n\\(\\gamma\\), which is used when we are considering discounted returns.\n\nInstead of using a single joint distribution given by the equation, we can break down the equation into two parts:\n\nTransition probabilities \\(P\\left(s^{\\prime} \\mid s, A\\right)\\)\nExpected reward \\(E\\left(r \\mid s, a, s^{\\prime}\\right)\\)\n\nWe write it down to break down the joint distribution. Here, only \\(E\\left(r \\mid s, a, s^{\\prime}\\right)\\) is enough as we are optimizing rewards.\nThe formulation of Markov Decision Process (MDP) is given by the Bellman equation:\n\\[\nS, A, P\\left(s^{\\prime} \\mid S, A\\right), E\\left(r \\mid s, a, S^{\\prime}\\right)\n\\]\n\nThe Bellman Equation\nThe Bellman equation is central to the theory of MDPs. It provides a recursive formulation for the value function of a policy in an MDP. The value function represents the expected return (accumulated rewards) for an agent starting in a particular state and following a specific policy thereafter.\nThe Bellman equation for MDPs can be expressed in two forms: one for the state-value function V(s) and another for the action-value function Q(s, a):\n\\[\n\\begin{aligned}\n& V(s) = \\max_a \\left\\{R(s,a) + \\gamma \\sum P(s'|s,a) V(s')\\right\\}  -&gt; {3} \\\\\n& Q(s,a) = R(s,a) + \\gamma \\sum P(s'|s,a) \\max_{a'} Q(s',a')  -&gt; {4}\n\\end{aligned}\n\\]\nIn these equations:\n\nV(s) is the value of state s under a policy.\nQ(s, a) is the value of taking action a in state s under a policy.\nR(s, a) is the immediate reward received after transitioning from state s with action a.\nP(s'|s, a) is the transition probability of landing in state s' when action a is taken in state s.\nγ is the discount factor which determines the present value of future rewards.\n\nThe Bellman equation essentially states that the value of a state (or state-action pair) is equal to the immediate reward plus the discounted expected value of the next state (or state-action pair). This recursive nature of the Bellman equation allows us to solve MDPs using dynamic programming methods."
   },
   {
-    "objectID": "posts/post-with-code/index.html#value-iteration",
-    "href": "posts/post-with-code/index.html#value-iteration",
-    "title": "Post With Code",
+    "objectID": "project_posts/Maths thing/index.html#value-iteration",
+    "href": "project_posts/Maths thing/index.html#value-iteration",
+    "title": "QuadCopter Reinforcement learning Bot",
     "section": "Value Iteration",
     "text": "Value Iteration\n\nValue function become useful when the Markov property holds true because we assume value to state regardless of how we came to that particular state\nIf Markov property is not met how we arrived at the state will influence what will happen in future\nIn the Value iteration approach we wont need the past states\n\nValue iteration is a powerful approach that eliminates the need for past states in the computation of the value function. This method is widely employed in reinforcement learning and dynamic programming."
   },
   {
-    "objectID": "posts/post-with-code/index.html#theorem",
-    "href": "posts/post-with-code/index.html#theorem",
-    "title": "Post With Code",
+    "objectID": "project_posts/Maths thing/index.html#theorem",
+    "href": "project_posts/Maths thing/index.html#theorem",
+    "title": "QuadCopter Reinforcement learning Bot",
     "section": "Theorem",
     "text": "Theorem\nLet \\(v^0 \\in V\\) and \\(\\varepsilon &gt; 0\\) be given. We derive the sequence \\(\\{v^n\\}\\) from \\(v^{n+1} = LV^n\\), where \\(LV = \\max_{\\pi}\\{r + \\gamma P^{\\pi}v\\}\\). Here, \\(r\\) represents the reward, \\(\\gamma\\) is the discount factor, and \\(P^{\\pi}\\) is the transition probability under policy \\(\\pi\\).\n\nTheorem Statement\nThen:\n\n\\(v^n\\) converges in the norm to \\(v^*\\).\nFor all finite \\(N\\) at which the conditions \\[\n\\|v^{n+1} - v^n\\| &lt; \\varepsilon \\times \\frac{(1-r)}{2r}\n\\] hold for all \\(n &gt; N\\).\nThe policy \\(\\pi\\) is defined by \\[\n\\pi(s) = \\underset{a}{\\operatorname{argmax}}\\{E(r \\mid s, a) + \\gamma \\sum_{s'} p(s' \\mid s, a) \\cdot v^{n+1}(s')\\}\n\\].\n\\(\\|v^{n+1} - v^*\\| \\leq \\varepsilon / 2\\) when the condition \\(\\|v_\\pi - v^*\\| = \\varepsilon\\) is met, where \\(v_\\pi\\) is \\(\\varepsilon\\)-optimal.\n\nThe sequence \\(\\{v^n\\}\\) is derived through the recursive equation \\[\nv^{n+1} = LV^n\n\\], where \\(L\\) represents the Bellman operator. The operator \\(L\\) is defined as \\[\nLV = \\max_{\\pi}\\{r + \\gamma P^{\\pi}v\\}\n\\], capturing the maximum expected sum of rewards under any policy.\nIn the theorem, \\(\\varepsilon\\) is used to set a threshold for the difference between consecutive values in the sequence \\(\\{v^n\\}\\) during the iterative process of value iteration. Specifically, condition (b) states that for all finite \\(N\\), if \\[\n\\|v^{n+1} - v^n\\| &lt; \\varepsilon \\times \\frac{(1-\\gamma)}{2\\gamma}\n\\] holds for all \\(n &gt; N\\), then the sequence is considered to have converged.\nThe theorem asserts the convergence of the sequence \\(v^n\\) to the optimal value function \\(v^*\\) under the conditions outlined in points (a) through (d). The proof involves analyzing the difference between consecutive values in the sequence and establishing convergence criteria."
   },
   {
-    "objectID": "posts/post-with-code/index.html#introduction-2",
-    "href": "posts/post-with-code/index.html#introduction-2",
-    "title": "Post With Code",
+    "objectID": "project_posts/Maths thing/index.html#introduction-2",
+    "href": "project_posts/Maths thing/index.html#introduction-2",
+    "title": "QuadCopter Reinforcement learning Bot",
     "section": "Introduction",
     "text": "Introduction"
   },
   {
-    "objectID": "posts/post-with-code/index.html#formulation-1",
-    "href": "posts/post-with-code/index.html#formulation-1",
-    "title": "Post With Code",
+    "objectID": "project_posts/Maths thing/index.html#formulation-1",
+    "href": "project_posts/Maths thing/index.html#formulation-1",
+    "title": "QuadCopter Reinforcement learning Bot",
     "section": "Formulation",
     "text": "Formulation"
   },
   {
-    "objectID": "posts/post-with-code/index.html#simple-overview",
-    "href": "posts/post-with-code/index.html#simple-overview",
-    "title": "Post With Code",
+    "objectID": "project_posts/Maths thing/index.html#simple-overview",
+    "href": "project_posts/Maths thing/index.html#simple-overview",
+    "title": "QuadCopter Reinforcement learning Bot",
     "section": "Simple overview",
     "text": "Simple overview"
   }
