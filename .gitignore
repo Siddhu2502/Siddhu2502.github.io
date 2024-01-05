@@ -1,0 +1,14 @@
+/.quarto/
+/posts/*
+/posts
+/project_posts/*
+/project_posts
+/_quarto.yml
+/about.qmd
+/blogs.qmd
+/contact.qmd
+/dark-theme.scss
+/index.qmd
+/projects.qmd
+/profile.png
+/styles.css
