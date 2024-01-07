@@ -8,6 +8,9 @@
   {
     "listing": "/blogs.html",
     "items": [
+      "/posts/Distributed computing CC/index.html",
+      "/posts/Grid computing CC/index.html",
+      "/posts/Recursion DSA/index.html",
       "/posts/welcome/index.html"
     ]
   }
