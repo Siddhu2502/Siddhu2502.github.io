@@ -1,17 +1,20 @@
 [
   {
-    "listing": "/projects.html",
+    "listing": "/blogs.html",
     "items": [
-      "/project_posts/Maths thing/index.html"
+      "/posts/Array DSA/index.html",
+      "/posts/Distributed computing CC/index.html",
+      "/posts/Grid computing CC/index.html",
+      "/posts/NLP basics/index.html",
+      "/posts/NLP basics/nextindex.html",
+      "/posts/Recursion DSA/index.html",
+      "/posts/welcome/index.html"
     ]
   },
   {
-    "listing": "/blogs.html",
+    "listing": "/projects.html",
     "items": [
-      "/posts/Distributed computing CC/index.html",
-      "/posts/Grid computing CC/index.html",
-      "/posts/Recursion DSA/index.html",
-      "/posts/welcome/index.html"
+      "/project_posts/Maths thing/index.html"
     ]
   }
 ]

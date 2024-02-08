@@ -1,0 +1,17 @@
+---
+title: "Siddharth D"
+image: profile.png
+about:
+  template: solana
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/siddharth-d-816074217/
+    - icon: github
+      text: Github
+      href: https://github.com/Siddhu2502
+    - icon: file-person
+      text: Resume
+      href: https://docs.google.com/document/d/1wv6QuhM0rrhDOqxL_CJ8CjlL03Ups1Y3rp29-a5-pMI/edit?usp=sharing
+
+---

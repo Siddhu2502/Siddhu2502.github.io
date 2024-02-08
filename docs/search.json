@@ -1,10 +1,45 @@
 [
   {
+    "objectID": "posts/Grid computing CC/index.html",
+    "href": "posts/Grid computing CC/index.html",
+    "title": "Clould Computing (Grid Computing)",
+    "section": "",
+    "text": "Grid computing is the collection of computer resources from multiple locations to reach a common goal. The grid can be thought of as a distributed system with non-interactive workloads that involve a large number of files.\nGrid computing is distinguished from conventional high-performance computing systems such as cluster computing in that grid computers have each node set to perform a different task/application. Grid computers also tend to be more heterogeneous and geographically dispersed (thus not physically coupled) than cluster computers.\nAlthough a single grid can be dedicated to a particular application, commonly a grid is used for a variety of purposes. Grids are often constructed with general-purpose grid middleware software libraries. Grid sizes can be quite large."
+  },
+  {
+    "objectID": "posts/Grid computing CC/index.html#keywords",
+    "href": "posts/Grid computing CC/index.html#keywords",
+    "title": "Clould Computing (Grid Computing)",
+    "section": "Keywords",
+    "text": "Keywords\n\nresource sharing\nvirtualization\ngrid computing\nheterogeneous\ngeographically dispersed\ncomputing resources\n\nprocessing\nnetwork bandwidth\nstorage capacity\n\ndata vizualization\nresource exploitation"
+  },
+  {
+    "objectID": "posts/Grid computing CC/index.html#summary",
+    "href": "posts/Grid computing CC/index.html#summary",
+    "title": "Clould Computing (Grid Computing)",
+    "section": "Summary",
+    "text": "Summary\n\nGrid computing is a distributed architecture of large number of computers connected to solve a complex problem.\nIt is a virtual super computer that can be used for solving a complex problem. It is a form of distributed computing where the resources are shared and coordinated to solve a single problem."
+  },
+  {
     "objectID": "posts/welcome/index.html",
     "href": "posts/welcome/index.html",
     "title": "Welcome To My Blog",
     "section": "",
     "text": "This is the first post of my blog. Welcome!\nHello guys welcome to my portfolio website. Looking forward to have a great time with you all."
+  },
+  {
+    "objectID": "posts/NLP basics/index.html",
+    "href": "posts/NLP basics/index.html",
+    "title": "Topic 1 -> Basis of Speech acoustics",
+    "section": "",
+    "text": "Speech Signal\n\nThe fundamental analog form of"
+  },
+  {
+    "objectID": "posts/Array DSA/index.html",
+    "href": "posts/Array DSA/index.html",
+    "title": "Topic 1 -> Array",
+    "section": "",
+    "text": "Python’s Array Module\nThe array module in Python is used to store homogeneous data types such as integers, floats, etc. It is similar to lists in Python, but with the added advantage of being more efficient in terms of memory and performance for certain operations.\nWhen to use the array module? You should consider using the array module when you need to store a large amount of homogeneous data. This is because arrays are more memory efficient than lists. They also provide faster access in some cases because they store data in contiguous memory blocks, unlike lists.\nComparing array module with normal list Here are some key differences between the array module and a normal list in Python:\nHomogeneity: Arrays can only store elements of the same type, while lists can store elements of different types.\nMemory and Performance: Arrays are more memory efficient and can provide faster access and manipulation for large amounts of data.\nFunctionality: Lists come with a variety of built-in methods for manipulation like append, remove, pop, etc. Arrays have fewer methods but are more specialized for numerical and computational tasks.\nIn the provided code snippet, an array of type ‘h’ (short integers) is created to store prime numbers. This is a good use case for the array module because we are dealing with a large amount of homogeneous numerical data.\nIn this code, the array is more memory efficient than a list would be, and it provides fast and efficient access to the prime numbers stored within it."
   },
   {
     "objectID": "about.html#experience",
@@ -19,6 +54,27 @@
     "title": "About Me",
     "section": "Tech Stack and Workflow",
     "text": "Tech Stack and Workflow\n\nBackend Development: Django, Flask, RestAPI\nMachine Learning: TensorFlow, PyTorch, Scikit-learn\nComputer Vision: OpenCV, Roboflow, Dlib\nCloud Platforms: Microsoft Azure\nContainerization: Docker\nProgramming Languages: Python, Scala, Java (basic knowledge), MATLAB\nCompetitive Programming: Proficient in Python (Leetcode, Codechef)"
+  },
+  {
+    "objectID": "blogs.html",
+    "href": "blogs.html",
+    "title": "Blogs",
+    "section": "",
+    "text": "Topic 1 -&gt; Array\n\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n2 min\n\n\n\n\n\n\n  \n\n\n\n\nClould Computing (Distributed Computing)\n\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n2 min\n\n\n\n\n\n\n  \n\n\n\n\nClould Computing (Grid Computing)\n\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n3 min\n\n\n\n\n\n\n  \n\n\n\n\nTopic 1 -&gt; Basis of Speech acoustics\n\n\n\n\n\n\n\n\n\n\n\n\nJan 6, 2024\n\n\nSiddharth D\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nTopic 1 -&gt; Speech acoustics in Depth\n\n\n\n\n\n\n\n\n\n\n\n\nJan 6, 2024\n\n\nSiddharth D\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nTopic 1 -&gt; Recursion\n\n\n\n\n\n\n\n\n\n\n\n\nJan 6, 2024\n\n\nSiddharth D\n\n\n4 min\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\n\n\n\nJan 1, 2024\n\n\nSiddharth D\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Siddharth D",
+    "section": "",
+    "text": "My Personal Website\n\n\n\n\nWelcome to My Personal Website!\n\n\n\n\nAbout Me\n\n\nProjects\n\n\nBlogs\n\n\nContact\n\n\n\n\n\n\n\nAbout This Site\n\n\nThis is my personal website where you can learn more about me, see my projects, read my blogs, and get in touch with me.\n\n\n\n\n\n© 2024 My Personal Website"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "QuadCopter Reinforcement learning Bot\n\n\n\n\n\n\n\n\n\n\n\n\nJan 5, 2024\n\n\nSiddharth D\n\n\n12 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "contact.html",
@@ -47,27 +103,6 @@
     "title": "Contact",
     "section": "Social Media",
     "text": "Social Media\n\nLinkedIn\nWhatsapp\n\nNote: Please allow me 24-48 hours to respond to your messages. Thank you for understanding!"
-  },
-  {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "Projects",
-    "section": "",
-    "text": "QuadCopter Reinforcement learning Bot\n\n\n\n\n\n\n\n\n\n\n\n\nJan 5, 2024\n\n\nSiddharth D\n\n\n12 min\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Siddharth D",
-    "section": "",
-    "text": "My Personal Website\n\n\n\n\nWelcome to My Personal Website!\n\n\n\n\nAbout Me\n\n\nProjects\n\n\nBlogs\n\n\nContact\n\n\n\n\n\n\n\nAbout This Site\n\n\nThis is my personal website where you can learn more about me, see my projects, read my blogs, and get in touch with me.\n\n\n\n\n\n© 2024 My Personal Website"
-  },
-  {
-    "objectID": "blogs.html",
-    "href": "blogs.html",
-    "title": "Blogs",
-    "section": "",
-    "text": "Clould Computing (Distributed Computing)\n\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n2 min\n\n\n\n\n\n\n  \n\n\n\n\nClould Computing (Grid Computing)\n\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n3 min\n\n\n\n\n\n\n  \n\n\n\n\nTopic 1 -&gt; Recursion\n\n\n\n\n\n\n\n\n\n\n\n\nJan 6, 2024\n\n\nSiddharth D\n\n\n4 min\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\n\n\n\nJan 1, 2024\n\n\nSiddharth D\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "project_posts/Maths thing/index.html",
@@ -182,48 +217,6 @@
     "text": "Simple overview"
   },
   {
-    "objectID": "posts/DailyDoseofDSA/index.html",
-    "href": "posts/DailyDoseofDSA/index.html",
-    "title": "Topic 1 -> Recursion",
-    "section": "",
-    "text": "One way to describe repetition within a computer program is the use of loops, such as Python’s while-loop and for-loop, but an entire way of approach is using Recrusions which brings us to today’s topic on learning stuff daily for 100 days\n\nTest for base cases. We begin by testing for a set of base cases (there should be at least one). These base cases should be defined so that every possible chain of recursive calls will eventually reach a base case, and the handling ofeach base case should not use recursion.\nRecur. If not a base case, we perform one or more recursive calls. This recursive step may involve a test that decides which of several possible recursive calls to make. We should define each possible recursive call so that it makes progress towards a base case.\nImportant Point here is that if this base case is not met then we fall into a infinite recursion and kaboom 💥\n\ndef fib(n):\n    if n &lt;= 1:         # -----&gt; this part (remember this)\n        return 0\n    # ... rest of the function here \nThis function has this fib(n) so that “n” is what that has to be satisfied … by now you would have got the grip of the step 1 of recursion\nthe next step is to lay out your logic and write the rest of the function\ndef fib(n):\n    if n &lt;= 1:\n        return 0\n    else:\n        return fib(n-1) + fib(n-2)  # --&gt; go back 2 steps and sum then up\nCertainly! Let’s add examples for binary recursion and multiple recursion:"
-  },
-  {
-    "objectID": "posts/DailyDoseofDSA/index.html#linear-recursion",
-    "href": "posts/DailyDoseofDSA/index.html#linear-recursion",
-    "title": "Topic 1 -> Recursion",
-    "section": "Linear Recursion",
-    "text": "Linear Recursion\nIf a recursive function is designed so that each invocation of the body makes at most one new recursive call, this is known as linear recursion.\nExample:\ndef reversearr(array, start, stop):\n    if start &lt; stop-1: # -----&gt; base case baked right into the recursion itself\n        array[start], array[stop-1] = array[stop-1], array[start]\n        reversearr(array, start+1, stop-1)\n    return array"
-  },
-  {
-    "objectID": "posts/DailyDoseofDSA/index.html#binary-recursion",
-    "href": "posts/DailyDoseofDSA/index.html#binary-recursion",
-    "title": "Topic 1 -> Recursion",
-    "section": "Binary Recursion",
-    "text": "Binary Recursion\nIn binary recursion, each recursive call results in two new recursive calls. This often occurs in problems that can be divided into two sub-problems.\nExample (Binary Recursion):\ndef binary_sum(arr, start, end):\n    if start == end:  # base case when there's only one element\n        return arr[start]\n    else:\n        mid = (start + end) // 2\n        left_sum = binary_sum(arr, start, mid)\n        right_sum = binary_sum(arr, mid+1, end)\n        return left_sum + right_sum\nExplanation: This function recursively divides the array into two halves and calculates the sum of each half. The base case is when the array has only one element, and the sum is returned. The overall sum is then calculated by adding the sums of the left and right halves."
-  },
-  {
-    "objectID": "posts/DailyDoseofDSA/index.html#multiple-recursion",
-    "href": "posts/DailyDoseofDSA/index.html#multiple-recursion",
-    "title": "Topic 1 -> Recursion",
-    "section": "Multiple Recursion",
-    "text": "Multiple Recursion\nMultiple recursion involves a recursive function making more than two calls. It can be a bit complex but is a powerful technique for solving certain types of problems.\nExample (Multiple Recursion):\ndef multiply_elements(arr, start, end):\n    if start == end:  # base case when there's only one element\n        return arr[start]\n    else:\n        mid = (start + end) // 2\n        left_product = multiply_elements(arr, start, mid)\n        right_product = multiply_elements(arr, mid+1, end)\n        current_product = arr[start] * arr[end]  # additional recursive call\n        return left_product * right_product * current_product\nExplanation: This function recursively multiplies the elements in the array. In addition to the recursive calls for the left and right halves, there is an extra recursive call to multiply the first and last elements of the current segment. The base case is when the array has only one element.\n\nFeel free to experiment with these examples and observe their behavior. Understanding binary and multiple recursion is essential for tackling a wide range of algorithmic problems. Happy coding! 💻🚀"
-  },
-  {
-    "objectID": "posts/CloudComputing/index.html",
-    "href": "posts/CloudComputing/index.html",
-    "title": "Clould Computing (Distributed Computing)",
-    "section": "",
-    "text": "Introduction\nDistributed computing can be termed as follows: “A distributed system is a collection of independent computers that appear to the users of the system as a single computer”. The main goal of distributed computing is to connect users and resources in a transparent, open, and scalable way. The main advantage of distributed computing is that it allows users to access data and applications from anywhere in the world, as long as they have access to the Internet. This is a huge advantage for companies that have offices in different locations, as it allows them to share data and applications without having to worry about the physical location of the data and applications.\n\n\nDistributed computing\n\nMultiple nodes which carry out set of processes that are distributed across the network of machines and work together to solve a problem can be coined as distributed computing\nThese are also called as peer to peer computing. That is several applications coordinate amoung themselves to address a particular problem.\n\nPrimarily usefull for large scale applicaiton development or large scale operational need right where you have different operation being served by different nodes.\n\n\n\n\nAspects of distributed computing\n\nThree significant characteristics of distributed systems are:\n\nconcurrency of components,\nlack of a global clock\nindependent failure of components\n\nExamples of distributed systems vary from SOA-based systems to massively multiplayer online games to peer-to-peer applications.\n\n\n\nDistributed cloud computing\n\nDistributed cloud computing is a cloud computing platform that is distributed among multiple different physical locations.\nDespite its distributed nature, it is still a single cloud computing platform.\nDistributed cloud computing is a relatively new concept that is still being developed.\nThe main advantage of distributed cloud computing is that it allows users to access data and applications from anywhere in the world, as long as they have access to the Internet. This makes it a very useful tool for companies that have offices in different locations, as it allows them to share data and applications without having to worry about the physical location of the data and applications."
-  },
-  {
-    "objectID": "posts/CloudComputing/hello.html",
-    "href": "posts/CloudComputing/hello.html",
-    "title": "Introduction",
-    "section": "",
-    "text": "Introduction\nDistributed computing can be termed as follows: “A distributed system is a collection of independent computers that appear to the users of the system as a single computer”. The main goal of distributed computing is to connect users and resources in a transparent, open, and scalable way. The main advantage of distributed computing is that it allows users to access data and applications from anywhere in the world, as long as they have access to the Internet. This is a huge advantage for companies that have offices in different locations, as it allows them to share data and applications without having to worry about the physical location of the data and applications.\n\n\nDistributed computing\n\nMultiple nodes which carry out set of processes that are distributed across the network of machines and work together to solve a problem can be coined as distributed computing\nThese are also called as peer to peer computing. That is several applications coordinate amoung themselves to address a particular problem.\n\nPrimarily usefull for large scale applicaiton development or large scale operational need right where you have different operation being served by different nodes.\n\n\n\n\nAspects of distributed computing\n\nThree significant characteristics of distributed systems are:\n\nconcurrency of components,\nlack of a global clock\nindependent failure of components\n\nExamples of distributed systems vary from SOA-based systems to massively multiplayer online games to peer-to-peer applications.\n\n\n\nDistributed cloud computing\n\nDistributed cloud computing is a cloud computing platform that is distributed among multiple different physical locations.\nDespite its distributed nature, it is still a single cloud computing platform.\nDistributed cloud computing is a relatively new concept that is still being developed.\nThe main advantage of distributed cloud computing is that it allows users to access data and applications from anywhere in the world, as long as they have access to the Internet. This makes it a very useful tool for companies that have offices in different locations, as it allows them to share data and applications without having to worry about the physical location of the data and applications."
-  },
-  {
     "objectID": "posts/Distributed computing CC/index.html",
     "href": "posts/Distributed computing CC/index.html",
     "title": "Clould Computing (Distributed Computing)",
@@ -257,33 +250,5 @@
     "title": "Topic 1 -> Recursion",
     "section": "Multiple Recursion",
     "text": "Multiple Recursion\nMultiple recursion involves a recursive function making more than two calls. It can be a bit complex but is a powerful technique for solving certain types of problems.\nExample (Multiple Recursion):\ndef multiply_elements(arr, start, end):\n    if start == end:  # base case when there's only one element\n        return arr[start]\n    else:\n        mid = (start + end) // 2\n        left_product = multiply_elements(arr, start, mid)\n        right_product = multiply_elements(arr, mid+1, end)\n        current_product = arr[start] * arr[end]  # additional recursive call\n        return left_product * right_product * current_product\nExplanation: This function recursively multiplies the elements in the array. In addition to the recursive calls for the left and right halves, there is an extra recursive call to multiply the first and last elements of the current segment. The base case is when the array has only one element.\n\nFeel free to experiment with these examples and observe their behavior. Understanding binary and multiple recursion is essential for tackling a wide range of algorithmic problems. Happy coding! 💻🚀"
-  },
-  {
-    "objectID": "posts/Grid computing CC/asdf.html",
-    "href": "posts/Grid computing CC/asdf.html",
-    "title": "Introduction",
-    "section": "",
-    "text": "Introduction\nGrid computing is the collection of computer resources from multiple locations to reach a common goal. The grid can be thought of as a distributed system with non-interactive workloads that involve a large number of files.\nGrid computing is distinguished from conventional high-performance computing systems such as cluster computing in that grid computers have each node set to perform a different task/application. Grid computers also tend to be more heterogeneous and geographically dispersed (thus not physically coupled) than cluster computers.\nAlthough a single grid can be dedicated to a particular application, commonly a grid is used for a variety of purposes. Grids are often constructed with general-purpose grid middleware software libraries. Grid sizes can be quite large.\n\n\nFeatures of Grid Computing\nThey enable the ability of virtualization of distributed computing and data resources such as processing, network bandwidth and storage capacity to create a single system image, granting users and applications seamless access to vast IT capabilities.\nBoth the distributed and the grid computing looks similar at the first glance, but there are many differences between them. The main difference between distributed and grid computing is that the distributed computing helps to share the workload between several autonomous computers to accomplish a task while the grid computing connects several distributed computing systems to coordinate to solve a single problem.\n\n\nGrid Computing Architecture\nThey provide dependable, consistent, pervasive, and inexpensive access to high-end computational capabilities.\nThey are composed of a collection of distributed, possibly heterogeneous resources, which are coordinated to present users with a single, integrated, and unified resource.\nUsers (or the client) submit jobs to the system, which are scheduledb byt the system. The system then executes the jobs on the resources and returns the results to the users.\nThe Grid links together computing recsources such as PCs, workstations, servers, storage systems, instruments and sensors into a unified resource."
-  },
-  {
-    "objectID": "posts/Grid computing CC/index.html",
-    "href": "posts/Grid computing CC/index.html",
-    "title": "Clould Computing (Grid Computing)",
-    "section": "",
-    "text": "Grid computing is the collection of computer resources from multiple locations to reach a common goal. The grid can be thought of as a distributed system with non-interactive workloads that involve a large number of files.\nGrid computing is distinguished from conventional high-performance computing systems such as cluster computing in that grid computers have each node set to perform a different task/application. Grid computers also tend to be more heterogeneous and geographically dispersed (thus not physically coupled) than cluster computers.\nAlthough a single grid can be dedicated to a particular application, commonly a grid is used for a variety of purposes. Grids are often constructed with general-purpose grid middleware software libraries. Grid sizes can be quite large."
-  },
-  {
-    "objectID": "posts/Grid computing CC/index.html#keywords",
-    "href": "posts/Grid computing CC/index.html#keywords",
-    "title": "Clould Computing (Grid Computing)",
-    "section": "Keywords",
-    "text": "Keywords\n\nresource sharing\nvirtualization\ngrid computing\nheterogeneous\ngeographically dispersed\ncomputing resources\n\nprocessing\nnetwork bandwidth\nstorage capacity\n\ndata vizualization\nresource exploitation"
-  },
-  {
-    "objectID": "posts/Grid computing CC/index.html#summary",
-    "href": "posts/Grid computing CC/index.html#summary",
-    "title": "Clould Computing (Grid Computing)",
-    "section": "Summary",
-    "text": "Summary\n\nGrid computing is a distributed architecture of large number of computers connected to solve a complex problem.\nIt is a virtual super computer that can be used for solving a complex problem. It is a form of distributed computing where the resources are shared and coordinated to solve a single problem."
   }
 ]
