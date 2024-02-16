@@ -25,21 +25,21 @@
     "href": "posts/welcome/index.html",
     "title": "Welcome To My Blog",
     "section": "",
-    "text": "This is the first post of my blog. Welcome!\nHello guys welcome to my portfolio website. Looking forward to have a great time with you all."
+    "text": "This is the first post of my blog. Welcome!\nHello guys welcome to my portfolio website. Looking forward to have a great time with you all.\n\n\n\n Back to top"
   },
   {
     "objectID": "posts/NLP basics/index.html",
     "href": "posts/NLP basics/index.html",
     "title": "Topic 1 -> Basis of Speech acoustics",
     "section": "",
-    "text": "Speech Signal\n\nThe fundamental analog form of"
+    "text": "Speech Signal\n\nThe fundamental analog form of\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "posts/Array DSA/index.html",
     "href": "posts/Array DSA/index.html",
     "title": "Topic 1 -> Array",
     "section": "",
-    "text": "Python’s Array Module\nThe array module in Python is used to store homogeneous data types such as integers, floats, etc. It is similar to lists in Python, but with the added advantage of being more efficient in terms of memory and performance for certain operations.\nWhen to use the array module? You should consider using the array module when you need to store a large amount of homogeneous data. This is because arrays are more memory efficient than lists. They also provide faster access in some cases because they store data in contiguous memory blocks, unlike lists.\nComparing array module with normal list Here are some key differences between the array module and a normal list in Python:\nHomogeneity: Arrays can only store elements of the same type, while lists can store elements of different types.\nMemory and Performance: Arrays are more memory efficient and can provide faster access and manipulation for large amounts of data.\nFunctionality: Lists come with a variety of built-in methods for manipulation like append, remove, pop, etc. Arrays have fewer methods but are more specialized for numerical and computational tasks.\nIn the provided code snippet, an array of type ‘h’ (short integers) is created to store prime numbers. This is a good use case for the array module because we are dealing with a large amount of homogeneous numerical data.\nIn this code, the array is more memory efficient than a list would be, and it provides fast and efficient access to the prime numbers stored within it."
+    "text": "Python’s Array Module\nThe array module in Python is used to store homogeneous data types such as integers, floats, etc. It is similar to lists in Python, but with the added advantage of being more efficient in terms of memory and performance for certain operations.\nWhen to use the array module? You should consider using the array module when you need to store a large amount of homogeneous data. This is because arrays are more memory efficient than lists. They also provide faster access in some cases because they store data in contiguous memory blocks, unlike lists.\nComparing array module with normal list Here are some key differences between the array module and a normal list in Python:\nHomogeneity: Arrays can only store elements of the same type, while lists can store elements of different types.\nMemory and Performance: Arrays are more memory efficient and can provide faster access and manipulation for large amounts of data.\nFunctionality: Lists come with a variety of built-in methods for manipulation like append, remove, pop, etc. Arrays have fewer methods but are more specialized for numerical and computational tasks.\nIn the provided code snippet, an array of type ‘h’ (short integers) is created to store prime numbers. This is a good use case for the array module because we are dealing with a large amount of homogeneous numerical data.\nIn this code, the array is more memory efficient than a list would be, and it provides fast and efficient access to the prime numbers stored within it.\n\n\n\n\n Back to top"
   },
   {
     "objectID": "about.html#experience",
@@ -54,27 +54,6 @@
     "title": "About Me",
     "section": "Tech Stack and Workflow",
     "text": "Tech Stack and Workflow\n\nBackend Development: Django, Flask, RestAPI\nMachine Learning: TensorFlow, PyTorch, Scikit-learn\nComputer Vision: OpenCV, Roboflow, Dlib\nCloud Platforms: Microsoft Azure\nContainerization: Docker\nProgramming Languages: Python, Scala, Java (basic knowledge), MATLAB\nCompetitive Programming: Proficient in Python (Leetcode, Codechef)"
-  },
-  {
-    "objectID": "blogs.html",
-    "href": "blogs.html",
-    "title": "Blogs",
-    "section": "",
-    "text": "Topic 1 -&gt; Array\n\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n2 min\n\n\n\n\n\n\n  \n\n\n\n\nClould Computing (Distributed Computing)\n\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n2 min\n\n\n\n\n\n\n  \n\n\n\n\nClould Computing (Grid Computing)\n\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n3 min\n\n\n\n\n\n\n  \n\n\n\n\nTopic 1 -&gt; Basis of Speech acoustics\n\n\n\n\n\n\n\n\n\n\n\n\nJan 6, 2024\n\n\nSiddharth D\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nTopic 1 -&gt; Speech acoustics in Depth\n\n\n\n\n\n\n\n\n\n\n\n\nJan 6, 2024\n\n\nSiddharth D\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nTopic 1 -&gt; Recursion\n\n\n\n\n\n\n\n\n\n\n\n\nJan 6, 2024\n\n\nSiddharth D\n\n\n4 min\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\n\n\n\nJan 1, 2024\n\n\nSiddharth D\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Siddharth D",
-    "section": "",
-    "text": "My Personal Website\n\n\n\n\nWelcome to My Personal Website!\n\n\n\n\nAbout Me\n\n\nProjects\n\n\nBlogs\n\n\nContact\n\n\n\n\n\n\n\nAbout This Site\n\n\nThis is my personal website where you can learn more about me, see my projects, read my blogs, and get in touch with me.\n\n\n\n\n\n© 2024 My Personal Website"
-  },
-  {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "Projects",
-    "section": "",
-    "text": "QuadCopter Reinforcement learning Bot\n\n\n\n\n\n\n\n\n\n\n\n\nJan 5, 2024\n\n\nSiddharth D\n\n\n12 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "contact.html",
@@ -103,6 +82,27 @@
     "title": "Contact",
     "section": "Social Media",
     "text": "Social Media\n\nLinkedIn\nWhatsapp\n\nNote: Please allow me 24-48 hours to respond to your messages. Thank you for understanding!"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "QuadCopter Reinforcement learning Bot\n\n\n\n\n\n\n\n\n\n\n\n\nJan 5, 2024\n\n\nSiddharth D\n\n\n12 min\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Siddharth D",
+    "section": "",
+    "text": "My Personal Website\n\n\n\n\n\nWelcome to My Personal Website!\n\n\n\n\nAbout Me\n\n\nProjects\n\n\nBlogs\n\n\nContact\n\n\n\n\n\n\n\nAbout This Site\n\n\nThis is my personal website where you can learn more about me, see my projects, read my blogs, and get in touch with me.\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "blogs.html",
+    "href": "blogs.html",
+    "title": "Blogs",
+    "section": "",
+    "text": "Topic 1 -&gt; Array\n\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n2 min\n\n\n\n\n\n\n  \n\n\n\n\nClould Computing (Distributed Computing)\n\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n2 min\n\n\n\n\n\n\n  \n\n\n\n\nClould Computing (Grid Computing)\n\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n3 min\n\n\n\n\n\n\n  \n\n\n\n\nTopic 1 -&gt; Basis of Speech acoustics\n\n\n\n\n\n\n\n\n\n\n\n\nJan 6, 2024\n\n\nSiddharth D\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nTopic 1 -&gt; Speech acoustics in Depth\n\n\n\n\n\n\n\n\n\n\n\n\nJan 6, 2024\n\n\nSiddharth D\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nTopic 1 -&gt; Recursion\n\n\n\n\n\n\n\n\n\n\n\n\nJan 6, 2024\n\n\nSiddharth D\n\n\n4 min\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\n\n\n\nJan 1, 2024\n\n\nSiddharth D\n\n\n1 min\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "project_posts/Maths thing/index.html",
@@ -221,7 +221,14 @@
     "href": "posts/Distributed computing CC/index.html",
     "title": "Clould Computing (Distributed Computing)",
     "section": "",
-    "text": "Introduction\nDistributed computing can be termed as follows: “A distributed system is a collection of independent computers that appear to the users of the system as a single computer”. The main goal of distributed computing is to connect users and resources in a transparent, open, and scalable way. The main advantage of distributed computing is that it allows users to access data and applications from anywhere in the world, as long as they have access to the Internet. This is a huge advantage for companies that have offices in different locations, as it allows them to share data and applications without having to worry about the physical location of the data and applications.\n\n\nDistributed computing\n\nMultiple nodes which carry out set of processes that are distributed across the network of machines and work together to solve a problem can be coined as distributed computing\nThese are also called as peer to peer computing. That is several applications coordinate amoung themselves to address a particular problem.\n\nPrimarily usefull for large scale applicaiton development or large scale operational need right where you have different operation being served by different nodes.\n\n\n\n\nAspects of distributed computing\n\nThree significant characteristics of distributed systems are:\n\nconcurrency of components,\nlack of a global clock\nindependent failure of components\n\nExamples of distributed systems vary from SOA-based systems to massively multiplayer online games to peer-to-peer applications.\n\n\n\nDistributed cloud computing\n\nDistributed cloud computing is a cloud computing platform that is distributed among multiple different physical locations.\nDespite its distributed nature, it is still a single cloud computing platform.\nDistributed cloud computing is a relatively new concept that is still being developed.\nThe main advantage of distributed cloud computing is that it allows users to access data and applications from anywhere in the world, as long as they have access to the Internet. This makes it a very useful tool for companies that have offices in different locations, as it allows them to share data and applications without having to worry about the physical location of the data and applications."
+    "text": "Introduction\nDistributed computing can be termed as follows: “A distributed system is a collection of independent computers that appear to the users of the system as a single computer”. The main goal of distributed computing is to connect users and resources in a transparent, open, and scalable way. The main advantage of distributed computing is that it allows users to access data and applications from anywhere in the world, as long as they have access to the Internet. This is a huge advantage for companies that have offices in different locations, as it allows them to share data and applications without having to worry about the physical location of the data and applications.\n\n\nDistributed computing\n\nMultiple nodes which carry out set of processes that are distributed across the network of machines and work together to solve a problem can be coined as distributed computing\nThese are also called as peer to peer computing. That is several applications coordinate amoung themselves to address a particular problem.\n\nPrimarily usefull for large scale applicaiton development or large scale operational need right where you have different operation being served by different nodes.\n\n\n\n\nAspects of distributed computing\n\nThree significant characteristics of distributed systems are:\n\nconcurrency of components,\nlack of a global clock\nindependent failure of components\n\nExamples of distributed systems vary from SOA-based systems to massively multiplayer online games to peer-to-peer applications.\n\n\n\nDistributed cloud computing\n\nDistributed cloud computing is a cloud computing platform that is distributed among multiple different physical locations.\nDespite its distributed nature, it is still a single cloud computing platform.\nDistributed cloud computing is a relatively new concept that is still being developed.\nThe main advantage of distributed cloud computing is that it allows users to access data and applications from anywhere in the world, as long as they have access to the Internet. This makes it a very useful tool for companies that have offices in different locations, as it allows them to share data and applications without having to worry about the physical location of the data and applications.\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "posts/NLP basics/nextindex.html",
+    "href": "posts/NLP basics/nextindex.html",
+    "title": "Topic 1 -> Speech acoustics in Depth",
+    "section": "",
+    "text": "Back to top"
   },
   {
     "objectID": "posts/Recursion DSA/index.html",

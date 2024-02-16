@@ -1,5 +1,11 @@
 [
   {
+    "listing": "/projects.html",
+    "items": [
+      "/project_posts/Maths thing/index.html"
+    ]
+  },
+  {
     "listing": "/blogs.html",
     "items": [
       "/posts/Array DSA/index.html",
@@ -9,12 +15,6 @@
       "/posts/NLP basics/nextindex.html",
       "/posts/Recursion DSA/index.html",
       "/posts/welcome/index.html"
-    ]
-  },
-  {
-    "listing": "/projects.html",
-    "items": [
-      "/project_posts/Maths thing/index.html"
     ]
   }
 ]
