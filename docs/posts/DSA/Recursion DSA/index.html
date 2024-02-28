@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Siddharth D">
-<meta name="dcterms.date" content="2024-01-07">
+<meta name="dcterms.date" content="2024-01-06">
 
-<title>Siddharth D - Topic 1 -&gt; Array</title>
+<title>Siddharth D - Topic 1 -&gt; Recursion</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,30 +22,64 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../profile.png" rel="icon" type="image/png">
-<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
-<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../profile.png" rel="icon" type="image/png">
+<script src="../../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -92,21 +126,15 @@ cookieconsent.run({
 </script> 
   
 <style>html{ scroll-behavior: smooth; }</style>
-<script async="" src="https://hypothes.is/embed.js"></script>
-<script>
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    document.body.classList.add('hypothesis-enabled');
-  });
-</script>
 <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8707818893687627" crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Siddharth D - Topic 1 -> Array">
+<link rel="stylesheet" href="../../../styles.css">
+<meta property="og:title" content="Siddharth D - Topic 1 -> Recursion">
 <meta property="og:description" content="">
 <meta property="og:image" content="thumbnail.png">
 <meta property="og:site_name" content="Siddharth D">
-<meta name="twitter:title" content="Siddharth D - Topic 1 -> Array">
+<meta name="twitter:title" content="Siddharth D - Topic 1 -> Recursion">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="thumbnail.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -119,7 +147,7 @@ cookieconsent.run({
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Siddharth D</span>
     </a>
   </div>
@@ -130,19 +158,19 @@ cookieconsent.run({
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
+    <a class="nav-link" href="../../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../projects.html"> 
+    <a class="nav-link" href="../../../projects.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blogs.html"> 
+    <a class="nav-link" href="../../../blogs.html"> 
 <span class="menu-text">Blogs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../contact.html"> 
+    <a class="nav-link" href="../../../contact.html"> 
 <span class="menu-text">Contact</span></a>
   </li>  
 </ul>
@@ -157,7 +185,7 @@ cookieconsent.run({
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Topic 1 -&gt; Array</h1>
+      <h1 class="title">Topic 1 -&gt; Recursion</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">DSA</div>
               </div>
@@ -177,7 +205,7 @@ cookieconsent.run({
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">January 7, 2024</p>
+        <p class="date">January 6, 2024</p>
       </div>
     </div>
     
@@ -193,7 +221,13 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#pythons-array-module" id="toc-pythons-array-module" class="nav-link active" data-scroll-target="#pythons-array-module">Python’s Array Module</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#types-of-recursion" id="toc-types-of-recursion" class="nav-link" data-scroll-target="#types-of-recursion">Types of Recursion</a>
+  <ul class="collapse">
+  <li><a href="#linear-recursion" id="toc-linear-recursion" class="nav-link" data-scroll-target="#linear-recursion">Linear Recursion</a></li>
+  <li><a href="#binary-recursion" id="toc-binary-recursion" class="nav-link" data-scroll-target="#binary-recursion">Binary Recursion</a></li>
+  <li><a href="#multiple-recursion" id="toc-multiple-recursion" class="nav-link" data-scroll-target="#multiple-recursion">Multiple Recursion</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -204,18 +238,72 @@ cookieconsent.run({
 
 
 
-<section id="pythons-array-module" class="level1">
-<h1>Python’s Array Module</h1>
-<p>The array module in Python is used to store homogeneous data types such as integers, floats, etc. It is similar to lists in Python, but with the added advantage of being more efficient in terms of memory and performance for certain operations.</p>
-<p>When to use the array module? You should consider using the array module when you need to store a large amount of homogeneous data. This is because arrays are more memory efficient than lists. They also provide faster access in some cases because they store data in contiguous memory blocks, unlike lists.</p>
-<p>Comparing array module with normal list Here are some key differences between the array module and a normal list in Python:</p>
-<p>Homogeneity: Arrays can only store elements of the same type, while lists can store elements of different types.</p>
-<p>Memory and Performance: Arrays are more memory efficient and can provide faster access and manipulation for large amounts of data.</p>
-<p>Functionality: Lists come with a variety of built-in methods for manipulation like append, remove, pop, etc. Arrays have fewer methods but are more specialized for numerical and computational tasks.</p>
-<p>In the provided code snippet, an array of type ‘h’ (short integers) is created to store prime numbers. This is a good use case for the array module because we are dealing with a large amount of homogeneous numerical data.</p>
-<p>In this code, the array is more memory efficient than a list would be, and it provides fast and efficient access to the prime numbers stored within it.</p>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>One way to describe repetition within a computer program is the use of loops, such as Python’s while-loop and for-loop, but an entire way of approach is using Recrusions which brings us to today’s topic on learning stuff daily for 100 days</p>
+<ul>
+<li><p><strong>Test for base cases.</strong> We begin by testing for a set of base cases (there should be at least one). These base cases should be defined so that every possible chain of recursive calls will eventually reach a base case, and the handling ofeach base case should not use recursion.</p></li>
+<li><p><strong>Recur</strong>. If not a base case, we perform one or more recursive calls. This recursive step may involve a test that decides which of several possible recursive calls to make. We should define each possible recursive call so that it makes progress towards a base case.</p></li>
+<li><p><strong>Important Point</strong> here is that if this base case is not met then we fall into a infinite recursion and kaboom 💥</p></li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fib(n):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">&lt;=</span> <span class="dv">1</span>:         <span class="co"># -----&gt; this part (remember this)</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ... rest of the function here </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This function has this <code>fib(n)</code> so that “n” is what that has to be satisfied … by now you would have got the grip of the step 1 of recursion</p>
+<p>the next step is to lay out your logic and write the rest of the function</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fib(n):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">&lt;=</span> <span class="dv">1</span>:</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> fib(n<span class="op">-</span><span class="dv">1</span>) <span class="op">+</span> fib(n<span class="op">-</span><span class="dv">2</span>)  <span class="co"># --&gt; go back 2 steps and sum then up</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Certainly! Let’s add examples for binary recursion and multiple recursion:</p>
+</section>
+<section id="types-of-recursion" class="level1">
+<h1>Types of Recursion</h1>
+<section id="linear-recursion" class="level2">
+<h2 class="anchored" data-anchor-id="linear-recursion">Linear Recursion</h2>
+<p>If a recursive function is designed so that each invocation of the body makes at most one new recursive call, this is known as linear recursion.</p>
+<p>Example:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> reversearr(array, start, stop):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> start <span class="op">&lt;</span> stop<span class="op">-</span><span class="dv">1</span>: <span class="co"># -----&gt; base case baked right into the recursion itself</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        array[start], array[stop<span class="op">-</span><span class="dv">1</span>] <span class="op">=</span> array[stop<span class="op">-</span><span class="dv">1</span>], array[start]</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        reversearr(array, start<span class="op">+</span><span class="dv">1</span>, stop<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> array</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="binary-recursion" class="level2">
+<h2 class="anchored" data-anchor-id="binary-recursion">Binary Recursion</h2>
+<p>In binary recursion, each recursive call results in two new recursive calls. This often occurs in problems that can be divided into two sub-problems.</p>
+<p>Example (Binary Recursion):</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> binary_sum(arr, start, end):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> start <span class="op">==</span> end:  <span class="co"># base case when there's only one element</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> arr[start]</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        mid <span class="op">=</span> (start <span class="op">+</span> end) <span class="op">//</span> <span class="dv">2</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        left_sum <span class="op">=</span> binary_sum(arr, start, mid)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        right_sum <span class="op">=</span> binary_sum(arr, mid<span class="op">+</span><span class="dv">1</span>, end)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> left_sum <span class="op">+</span> right_sum</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Explanation: This function recursively divides the array into two halves and calculates the sum of each half. The base case is when the array has only one element, and the sum is returned. The overall sum is then calculated by adding the sums of the left and right halves.</p>
+</section>
+<section id="multiple-recursion" class="level2">
+<h2 class="anchored" data-anchor-id="multiple-recursion">Multiple Recursion</h2>
+<p>Multiple recursion involves a recursive function making more than two calls. It can be a bit complex but is a powerful technique for solving certain types of problems.</p>
+<p>Example (Multiple Recursion):</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> multiply_elements(arr, start, end):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> start <span class="op">==</span> end:  <span class="co"># base case when there's only one element</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> arr[start]</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        mid <span class="op">=</span> (start <span class="op">+</span> end) <span class="op">//</span> <span class="dv">2</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        left_product <span class="op">=</span> multiply_elements(arr, start, mid)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        right_product <span class="op">=</span> multiply_elements(arr, mid<span class="op">+</span><span class="dv">1</span>, end)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        current_product <span class="op">=</span> arr[start] <span class="op">*</span> arr[end]  <span class="co"># additional recursive call</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> left_product <span class="op">*</span> right_product <span class="op">*</span> current_product</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Explanation: This function recursively multiplies the elements in the array. In addition to the recursive calls for the left and right halves, there is an extra recursive call to multiply the first and last elements of the current segment. The base case is when the array has only one element.</p>
+<hr>
+<p>Feel free to experiment with these examples and observe their behavior. Understanding binary and multiple recursion is essential for tackling a wide range of algorithmic problems. Happy coding! 💻🚀</p>
 
 
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -750,6 +838,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<script src="https://utteranc.es/client.js" repo="Siddhu2502/discusstionrepo" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -768,5 +858,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

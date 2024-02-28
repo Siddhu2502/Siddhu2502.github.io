@@ -1,5 +1,33 @@
 [
   {
+    "objectID": "posts/DSA/Recursion DSA/index.html",
+    "href": "posts/DSA/Recursion DSA/index.html",
+    "title": "Topic 1 -> Recursion",
+    "section": "",
+    "text": "One way to describe repetition within a computer program is the use of loops, such as Python’s while-loop and for-loop, but an entire way of approach is using Recrusions which brings us to today’s topic on learning stuff daily for 100 days\n\nTest for base cases. We begin by testing for a set of base cases (there should be at least one). These base cases should be defined so that every possible chain of recursive calls will eventually reach a base case, and the handling ofeach base case should not use recursion.\nRecur. If not a base case, we perform one or more recursive calls. This recursive step may involve a test that decides which of several possible recursive calls to make. We should define each possible recursive call so that it makes progress towards a base case.\nImportant Point here is that if this base case is not met then we fall into a infinite recursion and kaboom 💥\n\ndef fib(n):\n    if n &lt;= 1:         # -----&gt; this part (remember this)\n        return 0\n    # ... rest of the function here \nThis function has this fib(n) so that “n” is what that has to be satisfied … by now you would have got the grip of the step 1 of recursion\nthe next step is to lay out your logic and write the rest of the function\ndef fib(n):\n    if n &lt;= 1:\n        return 0\n    else:\n        return fib(n-1) + fib(n-2)  # --&gt; go back 2 steps and sum then up\nCertainly! Let’s add examples for binary recursion and multiple recursion:"
+  },
+  {
+    "objectID": "posts/DSA/Recursion DSA/index.html#linear-recursion",
+    "href": "posts/DSA/Recursion DSA/index.html#linear-recursion",
+    "title": "Topic 1 -> Recursion",
+    "section": "Linear Recursion",
+    "text": "Linear Recursion\nIf a recursive function is designed so that each invocation of the body makes at most one new recursive call, this is known as linear recursion.\nExample:\ndef reversearr(array, start, stop):\n    if start &lt; stop-1: # -----&gt; base case baked right into the recursion itself\n        array[start], array[stop-1] = array[stop-1], array[start]\n        reversearr(array, start+1, stop-1)\n    return array"
+  },
+  {
+    "objectID": "posts/DSA/Recursion DSA/index.html#binary-recursion",
+    "href": "posts/DSA/Recursion DSA/index.html#binary-recursion",
+    "title": "Topic 1 -> Recursion",
+    "section": "Binary Recursion",
+    "text": "Binary Recursion\nIn binary recursion, each recursive call results in two new recursive calls. This often occurs in problems that can be divided into two sub-problems.\nExample (Binary Recursion):\ndef binary_sum(arr, start, end):\n    if start == end:  # base case when there's only one element\n        return arr[start]\n    else:\n        mid = (start + end) // 2\n        left_sum = binary_sum(arr, start, mid)\n        right_sum = binary_sum(arr, mid+1, end)\n        return left_sum + right_sum\nExplanation: This function recursively divides the array into two halves and calculates the sum of each half. The base case is when the array has only one element, and the sum is returned. The overall sum is then calculated by adding the sums of the left and right halves."
+  },
+  {
+    "objectID": "posts/DSA/Recursion DSA/index.html#multiple-recursion",
+    "href": "posts/DSA/Recursion DSA/index.html#multiple-recursion",
+    "title": "Topic 1 -> Recursion",
+    "section": "Multiple Recursion",
+    "text": "Multiple Recursion\nMultiple recursion involves a recursive function making more than two calls. It can be a bit complex but is a powerful technique for solving certain types of problems.\nExample (Multiple Recursion):\ndef multiply_elements(arr, start, end):\n    if start == end:  # base case when there's only one element\n        return arr[start]\n    else:\n        mid = (start + end) // 2\n        left_product = multiply_elements(arr, start, mid)\n        right_product = multiply_elements(arr, mid+1, end)\n        current_product = arr[start] * arr[end]  # additional recursive call\n        return left_product * right_product * current_product\nExplanation: This function recursively multiplies the elements in the array. In addition to the recursive calls for the left and right halves, there is an extra recursive call to multiply the first and last elements of the current segment. The base case is when the array has only one element.\n\nFeel free to experiment with these examples and observe their behavior. Understanding binary and multiple recursion is essential for tackling a wide range of algorithmic problems. Happy coding! 💻🚀"
+  },
+  {
     "objectID": "posts/Grid computing CC/index.html",
     "href": "posts/Grid computing CC/index.html",
     "title": "Clould Computing (Grid Computing)",
@@ -21,81 +49,39 @@
     "text": "Summary\n\nGrid computing is a distributed architecture of large number of computers connected to solve a complex problem.\nIt is a virtual super computer that can be used for solving a complex problem. It is a form of distributed computing where the resources are shared and coordinated to solve a single problem.\n\nThank You!"
   },
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
+    "objectID": "posts/NLP/LanguageModelling.html",
+    "href": "posts/NLP/LanguageModelling.html",
+    "title": "Language Modelling and Other Concepts",
     "section": "",
-    "text": "This is the first post of my blog. Welcome!\nHello guys welcome to my portfolio website. Looking forward to have a great time with you all.\n\n\n\n Back to top"
+    "text": "In this article, we will discuss the concept of language modelling and its importance in the field of Natural Language Processing. We will also discuss some of the other important concepts of NLP"
   },
   {
-    "objectID": "posts/NLP/NLPIntro.html",
-    "href": "posts/NLP/NLPIntro.html",
-    "title": "Introduction to NLP",
+    "objectID": "posts/NLP/LanguageModelling.html#unigram-model",
+    "href": "posts/NLP/LanguageModelling.html#unigram-model",
+    "title": "Language Modelling and Other Concepts",
+    "section": "Unigram Model",
+    "text": "Unigram Model\n\nIn the unigram model, the probability of a word depends only on the word itself and not on any other words.\nThe probability of a word is given by the formula:\n\\[ P(w) = \\frac{Count(w)}{N} \\]\nWhere,\n\n\\(Count(w)\\) is the number of times the word \\(w\\) has appeared in the corpus\n\\(N\\) is the total number of words in the corpus\n\nThe unigram model is the simplest language model and is used as a baseline for comparison with other language models.\n\n# Example of Unigram Model\ntext = \"What are your aspirations in life\"\n\n# Tokenize the text\ntokens = text.split()\n\n# Count the frequency of each word\nword_freq = {}\nfor word in tokens:\n    if word in word_freq:\n        word_freq[word] += 1\n    else:\n        word_freq[word] = 1\n\n# Calculate the probability of each word\nprob_word = {}\nfor word in word_freq:\n    prob_word[word] = word_freq[word] / len(tokens)\n\n# Print the probability of each word\nfor word in prob_word:\n    print(word, prob_word[word])"
+  },
+  {
+    "objectID": "posts/NLP/LanguageModelling.html#bigram-model",
+    "href": "posts/NLP/LanguageModelling.html#bigram-model",
+    "title": "Language Modelling and Other Concepts",
+    "section": "Bigram Model",
+    "text": "Bigram Model\n\nIn the bigram model, the probability of a word depends only on the previous word.\nThe probability of a word is given by the formula:\n\\[ P(w_i|w_{i-1}) = \\frac{Count(w_{i-1},w_i)}{Count(w_{i-1})} \\]\nWhere,\n\n\\(Count(w_{i-1},w_i)\\) is the number of times the word \\(w_i\\) has appeared after the word \\(w_{i-1}\\)\n\\(Count(w_{i-1})\\) is the number of times the word \\(w_{i-1}\\) has appeared in the corpus\n\n\\(P(w_i|w_{i-1})\\) is the probability of the word \\(w_i\\) given the word \\(w_{i-1}\\)\n\n# Example of Bigram Model\ntext = \"What are your aspirations in life\"\n\n# Tokenize the text\ntokens = text.split()\n\n# Create bigrams\nbigrams = [(tokens[i], tokens[i+1]) for i in range(len(tokens)-1)]\n\n# Count the frequency of each bigram\nbigram_freq = {}\n\nfor bigram in bigrams:\n    if bigram in bigram_freq:\n        bigram_freq[bigram] += 1\n    else:\n        bigram_freq[bigram] = 1\n\n# Calculate the probability of each bigram\nprob_bigram = {}\nfor bigram in bigram_freq:\n    prob_bigram[bigram] = bigram_freq[bigram] / tokens.count(bigram[0])\n\n# Print the probability of each bigram\nfor bigram in prob_bigram:\n    print(bigram, prob_bigram[bigram])"
+  },
+  {
+    "objectID": "posts/NLP/LanguageModelling.html#trigram-model",
+    "href": "posts/NLP/LanguageModelling.html#trigram-model",
+    "title": "Language Modelling and Other Concepts",
+    "section": "Trigram Model",
+    "text": "Trigram Model\n\nIn the trigram model, the probability of a word depends on the previous two words.\nThe probability of a word is given by the formula:\n\\[ P(w_i|w_{i-2},w_{i-1}) = \\frac{Count(w_{i-2},w_{i-1},w_i)}{Count(w_{i-2},w_{i-1})} \\]\nWhere,\n\n\\(Count(w_{i-2},w_{i-1},w_i)\\) is the number of times the word \\(w_i\\) has appeared after the words \\(w_{i-2}\\) and \\(w_{i-1}\\)\n\\(Count(w_{i-2},w_{i-1})\\) is the number of times the words \\(w_{i-2}\\) and \\(w_{i-1}\\) have appeared in the corpus\n\n\\(P(w_i|w_{i-2},w_{i-1})\\) is the probability of the word \\(w_i\\) given the words \\(w_{i-2}\\) and \\(w_{i-1}\\)\n\n# Example of Trigram Model\ntext = \"What are your aspirations in life\"\n\n# Tokenize the text\ntokens = text.split()\n\n# Create trigrams\ntrigrams = [(tokens[i], tokens[i+1], tokens[i+2]) for i in range(len(tokens)-2)]\n\n# Count the frequency of each trigram\ntrigram_freq = {}\n\nfor trigram in trigrams:\n    if trigram in trigram_freq:\n        trigram_freq[trigram] += 1\n    else:\n        trigram_freq[trigram] = 1\n\n# Calculate the probability of each trigram\nprob_trigram = {}\nfor trigram in trigram_freq:\n    prob_trigram[trigram] = trigram_freq[trigram] / bigrams.count((trigram[0], trigram[1]))\n\n# Print the probability of each trigram\nfor trigram in prob_trigram:\n    print(trigram, prob_trigram[trigram])"
+  },
+  {
+    "objectID": "posts/Distributed computing CC/index.html",
+    "href": "posts/Distributed computing CC/index.html",
+    "title": "Clould Computing (Distributed Computing)",
     "section": "",
-    "text": "NLP is branch of AI that helps computers understand, interpret and manipulate human language.\nThe goal is to completely capture the context of human langage and understand the meaning behind it."
-  },
-  {
-    "objectID": "posts/NLP/NLPIntro.html#phonetics",
-    "href": "posts/NLP/NLPIntro.html#phonetics",
-    "title": "Introduction to NLP",
-    "section": "Phonetics",
-    "text": "Phonetics\nIt is the branch that studies how humans produce and perceive speech sounds. It is the study of the physical sounds of human speech."
-  },
-  {
-    "objectID": "posts/NLP/NLPIntro.html#phonology",
-    "href": "posts/NLP/NLPIntro.html#phonology",
-    "title": "Introduction to NLP",
-    "section": "Phonology",
-    "text": "Phonology\nIt is the branch that studies the sound patterns of human language. They linguists study the languages or dialects and organize their sounds (phonemes) into a system of relationships."
-  },
-  {
-    "objectID": "posts/NLP/NLPIntro.html#morphology",
-    "href": "posts/NLP/NLPIntro.html#morphology",
-    "title": "Introduction to NLP",
-    "section": "Morphology",
-    "text": "Morphology\nIt deals with the words are formed and the relationship of words with each other. It is the study of the structure of words. It analyses the structure of words and parts of words, such as\n\nstems: the core part of a word\nroot words: the basic part of a word\nprefixes: the part of a word that comes before the root word\nsuffixes: the part of a word that comes after the root word"
-  },
-  {
-    "objectID": "posts/NLP/NLPIntro.html#syntax",
-    "href": "posts/NLP/NLPIntro.html#syntax",
-    "title": "Introduction to NLP",
-    "section": "Syntax",
-    "text": "Syntax\nIt is the study of the structure of sentences. It is the study of the principles and rules for constructing sentences in natural languages."
-  },
-  {
-    "objectID": "posts/NLP/NLPIntro.html#semantics",
-    "href": "posts/NLP/NLPIntro.html#semantics",
-    "title": "Introduction to NLP",
-    "section": "Semantics",
-    "text": "Semantics\nIt is the study of meaning in language. It is the study of meaning in language. It focuses on the relation between signifiers, such as words, phrases, signs, and symbols, and what they stand for, their denotation."
-  },
-  {
-    "objectID": "posts/NLP/NLPIntro.html#pragmatics",
-    "href": "posts/NLP/NLPIntro.html#pragmatics",
-    "title": "Introduction to NLP",
-    "section": "Pragmatics",
-    "text": "Pragmatics\nIt is the study of how context influences the interpretation of meaning. It studies the aspects of meaning and language use that are dependent on the speaker, the addressee, and other features of the context of utterance."
-  },
-  {
-    "objectID": "posts/NLP/NLPIntro.html#data-aspect",
-    "href": "posts/NLP/NLPIntro.html#data-aspect",
-    "title": "Introduction to NLP",
-    "section": "Data aspect",
-    "text": "Data aspect\n\nCorpus: It is a collection of text. It is a large and structured set of texts. They are used to do statistical analysis and hypothesis testing, checking occurrences or validating linguistic rules within a specific language territory.\nVocabulary: It is a list of words in a language. It is a set of familiar words within a person’s language. It is the set of words known to a person or other entity.\nAnnotation: It is the process of adding information to a text. It is the process of adding metadata to a text. It is the process of marking up a document with additional information.\nLexicon: It refers to the words and thier meaning (sort of real dictionary)."
-  },
-  {
-    "objectID": "posts/NLP/NLPIntro.html#algorithms-aspect",
-    "href": "posts/NLP/NLPIntro.html#algorithms-aspect",
-    "title": "Introduction to NLP",
-    "section": "Algorithms aspect",
-    "text": "Algorithms aspect\n\nTokens: It is the pieces of data such as words, characters, subwords etc:-\nTokenization:\n\nIt is the initial step in modell the content of the text.\nIt is the process of breaking a stream of text up into words, phrases, symbols, or other meaningful elements called tokens.\n\n\n\nTokenization and its types\nThere are many types of tokenization such as\n\nWord tokenization\nSentence tokenization\nSubword tokenization\nCharacter tokenization\n\n\nWord Level Tokenization\nIts the most commonly used tokenization method. It splits the words based on the space or any specific delimeter\n\n# using nltk library\n\nimport nltk\nfrom nltk.tokenize import word_tokenize\ntext = \"I am learning NLP\"\nword_tokenize(text)\n\n# using python inbuilt split method\n\nvocabulary = []\ntext = \"I am learning NLP\"\nvocabulary = text.split(\" \")\nprint(vocabulary)\n\n\n\n\n\n\nWhat are some issues with word level tokenization?\n\n\n\n\n\nHere we will discuss few issues with word level tokenization\n\nContractions\nOOV (Out of Vocabulary) words\nPunctuations\n\nTry to find more issues if you can!! (note: there are actually many) .. That is one of the reason why we dont just split with space and call it a day.\n\n\n\n\n\nSentence Level Tokenization\nSentence tokenization, also known as sentence segmentation, is the process of dividing text into sentences. This is typically done using punctuation and capitalization cues.\n# using nltk library\n\nimport nltk\nfrom nltk.tokenize import sent_tokenize\ntext = \"I am learning NLP. It is very interesting.\"\nsent_tokenize(text)\n\n\nSubword Level Tokenization\nSubword tokenization splits words into smaller units (or subwords). This can help to handle the problem of out-of-vocabulary words.\n# using BPEmb library for Byte Pair Encoding\n\nfrom bpemb import BPEmb\nbpemb_en = BPEmb(lang=\"en\", dim=50)\ntext = \"I am learning NLP\"\nbpemb_en.encode(text)\n\n\nCharacter Level Tokenization\nCharacter tokenization splits text into characters. This can be useful for languages where words are not separated by spaces, like Chinese and Japanese.\ntext = \"I am learning NLP\"\nlist(text)\n\n\n\n\n\n\nIssues with Other Types of Tokenization\n\n\n\n\n\n\nSentence Tokenization: Sentence tokenization can be tricky when dealing with abbreviations, email addresses, websites, etc. where periods are used but do not indicate the end of a sentence.\nSubword Tokenization: While subword tokenization can help with out-of-vocabulary words, it can lead to an explosion in the number of tokens for very large texts.\nCharacter Tokenization: Character tokenization can lead to very long sequences for longer texts and may lose the meaning carried by specific words or phrases.\n\nCan you find more issues with other types of tokenization? (note: there are actually many)"
-  },
-  {
-    "objectID": "posts/Array DSA/index.html",
-    "href": "posts/Array DSA/index.html",
-    "title": "Topic 1 -> Array",
-    "section": "",
-    "text": "Python’s Array Module\nThe array module in Python is used to store homogeneous data types such as integers, floats, etc. It is similar to lists in Python, but with the added advantage of being more efficient in terms of memory and performance for certain operations.\nWhen to use the array module? You should consider using the array module when you need to store a large amount of homogeneous data. This is because arrays are more memory efficient than lists. They also provide faster access in some cases because they store data in contiguous memory blocks, unlike lists.\nComparing array module with normal list Here are some key differences between the array module and a normal list in Python:\nHomogeneity: Arrays can only store elements of the same type, while lists can store elements of different types.\nMemory and Performance: Arrays are more memory efficient and can provide faster access and manipulation for large amounts of data.\nFunctionality: Lists come with a variety of built-in methods for manipulation like append, remove, pop, etc. Arrays have fewer methods but are more specialized for numerical and computational tasks.\nIn the provided code snippet, an array of type ‘h’ (short integers) is created to store prime numbers. This is a good use case for the array module because we are dealing with a large amount of homogeneous numerical data.\nIn this code, the array is more memory efficient than a list would be, and it provides fast and efficient access to the prime numbers stored within it.\n\n\n\n\n Back to top"
+    "text": "Introduction\nDistributed computing can be termed as follows: “A distributed system is a collection of independent computers that appear to the users of the system as a single computer”. The main goal of distributed computing is to connect users and resources in a transparent, open, and scalable way. The main advantage of distributed computing is that it allows users to access data and applications from anywhere in the world, as long as they have access to the Internet. This is a huge advantage for companies that have offices in different locations, as it allows them to share data and applications without having to worry about the physical location of the data and applications.\n\n\nDistributed computing\n\nMultiple nodes which carry out set of processes that are distributed across the network of machines and work together to solve a problem can be coined as distributed computing\nThese are also called as peer to peer computing. That is several applications coordinate amoung themselves to address a particular problem.\n\nPrimarily usefull for large scale applicaiton development or large scale operational need right where you have different operation being served by different nodes.\n\n\n\n\nAspects of distributed computing\n\nThree significant characteristics of distributed systems are:\n\nconcurrency of components,\nlack of a global clock\nindependent failure of components\n\nExamples of distributed systems vary from SOA-based systems to massively multiplayer online games to peer-to-peer applications.\n\n\n\nDistributed cloud computing\n\nDistributed cloud computing is a cloud computing platform that is distributed among multiple different physical locations.\nDespite its distributed nature, it is still a single cloud computing platform.\nDistributed cloud computing is a relatively new concept that is still being developed.\nThe main advantage of distributed cloud computing is that it allows users to access data and applications from anywhere in the world, as long as they have access to the Internet. This makes it a very useful tool for companies that have offices in different locations, as it allows them to share data and applications without having to worry about the physical location of the data and applications.\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "about.html#experience",
@@ -151,14 +137,14 @@
     "href": "index.html",
     "title": "Siddharth D",
     "section": "",
-    "text": "My Personal Website\n\n\n\n\n\nWelcome to My Personal Website!\n\n\n\n\nAbout Me\n\n\nProjects\n\n\nBlogs\n\n\nContact\n\n\n\n\n\n\n\nAbout This Site\n\n\nThis is my personal website where you can learn more about me, see my projects, read my blogs, and get in touch with me.\n\n\n\n\n\n Back to top"
+    "text": "My Personal Website\n\n\n\n\nWelcome to My Personal Website!\n\n\n\n\nAbout Me\n\n\nProjects\n\n\nBlogs\n\n\nContact\n\n\n\n\n\n\n\nAbout This Site\n\n\nThis is my personal website where you can learn more about me, see my projects, read my blogs, and get in touch with me.\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "blogs.html",
     "href": "blogs.html",
     "title": "Blogs",
     "section": "",
-    "text": "Introduction to NLP\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n5 min\n\n\n\n\n\n\n\n\n\n\n\n\nLanguage Modelling and Other Concepts\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n6 min\n\n\n\n\n\n\n\n\n\n\n\n\nTopic 1 -&gt; Array\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\nClould Computing (Distributed Computing)\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\nClould Computing (Grid Computing)\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\nTopic 1 -&gt; Recursion\n\n\n\n\n\n\n\n\n\n\n\nJan 6, 2024\n\n\nSiddharth D\n\n\n4 min\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\n\n\nJan 1, 2024\n\n\nSiddharth D\n\n\n1 min\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Introduction to NLP\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n5 min\n\n\n\n\n\n\n\n\n\n\n\n\nLanguage Modelling and Other Concepts\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n6 min\n\n\n\n\n\n\n\n\n\n\n\n\nClould Computing (Distributed Computing)\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\nClould Computing (Grid Computing)\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\nTopic 1 -&gt; Array\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\nTopic 1 -&gt; Recursion\n\n\n\n\n\n\n\n\n\n\n\nJan 6, 2024\n\n\nSiddharth D\n\n\n4 min\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\n\n\nJan 1, 2024\n\n\nSiddharth D\n\n\n1 min\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "project_posts/Maths thing/index.html",
@@ -273,66 +259,80 @@
     "text": "Simple overview"
   },
   {
-    "objectID": "posts/Distributed computing CC/index.html",
-    "href": "posts/Distributed computing CC/index.html",
-    "title": "Clould Computing (Distributed Computing)",
+    "objectID": "posts/NLP/NLPIntro.html",
+    "href": "posts/NLP/NLPIntro.html",
+    "title": "Introduction to NLP",
     "section": "",
-    "text": "Introduction\nDistributed computing can be termed as follows: “A distributed system is a collection of independent computers that appear to the users of the system as a single computer”. The main goal of distributed computing is to connect users and resources in a transparent, open, and scalable way. The main advantage of distributed computing is that it allows users to access data and applications from anywhere in the world, as long as they have access to the Internet. This is a huge advantage for companies that have offices in different locations, as it allows them to share data and applications without having to worry about the physical location of the data and applications.\n\n\nDistributed computing\n\nMultiple nodes which carry out set of processes that are distributed across the network of machines and work together to solve a problem can be coined as distributed computing\nThese are also called as peer to peer computing. That is several applications coordinate amoung themselves to address a particular problem.\n\nPrimarily usefull for large scale applicaiton development or large scale operational need right where you have different operation being served by different nodes.\n\n\n\n\nAspects of distributed computing\n\nThree significant characteristics of distributed systems are:\n\nconcurrency of components,\nlack of a global clock\nindependent failure of components\n\nExamples of distributed systems vary from SOA-based systems to massively multiplayer online games to peer-to-peer applications.\n\n\n\nDistributed cloud computing\n\nDistributed cloud computing is a cloud computing platform that is distributed among multiple different physical locations.\nDespite its distributed nature, it is still a single cloud computing platform.\nDistributed cloud computing is a relatively new concept that is still being developed.\nThe main advantage of distributed cloud computing is that it allows users to access data and applications from anywhere in the world, as long as they have access to the Internet. This makes it a very useful tool for companies that have offices in different locations, as it allows them to share data and applications without having to worry about the physical location of the data and applications.\n\n\n\n\n\n Back to top"
+    "text": "NLP is branch of AI that helps computers understand, interpret and manipulate human language.\nThe goal is to completely capture the context of human langage and understand the meaning behind it."
   },
   {
-    "objectID": "posts/NLP/LanguageModelling.html",
-    "href": "posts/NLP/LanguageModelling.html",
-    "title": "Language Modelling and Other Concepts",
+    "objectID": "posts/NLP/NLPIntro.html#phonetics",
+    "href": "posts/NLP/NLPIntro.html#phonetics",
+    "title": "Introduction to NLP",
+    "section": "Phonetics",
+    "text": "Phonetics\nIt is the branch that studies how humans produce and perceive speech sounds. It is the study of the physical sounds of human speech."
+  },
+  {
+    "objectID": "posts/NLP/NLPIntro.html#phonology",
+    "href": "posts/NLP/NLPIntro.html#phonology",
+    "title": "Introduction to NLP",
+    "section": "Phonology",
+    "text": "Phonology\nIt is the branch that studies the sound patterns of human language. They linguists study the languages or dialects and organize their sounds (phonemes) into a system of relationships."
+  },
+  {
+    "objectID": "posts/NLP/NLPIntro.html#morphology",
+    "href": "posts/NLP/NLPIntro.html#morphology",
+    "title": "Introduction to NLP",
+    "section": "Morphology",
+    "text": "Morphology\nIt deals with the words are formed and the relationship of words with each other. It is the study of the structure of words. It analyses the structure of words and parts of words, such as\n\nstems: the core part of a word\nroot words: the basic part of a word\nprefixes: the part of a word that comes before the root word\nsuffixes: the part of a word that comes after the root word"
+  },
+  {
+    "objectID": "posts/NLP/NLPIntro.html#syntax",
+    "href": "posts/NLP/NLPIntro.html#syntax",
+    "title": "Introduction to NLP",
+    "section": "Syntax",
+    "text": "Syntax\nIt is the study of the structure of sentences. It is the study of the principles and rules for constructing sentences in natural languages."
+  },
+  {
+    "objectID": "posts/NLP/NLPIntro.html#semantics",
+    "href": "posts/NLP/NLPIntro.html#semantics",
+    "title": "Introduction to NLP",
+    "section": "Semantics",
+    "text": "Semantics\nIt is the study of meaning in language. It is the study of meaning in language. It focuses on the relation between signifiers, such as words, phrases, signs, and symbols, and what they stand for, their denotation."
+  },
+  {
+    "objectID": "posts/NLP/NLPIntro.html#pragmatics",
+    "href": "posts/NLP/NLPIntro.html#pragmatics",
+    "title": "Introduction to NLP",
+    "section": "Pragmatics",
+    "text": "Pragmatics\nIt is the study of how context influences the interpretation of meaning. It studies the aspects of meaning and language use that are dependent on the speaker, the addressee, and other features of the context of utterance."
+  },
+  {
+    "objectID": "posts/NLP/NLPIntro.html#data-aspect",
+    "href": "posts/NLP/NLPIntro.html#data-aspect",
+    "title": "Introduction to NLP",
+    "section": "Data aspect",
+    "text": "Data aspect\n\nCorpus: It is a collection of text. It is a large and structured set of texts. They are used to do statistical analysis and hypothesis testing, checking occurrences or validating linguistic rules within a specific language territory.\nVocabulary: It is a list of words in a language. It is a set of familiar words within a person’s language. It is the set of words known to a person or other entity.\nAnnotation: It is the process of adding information to a text. It is the process of adding metadata to a text. It is the process of marking up a document with additional information.\nLexicon: It refers to the words and thier meaning (sort of real dictionary)."
+  },
+  {
+    "objectID": "posts/NLP/NLPIntro.html#algorithms-aspect",
+    "href": "posts/NLP/NLPIntro.html#algorithms-aspect",
+    "title": "Introduction to NLP",
+    "section": "Algorithms aspect",
+    "text": "Algorithms aspect\n\nTokens: It is the pieces of data such as words, characters, subwords etc:-\nTokenization:\n\nIt is the initial step in modell the content of the text.\nIt is the process of breaking a stream of text up into words, phrases, symbols, or other meaningful elements called tokens.\n\n\n\nTokenization and its types\nThere are many types of tokenization such as\n\nWord tokenization\nSentence tokenization\nSubword tokenization\nCharacter tokenization\n\n\nWord Level Tokenization\nIts the most commonly used tokenization method. It splits the words based on the space or any specific delimeter\n\n# using nltk library\n\nimport nltk\nfrom nltk.tokenize import word_tokenize\ntext = \"I am learning NLP\"\nword_tokenize(text)\n\n# using python inbuilt split method\n\nvocabulary = []\ntext = \"I am learning NLP\"\nvocabulary = text.split(\" \")\nprint(vocabulary)\n\n\n\n\n\n\nWhat are some issues with word level tokenization?\n\n\n\n\n\nHere we will discuss few issues with word level tokenization\n\nContractions\nOOV (Out of Vocabulary) words\nPunctuations\n\nTry to find more issues if you can!! (note: there are actually many) .. That is one of the reason why we dont just split with space and call it a day.\n\n\n\n\n\nSentence Level Tokenization\nSentence tokenization, also known as sentence segmentation, is the process of dividing text into sentences. This is typically done using punctuation and capitalization cues.\n# using nltk library\n\nimport nltk\nfrom nltk.tokenize import sent_tokenize\ntext = \"I am learning NLP. It is very interesting.\"\nsent_tokenize(text)\n\n\nSubword Level Tokenization\nSubword tokenization splits words into smaller units (or subwords). This can help to handle the problem of out-of-vocabulary words.\n# using BPEmb library for Byte Pair Encoding\n\nfrom bpemb import BPEmb\nbpemb_en = BPEmb(lang=\"en\", dim=50)\ntext = \"I am learning NLP\"\nbpemb_en.encode(text)\n\n\nCharacter Level Tokenization\nCharacter tokenization splits text into characters. This can be useful for languages where words are not separated by spaces, like Chinese and Japanese.\ntext = \"I am learning NLP\"\nlist(text)\n\n\n\n\n\n\nIssues with Other Types of Tokenization\n\n\n\n\n\n\nSentence Tokenization: Sentence tokenization can be tricky when dealing with abbreviations, email addresses, websites, etc. where periods are used but do not indicate the end of a sentence.\nSubword Tokenization: While subword tokenization can help with out-of-vocabulary words, it can lead to an explosion in the number of tokens for very large texts.\nCharacter Tokenization: Character tokenization can lead to very long sequences for longer texts and may lose the meaning carried by specific words or phrases.\n\nCan you find more issues with other types of tokenization? (note: there are actually many)"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
     "section": "",
-    "text": "In this article, we will discuss the concept of language modelling and its importance in the field of Natural Language Processing. We will also discuss some of the other important concepts of NLP"
+    "text": "This is the first post of my blog. Welcome!\nHello guys welcome to my portfolio website. Looking forward to have a great time with you all.\n\n\n\n Back to top"
   },
   {
-    "objectID": "posts/NLP/LanguageModelling.html#unigram-model",
-    "href": "posts/NLP/LanguageModelling.html#unigram-model",
-    "title": "Language Modelling and Other Concepts",
-    "section": "Unigram Model",
-    "text": "Unigram Model\n\nIn the unigram model, the probability of a word depends only on the word itself and not on any other words.\nThe probability of a word is given by the formula:\n\\[ P(w) = \\frac{Count(w)}{N} \\]\nWhere,\n\n\\(Count(w)\\) is the number of times the word \\(w\\) has appeared in the corpus\n\\(N\\) is the total number of words in the corpus\n\nThe unigram model is the simplest language model and is used as a baseline for comparison with other language models.\n\n# Example of Unigram Model\ntext = \"What are your aspirations in life\"\n\n# Tokenize the text\ntokens = text.split()\n\n# Count the frequency of each word\nword_freq = {}\nfor word in tokens:\n    if word in word_freq:\n        word_freq[word] += 1\n    else:\n        word_freq[word] = 1\n\n# Calculate the probability of each word\nprob_word = {}\nfor word in word_freq:\n    prob_word[word] = word_freq[word] / len(tokens)\n\n# Print the probability of each word\nfor word in prob_word:\n    print(word, prob_word[word])"
-  },
-  {
-    "objectID": "posts/NLP/LanguageModelling.html#bigram-model",
-    "href": "posts/NLP/LanguageModelling.html#bigram-model",
-    "title": "Language Modelling and Other Concepts",
-    "section": "Bigram Model",
-    "text": "Bigram Model\n\nIn the bigram model, the probability of a word depends only on the previous word.\nThe probability of a word is given by the formula:\n\\[ P(w_i|w_{i-1}) = \\frac{Count(w_{i-1},w_i)}{Count(w_{i-1})} \\]\nWhere,\n\n\\(Count(w_{i-1},w_i)\\) is the number of times the word \\(w_i\\) has appeared after the word \\(w_{i-1}\\)\n\\(Count(w_{i-1})\\) is the number of times the word \\(w_{i-1}\\) has appeared in the corpus\n\n\\(P(w_i|w_{i-1})\\) is the probability of the word \\(w_i\\) given the word \\(w_{i-1}\\)\n\n# Example of Bigram Model\ntext = \"What are your aspirations in life\"\n\n# Tokenize the text\ntokens = text.split()\n\n# Create bigrams\nbigrams = [(tokens[i], tokens[i+1]) for i in range(len(tokens)-1)]\n\n# Count the frequency of each bigram\nbigram_freq = {}\n\nfor bigram in bigrams:\n    if bigram in bigram_freq:\n        bigram_freq[bigram] += 1\n    else:\n        bigram_freq[bigram] = 1\n\n# Calculate the probability of each bigram\nprob_bigram = {}\nfor bigram in bigram_freq:\n    prob_bigram[bigram] = bigram_freq[bigram] / tokens.count(bigram[0])\n\n# Print the probability of each bigram\nfor bigram in prob_bigram:\n    print(bigram, prob_bigram[bigram])"
-  },
-  {
-    "objectID": "posts/NLP/LanguageModelling.html#trigram-model",
-    "href": "posts/NLP/LanguageModelling.html#trigram-model",
-    "title": "Language Modelling and Other Concepts",
-    "section": "Trigram Model",
-    "text": "Trigram Model\n\nIn the trigram model, the probability of a word depends on the previous two words.\nThe probability of a word is given by the formula:\n\\[ P(w_i|w_{i-2},w_{i-1}) = \\frac{Count(w_{i-2},w_{i-1},w_i)}{Count(w_{i-2},w_{i-1})} \\]\nWhere,\n\n\\(Count(w_{i-2},w_{i-1},w_i)\\) is the number of times the word \\(w_i\\) has appeared after the words \\(w_{i-2}\\) and \\(w_{i-1}\\)\n\\(Count(w_{i-2},w_{i-1})\\) is the number of times the words \\(w_{i-2}\\) and \\(w_{i-1}\\) have appeared in the corpus\n\n\\(P(w_i|w_{i-2},w_{i-1})\\) is the probability of the word \\(w_i\\) given the words \\(w_{i-2}\\) and \\(w_{i-1}\\)\n\n# Example of Trigram Model\ntext = \"What are your aspirations in life\"\n\n# Tokenize the text\ntokens = text.split()\n\n# Create trigrams\ntrigrams = [(tokens[i], tokens[i+1], tokens[i+2]) for i in range(len(tokens)-2)]\n\n# Count the frequency of each trigram\ntrigram_freq = {}\n\nfor trigram in trigrams:\n    if trigram in trigram_freq:\n        trigram_freq[trigram] += 1\n    else:\n        trigram_freq[trigram] = 1\n\n# Calculate the probability of each trigram\nprob_trigram = {}\nfor trigram in trigram_freq:\n    prob_trigram[trigram] = trigram_freq[trigram] / bigrams.count((trigram[0], trigram[1]))\n\n# Print the probability of each trigram\nfor trigram in prob_trigram:\n    print(trigram, prob_trigram[trigram])"
-  },
-  {
-    "objectID": "posts/Recursion DSA/index.html",
-    "href": "posts/Recursion DSA/index.html",
-    "title": "Topic 1 -> Recursion",
+    "objectID": "posts/DSA/Array DSA/index.html",
+    "href": "posts/DSA/Array DSA/index.html",
+    "title": "Topic 1 -> Array",
     "section": "",
-    "text": "One way to describe repetition within a computer program is the use of loops, such as Python’s while-loop and for-loop, but an entire way of approach is using Recrusions which brings us to today’s topic on learning stuff daily for 100 days\n\nTest for base cases. We begin by testing for a set of base cases (there should be at least one). These base cases should be defined so that every possible chain of recursive calls will eventually reach a base case, and the handling ofeach base case should not use recursion.\nRecur. If not a base case, we perform one or more recursive calls. This recursive step may involve a test that decides which of several possible recursive calls to make. We should define each possible recursive call so that it makes progress towards a base case.\nImportant Point here is that if this base case is not met then we fall into a infinite recursion and kaboom 💥\n\ndef fib(n):\n    if n &lt;= 1:         # -----&gt; this part (remember this)\n        return 0\n    # ... rest of the function here \nThis function has this fib(n) so that “n” is what that has to be satisfied … by now you would have got the grip of the step 1 of recursion\nthe next step is to lay out your logic and write the rest of the function\ndef fib(n):\n    if n &lt;= 1:\n        return 0\n    else:\n        return fib(n-1) + fib(n-2)  # --&gt; go back 2 steps and sum then up\nCertainly! Let’s add examples for binary recursion and multiple recursion:"
-  },
-  {
-    "objectID": "posts/Recursion DSA/index.html#linear-recursion",
-    "href": "posts/Recursion DSA/index.html#linear-recursion",
-    "title": "Topic 1 -> Recursion",
-    "section": "Linear Recursion",
-    "text": "Linear Recursion\nIf a recursive function is designed so that each invocation of the body makes at most one new recursive call, this is known as linear recursion.\nExample:\ndef reversearr(array, start, stop):\n    if start &lt; stop-1: # -----&gt; base case baked right into the recursion itself\n        array[start], array[stop-1] = array[stop-1], array[start]\n        reversearr(array, start+1, stop-1)\n    return array"
-  },
-  {
-    "objectID": "posts/Recursion DSA/index.html#binary-recursion",
-    "href": "posts/Recursion DSA/index.html#binary-recursion",
-    "title": "Topic 1 -> Recursion",
-    "section": "Binary Recursion",
-    "text": "Binary Recursion\nIn binary recursion, each recursive call results in two new recursive calls. This often occurs in problems that can be divided into two sub-problems.\nExample (Binary Recursion):\ndef binary_sum(arr, start, end):\n    if start == end:  # base case when there's only one element\n        return arr[start]\n    else:\n        mid = (start + end) // 2\n        left_sum = binary_sum(arr, start, mid)\n        right_sum = binary_sum(arr, mid+1, end)\n        return left_sum + right_sum\nExplanation: This function recursively divides the array into two halves and calculates the sum of each half. The base case is when the array has only one element, and the sum is returned. The overall sum is then calculated by adding the sums of the left and right halves."
-  },
-  {
-    "objectID": "posts/Recursion DSA/index.html#multiple-recursion",
-    "href": "posts/Recursion DSA/index.html#multiple-recursion",
-    "title": "Topic 1 -> Recursion",
-    "section": "Multiple Recursion",
-    "text": "Multiple Recursion\nMultiple recursion involves a recursive function making more than two calls. It can be a bit complex but is a powerful technique for solving certain types of problems.\nExample (Multiple Recursion):\ndef multiply_elements(arr, start, end):\n    if start == end:  # base case when there's only one element\n        return arr[start]\n    else:\n        mid = (start + end) // 2\n        left_product = multiply_elements(arr, start, mid)\n        right_product = multiply_elements(arr, mid+1, end)\n        current_product = arr[start] * arr[end]  # additional recursive call\n        return left_product * right_product * current_product\nExplanation: This function recursively multiplies the elements in the array. In addition to the recursive calls for the left and right halves, there is an extra recursive call to multiply the first and last elements of the current segment. The base case is when the array has only one element.\n\nFeel free to experiment with these examples and observe their behavior. Understanding binary and multiple recursion is essential for tackling a wide range of algorithmic problems. Happy coding! 💻🚀"
+    "text": "Python’s Array Module\nThe array module in Python is used to store homogeneous data types such as integers, floats, etc. It is similar to lists in Python, but with the added advantage of being more efficient in terms of memory and performance for certain operations.\nWhen to use the array module? You should consider using the array module when you need to store a large amount of homogeneous data. This is because arrays are more memory efficient than lists. They also provide faster access in some cases because they store data in contiguous memory blocks, unlike lists.\nComparing array module with normal list Here are some key differences between the array module and a normal list in Python:\nHomogeneity: Arrays can only store elements of the same type, while lists can store elements of different types.\nMemory and Performance: Arrays are more memory efficient and can provide faster access and manipulation for large amounts of data.\nFunctionality: Lists come with a variety of built-in methods for manipulation like append, remove, pop, etc. Arrays have fewer methods but are more specialized for numerical and computational tasks.\nIn the provided code snippet, an array of type ‘h’ (short integers) is created to store prime numbers. This is a good use case for the array module because we are dealing with a large amount of homogeneous numerical data.\nIn this code, the array is more memory efficient than a list would be, and it provides fast and efficient access to the prime numbers stored within it.\n\n\n\n\n Back to top"
   }
 ]

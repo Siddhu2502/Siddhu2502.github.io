@@ -10,10 +10,10 @@
     "items": [
       "/posts/NLP/NLPIntro.html",
       "/posts/NLP/LanguageModelling.html",
-      "/posts/Array DSA/index.html",
       "/posts/Distributed computing CC/index.html",
       "/posts/Grid computing CC/index.html",
-      "/posts/Recursion DSA/index.html",
+      "/posts/DSA/Array DSA/index.html",
+      "/posts/DSA/Recursion DSA/index.html",
       "/posts/welcome/index.html"
     ]
   }
