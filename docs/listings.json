@@ -8,11 +8,11 @@
   {
     "listing": "/blogs.html",
     "items": [
+      "/posts/NLP/NLPIntro.html",
       "/posts/Array DSA/index.html",
       "/posts/Distributed computing CC/index.html",
       "/posts/Grid computing CC/index.html",
-      "/posts/NLP basics/index.html",
-      "/posts/NLP basics/nextindex.html",
+      "/posts/NLP/nextindex.html",
       "/posts/Recursion DSA/index.html",
       "/posts/welcome/index.html"
     ]

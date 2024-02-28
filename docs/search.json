@@ -102,7 +102,7 @@
     "href": "blogs.html",
     "title": "Blogs",
     "section": "",
-    "text": "Topic 1 -&gt; Array\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\nClould Computing (Distributed Computing)\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\nClould Computing (Grid Computing)\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\nTopic 1 -&gt; Basis of Speech acoustics\n\n\n\n\n\n\n\n\n\n\n\nJan 6, 2024\n\n\nSiddharth D\n\n\n1 min\n\n\n\n\n\n\n\n\n\n\n\n\nTopic 1 -&gt; Speech acoustics in Depth\n\n\n\n\n\n\n\n\n\n\n\nJan 6, 2024\n\n\nSiddharth D\n\n\n1 min\n\n\n\n\n\n\n\n\n\n\n\n\nTopic 1 -&gt; Recursion\n\n\n\n\n\n\n\n\n\n\n\nJan 6, 2024\n\n\nSiddharth D\n\n\n4 min\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\n\n\nJan 1, 2024\n\n\nSiddharth D\n\n\n1 min\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Introduction to NLP\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n5 min\n\n\n\n\n\n\n\n\n\n\n\n\nTopic 1 -&gt; Array\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\nClould Computing (Distributed Computing)\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\nClould Computing (Grid Computing)\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\nTopic 1 -&gt; Speech acoustics in Depth\n\n\n\n\n\n\n\n\n\n\n\nJan 6, 2024\n\n\nSiddharth D\n\n\n1 min\n\n\n\n\n\n\n\n\n\n\n\n\nTopic 1 -&gt; Recursion\n\n\n\n\n\n\n\n\n\n\n\nJan 6, 2024\n\n\nSiddharth D\n\n\n4 min\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\n\n\nJan 1, 2024\n\n\nSiddharth D\n\n\n1 min\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "project_posts/Maths thing/index.html",
@@ -257,5 +257,138 @@
     "title": "Topic 1 -> Recursion",
     "section": "Multiple Recursion",
     "text": "Multiple Recursion\nMultiple recursion involves a recursive function making more than two calls. It can be a bit complex but is a powerful technique for solving certain types of problems.\nExample (Multiple Recursion):\ndef multiply_elements(arr, start, end):\n    if start == end:  # base case when there's only one element\n        return arr[start]\n    else:\n        mid = (start + end) // 2\n        left_product = multiply_elements(arr, start, mid)\n        right_product = multiply_elements(arr, mid+1, end)\n        current_product = arr[start] * arr[end]  # additional recursive call\n        return left_product * right_product * current_product\nExplanation: This function recursively multiplies the elements in the array. In addition to the recursive calls for the left and right halves, there is an extra recursive call to multiply the first and last elements of the current segment. The base case is when the array has only one element.\n\nFeel free to experiment with these examples and observe their behavior. Understanding binary and multiple recursion is essential for tackling a wide range of algorithmic problems. Happy coding! 💻🚀"
+  },
+  {
+    "objectID": "posts/NLP/index.html",
+    "href": "posts/NLP/index.html",
+    "title": "Introduction to NLP",
+    "section": "",
+    "text": "NLP is branch of AI that helps computers understand, interpret and manipulate human language.\nThe goal is to completely capture the context of human langage and understand the meaning behind it."
+  },
+  {
+    "objectID": "posts/NLP/index.html#phonetics",
+    "href": "posts/NLP/index.html#phonetics",
+    "title": "Introduction to NLP",
+    "section": "Phonetics",
+    "text": "Phonetics\nIt is the branch that studies how humans produce and perceive speech sounds. It is the study of the physical sounds of human speech."
+  },
+  {
+    "objectID": "posts/NLP/index.html#phonology",
+    "href": "posts/NLP/index.html#phonology",
+    "title": "Introduction to NLP",
+    "section": "Phonology",
+    "text": "Phonology\nIt is the branch that studies the sound patterns of human language. They linguists study the languages or dialects and organize their sounds (phonemes) into a system of relationships."
+  },
+  {
+    "objectID": "posts/NLP/index.html#morphology",
+    "href": "posts/NLP/index.html#morphology",
+    "title": "Introduction to NLP",
+    "section": "Morphology",
+    "text": "Morphology\nIt deals with the words are formed and the relationship of words with each other. It is the study of the structure of words. It analyses the structure of words and parts of words, such as\n\nstems: the core part of a word\nroot words: the basic part of a word\nprefixes: the part of a word that comes before the root word\nsuffixes: the part of a word that comes after the root word"
+  },
+  {
+    "objectID": "posts/NLP/index.html#syntax",
+    "href": "posts/NLP/index.html#syntax",
+    "title": "Introduction to NLP",
+    "section": "Syntax",
+    "text": "Syntax\nIt is the study of the structure of sentences. It is the study of the principles and rules for constructing sentences in natural languages."
+  },
+  {
+    "objectID": "posts/NLP/index.html#semantics",
+    "href": "posts/NLP/index.html#semantics",
+    "title": "Introduction to NLP",
+    "section": "Semantics",
+    "text": "Semantics\nIt is the study of meaning in language. It is the study of meaning in language. It focuses on the relation between signifiers, such as words, phrases, signs, and symbols, and what they stand for, their denotation."
+  },
+  {
+    "objectID": "posts/NLP/index.html#pragmatics",
+    "href": "posts/NLP/index.html#pragmatics",
+    "title": "Introduction to NLP",
+    "section": "Pragmatics",
+    "text": "Pragmatics\nIt is the study of how context influences the interpretation of meaning. It studies the aspects of meaning and language use that are dependent on the speaker, the addressee, and other features of the context of utterance."
+  },
+  {
+    "objectID": "posts/NLP/index.html#data-aspect",
+    "href": "posts/NLP/index.html#data-aspect",
+    "title": "Introduction to NLP",
+    "section": "Data aspect",
+    "text": "Data aspect\n\nCorpus: It is a collection of text. It is a large and structured set of texts. They are used to do statistical analysis and hypothesis testing, checking occurrences or validating linguistic rules within a specific language territory.\nVocabulary: It is a list of words in a language. It is a set of familiar words within a person’s language. It is the set of words known to a person or other entity.\nAnnotation: It is the process of adding information to a text. It is the process of adding metadata to a text. It is the process of marking up a document with additional information.\nLexicon: It refers to the words and thier meaning (sort of real dictionary)."
+  },
+  {
+    "objectID": "posts/NLP/index.html#algorithms-aspect",
+    "href": "posts/NLP/index.html#algorithms-aspect",
+    "title": "Introduction to NLP",
+    "section": "Algorithms aspect",
+    "text": "Algorithms aspect\n\nTokens: It is the pieces of data such as words, characters, subwords etc:-\nTokenization:\n\nIt is the initial step in modell the content of the text.\nIt is the process of breaking a stream of text up into words, phrases, symbols, or other meaningful elements called tokens.\n\n\n\nTokenization and its types\nThere are many types of tokenization such as\n\nWord tokenization\nSentence tokenization\nSubword tokenization\nCharacter tokenization\n\n\nWord Level Tokenization\nIts the most commonly used tokenization method. It splits the words based on the space or any specific delimeter\n\n# using nltk library\n\nimport nltk\nfrom nltk.tokenize import word_tokenize\ntext = \"I am learning NLP\"\nword_tokenize(text)\n\n# using python inbuilt split method\n\nvocabulary = []\ntext = \"I am learning NLP\"\nvocabulary = text.split(\" \")\nprint(vocabulary)\n\n\n\n\n\n\nWhat are some issues with word level tokenization?\n\n\n\n\n\nHere we will discuss few issues with word level tokenization\n\nContractions\nOOV (Out of Vocabulary) words\nPunctuations\n\nTry to find more issues if you can!! (note: there are actually many) .. That is one of the reason why we dont just split with space and call it a day.\n\n\n\n\n\nSentence Level Tokenization\nSentence tokenization, also known as sentence segmentation, is the process of dividing text into sentences. This is typically done using punctuation and capitalization cues.\n# using nltk library\n\nimport nltk\nfrom nltk.tokenize import sent_tokenize\ntext = \"I am learning NLP. It is very interesting.\"\nsent_tokenize(text)\n\n\nSubword Level Tokenization\nSubword tokenization splits words into smaller units (or subwords). This can help to handle the problem of out-of-vocabulary words.\n# using BPEmb library for Byte Pair Encoding\n\nfrom bpemb import BPEmb\nbpemb_en = BPEmb(lang=\"en\", dim=50)\ntext = \"I am learning NLP\"\nbpemb_en.encode(text)\n\n\nCharacter Level Tokenization\nCharacter tokenization splits text into characters. This can be useful for languages where words are not separated by spaces, like Chinese and Japanese.\ntext = \"I am learning NLP\"\nlist(text)\n\n\n\n\n\n\nIssues with Other Types of Tokenization\n\n\n\n\n\n\nSentence Tokenization: Sentence tokenization can be tricky when dealing with abbreviations, email addresses, websites, etc. where periods are used but do not indicate the end of a sentence.\nSubword Tokenization: While subword tokenization can help with out-of-vocabulary words, it can lead to an explosion in the number of tokens for very large texts.\nCharacter Tokenization: Character tokenization can lead to very long sequences for longer texts and may lose the meaning carried by specific words or phrases.\n\nCan you find more issues with other types of tokenization? (note: there are actually many)"
+  },
+  {
+    "objectID": "posts/NLP/nextindex.html",
+    "href": "posts/NLP/nextindex.html",
+    "title": "Topic 1 -> Speech acoustics in Depth",
+    "section": "",
+    "text": "Back to top"
+  },
+  {
+    "objectID": "posts/NLP/NLPIntro.html",
+    "href": "posts/NLP/NLPIntro.html",
+    "title": "Introduction to NLP",
+    "section": "",
+    "text": "NLP is branch of AI that helps computers understand, interpret and manipulate human language.\nThe goal is to completely capture the context of human langage and understand the meaning behind it."
+  },
+  {
+    "objectID": "posts/NLP/NLPIntro.html#phonetics",
+    "href": "posts/NLP/NLPIntro.html#phonetics",
+    "title": "Introduction to NLP",
+    "section": "Phonetics",
+    "text": "Phonetics\nIt is the branch that studies how humans produce and perceive speech sounds. It is the study of the physical sounds of human speech."
+  },
+  {
+    "objectID": "posts/NLP/NLPIntro.html#phonology",
+    "href": "posts/NLP/NLPIntro.html#phonology",
+    "title": "Introduction to NLP",
+    "section": "Phonology",
+    "text": "Phonology\nIt is the branch that studies the sound patterns of human language. They linguists study the languages or dialects and organize their sounds (phonemes) into a system of relationships."
+  },
+  {
+    "objectID": "posts/NLP/NLPIntro.html#morphology",
+    "href": "posts/NLP/NLPIntro.html#morphology",
+    "title": "Introduction to NLP",
+    "section": "Morphology",
+    "text": "Morphology\nIt deals with the words are formed and the relationship of words with each other. It is the study of the structure of words. It analyses the structure of words and parts of words, such as\n\nstems: the core part of a word\nroot words: the basic part of a word\nprefixes: the part of a word that comes before the root word\nsuffixes: the part of a word that comes after the root word"
+  },
+  {
+    "objectID": "posts/NLP/NLPIntro.html#syntax",
+    "href": "posts/NLP/NLPIntro.html#syntax",
+    "title": "Introduction to NLP",
+    "section": "Syntax",
+    "text": "Syntax\nIt is the study of the structure of sentences. It is the study of the principles and rules for constructing sentences in natural languages."
+  },
+  {
+    "objectID": "posts/NLP/NLPIntro.html#semantics",
+    "href": "posts/NLP/NLPIntro.html#semantics",
+    "title": "Introduction to NLP",
+    "section": "Semantics",
+    "text": "Semantics\nIt is the study of meaning in language. It is the study of meaning in language. It focuses on the relation between signifiers, such as words, phrases, signs, and symbols, and what they stand for, their denotation."
+  },
+  {
+    "objectID": "posts/NLP/NLPIntro.html#pragmatics",
+    "href": "posts/NLP/NLPIntro.html#pragmatics",
+    "title": "Introduction to NLP",
+    "section": "Pragmatics",
+    "text": "Pragmatics\nIt is the study of how context influences the interpretation of meaning. It studies the aspects of meaning and language use that are dependent on the speaker, the addressee, and other features of the context of utterance."
+  },
+  {
+    "objectID": "posts/NLP/NLPIntro.html#data-aspect",
+    "href": "posts/NLP/NLPIntro.html#data-aspect",
+    "title": "Introduction to NLP",
+    "section": "Data aspect",
+    "text": "Data aspect\n\nCorpus: It is a collection of text. It is a large and structured set of texts. They are used to do statistical analysis and hypothesis testing, checking occurrences or validating linguistic rules within a specific language territory.\nVocabulary: It is a list of words in a language. It is a set of familiar words within a person’s language. It is the set of words known to a person or other entity.\nAnnotation: It is the process of adding information to a text. It is the process of adding metadata to a text. It is the process of marking up a document with additional information.\nLexicon: It refers to the words and thier meaning (sort of real dictionary)."
+  },
+  {
+    "objectID": "posts/NLP/NLPIntro.html#algorithms-aspect",
+    "href": "posts/NLP/NLPIntro.html#algorithms-aspect",
+    "title": "Introduction to NLP",
+    "section": "Algorithms aspect",
+    "text": "Algorithms aspect\n\nTokens: It is the pieces of data such as words, characters, subwords etc:-\nTokenization:\n\nIt is the initial step in modell the content of the text.\nIt is the process of breaking a stream of text up into words, phrases, symbols, or other meaningful elements called tokens.\n\n\n\nTokenization and its types\nThere are many types of tokenization such as\n\nWord tokenization\nSentence tokenization\nSubword tokenization\nCharacter tokenization\n\n\nWord Level Tokenization\nIts the most commonly used tokenization method. It splits the words based on the space or any specific delimeter\n\n# using nltk library\n\nimport nltk\nfrom nltk.tokenize import word_tokenize\ntext = \"I am learning NLP\"\nword_tokenize(text)\n\n# using python inbuilt split method\n\nvocabulary = []\ntext = \"I am learning NLP\"\nvocabulary = text.split(\" \")\nprint(vocabulary)\n\n\n\n\n\n\nWhat are some issues with word level tokenization?\n\n\n\n\n\nHere we will discuss few issues with word level tokenization\n\nContractions\nOOV (Out of Vocabulary) words\nPunctuations\n\nTry to find more issues if you can!! (note: there are actually many) .. That is one of the reason why we dont just split with space and call it a day.\n\n\n\n\n\nSentence Level Tokenization\nSentence tokenization, also known as sentence segmentation, is the process of dividing text into sentences. This is typically done using punctuation and capitalization cues.\n# using nltk library\n\nimport nltk\nfrom nltk.tokenize import sent_tokenize\ntext = \"I am learning NLP. It is very interesting.\"\nsent_tokenize(text)\n\n\nSubword Level Tokenization\nSubword tokenization splits words into smaller units (or subwords). This can help to handle the problem of out-of-vocabulary words.\n# using BPEmb library for Byte Pair Encoding\n\nfrom bpemb import BPEmb\nbpemb_en = BPEmb(lang=\"en\", dim=50)\ntext = \"I am learning NLP\"\nbpemb_en.encode(text)\n\n\nCharacter Level Tokenization\nCharacter tokenization splits text into characters. This can be useful for languages where words are not separated by spaces, like Chinese and Japanese.\ntext = \"I am learning NLP\"\nlist(text)\n\n\n\n\n\n\nIssues with Other Types of Tokenization\n\n\n\n\n\n\nSentence Tokenization: Sentence tokenization can be tricky when dealing with abbreviations, email addresses, websites, etc. where periods are used but do not indicate the end of a sentence.\nSubword Tokenization: While subword tokenization can help with out-of-vocabulary words, it can lead to an explosion in the number of tokens for very large texts.\nCharacter Tokenization: Character tokenization can lead to very long sequences for longer texts and may lose the meaning carried by specific words or phrases.\n\nCan you find more issues with other types of tokenization? (note: there are actually many)"
   }
 ]
