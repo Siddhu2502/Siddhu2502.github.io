@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Siddharth D">
-<meta name="dcterms.date" content="2024-02-28">
+<meta name="dcterms.date" content="2024-01-06">
 
-<title>Siddharth D - Introduction to NLP</title>
+<title>Siddharth D - Language Modelling and Other Concepts</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,40 +21,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -136,13 +102,11 @@ cookieconsent.run({
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Siddharth D - Introduction to NLP">
-<meta property="og:description" content="">
-<meta property="og:image" content="introimage.jpeg">
+<meta property="og:title" content="Siddharth D - Language Modelling and Other Concepts">
+<meta property="og:image" content="thumbnail.png">
 <meta property="og:site_name" content="Siddharth D">
-<meta name="twitter:title" content="Siddharth D - Introduction to NLP">
-<meta name="twitter:description" content="">
-<meta name="twitter:image" content="introimage.jpeg">
+<meta name="twitter:title" content="Siddharth D - Language Modelling and Other Concepts">
+<meta name="twitter:image" content="thumbnail.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -191,9 +155,10 @@ cookieconsent.run({
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Introduction to NLP</h1>
+      <h1 class="title">Language Modelling and Other Concepts</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">NLP</div>
+                <div class="quarto-category">Course_NLP</div>
               </div>
                   </div>
   </div>
@@ -211,7 +176,7 @@ cookieconsent.run({
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">February 28, 2024</p>
+        <p class="date">January 6, 2024</p>
       </div>
     </div>
     
@@ -223,32 +188,7 @@ cookieconsent.run({
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#natural-language-processing-nlp" id="toc-natural-language-processing-nlp" class="nav-link active" data-scroll-target="#natural-language-processing-nlp">Natural Language Processing (NLP)</a></li>
-  <li><a href="#linguistics-and-nlp" id="toc-linguistics-and-nlp" class="nav-link" data-scroll-target="#linguistics-and-nlp">Linguistics and NLP</a>
-  <ul class="collapse">
-  <li><a href="#phonetics" id="toc-phonetics" class="nav-link" data-scroll-target="#phonetics">Phonetics</a></li>
-  <li><a href="#phonology" id="toc-phonology" class="nav-link" data-scroll-target="#phonology">Phonology</a></li>
-  <li><a href="#morphology" id="toc-morphology" class="nav-link" data-scroll-target="#morphology">Morphology</a></li>
-  <li><a href="#syntax" id="toc-syntax" class="nav-link" data-scroll-target="#syntax">Syntax</a></li>
-  <li><a href="#semantics" id="toc-semantics" class="nav-link" data-scroll-target="#semantics">Semantics</a></li>
-  <li><a href="#pragmatics" id="toc-pragmatics" class="nav-link" data-scroll-target="#pragmatics">Pragmatics</a></li>
-  </ul></li>
-  <li><a href="#computational-concepts-of-nlp" id="toc-computational-concepts-of-nlp" class="nav-link" data-scroll-target="#computational-concepts-of-nlp">Computational concepts of NLP</a>
-  <ul class="collapse">
-  <li><a href="#data-aspect" id="toc-data-aspect" class="nav-link" data-scroll-target="#data-aspect">Data aspect</a></li>
-  <li><a href="#algorithms-aspect" id="toc-algorithms-aspect" class="nav-link" data-scroll-target="#algorithms-aspect">Algorithms aspect</a>
-  <ul class="collapse">
-  <li><a href="#tokenization-and-its-types" id="toc-tokenization-and-its-types" class="nav-link" data-scroll-target="#tokenization-and-its-types">Tokenization and its types</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#challenges-in-nlp" id="toc-challenges-in-nlp" class="nav-link" data-scroll-target="#challenges-in-nlp">Challenges in NLP</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -257,199 +197,8 @@ cookieconsent.run({
 
 
 
-<section id="natural-language-processing-nlp" class="level1">
-<h1>Natural Language Processing (NLP)</h1>
-<ul>
-<li>NLP is branch of AI that helps computers understand, interpret and manipulate human language.</li>
-<li>The goal is to completely capture the context of human langage and understand the meaning behind it.</li>
-</ul>
-</section>
-<section id="linguistics-and-nlp" class="level1">
-<h1>Linguistics and NLP</h1>
-<p>Linguistics is the scientific study of language and its structure, including the study of grammar, syntax, and phonetics. NLP is the application of computational techniques to the analysis and synthesis of natural language and speech.</p>
-<p>Computational linguistics is the scientific study of language from a computational perspective.</p>
-<p>The lingustics are divided into 6 categories namely</p>
-<ul>
-<li>Phonetics</li>
-<li>Phonology</li>
-<li>Morphology</li>
-<li>Syntax</li>
-<li>Semantics</li>
-<li>Pragmatics</li>
-</ul>
-<section id="phonetics" class="level2">
-<h2 class="anchored" data-anchor-id="phonetics">Phonetics</h2>
-<p>It is the branch that studies how humans produce and perceive speech sounds. It is the study of the physical sounds of human speech.</p>
-</section>
-<section id="phonology" class="level2">
-<h2 class="anchored" data-anchor-id="phonology">Phonology</h2>
-<p>It is the branch that studies the sound patterns of human language. They linguists study the <strong>languages</strong> or <strong>dialects</strong> and organize their sounds (phonemes) into a system of relationships.</p>
-</section>
-<section id="morphology" class="level2">
-<h2 class="anchored" data-anchor-id="morphology">Morphology</h2>
-<p>It deals with the words are formed and the relationship of words with each other. It is the study of the structure of words. It analyses the structure of words and parts of words, such as</p>
-<ul>
-<li><strong>stems</strong>: the core part of a word</li>
-<li><strong>root words</strong>: the basic part of a word</li>
-<li><strong>prefixes</strong>: the part of a word that comes before the root word</li>
-<li><strong>suffixes</strong>: the part of a word that comes after the root word</li>
-</ul>
-</section>
-<section id="syntax" class="level2">
-<h2 class="anchored" data-anchor-id="syntax">Syntax</h2>
-<p>It is the study of the structure of sentences. It is the study of the principles and rules for <strong>constructing</strong> sentences in natural languages.</p>
-</section>
-<section id="semantics" class="level2">
-<h2 class="anchored" data-anchor-id="semantics">Semantics</h2>
-<p>It is the study of meaning in language. It is the study of meaning in language. It focuses on the <strong>relation between signifiers</strong>, such as words, phrases, signs, and symbols, and what they stand for, their denotation.</p>
-</section>
-<section id="pragmatics" class="level2">
-<h2 class="anchored" data-anchor-id="pragmatics">Pragmatics</h2>
-<p>It is the study of how context <strong>influences</strong> the <strong>interpretation</strong> of meaning. It studies the aspects of meaning and language use that are dependent on the speaker, the addressee, and other features of the context of utterance.</p>
-</section>
-</section>
-<section id="computational-concepts-of-nlp" class="level1">
-<h1>Computational concepts of NLP</h1>
-<p>The computational part of NLP includes data (vocab, corpus, etc), algorithms (tokenization, stemming, etc), and models (word2vec, BERT, etc).</p>
-<section id="data-aspect" class="level2">
-<h2 class="anchored" data-anchor-id="data-aspect">Data aspect</h2>
-<ul>
-<li>Corpus: It is a collection of text. It is a large and structured set of texts. They are used to do statistical analysis and hypothesis testing, checking occurrences or validating linguistic rules within a specific language territory.</li>
-<li>Vocabulary: It is a list of words in a language. It is a set of familiar words within a person’s language. It is the set of words known to a person or other entity.</li>
-<li>Annotation: It is the process of adding information to a text. It is the process of adding metadata to a text. It is the process of marking up a document with additional information.</li>
-<li>Lexicon: It refers to the words and thier meaning (sort of real dictionary).</li>
-</ul>
-</section>
-<section id="algorithms-aspect" class="level2">
-<h2 class="anchored" data-anchor-id="algorithms-aspect">Algorithms aspect</h2>
-<ul>
-<li>Tokens: It is the pieces of data such as words, characters, subwords etc:-</li>
-<li>Tokenization:
-<ul>
-<li>It is the initial step in modell the content of the text.</li>
-<li>It is the process of breaking a stream of text up into words, phrases, symbols, or other meaningful elements called tokens.</li>
-</ul></li>
-</ul>
-<section id="tokenization-and-its-types" class="level3">
-<h3 class="anchored" data-anchor-id="tokenization-and-its-types">Tokenization and its types</h3>
-<p>There are many types of tokenization such as</p>
-<ul>
-<li>Word tokenization</li>
-<li>Sentence tokenization</li>
-<li>Subword tokenization</li>
-<li>Character tokenization</li>
-</ul>
-<section id="word-level-tokenization" class="level4">
-<h4 class="anchored" data-anchor-id="word-level-tokenization">Word Level Tokenization</h4>
-<p>Its the most commonly used tokenization method. It splits the words based on the space or any specific delimeter</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># using nltk library</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nltk</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> word_tokenize</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"I am learning NLP"</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>word_tokenize(text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># using python inbuilt split method</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>vocabulary <span class="op">=</span> []</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"I am learning NLP"</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>vocabulary <span class="op">=</span> text.split(<span class="st">" "</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(vocabulary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-What are some issues with word level tokenization?
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Here we will discuss few issues with word level tokenization</p>
-<ul>
-<li><strong>Contractions</strong></li>
-<li><strong>OOV (Out of Vocabulary) words</strong></li>
-<li><strong>Punctuations</strong></li>
-</ul>
-<p>Try to find more issues if you can!! (note: there are actually many) .. That is one of the reason why we dont just split with space and call it a day.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="sentence-level-tokenization" class="level4">
-<h4 class="anchored" data-anchor-id="sentence-level-tokenization">Sentence Level Tokenization</h4>
-<p>Sentence tokenization, also known as sentence segmentation, is the process of dividing text into sentences. This is typically done using punctuation and capitalization cues.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># using nltk library</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nltk</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> sent_tokenize</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"I am learning NLP. It is very interesting."</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>sent_tokenize(text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="subword-level-tokenization" class="level4">
-<h4 class="anchored" data-anchor-id="subword-level-tokenization">Subword Level Tokenization</h4>
-<p>Subword tokenization splits words into smaller units (or subwords). This can help to handle the problem of out-of-vocabulary words.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># using BPEmb library for Byte Pair Encoding</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bpemb <span class="im">import</span> BPEmb</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>bpemb_en <span class="op">=</span> BPEmb(lang<span class="op">=</span><span class="st">"en"</span>, dim<span class="op">=</span><span class="dv">50</span>)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"I am learning NLP"</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>bpemb_en.encode(text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="character-level-tokenization" class="level4">
-<h4 class="anchored" data-anchor-id="character-level-tokenization">Character Level Tokenization</h4>
-<p>Character tokenization splits text into characters. This can be useful for languages where words are not separated by spaces, like Chinese and Japanese.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"I am learning NLP"</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span>(text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Issues with Other Types of Tokenization
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<ul>
-<li><strong>Sentence Tokenization</strong>: Sentence tokenization can be tricky when dealing with abbreviations, email addresses, websites, etc. where periods are used but do not indicate the end of a sentence.</li>
-<li><strong>Subword Tokenization</strong>: While subword tokenization can help with out-of-vocabulary words, it can lead to an explosion in the number of tokens for very large texts.</li>
-<li><strong>Character Tokenization</strong>: Character tokenization can lead to very long sequences for longer texts and may lose the meaning carried by specific words or phrases.</li>
-</ul>
-<p>Can you find more issues with other types of tokenization? (note: there are actually many)</p>
-</div>
-</div>
-</div>
-</section>
-</section>
-</section>
-</section>
-<section id="challenges-in-nlp" class="level1">
-<h1>Challenges in NLP</h1>
-<ul>
-<li><strong>Ambiguity</strong>: Words can have multiple meanings.
-<ul>
-<li>Syntactic Ambiguity: It is the ambiguity that occurs when a sentence can have two (or more) different meanings because of the structure of the sentence.</li>
-<li>Semantic Ambiguity: It is the ambiguity that occurs when a word can have two (or more) different meanings.</li>
-<li>Lexical Ambiguity: It is the ambiguity that occurs when a word can have two (or more) different meanings.</li>
-</ul></li>
-<li><strong>Sarcasm</strong></li>
-<li><strong>Negation</strong></li>
-<li><strong>Anaphora</strong>: It is difficult to detect the meaning of pronouns.</li>
-<li><strong>Named Entity Recognition</strong>: It is difficult to detect the named entities in text.</li>
-</ul>
-</section>
-<section id="conclusion" class="level1">
-<h1>Conclusion</h1>
-<p>In this article, we have discussed the introduction to NLP, the computational concepts of NLP, and the challenges in NLP. We have also discussed the linguistic concepts of NLP.</p>
 
 
-</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
