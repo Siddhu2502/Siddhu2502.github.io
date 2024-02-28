@@ -158,7 +158,7 @@
     "href": "blogs.html",
     "title": "Blogs",
     "section": "",
-    "text": "Introduction to NLP\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n5 min\n\n\n\n\n\n\n\n\n\n\n\n\nTopic 1 -&gt; Array\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\nClould Computing (Distributed Computing)\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\nClould Computing (Grid Computing)\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\nLanguage Modelling and Other Concepts\n\n\n\n\n\n\n\n\n\n\n\nJan 6, 2024\n\n\nSiddharth D\n\n\n1 min\n\n\n\n\n\n\n\n\n\n\n\n\nTopic 1 -&gt; Recursion\n\n\n\n\n\n\n\n\n\n\n\nJan 6, 2024\n\n\nSiddharth D\n\n\n4 min\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\n\n\nJan 1, 2024\n\n\nSiddharth D\n\n\n1 min\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Introduction to NLP\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n5 min\n\n\n\n\n\n\n\n\n\n\n\n\nLanguage Modelling and Other Concepts\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n6 min\n\n\n\n\n\n\n\n\n\n\n\n\nTopic 1 -&gt; Array\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\nClould Computing (Distributed Computing)\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\nClould Computing (Grid Computing)\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\nTopic 1 -&gt; Recursion\n\n\n\n\n\n\n\n\n\n\n\nJan 6, 2024\n\n\nSiddharth D\n\n\n4 min\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\n\n\nJan 1, 2024\n\n\nSiddharth D\n\n\n1 min\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "project_posts/Maths thing/index.html",
@@ -284,7 +284,28 @@
     "href": "posts/NLP/LanguageModelling.html",
     "title": "Language Modelling and Other Concepts",
     "section": "",
-    "text": "Back to top"
+    "text": "In this article, we will discuss the concept of language modelling and its importance in the field of Natural Language Processing. We will also discuss some of the other important concepts of NLP"
+  },
+  {
+    "objectID": "posts/NLP/LanguageModelling.html#unigram-model",
+    "href": "posts/NLP/LanguageModelling.html#unigram-model",
+    "title": "Language Modelling and Other Concepts",
+    "section": "Unigram Model",
+    "text": "Unigram Model\n\nIn the unigram model, the probability of a word depends only on the word itself and not on any other words.\nThe probability of a word is given by the formula:\n\\[ P(w) = \\frac{Count(w)}{N} \\]\nWhere,\n\n\\(Count(w)\\) is the number of times the word \\(w\\) has appeared in the corpus\n\\(N\\) is the total number of words in the corpus\n\nThe unigram model is the simplest language model and is used as a baseline for comparison with other language models.\n\n# Example of Unigram Model\ntext = \"What are your aspirations in life\"\n\n# Tokenize the text\ntokens = text.split()\n\n# Count the frequency of each word\nword_freq = {}\nfor word in tokens:\n    if word in word_freq:\n        word_freq[word] += 1\n    else:\n        word_freq[word] = 1\n\n# Calculate the probability of each word\nprob_word = {}\nfor word in word_freq:\n    prob_word[word] = word_freq[word] / len(tokens)\n\n# Print the probability of each word\nfor word in prob_word:\n    print(word, prob_word[word])"
+  },
+  {
+    "objectID": "posts/NLP/LanguageModelling.html#bigram-model",
+    "href": "posts/NLP/LanguageModelling.html#bigram-model",
+    "title": "Language Modelling and Other Concepts",
+    "section": "Bigram Model",
+    "text": "Bigram Model\n\nIn the bigram model, the probability of a word depends only on the previous word.\nThe probability of a word is given by the formula:\n\\[ P(w_i|w_{i-1}) = \\frac{Count(w_{i-1},w_i)}{Count(w_{i-1})} \\]\nWhere,\n\n\\(Count(w_{i-1},w_i)\\) is the number of times the word \\(w_i\\) has appeared after the word \\(w_{i-1}\\)\n\\(Count(w_{i-1})\\) is the number of times the word \\(w_{i-1}\\) has appeared in the corpus\n\n\\(P(w_i|w_{i-1})\\) is the probability of the word \\(w_i\\) given the word \\(w_{i-1}\\)\n\n# Example of Bigram Model\ntext = \"What are your aspirations in life\"\n\n# Tokenize the text\ntokens = text.split()\n\n# Create bigrams\nbigrams = [(tokens[i], tokens[i+1]) for i in range(len(tokens)-1)]\n\n# Count the frequency of each bigram\nbigram_freq = {}\n\nfor bigram in bigrams:\n    if bigram in bigram_freq:\n        bigram_freq[bigram] += 1\n    else:\n        bigram_freq[bigram] = 1\n\n# Calculate the probability of each bigram\nprob_bigram = {}\nfor bigram in bigram_freq:\n    prob_bigram[bigram] = bigram_freq[bigram] / tokens.count(bigram[0])\n\n# Print the probability of each bigram\nfor bigram in prob_bigram:\n    print(bigram, prob_bigram[bigram])"
+  },
+  {
+    "objectID": "posts/NLP/LanguageModelling.html#trigram-model",
+    "href": "posts/NLP/LanguageModelling.html#trigram-model",
+    "title": "Language Modelling and Other Concepts",
+    "section": "Trigram Model",
+    "text": "Trigram Model\n\nIn the trigram model, the probability of a word depends on the previous two words.\nThe probability of a word is given by the formula:\n\\[ P(w_i|w_{i-2},w_{i-1}) = \\frac{Count(w_{i-2},w_{i-1},w_i)}{Count(w_{i-2},w_{i-1})} \\]\nWhere,\n\n\\(Count(w_{i-2},w_{i-1},w_i)\\) is the number of times the word \\(w_i\\) has appeared after the words \\(w_{i-2}\\) and \\(w_{i-1}\\)\n\\(Count(w_{i-2},w_{i-1})\\) is the number of times the words \\(w_{i-2}\\) and \\(w_{i-1}\\) have appeared in the corpus\n\n\\(P(w_i|w_{i-2},w_{i-1})\\) is the probability of the word \\(w_i\\) given the words \\(w_{i-2}\\) and \\(w_{i-1}\\)\n\n# Example of Trigram Model\ntext = \"What are your aspirations in life\"\n\n# Tokenize the text\ntokens = text.split()\n\n# Create trigrams\ntrigrams = [(tokens[i], tokens[i+1], tokens[i+2]) for i in range(len(tokens)-2)]\n\n# Count the frequency of each trigram\ntrigram_freq = {}\n\nfor trigram in trigrams:\n    if trigram in trigram_freq:\n        trigram_freq[trigram] += 1\n    else:\n        trigram_freq[trigram] = 1\n\n# Calculate the probability of each trigram\nprob_trigram = {}\nfor trigram in trigram_freq:\n    prob_trigram[trigram] = trigram_freq[trigram] / bigrams.count((trigram[0], trigram[1]))\n\n# Print the probability of each trigram\nfor trigram in prob_trigram:\n    print(trigram, prob_trigram[trigram])"
   },
   {
     "objectID": "posts/Recursion DSA/index.html",

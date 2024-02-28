@@ -9,10 +9,10 @@
     "listing": "/blogs.html",
     "items": [
       "/posts/NLP/NLPIntro.html",
+      "/posts/NLP/LanguageModelling.html",
       "/posts/Array DSA/index.html",
       "/posts/Distributed computing CC/index.html",
       "/posts/Grid computing CC/index.html",
-      "/posts/NLP/LanguageModelling.html",
       "/posts/Recursion DSA/index.html",
       "/posts/welcome/index.html"
     ]
