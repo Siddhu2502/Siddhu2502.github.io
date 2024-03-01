@@ -28,235 +28,11 @@
     "text": "Multiple Recursion\nMultiple recursion involves a recursive function making more than two calls. It can be a bit complex but is a powerful technique for solving certain types of problems.\nExample (Multiple Recursion):\ndef multiply_elements(arr, start, end):\n    if start == end:  # base case when there's only one element\n        return arr[start]\n    else:\n        mid = (start + end) // 2\n        left_product = multiply_elements(arr, start, mid)\n        right_product = multiply_elements(arr, mid+1, end)\n        current_product = arr[start] * arr[end]  # additional recursive call\n        return left_product * right_product * current_product\nExplanation: This function recursively multiplies the elements in the array. In addition to the recursive calls for the left and right halves, there is an extra recursive call to multiply the first and last elements of the current segment. The base case is when the array has only one element.\n\nFeel free to experiment with these examples and observe their behavior. Understanding binary and multiple recursion is essential for tackling a wide range of algorithmic problems. Happy coding! 💻🚀"
   },
   {
-    "objectID": "posts/Grid computing CC/index.html",
-    "href": "posts/Grid computing CC/index.html",
-    "title": "Clould Computing (Grid Computing)",
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
     "section": "",
-    "text": "Grid computing is the collection of computer resources from multiple locations to reach a common goal. The grid can be thought of as a distributed system with non-interactive workloads that involve a large number of files.\nGrid computing is distinguished from conventional high-performance computing systems such as cluster computing in that grid computers have each node set to perform a different task/application. Grid computers also tend to be more heterogeneous and geographically dispersed (thus not physically coupled) than cluster computers.\nAlthough a single grid can be dedicated to a particular application, commonly a grid is used for a variety of purposes. Grids are often constructed with general-purpose grid middleware software libraries. Grid sizes can be quite large."
-  },
-  {
-    "objectID": "posts/Grid computing CC/index.html#keywords",
-    "href": "posts/Grid computing CC/index.html#keywords",
-    "title": "Clould Computing (Grid Computing)",
-    "section": "Keywords",
-    "text": "Keywords\n\nresource sharing\nvirtualization\ngrid computing\nheterogeneous\ngeographically dispersed\ncomputing resources\n\nprocessing\nnetwork bandwidth\nstorage capacity\n\ndata vizualization\nresource exploitation"
-  },
-  {
-    "objectID": "posts/Grid computing CC/index.html#summary",
-    "href": "posts/Grid computing CC/index.html#summary",
-    "title": "Clould Computing (Grid Computing)",
-    "section": "Summary",
-    "text": "Summary\n\nGrid computing is a distributed architecture of large number of computers connected to solve a complex problem.\nIt is a virtual super computer that can be used for solving a complex problem. It is a form of distributed computing where the resources are shared and coordinated to solve a single problem.\n\nThank You!"
-  },
-  {
-    "objectID": "posts/NLP/LanguageModelling.html",
-    "href": "posts/NLP/LanguageModelling.html",
-    "title": "Language Modelling and Other Concepts",
-    "section": "",
-    "text": "In this article, we will discuss the concept of language modelling and its importance in the field of Natural Language Processing. We will also discuss some of the other important concepts of NLP"
-  },
-  {
-    "objectID": "posts/NLP/LanguageModelling.html#unigram-model",
-    "href": "posts/NLP/LanguageModelling.html#unigram-model",
-    "title": "Language Modelling and Other Concepts",
-    "section": "Unigram Model",
-    "text": "Unigram Model\n\nIn the unigram model, the probability of a word depends only on the word itself and not on any other words.\nThe probability of a word is given by the formula:\n\\[ P(w) = \\frac{Count(w)}{N} \\]\nWhere,\n\n\\(Count(w)\\) is the number of times the word \\(w\\) has appeared in the corpus\n\\(N\\) is the total number of words in the corpus\n\nThe unigram model is the simplest language model and is used as a baseline for comparison with other language models.\n\n# Example of Unigram Model\ntext = \"What are your aspirations in life\"\n\n# Tokenize the text\ntokens = text.split()\n\n# Count the frequency of each word\nword_freq = {}\nfor word in tokens:\n    if word in word_freq:\n        word_freq[word] += 1\n    else:\n        word_freq[word] = 1\n\n# Calculate the probability of each word\nprob_word = {}\nfor word in word_freq:\n    prob_word[word] = word_freq[word] / len(tokens)\n\n# Print the probability of each word\nfor word in prob_word:\n    print(word, prob_word[word])"
-  },
-  {
-    "objectID": "posts/NLP/LanguageModelling.html#bigram-model",
-    "href": "posts/NLP/LanguageModelling.html#bigram-model",
-    "title": "Language Modelling and Other Concepts",
-    "section": "Bigram Model",
-    "text": "Bigram Model\n\nIn the bigram model, the probability of a word depends only on the previous word.\nThe probability of a word is given by the formula:\n\\[ P(w_i|w_{i-1}) = \\frac{Count(w_{i-1},w_i)}{Count(w_{i-1})} \\]\nWhere,\n\n\\(Count(w_{i-1},w_i)\\) is the number of times the word \\(w_i\\) has appeared after the word \\(w_{i-1}\\)\n\\(Count(w_{i-1})\\) is the number of times the word \\(w_{i-1}\\) has appeared in the corpus\n\n\\(P(w_i|w_{i-1})\\) is the probability of the word \\(w_i\\) given the word \\(w_{i-1}\\)\n\n# Example of Bigram Model\ntext = \"What are your aspirations in life\"\n\n# Tokenize the text\ntokens = text.split()\n\n# Create bigrams\nbigrams = [(tokens[i], tokens[i+1]) for i in range(len(tokens)-1)]\n\n# Count the frequency of each bigram\nbigram_freq = {}\n\nfor bigram in bigrams:\n    if bigram in bigram_freq:\n        bigram_freq[bigram] += 1\n    else:\n        bigram_freq[bigram] = 1\n\n# Calculate the probability of each bigram\nprob_bigram = {}\nfor bigram in bigram_freq:\n    prob_bigram[bigram] = bigram_freq[bigram] / tokens.count(bigram[0])\n\n# Print the probability of each bigram\nfor bigram in prob_bigram:\n    print(bigram, prob_bigram[bigram])"
-  },
-  {
-    "objectID": "posts/NLP/LanguageModelling.html#trigram-model",
-    "href": "posts/NLP/LanguageModelling.html#trigram-model",
-    "title": "Language Modelling and Other Concepts",
-    "section": "Trigram Model",
-    "text": "Trigram Model\n\nIn the trigram model, the probability of a word depends on the previous two words.\nThe probability of a word is given by the formula:\n\\[ P(w_i|w_{i-2},w_{i-1}) = \\frac{Count(w_{i-2},w_{i-1},w_i)}{Count(w_{i-2},w_{i-1})} \\]\nWhere,\n\n\\(Count(w_{i-2},w_{i-1},w_i)\\) is the number of times the word \\(w_i\\) has appeared after the words \\(w_{i-2}\\) and \\(w_{i-1}\\)\n\\(Count(w_{i-2},w_{i-1})\\) is the number of times the words \\(w_{i-2}\\) and \\(w_{i-1}\\) have appeared in the corpus\n\n\\(P(w_i|w_{i-2},w_{i-1})\\) is the probability of the word \\(w_i\\) given the words \\(w_{i-2}\\) and \\(w_{i-1}\\)\n\n# Example of Trigram Model\ntext = \"What are your aspirations in life\"\n\n# Tokenize the text\ntokens = text.split()\n\n# Create trigrams\ntrigrams = [(tokens[i], tokens[i+1], tokens[i+2]) for i in range(len(tokens)-2)]\n\n# Count the frequency of each trigram\ntrigram_freq = {}\n\nfor trigram in trigrams:\n    if trigram in trigram_freq:\n        trigram_freq[trigram] += 1\n    else:\n        trigram_freq[trigram] = 1\n\n# Calculate the probability of each trigram\nprob_trigram = {}\nfor trigram in trigram_freq:\n    prob_trigram[trigram] = trigram_freq[trigram] / bigrams.count((trigram[0], trigram[1]))\n\n# Print the probability of each trigram\nfor trigram in prob_trigram:\n    print(trigram, prob_trigram[trigram])"
-  },
-  {
-    "objectID": "posts/Distributed computing CC/index.html",
-    "href": "posts/Distributed computing CC/index.html",
-    "title": "Clould Computing (Distributed Computing)",
-    "section": "",
-    "text": "Introduction\nDistributed computing can be termed as follows: “A distributed system is a collection of independent computers that appear to the users of the system as a single computer”. The main goal of distributed computing is to connect users and resources in a transparent, open, and scalable way. The main advantage of distributed computing is that it allows users to access data and applications from anywhere in the world, as long as they have access to the Internet. This is a huge advantage for companies that have offices in different locations, as it allows them to share data and applications without having to worry about the physical location of the data and applications.\n\n\nDistributed computing\n\nMultiple nodes which carry out set of processes that are distributed across the network of machines and work together to solve a problem can be coined as distributed computing\nThese are also called as peer to peer computing. That is several applications coordinate amoung themselves to address a particular problem.\n\nPrimarily usefull for large scale applicaiton development or large scale operational need right where you have different operation being served by different nodes.\n\n\n\n\nAspects of distributed computing\n\nThree significant characteristics of distributed systems are:\n\nconcurrency of components,\nlack of a global clock\nindependent failure of components\n\nExamples of distributed systems vary from SOA-based systems to massively multiplayer online games to peer-to-peer applications.\n\n\n\nDistributed cloud computing\n\nDistributed cloud computing is a cloud computing platform that is distributed among multiple different physical locations.\nDespite its distributed nature, it is still a single cloud computing platform.\nDistributed cloud computing is a relatively new concept that is still being developed.\nThe main advantage of distributed cloud computing is that it allows users to access data and applications from anywhere in the world, as long as they have access to the Internet. This makes it a very useful tool for companies that have offices in different locations, as it allows them to share data and applications without having to worry about the physical location of the data and applications.\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "about.html#experience",
-    "href": "about.html#experience",
-    "title": "About Me",
-    "section": "Experience",
-    "text": "Experience\n\nGoogle Developer Students Club\n\nMay 2023 - Present\n\nGDSC Amrita | Coimbatore, TN\n\nActively participated in GDSC (AI/ML)\nOrganized and facilitated an interactive Android workshop\nConducted a seminar on AI/ML deployment\n\n\n\n\nAnokha (Web dev)\n\nJune 2022 - June 2022\n\nAnokha Amrita | Coimbatore, TN\nDeveloped website for college department AIE\nShowcased participant’s code outputs and reports from training sessions and hackathons\nLive conversion of MD files into a neat HTML, Hosted in Github Pages\n\n\n\n\nAssociation of Students of Computer Science for Information Interchange (ASCII)\n\nJune 2022 - June 2023\n\nASCII Amrita | Coimbatore, TN\n\nPart of the Organization committee for a workshop on AI/ML basics using TensorFlow and PyTorch.\nActively maintaining of ACII github.\n\n\n\n\nIntel IOT/AI Club\n\nJune 2023 - Present\n\nIntel IOT Club | Coimbatore, TN\n\nActive team member of AI/ML club wing of the Intel IOT/AI club\nCreated basic ML model based on classification and image processing using Intel one API"
-  },
-  {
-    "objectID": "about.html#tech-stack-and-workflow",
-    "href": "about.html#tech-stack-and-workflow",
-    "title": "About Me",
-    "section": "Tech Stack and Workflow",
-    "text": "Tech Stack and Workflow\n\nBackend Development: Django, Flask, RestAPI\nMachine Learning: TensorFlow, PyTorch, Scikit-learn\nComputer Vision: OpenCV, Roboflow, Dlib\nCloud Platforms: Microsoft Azure\nContainerization: Docker\nProgramming Languages: Python, Scala, Java (basic knowledge), MATLAB\nCompetitive Programming: Proficient in Python (Leetcode, Codechef)"
-  },
-  {
-    "objectID": "contact.html",
-    "href": "contact.html",
-    "title": "Contact",
-    "section": "",
-    "text": "Hello! If you wish to contact me, please use the following methods:"
-  },
-  {
-    "objectID": "contact.html#email",
-    "href": "contact.html#email",
-    "title": "Contact",
-    "section": "Email",
-    "text": "Email\nYou can reach me at: dsiddharth25@gmail.com"
-  },
-  {
-    "objectID": "contact.html#phone",
-    "href": "contact.html#phone",
-    "title": "Contact",
-    "section": "Phone",
-    "text": "Phone\nYou can call me at: +91 73311-37182"
-  },
-  {
-    "objectID": "contact.html#social-media",
-    "href": "contact.html#social-media",
-    "title": "Contact",
-    "section": "Social Media",
-    "text": "Social Media\n\nLinkedIn\nWhatsapp\n\nNote: Please allow me 24-48 hours to respond to your messages. Thank you for understanding!"
-  },
-  {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "Projects",
-    "section": "",
-    "text": "QuadCopter Reinforcement learning Bot\n\n\n\n\n\n\n\n\n\n\n\nJan 5, 2024\n\n\nSiddharth D\n\n\n12 min\n\n\n\n\n\n\nNo matching items\n\n Back to top"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Siddharth D",
-    "section": "",
-    "text": "My Personal Website\n\n\n\n\nWelcome to My Personal Website!\n\n\n\n\nAbout Me\n\n\nProjects\n\n\nBlogs\n\n\nContact\n\n\n\n\n\n\n\nAbout This Site\n\n\nThis is my personal website where you can learn more about me, see my projects, read my blogs, and get in touch with me.\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "blogs.html",
-    "href": "blogs.html",
-    "title": "Blogs",
-    "section": "",
-    "text": "Introduction to NLP\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n5 min\n\n\n\n\n\n\n\n\n\n\n\n\nLanguage Modelling and Other Concepts\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n6 min\n\n\n\n\n\n\n\n\n\n\n\n\nClould Computing (Distributed Computing)\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\nClould Computing (Grid Computing)\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\nTopic 1 -&gt; Array\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\nTopic 1 -&gt; Recursion\n\n\n\n\n\n\n\n\n\n\n\nJan 6, 2024\n\n\nSiddharth D\n\n\n4 min\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\n\n\nJan 1, 2024\n\n\nSiddharth D\n\n\n1 min\n\n\n\n\n\n\nNo matching items\n\n Back to top"
-  },
-  {
-    "objectID": "project_posts/Maths thing/index.html",
-    "href": "project_posts/Maths thing/index.html",
-    "title": "QuadCopter Reinforcement learning Bot",
-    "section": "",
-    "text": "The goal of this project is to compare three approaches to control a Quadcopter in the task of navigating to multiple waypoints without crashing\n\nHuman Agents: A human directly controlls the drone and drives it to the destination using keyboard input\nPID: The Quadcopter is navigated autonomously using the feedback loop mechanism of the PID controller\nReinforcement Learning Agent: This being the crux of the project using 2 reinforcement learning algorithms DQN (Q learning and SAC). Detailed explanation about Q learning is what is being concentrated more on the project.\n\nQuadcoptes are generally controlled either by humans or by use of algorithms derived by control theory. PID controllers are often used to control the motor power of each propeller and by sensing information the balace is maintainted using feedback loop mechanism\nUsing reinforcement learning learning will be the next step in the evolution of autonomous vehicles. Given the state of the vehicle and the environment, the agent will learn to take actions that will maximize the reward. The agent will learn to navigate to the destination without crashing."
-  },
-  {
-    "objectID": "project_posts/Maths thing/index.html#physics",
-    "href": "project_posts/Maths thing/index.html#physics",
-    "title": "QuadCopter Reinforcement learning Bot",
-    "section": "Physics",
-    "text": "Physics\nAt each step of the simulation, the agents have to provide values between -0.003 and 0.083 (values chosen arbitrarily) for the thrust of their left and right rotors. The thrust is then converted to a force vector that is applied to the drone. The drone is then moved according to the force vector and the physics of the environment. The physics of the environment is as follows:\nStep 1: Calculate acceleration\n\\[\n\\begin{aligned}\n& \\ddot{x}=\\frac{-\\left(T_L+T_\\gamma\\right) \\sin (\\theta)}{m} \\\\\n& \\ddot{y}=\\frac{-\\left(T_L+T_\\gamma\\right) \\cos (\\theta)}{m} \\\\\n& \\ddot{\\theta}=\\frac{\\left(T_r-T_L\\right) \\cdot L}{m}\n\\end{aligned}\n\\]\nEquations for acceleration \\(( \\ddot{x}, \\ddot{y}, \\ddot{\\theta} )\\): \\(\\ddot{x} = \\frac{T_L + T_R}{m} \\cos(\\theta)\\) \\(\\ddot{y} = \\frac{T_L + T_R}{m} \\sin(\\theta)\\) \\(\\ddot{\\theta} = \\frac{l}{I} (T_R - T_L)\\)\nDefinitions of variables:\n\n\\(\\ddot{x}, \\ddot{y}\\): acceleration on the x and y axes.\n\\((\\ddot{\\theta})\\): angular acceleration.\n\\((T_L, T_R)\\): input thrust for the left and right propellers.\n\\((\\theta)\\): angle of the drone with respect to the z-axis.\n\\((m)\\): mass of the drone.\n\\((g)\\): acceleration due to gravity.\n\\((l):\\) distance between the center of mass and the propeller\n\nStep 2: Derive the speed and the position.\n\\[\n\\begin{aligned}\n& \\dot{x}(t-1)=\\ddot{x} \\cdot d t+\\dot{x}(t) \\\\\n& x(t+1)=\\dot{x} \\cdot d t+x(t\n\\end{aligned}\n\\]"
-  },
-  {
-    "objectID": "project_posts/Maths thing/index.html#scoring",
-    "href": "project_posts/Maths thing/index.html#scoring",
-    "title": "QuadCopter Reinforcement learning Bot",
-    "section": "Scoring",
-    "text": "Scoring\nThe simulation runs at 60fps for 100 seconds (can be modified). The agent should reach the destination without crashing. If the agents goes out of the field of the simulation, it is considered as a crash. The agent respawns with a penalty wait time of 3 seconds per crash (this is a bad thing in competitive environments)."
-  },
-  {
-    "objectID": "project_posts/Maths thing/index.html#human-agent",
-    "href": "project_posts/Maths thing/index.html#human-agent",
-    "title": "QuadCopter Reinforcement learning Bot",
-    "section": "Human Agent",
-    "text": "Human Agent\nThe human agent is simulated in a near Earth environment with the thrust being constant and the human controls by using his keyboard.\nThe values are:\n\nThrust initialization: \\(T_L = 0.04 \\quad \\text{and} \\quad T_R = 0.04\\)\nUP (incrementing \\(T_L\\) and \\(T_R\\) by 0.04): \\(T_L = T_L + 0.04 \\quad \\text{and} \\quad T_R = T_R + 0.04\\)\nDOWN (decrementing \\(T_L\\) and \\(T_R\\) by 0.04): \\(T_L = T_L - 0.04 \\quad \\text{and} \\quad T_R = T_R - 0.04\\)\nLEFT: \\(T_L = T_L - 0.003 \\quad \\text{and} \\quad T_R = T_R + 0.04\\)\nRIGHT: \\(T_L = T_L + 0.004 \\quad \\text{and} \\quad T_R = T_R - 0.03\\)"
-  },
-  {
-    "objectID": "project_posts/Maths thing/index.html#pid-agent",
-    "href": "project_posts/Maths thing/index.html#pid-agent",
-    "title": "QuadCopter Reinforcement learning Bot",
-    "section": "PID Agent",
-    "text": "PID Agent\nFor the PID agent we assume the error for the position from the target it has to reach and the location of the drone and move it vertically or rotate it at certain angle to move at different position\n\nThe vertical distance from the drone to target is sent to PID which outputs a optimal vertical speed\nThe horizontal distance is used to modify the thrust of each rotor to move it in the left or right direction same as the HUMAN Agent the rotation logic remains same\n\n—- PUT IMAGE HERE ——-"
-  },
-  {
-    "objectID": "project_posts/Maths thing/index.html#reinforcement-learning-agent",
-    "href": "project_posts/Maths thing/index.html#reinforcement-learning-agent",
-    "title": "QuadCopter Reinforcement learning Bot",
-    "section": "Reinforcement learning Agent",
-    "text": "Reinforcement learning Agent\nThe environment in which the drone trains is called as DRONEENV and we use openAI gym for creating the agent. The observations are made easy for the agent to understand. For observation the agents is given the following information (current position and the speed to move is determined by the following inputs)\n\nangle_to_up : angle between the drone and the up vector (to observe gravity)\nvelocity : velocity of the drone\nangle_velocity : angle of the velocity vector\ndistance_to_target : distance to the target\nangle_to_target : angle between the drone and the target\nangle_target_and_velocity : angle between the to_target vector and the velocity vector\ndistance_to_target : distance to the target\n\nBefore going deeper into this we must know some basic concepts of Reinforcement Learning\n\nIntroduction\nReinforcement learning is an area of Machine Learning. It is about taking suitable action to maximize reward in a particular situation. It is employed by various software and machines to find the best possible behavior or path it should take in a specific situation. Reinforcement learning differs from supervised learning in a way that in supervised learning the training data has the answer key with it so the model is trained with the correct answer itself whereas in reinforcement learning, there is no answer but the reinforcement agent decides what to do to perform the given task. In the absence of a training dataset, it is bound to learn from its experience.\nReinforcement Learning (RL) is the science of decision making. It is about learning the optimal behavior in an environment to obtain maximum reward. In RL, the data is accumulated from machine learning systems that use a trial-and-error method. Data is not part of the input that we would find in supervised or unsupervised machine learning.\nWe have 4 main components when it comes to reinforcement learning.\n\nReward\n\nThe rewards are scalar quantity which is a single number which can range from [−N,N] and sometimes it can have multiple outcomes so choosing them is the job of the agent\nThe reward should be outside the control of the agent which means that the reward should come from the environment in which the agent is training this will make sure that the agent wont be able to simply add more reward\nThe reward depends on the domain\nHaving singular scalar value is good as its easy to estimate the model performance\nReward should be bounded that is from -N to N\nRewards must be given for each epoch or every single iteration\n\n\n\nPolicy\nA policy is a rule that determines how an agent chooses an action in each state. It can be deterministic or stochastic, depending on whether the agent always selects the same action or randomly picks an action according to some probability distribution. Policy is a conditional probability which is given by \\(\\pi \\left(  a| s\\right) =P( A_{t}= a| s_{t}= s)\\) -&gt; The following equation stands for the probablity that the agent will take action ‘A’ given that at time t the state is ‘S’\n\n\nReturn\nReturn is a measure of the total reward that an agent can expect to receive in the future, starting from a given state or state-action pair. It is often used as a target for learning the value functions that estimate how good a state or an action is. There are different ways to define return, depending on how the rewards are discounted or summed up. One common way is to use the discounted return, which is given by the formula:\n\\[\nG_t = R_{t+1} + \\gamma R_{t+2} + \\gamma^2 R_{t+3} + \\dots = \\sum_{k=0}^\\infty \\gamma^k R_{t+k+1}\n\\]\n\nwhere \\(G_t\\) is the return at time step \\(t\\), \\(R_{t+k+1}\\) is the reward received at time step \\(t+k+1\\), and \\(\\gamma\\) is a discount factor between 0 and 1 that determines how much the agent values the future rewards.\nAgent which uses only the first term is called as near-sighted agent.\n\n\n\nValue Function\nThe value function \\(V^\\pi(s)\\) is the expected value of the return \\(G_t\\) when the agent follows the policy \\(\\pi\\) and starts from the state \\(s\\).\n\\[\nV^\\pi(s) = \\mathbb{E}_\\pi \\left\\{ G_t \\mid S_t = s \\right\\}\n\\]\nThe expectation \\(\\mathbb{E}_\\pi\\) is taken over the distribution of the possible trajectories that the agent can experience under the policy \\(\\pi\\). The value function represents how good or desirable a state is for the agent, and it can be used to evaluate or improve the policy."
-  },
-  {
-    "objectID": "project_posts/Maths thing/index.html#p",
-    "href": "project_posts/Maths thing/index.html#p",
-    "title": "QuadCopter Reinforcement learning Bot",
-    "section": "P",
-    "text": "P"
-  },
-  {
-    "objectID": "project_posts/Maths thing/index.html#p-i",
-    "href": "project_posts/Maths thing/index.html#p-i",
-    "title": "QuadCopter Reinforcement learning Bot",
-    "section": "P-I",
-    "text": "P-I"
-  },
-  {
-    "objectID": "project_posts/Maths thing/index.html#p-d",
-    "href": "project_posts/Maths thing/index.html#p-d",
-    "title": "QuadCopter Reinforcement learning Bot",
-    "section": "P-D",
-    "text": "P-D"
-  },
-  {
-    "objectID": "project_posts/Maths thing/index.html#p-i-d",
-    "href": "project_posts/Maths thing/index.html#p-i-d",
-    "title": "QuadCopter Reinforcement learning Bot",
-    "section": "P-I-D",
-    "text": "P-I-D"
-  },
-  {
-    "objectID": "project_posts/Maths thing/index.html#formulation",
-    "href": "project_posts/Maths thing/index.html#formulation",
-    "title": "QuadCopter Reinforcement learning Bot",
-    "section": "Formulation",
-    "text": "Formulation\nIn our research, we make certain assumptions to simplify the calculations and make them more static. The primary assumption is given by the following equations:\n\\[\n\\begin{aligned}\n& P(S_{t+1}=S^{\\prime}, R_{t+1}=v \\mid S_t=S, A_t=a) -&gt; {1} \\\\\n& P(S^{\\prime}, R \\mid S, a) -&gt; {2}\n\\end{aligned}\n\\]\nHere, \\(P(S^{\\prime}, R \\mid S, a)\\) represents the stationary assumption.\nTo obtain the output, we need:\n\n\\(S\\), which represents the set of states, also known as the state space.\n\\(A\\), which represents the set of actions.\n\\(\\gamma\\), which is used when we are considering discounted returns.\n\nInstead of using a single joint distribution given by the equation, we can break down the equation into two parts:\n\nTransition probabilities \\(P\\left(s^{\\prime} \\mid s, A\\right)\\)\nExpected reward \\(E\\left(r \\mid s, a, s^{\\prime}\\right)\\)\n\nWe write it down to break down the joint distribution. Here, only \\(E\\left(r \\mid s, a, s^{\\prime}\\right)\\) is enough as we are optimizing rewards.\nThe formulation of Markov Decision Process (MDP) is given by the Bellman equation:\n\\[\nS, A, P\\left(s^{\\prime} \\mid S, A\\right), E\\left(r \\mid s, a, S^{\\prime}\\right)\n\\]\n\nThe Bellman Equation\nThe Bellman equation is central to the theory of MDPs. It provides a recursive formulation for the value function of a policy in an MDP. The value function represents the expected return (accumulated rewards) for an agent starting in a particular state and following a specific policy thereafter.\nThe Bellman equation for MDPs can be expressed in two forms: one for the state-value function V(s) and another for the action-value function Q(s, a):\n\\[\n\\begin{aligned}\n& V(s) = \\max_a \\left\\{R(s,a) + \\gamma \\sum P(s'|s,a) V(s')\\right\\}  -&gt; {3} \\\\\n& Q(s,a) = R(s,a) + \\gamma \\sum P(s'|s,a) \\max_{a'} Q(s',a')  -&gt; {4}\n\\end{aligned}\n\\]\nIn these equations:\n\nV(s) is the value of state s under a policy.\nQ(s, a) is the value of taking action a in state s under a policy.\nR(s, a) is the immediate reward received after transitioning from state s with action a.\nP(s'|s, a) is the transition probability of landing in state s' when action a is taken in state s.\nγ is the discount factor which determines the present value of future rewards.\n\nThe Bellman equation essentially states that the value of a state (or state-action pair) is equal to the immediate reward plus the discounted expected value of the next state (or state-action pair). This recursive nature of the Bellman equation allows us to solve MDPs using dynamic programming methods."
-  },
-  {
-    "objectID": "project_posts/Maths thing/index.html#value-iteration",
-    "href": "project_posts/Maths thing/index.html#value-iteration",
-    "title": "QuadCopter Reinforcement learning Bot",
-    "section": "Value Iteration",
-    "text": "Value Iteration\n\nValue function become useful when the Markov property holds true because we assume value to state regardless of how we came to that particular state\nIf Markov property is not met how we arrived at the state will influence what will happen in future\nIn the Value iteration approach we wont need the past states\n\nValue iteration is a powerful approach that eliminates the need for past states in the computation of the value function. This method is widely employed in reinforcement learning and dynamic programming."
-  },
-  {
-    "objectID": "project_posts/Maths thing/index.html#theorem",
-    "href": "project_posts/Maths thing/index.html#theorem",
-    "title": "QuadCopter Reinforcement learning Bot",
-    "section": "Theorem",
-    "text": "Theorem\nLet \\(v^0 \\in V\\) and \\(\\varepsilon &gt; 0\\) be given. We derive the sequence \\(\\{v^n\\}\\) from \\(v^{n+1} = LV^n\\), where \\(LV = \\max_{\\pi}\\{r + \\gamma P^{\\pi}v\\}\\). Here, \\(r\\) represents the reward, \\(\\gamma\\) is the discount factor, and \\(P^{\\pi}\\) is the transition probability under policy \\(\\pi\\).\n\nTheorem Statement\nThen:\n\n\\(v^n\\) converges in the norm to \\(v^*\\).\nFor all finite \\(N\\) at which the conditions \\[\n\\|v^{n+1} - v^n\\| &lt; \\varepsilon \\times \\frac{(1-r)}{2r}\n\\] hold for all \\(n &gt; N\\).\nThe policy \\(\\pi\\) is defined by \\[\n\\pi(s) = \\underset{a}{\\operatorname{argmax}}\\{E(r \\mid s, a) + \\gamma \\sum_{s'} p(s' \\mid s, a) \\cdot v^{n+1}(s')\\}\n\\].\n\\(\\|v^{n+1} - v^*\\| \\leq \\varepsilon / 2\\) when the condition \\(\\|v_\\pi - v^*\\| = \\varepsilon\\) is met, where \\(v_\\pi\\) is \\(\\varepsilon\\)-optimal.\n\nThe sequence \\(\\{v^n\\}\\) is derived through the recursive equation \\[\nv^{n+1} = LV^n\n\\], where \\(L\\) represents the Bellman operator. The operator \\(L\\) is defined as \\[\nLV = \\max_{\\pi}\\{r + \\gamma P^{\\pi}v\\}\n\\], capturing the maximum expected sum of rewards under any policy.\nIn the theorem, \\(\\varepsilon\\) is used to set a threshold for the difference between consecutive values in the sequence \\(\\{v^n\\}\\) during the iterative process of value iteration. Specifically, condition (b) states that for all finite \\(N\\), if \\[\n\\|v^{n+1} - v^n\\| &lt; \\varepsilon \\times \\frac{(1-\\gamma)}{2\\gamma}\n\\] holds for all \\(n &gt; N\\), then the sequence is considered to have converged.\nThe theorem asserts the convergence of the sequence \\(v^n\\) to the optimal value function \\(v^*\\) under the conditions outlined in points (a) through (d). The proof involves analyzing the difference between consecutive values in the sequence and establishing convergence criteria."
-  },
-  {
-    "objectID": "project_posts/Maths thing/index.html#introduction-2",
-    "href": "project_posts/Maths thing/index.html#introduction-2",
-    "title": "QuadCopter Reinforcement learning Bot",
-    "section": "Introduction",
-    "text": "Introduction"
-  },
-  {
-    "objectID": "project_posts/Maths thing/index.html#formulation-1",
-    "href": "project_posts/Maths thing/index.html#formulation-1",
-    "title": "QuadCopter Reinforcement learning Bot",
-    "section": "Formulation",
-    "text": "Formulation"
-  },
-  {
-    "objectID": "project_posts/Maths thing/index.html#simple-overview",
-    "href": "project_posts/Maths thing/index.html#simple-overview",
-    "title": "QuadCopter Reinforcement learning Bot",
-    "section": "Simple overview",
-    "text": "Simple overview"
+    "text": "This is the first post of my blog. Welcome!\nHello guys welcome to my portfolio website. Looking forward to have a great time with you all.\n\n\n\n Back to top"
   },
   {
     "objectID": "posts/NLP/NLPIntro.html",
@@ -322,11 +98,207 @@
     "text": "Algorithms aspect\n\nTokens: It is the pieces of data such as words, characters, subwords etc:-\nTokenization:\n\nIt is the initial step in modell the content of the text.\nIt is the process of breaking a stream of text up into words, phrases, symbols, or other meaningful elements called tokens.\n\n\n\nTokenization and its types\nThere are many types of tokenization such as\n\nWord tokenization\nSentence tokenization\nSubword tokenization\nCharacter tokenization\n\n\nWord Level Tokenization\nIts the most commonly used tokenization method. It splits the words based on the space or any specific delimeter\n\n# using nltk library\n\nimport nltk\nfrom nltk.tokenize import word_tokenize\ntext = \"I am learning NLP\"\nword_tokenize(text)\n\n# using python inbuilt split method\n\nvocabulary = []\ntext = \"I am learning NLP\"\nvocabulary = text.split(\" \")\nprint(vocabulary)\n\n\n\n\n\n\nWhat are some issues with word level tokenization?\n\n\n\n\n\nHere we will discuss few issues with word level tokenization\n\nContractions\nOOV (Out of Vocabulary) words\nPunctuations\n\nTry to find more issues if you can!! (note: there are actually many) .. That is one of the reason why we dont just split with space and call it a day.\n\n\n\n\n\nSentence Level Tokenization\nSentence tokenization, also known as sentence segmentation, is the process of dividing text into sentences. This is typically done using punctuation and capitalization cues.\n# using nltk library\n\nimport nltk\nfrom nltk.tokenize import sent_tokenize\ntext = \"I am learning NLP. It is very interesting.\"\nsent_tokenize(text)\n\n\nSubword Level Tokenization\nSubword tokenization splits words into smaller units (or subwords). This can help to handle the problem of out-of-vocabulary words.\n# using BPEmb library for Byte Pair Encoding\n\nfrom bpemb import BPEmb\nbpemb_en = BPEmb(lang=\"en\", dim=50)\ntext = \"I am learning NLP\"\nbpemb_en.encode(text)\n\n\nCharacter Level Tokenization\nCharacter tokenization splits text into characters. This can be useful for languages where words are not separated by spaces, like Chinese and Japanese.\ntext = \"I am learning NLP\"\nlist(text)\n\n\n\n\n\n\nIssues with Other Types of Tokenization\n\n\n\n\n\n\nSentence Tokenization: Sentence tokenization can be tricky when dealing with abbreviations, email addresses, websites, etc. where periods are used but do not indicate the end of a sentence.\nSubword Tokenization: While subword tokenization can help with out-of-vocabulary words, it can lead to an explosion in the number of tokens for very large texts.\nCharacter Tokenization: Character tokenization can lead to very long sequences for longer texts and may lose the meaning carried by specific words or phrases.\n\nCan you find more issues with other types of tokenization? (note: there are actually many)"
   },
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
+    "objectID": "about.html#experience",
+    "href": "about.html#experience",
+    "title": "About Me",
+    "section": "Experience",
+    "text": "Experience\n\nGoogle Developer Students Club\n\nMay 2023 - Present\n\nGDSC Amrita | Coimbatore, TN\n\nActively participated in GDSC (AI/ML)\nOrganized and facilitated an interactive Android workshop\nConducted a seminar on AI/ML deployment\n\n\n\n\nAnokha (Web dev)\n\nJune 2022 - June 2022\n\nAnokha Amrita | Coimbatore, TN\nDeveloped website for college department AIE\nShowcased participant’s code outputs and reports from training sessions and hackathons\nLive conversion of MD files into a neat HTML, Hosted in Github Pages\n\n\n\n\nAssociation of Students of Computer Science for Information Interchange (ASCII)\n\nJune 2022 - June 2023\n\nASCII Amrita | Coimbatore, TN\n\nPart of the Organization committee for a workshop on AI/ML basics using TensorFlow and PyTorch.\nActively maintaining of ACII github.\n\n\n\n\nIntel IOT/AI Club\n\nJune 2023 - Present\n\nIntel IOT Club | Coimbatore, TN\n\nActive team member of AI/ML club wing of the Intel IOT/AI club\nCreated basic ML model based on classification and image processing using Intel one API"
+  },
+  {
+    "objectID": "about.html#tech-stack-and-workflow",
+    "href": "about.html#tech-stack-and-workflow",
+    "title": "About Me",
+    "section": "Tech Stack and Workflow",
+    "text": "Tech Stack and Workflow\n\nBackend Development: Django, Flask, RestAPI\nMachine Learning: TensorFlow, PyTorch, Scikit-learn\nComputer Vision: OpenCV, Roboflow, Dlib\nCloud Platforms: Microsoft Azure\nContainerization: Docker\nProgramming Languages: Python, Scala, Java (basic knowledge), MATLAB\nCompetitive Programming: Proficient in Python (Leetcode, Codechef)"
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
     "section": "",
-    "text": "This is the first post of my blog. Welcome!\nHello guys welcome to my portfolio website. Looking forward to have a great time with you all.\n\n\n\n Back to top"
+    "text": "Hello! If you wish to contact me, please use the following methods:"
+  },
+  {
+    "objectID": "contact.html#email",
+    "href": "contact.html#email",
+    "title": "Contact",
+    "section": "Email",
+    "text": "Email\nYou can reach me at: dsiddharth25@gmail.com"
+  },
+  {
+    "objectID": "contact.html#phone",
+    "href": "contact.html#phone",
+    "title": "Contact",
+    "section": "Phone",
+    "text": "Phone\nYou can call me at: +91 73311-37182"
+  },
+  {
+    "objectID": "contact.html#social-media",
+    "href": "contact.html#social-media",
+    "title": "Contact",
+    "section": "Social Media",
+    "text": "Social Media\n\nLinkedIn\nWhatsapp\n\nNote: Please allow me 24-48 hours to respond to your messages. Thank you for understanding!"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "QuadCopter Reinforcement learning Bot\n\n\n\n\n\n\n\n\n\n\n\nJan 5, 2024\n\n\nSiddharth D\n\n\n12 min\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Siddharth D",
+    "section": "",
+    "text": "My Personal Website\n\n\n\n\nWelcome to My Personal Website!\n\n\n\n\nAbout Me\n\n\nProjects\n\n\nBlogs\n\n\nContact\n\n\n\n\n\n\n\nAbout This Site\n\n\nThis is my personal website where you can learn more about me, see my projects, read my blogs, and get in touch with me.\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "blogs.html",
+    "href": "blogs.html",
+    "title": "Blogs",
+    "section": "",
+    "text": "Introduction to NLP\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n5 min\n\n\n\n\n\n\n\n\n\n\n\n\nLanguage Modelling and Other Concepts\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n6 min\n\n\n\n\n\n\n\n\n\n\n\n\nTopic 1 -&gt; Array\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\nTopic 1 -&gt; Recursion\n\n\n\n\n\n\n\n\n\n\n\nJan 6, 2024\n\n\nSiddharth D\n\n\n4 min\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\n\n\nJan 1, 2024\n\n\nSiddharth D\n\n\n1 min\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+  },
+  {
+    "objectID": "project_posts/RL_proj/index.html",
+    "href": "project_posts/RL_proj/index.html",
+    "title": "QuadCopter Reinforcement learning Bot",
+    "section": "",
+    "text": "The goal of this project is to compare three approaches to control a Quadcopter in the task of navigating to multiple waypoints without crashing\n\nHuman Agents: A human directly controlls the drone and drives it to the destination using keyboard input\nPID: The Quadcopter is navigated autonomously using the feedback loop mechanism of the PID controller\nReinforcement Learning Agent: This being the crux of the project using 2 reinforcement learning algorithms DQN (Q learning and SAC). Detailed explanation about Q learning is what is being concentrated more on the project.\n\nQuadcoptes are generally controlled either by humans or by use of algorithms derived by control theory. PID controllers are often used to control the motor power of each propeller and by sensing information the balace is maintainted using feedback loop mechanism\nUsing reinforcement learning learning will be the next step in the evolution of autonomous vehicles. Given the state of the vehicle and the environment, the agent will learn to take actions that will maximize the reward. The agent will learn to navigate to the destination without crashing."
+  },
+  {
+    "objectID": "project_posts/RL_proj/index.html#physics",
+    "href": "project_posts/RL_proj/index.html#physics",
+    "title": "QuadCopter Reinforcement learning Bot",
+    "section": "Physics",
+    "text": "Physics\nAt each step of the simulation, the agents have to provide values between -0.003 and 0.083 (values chosen arbitrarily) for the thrust of their left and right rotors. The thrust is then converted to a force vector that is applied to the drone. The drone is then moved according to the force vector and the physics of the environment. The physics of the environment is as follows:\nStep 1: Calculate acceleration\n\\[\n\\begin{aligned}\n& \\ddot{x}=\\frac{-\\left(T_L+T_\\gamma\\right) \\sin (\\theta)}{m} \\\\\n& \\ddot{y}=\\frac{-\\left(T_L+T_\\gamma\\right) \\cos (\\theta)}{m} \\\\\n& \\ddot{\\theta}=\\frac{\\left(T_r-T_L\\right) \\cdot L}{m}\n\\end{aligned}\n\\]\nEquations for acceleration \\(( \\ddot{x}, \\ddot{y}, \\ddot{\\theta} )\\): \\(\\ddot{x} = \\frac{T_L + T_R}{m} \\cos(\\theta)\\) \\(\\ddot{y} = \\frac{T_L + T_R}{m} \\sin(\\theta)\\) \\(\\ddot{\\theta} = \\frac{l}{I} (T_R - T_L)\\)\nDefinitions of variables:\n\n\\(\\ddot{x}, \\ddot{y}\\): acceleration on the x and y axes.\n\\((\\ddot{\\theta})\\): angular acceleration.\n\\((T_L, T_R)\\): input thrust for the left and right propellers.\n\\((\\theta)\\): angle of the drone with respect to the z-axis.\n\\((m)\\): mass of the drone.\n\\((g)\\): acceleration due to gravity.\n\\((l):\\) distance between the center of mass and the propeller\n\nStep 2: Derive the speed and the position.\n\\[\n\\begin{aligned}\n& \\dot{x}(t-1)=\\ddot{x} \\cdot d t+\\dot{x}(t) \\\\\n& x(t+1)=\\dot{x} \\cdot d t+x(t\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "project_posts/RL_proj/index.html#scoring",
+    "href": "project_posts/RL_proj/index.html#scoring",
+    "title": "QuadCopter Reinforcement learning Bot",
+    "section": "Scoring",
+    "text": "Scoring\nThe simulation runs at 60fps for 100 seconds (can be modified). The agent should reach the destination without crashing. If the agents goes out of the field of the simulation, it is considered as a crash. The agent respawns with a penalty wait time of 3 seconds per crash (this is a bad thing in competitive environments)."
+  },
+  {
+    "objectID": "project_posts/RL_proj/index.html#human-agent",
+    "href": "project_posts/RL_proj/index.html#human-agent",
+    "title": "QuadCopter Reinforcement learning Bot",
+    "section": "Human Agent",
+    "text": "Human Agent\nThe human agent is simulated in a near Earth environment with the thrust being constant and the human controls by using his keyboard.\nThe values are:\n\nThrust initialization: \\(T_L = 0.04 \\quad \\text{and} \\quad T_R = 0.04\\)\nUP (incrementing \\(T_L\\) and \\(T_R\\) by 0.04): \\(T_L = T_L + 0.04 \\quad \\text{and} \\quad T_R = T_R + 0.04\\)\nDOWN (decrementing \\(T_L\\) and \\(T_R\\) by 0.04): \\(T_L = T_L - 0.04 \\quad \\text{and} \\quad T_R = T_R - 0.04\\)\nLEFT: \\(T_L = T_L - 0.003 \\quad \\text{and} \\quad T_R = T_R + 0.04\\)\nRIGHT: \\(T_L = T_L + 0.004 \\quad \\text{and} \\quad T_R = T_R - 0.03\\)"
+  },
+  {
+    "objectID": "project_posts/RL_proj/index.html#pid-agent",
+    "href": "project_posts/RL_proj/index.html#pid-agent",
+    "title": "QuadCopter Reinforcement learning Bot",
+    "section": "PID Agent",
+    "text": "PID Agent\nFor the PID agent we assume the error for the position from the target it has to reach and the location of the drone and move it vertically or rotate it at certain angle to move at different position\n\nThe vertical distance from the drone to target is sent to PID which outputs a optimal vertical speed\nThe horizontal distance is used to modify the thrust of each rotor to move it in the left or right direction same as the HUMAN Agent the rotation logic remains same\n\n—- PUT IMAGE HERE ——-"
+  },
+  {
+    "objectID": "project_posts/RL_proj/index.html#reinforcement-learning-agent",
+    "href": "project_posts/RL_proj/index.html#reinforcement-learning-agent",
+    "title": "QuadCopter Reinforcement learning Bot",
+    "section": "Reinforcement learning Agent",
+    "text": "Reinforcement learning Agent\nThe environment in which the drone trains is called as DRONEENV and we use openAI gym for creating the agent. The observations are made easy for the agent to understand. For observation the agents is given the following information (current position and the speed to move is determined by the following inputs)\n\nangle_to_up : angle between the drone and the up vector (to observe gravity)\nvelocity : velocity of the drone\nangle_velocity : angle of the velocity vector\ndistance_to_target : distance to the target\nangle_to_target : angle between the drone and the target\nangle_target_and_velocity : angle between the to_target vector and the velocity vector\ndistance_to_target : distance to the target\n\nBefore going deeper into this we must know some basic concepts of Reinforcement Learning\n\nIntroduction\nReinforcement learning is an area of Machine Learning. It is about taking suitable action to maximize reward in a particular situation. It is employed by various software and machines to find the best possible behavior or path it should take in a specific situation. Reinforcement learning differs from supervised learning in a way that in supervised learning the training data has the answer key with it so the model is trained with the correct answer itself whereas in reinforcement learning, there is no answer but the reinforcement agent decides what to do to perform the given task. In the absence of a training dataset, it is bound to learn from its experience.\nReinforcement Learning (RL) is the science of decision making. It is about learning the optimal behavior in an environment to obtain maximum reward. In RL, the data is accumulated from machine learning systems that use a trial-and-error method. Data is not part of the input that we would find in supervised or unsupervised machine learning.\nWe have 4 main components when it comes to reinforcement learning.\n\nReward\n\nThe rewards are scalar quantity which is a single number which can range from [−N,N] and sometimes it can have multiple outcomes so choosing them is the job of the agent\nThe reward should be outside the control of the agent which means that the reward should come from the environment in which the agent is training this will make sure that the agent wont be able to simply add more reward\nThe reward depends on the domain\nHaving singular scalar value is good as its easy to estimate the model performance\nReward should be bounded that is from -N to N\nRewards must be given for each epoch or every single iteration\n\n\n\nPolicy\nA policy is a rule that determines how an agent chooses an action in each state. It can be deterministic or stochastic, depending on whether the agent always selects the same action or randomly picks an action according to some probability distribution. Policy is a conditional probability which is given by \\(\\pi \\left(  a| s\\right) =P( A_{t}= a| s_{t}= s)\\) -&gt; The following equation stands for the probablity that the agent will take action ‘A’ given that at time t the state is ‘S’\n\n\nReturn\nReturn is a measure of the total reward that an agent can expect to receive in the future, starting from a given state or state-action pair. It is often used as a target for learning the value functions that estimate how good a state or an action is. There are different ways to define return, depending on how the rewards are discounted or summed up. One common way is to use the discounted return, which is given by the formula:\n\\[\nG_t = R_{t+1} + \\gamma R_{t+2} + \\gamma^2 R_{t+3} + \\dots = \\sum_{k=0}^\\infty \\gamma^k R_{t+k+1}\n\\]\n\nwhere \\(G_t\\) is the return at time step \\(t\\), \\(R_{t+k+1}\\) is the reward received at time step \\(t+k+1\\), and \\(\\gamma\\) is a discount factor between 0 and 1 that determines how much the agent values the future rewards.\nAgent which uses only the first term is called as near-sighted agent.\n\n\n\nValue Function\nThe value function \\(V^\\pi(s)\\) is the expected value of the return \\(G_t\\) when the agent follows the policy \\(\\pi\\) and starts from the state \\(s\\).\n\\[\nV^\\pi(s) = \\mathbb{E}_\\pi \\left\\{ G_t \\mid S_t = s \\right\\}\n\\]\nThe expectation \\(\\mathbb{E}_\\pi\\) is taken over the distribution of the possible trajectories that the agent can experience under the policy \\(\\pi\\). The value function represents how good or desirable a state is for the agent, and it can be used to evaluate or improve the policy."
+  },
+  {
+    "objectID": "project_posts/RL_proj/index.html#p",
+    "href": "project_posts/RL_proj/index.html#p",
+    "title": "QuadCopter Reinforcement learning Bot",
+    "section": "P",
+    "text": "P"
+  },
+  {
+    "objectID": "project_posts/RL_proj/index.html#p-i",
+    "href": "project_posts/RL_proj/index.html#p-i",
+    "title": "QuadCopter Reinforcement learning Bot",
+    "section": "P-I",
+    "text": "P-I"
+  },
+  {
+    "objectID": "project_posts/RL_proj/index.html#p-d",
+    "href": "project_posts/RL_proj/index.html#p-d",
+    "title": "QuadCopter Reinforcement learning Bot",
+    "section": "P-D",
+    "text": "P-D"
+  },
+  {
+    "objectID": "project_posts/RL_proj/index.html#p-i-d",
+    "href": "project_posts/RL_proj/index.html#p-i-d",
+    "title": "QuadCopter Reinforcement learning Bot",
+    "section": "P-I-D",
+    "text": "P-I-D"
+  },
+  {
+    "objectID": "project_posts/RL_proj/index.html#formulation",
+    "href": "project_posts/RL_proj/index.html#formulation",
+    "title": "QuadCopter Reinforcement learning Bot",
+    "section": "Formulation",
+    "text": "Formulation\nIn our research, we make certain assumptions to simplify the calculations and make them more static. The primary assumption is given by the following equations:\n\\[\n\\begin{aligned}\n& P(S_{t+1}=S^{\\prime}, R_{t+1}=v \\mid S_t=S, A_t=a) -&gt; {1} \\\\\n& P(S^{\\prime}, R \\mid S, a) -&gt; {2}\n\\end{aligned}\n\\]\nHere, \\(P(S^{\\prime}, R \\mid S, a)\\) represents the stationary assumption.\nTo obtain the output, we need:\n\n\\(S\\), which represents the set of states, also known as the state space.\n\\(A\\), which represents the set of actions.\n\\(\\gamma\\), which is used when we are considering discounted returns.\n\nInstead of using a single joint distribution given by the equation, we can break down the equation into two parts:\n\nTransition probabilities \\(P\\left(s^{\\prime} \\mid s, A\\right)\\)\nExpected reward \\(E\\left(r \\mid s, a, s^{\\prime}\\right)\\)\n\nWe write it down to break down the joint distribution. Here, only \\(E\\left(r \\mid s, a, s^{\\prime}\\right)\\) is enough as we are optimizing rewards.\nThe formulation of Markov Decision Process (MDP) is given by the Bellman equation:\n\\[\nS, A, P\\left(s^{\\prime} \\mid S, A\\right), E\\left(r \\mid s, a, S^{\\prime}\\right)\n\\]\n\nThe Bellman Equation\nThe Bellman equation is central to the theory of MDPs. It provides a recursive formulation for the value function of a policy in an MDP. The value function represents the expected return (accumulated rewards) for an agent starting in a particular state and following a specific policy thereafter.\nThe Bellman equation for MDPs can be expressed in two forms: one for the state-value function V(s) and another for the action-value function Q(s, a):\n\\[\n\\begin{aligned}\n& V(s) = \\max_a \\left\\{R(s,a) + \\gamma \\sum P(s'|s,a) V(s')\\right\\}  -&gt; {3} \\\\\n& Q(s,a) = R(s,a) + \\gamma \\sum P(s'|s,a) \\max_{a'} Q(s',a')  -&gt; {4}\n\\end{aligned}\n\\]\nIn these equations:\n\nV(s) is the value of state s under a policy.\nQ(s, a) is the value of taking action a in state s under a policy.\nR(s, a) is the immediate reward received after transitioning from state s with action a.\nP(s'|s, a) is the transition probability of landing in state s' when action a is taken in state s.\nγ is the discount factor which determines the present value of future rewards.\n\nThe Bellman equation essentially states that the value of a state (or state-action pair) is equal to the immediate reward plus the discounted expected value of the next state (or state-action pair). This recursive nature of the Bellman equation allows us to solve MDPs using dynamic programming methods."
+  },
+  {
+    "objectID": "project_posts/RL_proj/index.html#value-iteration",
+    "href": "project_posts/RL_proj/index.html#value-iteration",
+    "title": "QuadCopter Reinforcement learning Bot",
+    "section": "Value Iteration",
+    "text": "Value Iteration\n\nValue function become useful when the Markov property holds true because we assume value to state regardless of how we came to that particular state\nIf Markov property is not met how we arrived at the state will influence what will happen in future\nIn the Value iteration approach we wont need the past states\n\nValue iteration is a powerful approach that eliminates the need for past states in the computation of the value function. This method is widely employed in reinforcement learning and dynamic programming."
+  },
+  {
+    "objectID": "project_posts/RL_proj/index.html#theorem",
+    "href": "project_posts/RL_proj/index.html#theorem",
+    "title": "QuadCopter Reinforcement learning Bot",
+    "section": "Theorem",
+    "text": "Theorem\nLet \\(v^0 \\in V\\) and \\(\\varepsilon &gt; 0\\) be given. We derive the sequence \\(\\{v^n\\}\\) from \\(v^{n+1} = LV^n\\), where \\(LV = \\max_{\\pi}\\{r + \\gamma P^{\\pi}v\\}\\). Here, \\(r\\) represents the reward, \\(\\gamma\\) is the discount factor, and \\(P^{\\pi}\\) is the transition probability under policy \\(\\pi\\).\n\nTheorem Statement\nThen:\n\n\\(v^n\\) converges in the norm to \\(v^*\\).\nFor all finite \\(N\\) at which the conditions \\[\n\\|v^{n+1} - v^n\\| &lt; \\varepsilon \\times \\frac{(1-r)}{2r}\n\\] hold for all \\(n &gt; N\\).\nThe policy \\(\\pi\\) is defined by \\[\n\\pi(s) = \\underset{a}{\\operatorname{argmax}}\\{E(r \\mid s, a) + \\gamma \\sum_{s'} p(s' \\mid s, a) \\cdot v^{n+1}(s')\\}\n\\].\n\\(\\|v^{n+1} - v^*\\| \\leq \\varepsilon / 2\\) when the condition \\(\\|v_\\pi - v^*\\| = \\varepsilon\\) is met, where \\(v_\\pi\\) is \\(\\varepsilon\\)-optimal.\n\nThe sequence \\(\\{v^n\\}\\) is derived through the recursive equation \\[\nv^{n+1} = LV^n\n\\], where \\(L\\) represents the Bellman operator. The operator \\(L\\) is defined as \\[\nLV = \\max_{\\pi}\\{r + \\gamma P^{\\pi}v\\}\n\\], capturing the maximum expected sum of rewards under any policy.\nIn the theorem, \\(\\varepsilon\\) is used to set a threshold for the difference between consecutive values in the sequence \\(\\{v^n\\}\\) during the iterative process of value iteration. Specifically, condition (b) states that for all finite \\(N\\), if \\[\n\\|v^{n+1} - v^n\\| &lt; \\varepsilon \\times \\frac{(1-\\gamma)}{2\\gamma}\n\\] holds for all \\(n &gt; N\\), then the sequence is considered to have converged.\nThe theorem asserts the convergence of the sequence \\(v^n\\) to the optimal value function \\(v^*\\) under the conditions outlined in points (a) through (d). The proof involves analyzing the difference between consecutive values in the sequence and establishing convergence criteria."
+  },
+  {
+    "objectID": "project_posts/RL_proj/index.html#introduction-2",
+    "href": "project_posts/RL_proj/index.html#introduction-2",
+    "title": "QuadCopter Reinforcement learning Bot",
+    "section": "Introduction",
+    "text": "Introduction"
+  },
+  {
+    "objectID": "project_posts/RL_proj/index.html#formulation-1",
+    "href": "project_posts/RL_proj/index.html#formulation-1",
+    "title": "QuadCopter Reinforcement learning Bot",
+    "section": "Formulation",
+    "text": "Formulation"
+  },
+  {
+    "objectID": "project_posts/RL_proj/index.html#simple-overview",
+    "href": "project_posts/RL_proj/index.html#simple-overview",
+    "title": "QuadCopter Reinforcement learning Bot",
+    "section": "Simple overview",
+    "text": "Simple overview"
+  },
+  {
+    "objectID": "posts/NLP/LanguageModelling.html",
+    "href": "posts/NLP/LanguageModelling.html",
+    "title": "Language Modelling and Other Concepts",
+    "section": "",
+    "text": "In this article, we will discuss the concept of language modelling and its importance in the field of Natural Language Processing. We will also discuss some of the other important concepts of NLP"
+  },
+  {
+    "objectID": "posts/NLP/LanguageModelling.html#unigram-model",
+    "href": "posts/NLP/LanguageModelling.html#unigram-model",
+    "title": "Language Modelling and Other Concepts",
+    "section": "Unigram Model",
+    "text": "Unigram Model\n\nIn the unigram model, the probability of a word depends only on the word itself and not on any other words.\nThe probability of a word is given by the formula:\n\\[ P(w) = \\frac{Count(w)}{N} \\]\nWhere,\n\n\\(Count(w)\\) is the number of times the word \\(w\\) has appeared in the corpus\n\\(N\\) is the total number of words in the corpus\n\nThe unigram model is the simplest language model and is used as a baseline for comparison with other language models.\n\n# Example of Unigram Model\ntext = \"What are your aspirations in life\"\n\n# Tokenize the text\ntokens = text.split()\n\n# Count the frequency of each word\nword_freq = {}\nfor word in tokens:\n    if word in word_freq:\n        word_freq[word] += 1\n    else:\n        word_freq[word] = 1\n\n# Calculate the probability of each word\nprob_word = {}\nfor word in word_freq:\n    prob_word[word] = word_freq[word] / len(tokens)\n\n# Print the probability of each word\nfor word in prob_word:\n    print(word, prob_word[word])"
+  },
+  {
+    "objectID": "posts/NLP/LanguageModelling.html#bigram-model",
+    "href": "posts/NLP/LanguageModelling.html#bigram-model",
+    "title": "Language Modelling and Other Concepts",
+    "section": "Bigram Model",
+    "text": "Bigram Model\n\nIn the bigram model, the probability of a word depends only on the previous word.\nThe probability of a word is given by the formula:\n\\[ P(w_i|w_{i-1}) = \\frac{Count(w_{i-1},w_i)}{Count(w_{i-1})} \\]\nWhere,\n\n\\(Count(w_{i-1},w_i)\\) is the number of times the word \\(w_i\\) has appeared after the word \\(w_{i-1}\\)\n\\(Count(w_{i-1})\\) is the number of times the word \\(w_{i-1}\\) has appeared in the corpus\n\n\\(P(w_i|w_{i-1})\\) is the probability of the word \\(w_i\\) given the word \\(w_{i-1}\\)\n\n# Example of Bigram Model\ntext = \"What are your aspirations in life\"\n\n# Tokenize the text\ntokens = text.split()\n\n# Create bigrams\nbigrams = [(tokens[i], tokens[i+1]) for i in range(len(tokens)-1)]\n\n# Count the frequency of each bigram\nbigram_freq = {}\n\nfor bigram in bigrams:\n    if bigram in bigram_freq:\n        bigram_freq[bigram] += 1\n    else:\n        bigram_freq[bigram] = 1\n\n# Calculate the probability of each bigram\nprob_bigram = {}\nfor bigram in bigram_freq:\n    prob_bigram[bigram] = bigram_freq[bigram] / tokens.count(bigram[0])\n\n# Print the probability of each bigram\nfor bigram in prob_bigram:\n    print(bigram, prob_bigram[bigram])"
+  },
+  {
+    "objectID": "posts/NLP/LanguageModelling.html#trigram-model",
+    "href": "posts/NLP/LanguageModelling.html#trigram-model",
+    "title": "Language Modelling and Other Concepts",
+    "section": "Trigram Model",
+    "text": "Trigram Model\n\nIn the trigram model, the probability of a word depends on the previous two words.\nThe probability of a word is given by the formula:\n\\[ P(w_i|w_{i-2},w_{i-1}) = \\frac{Count(w_{i-2},w_{i-1},w_i)}{Count(w_{i-2},w_{i-1})} \\]\nWhere,\n\n\\(Count(w_{i-2},w_{i-1},w_i)\\) is the number of times the word \\(w_i\\) has appeared after the words \\(w_{i-2}\\) and \\(w_{i-1}\\)\n\\(Count(w_{i-2},w_{i-1})\\) is the number of times the words \\(w_{i-2}\\) and \\(w_{i-1}\\) have appeared in the corpus\n\n\\(P(w_i|w_{i-2},w_{i-1})\\) is the probability of the word \\(w_i\\) given the words \\(w_{i-2}\\) and \\(w_{i-1}\\)\n\n# Example of Trigram Model\ntext = \"What are your aspirations in life\"\n\n# Tokenize the text\ntokens = text.split()\n\n# Create trigrams\ntrigrams = [(tokens[i], tokens[i+1], tokens[i+2]) for i in range(len(tokens)-2)]\n\n# Count the frequency of each trigram\ntrigram_freq = {}\n\nfor trigram in trigrams:\n    if trigram in trigram_freq:\n        trigram_freq[trigram] += 1\n    else:\n        trigram_freq[trigram] = 1\n\n# Calculate the probability of each trigram\nprob_trigram = {}\nfor trigram in trigram_freq:\n    prob_trigram[trigram] = trigram_freq[trigram] / bigrams.count((trigram[0], trigram[1]))\n\n# Print the probability of each trigram\nfor trigram in prob_trigram:\n    print(trigram, prob_trigram[trigram])"
   },
   {
     "objectID": "posts/DSA/Array DSA/index.html",
