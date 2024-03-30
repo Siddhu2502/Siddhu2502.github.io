@@ -1,9 +1,9 @@
 /*-- scss:defaults --*/
 // Base document colors
-$body-bg: #181818;
-$body-color: white;
-$link-color: #75AADB;
-$navbar-bg: #0e0b0b;
+$body-bg: #222222; // Lighten the background color a bit
+$body-color: #F5F5F5; // Use a lighter shade of white for the body text
+$link-color: #54c0da; // Use a bright color like gold for links to stand out in dark mode
+$navbar-bg: #1a1a1a; // Lighten the navbar background color a bit
 
 // Code blocks
-$code-block-bg-alpha: -.8;
+$code-block-bg-alpha: -.6; // Increase the alpha value to lighten the code block background
