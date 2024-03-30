@@ -8,6 +8,8 @@
   {
     "listing": "/blogs.html",
     "items": [
+      "/posts/CLOUDCOMPUTING/basiccloudqa.html",
+      "/posts/DEEP LEARNING/basics.html",
       "/posts/NLP/NLPIntro.html",
       "/posts/NLP/LanguageModelling.html",
       "/posts/DSA/Array DSA/index.html",
