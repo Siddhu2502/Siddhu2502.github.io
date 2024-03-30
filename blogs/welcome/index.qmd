@@ -1,0 +1,12 @@
+---
+title: "Welcome To My Blog"
+author: "Siddharth D"
+date: "2024-01-01"
+categories: [myself]
+image: thumbnail.jpg
+toc: true
+---
+
+This is the first post of my blog. Welcome!
+
+Hello guys welcome to my portfolio website. Looking forward to have a great time with you all. 

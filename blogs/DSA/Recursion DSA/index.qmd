@@ -1,0 +1,98 @@
+---
+title: "Topic 1 -> Recursion"
+author: "Siddharth D"
+date: "2024-01-06"
+categories: [DSA]
+image: thumbnail.png
+toc: true
+code-block-bg: true
+code-annotations: true
+code-fold: true
+---
+
+# Introduction
+One way to describe repetition within a computer program is the use of loops, such as Python’s while-loop and for-loop, but an entire way of approach is using Recrusions which brings us to today's topic on learning stuff daily for 100 days
+
+- **Test for base cases.** We begin by testing for a set of base cases (there should be at least one). These base cases should be defined so that every possible
+chain of recursive calls will eventually reach a base case, and the handling ofeach base case should not use recursion.
+- **Recur**. If not a base case, we perform one or more recursive calls. This recursive step may involve a test that decides which of several possible recursive
+calls to make. We should define each possible recursive call so that it makes progress towards a base case.
+
+- **Important Point** here is that if this base case is not met then we fall into a infinite recursion and kaboom 💥
+
+```python
+def fib(n):
+    if n <= 1:         # -----> this part (remember this)
+        return 0
+    # ... rest of the function here 
+```
+This function has this ```fib(n)``` so that "n" is what that has to be satisfied ... by now you would have got the grip of the step 1 of recursion
+
+the next step is to lay out your logic and write the rest of the function 
+
+```python
+def fib(n):
+    if n <= 1:
+        return 0
+    else:
+        return fib(n-1) + fib(n-2)  # --> go back 2 steps and sum then up
+```
+
+Certainly! Let's add examples for binary recursion and multiple recursion:
+
+
+# Types of Recursion
+
+## Linear Recursion
+If a recursive function is designed so that each invocation of the body makes at most one new recursive call, this is known as linear recursion.
+
+Example:
+
+```python
+def reversearr(array, start, stop):
+    if start < stop-1: # -----> base case baked right into the recursion itself
+        array[start], array[stop-1] = array[stop-1], array[start]
+        reversearr(array, start+1, stop-1)
+    return array
+```
+
+## Binary Recursion
+In binary recursion, each recursive call results in two new recursive calls. This often occurs in problems that can be divided into two sub-problems.
+
+Example (Binary Recursion):
+
+```python
+def binary_sum(arr, start, end):
+    if start == end:  # base case when there's only one element
+        return arr[start]
+    else:
+        mid = (start + end) // 2
+        left_sum = binary_sum(arr, start, mid)
+        right_sum = binary_sum(arr, mid+1, end)
+        return left_sum + right_sum
+```
+
+Explanation: This function recursively divides the array into two halves and calculates the sum of each half. The base case is when the array has only one element, and the sum is returned. The overall sum is then calculated by adding the sums of the left and right halves.
+
+## Multiple Recursion
+Multiple recursion involves a recursive function making more than two calls. It can be a bit complex but is a powerful technique for solving certain types of problems.
+
+Example (Multiple Recursion):
+
+```python
+def multiply_elements(arr, start, end):
+    if start == end:  # base case when there's only one element
+        return arr[start]
+    else:
+        mid = (start + end) // 2
+        left_product = multiply_elements(arr, start, mid)
+        right_product = multiply_elements(arr, mid+1, end)
+        current_product = arr[start] * arr[end]  # additional recursive call
+        return left_product * right_product * current_product
+```
+
+Explanation: This function recursively multiplies the elements in the array. In addition to the recursive calls for the left and right halves, there is an extra recursive call to multiply the first and last elements of the current segment. The base case is when the array has only one element.
+
+---
+
+Feel free to experiment with these examples and observe their behavior. Understanding binary and multiple recursion is essential for tackling a wide range of algorithmic problems. Happy coding! 💻🚀

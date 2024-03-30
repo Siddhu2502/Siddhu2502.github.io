@@ -1,0 +1,30 @@
+---
+title: "Topic 1 -> Array"
+author: "Siddharth D"
+date: "2024-01-07"
+categories: [DSA]
+image: thumbnail.png
+toc: true
+code-block-bg: true
+code-annotations: true
+code-fold: true
+---
+# Python's Array Module
+
+The array module in Python is used to store homogeneous data types such as integers, floats, etc. It is similar to lists in Python, but with the added advantage of being more efficient in terms of memory and performance for certain operations.
+
+When to use the array module?
+You should consider using the array module when you need to store a large amount of homogeneous data. This is because arrays are more memory efficient than lists. They also provide faster access in some cases because they store data in contiguous memory blocks, unlike lists.
+
+Comparing array module with normal list
+Here are some key differences between the array module and a normal list in Python:
+
+Homogeneity: Arrays can only store elements of the same type, while lists can store elements of different types.
+
+Memory and Performance: Arrays are more memory efficient and can provide faster access and manipulation for large amounts of data.
+
+Functionality: Lists come with a variety of built-in methods for manipulation like append, remove, pop, etc. Arrays have fewer methods but are more specialized for numerical and computational tasks.
+
+In the provided code snippet, an array of type 'h' (short integers) is created to store prime numbers. This is a good use case for the array module because we are dealing with a large amount of homogeneous numerical data.
+
+In this code, the array is more memory efficient than a list would be, and it provides fast and efficient access to the prime numbers stored within it.

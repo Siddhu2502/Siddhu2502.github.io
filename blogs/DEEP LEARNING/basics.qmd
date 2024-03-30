@@ -1,0 +1,80 @@
+---
+title: "Mathematics for intelligent system"
+author: "Siddharth D"
+date: "2024-02-28"
+categories: [NLP, Course_NLP]
+image: introductiontonlp.png
+toc: true
+toc-depth: 3
+code-block-bg: true
+code-annotations: true
+code-fold: true
+---
+
+# Introduction
+
+
+# Learning Rate 
+
+# Regularization 
+
+## L1 Regularization
+
+The L1 regularization is calculated as:
+
+$$
+L1 = \lambda \sum_{i=1}^{n} |w_i|
+$$
+
+Where $\lambda$ is the regularization strength and $w_i$ is the weight of the $i^{th}$ feature.
+
+The main use of the L1 regularization with respect to the pane of the weights of the model is that it can be used to select the most important features of the model. This is because the L1 regularization tends to shrink the weights of the less important features to zero. This is because the L1 regularization is not differentiable at zero, and hence the weights of the less important features are shrunk to zero.
+
+The region where the L1 regularization is not differentiable is shown in the figure below:
+
+## L2 Regularization
+
+The L2 regularization is calculated as:
+
+$$
+L2 = \lambda \sum_{i=1}^{n} w_i^2
+$$
+
+Where $\lambda$ is the regularization strength and $w_i$ is the weight of the $i^{th}$ feature.
+
+The main use of the L2 regularization with respect to the pane of the weights of the model is that it can be used to prevent the weights from becoming too large. This is because the L2 regularization tends to shrink the weights of the model. This is because the L2 regularization is differentiable everywhere, and hence the weights of the model are shrunk towards zero.
+
+The shape of the L2 regularization is a circle in the weight space
+
+# Computational Load
+
+By introducting more number of weights and hidden layers in the model the computation intensity becomes more. This is because the number of weights to be trained increases. This is the reason why the deep learning models are trained on GPUs and TPUs.
+
+We can use methods such as **Batch Normalization** to reduce the computational load.
+
+## Batch Normalization
+
+The batch normalization is a technique used to normalize the input of the hidden layers of the model. This is done to reduce the internal covariate shift. The internal covariate shift is the change in the distribution of the input of the hidden layers of the model. This is because the input of the hidden layers of the model changes as the weights of the model are updated. This is because the input of the hidden layers of the model is a function of the weights of the model.
+
+The batch normalization is calculated as:
+
+$$
+\hat{x} = \frac{x - \mu}{\sqrt{\sigma^2 + \epsilon}}
+$$
+
+Where $\hat{x}$ is the normalized input, $x$ is the input, $\mu$ is the mean of the input, $\sigma^2$ is the variance of the input, and $\epsilon$ is a small number to prevent division by zero.
+
+The steps inculded in 
+
+- Compute the mean and variance of the vectors in the mini-batch
+  - Mean = $\mu = \frac{1}{m} \sum_{i=1}^{m} x_i$
+  - Variance = $\sigma^2 = \frac{1}{m} \sum_{i=1}^{m} (x_i - \mu)^2$
+- Normalize the input
+  - $\hat{x} = \frac{x - \mu}{\sqrt{\sigma^2 + \epsilon}}$
+  - Where $\hat{x}$ is the normalized input, $x$ is the input, $\mu$ is the mean of the input, $\sigma^2$ is the variance of the input, and $\epsilon$ is a small number to prevent division by zero.
+- Scale and shift the normalized input
+  - $y = \gamma \hat{x} + \beta$
+  - Where $y$ is the output, $\gamma$ is the scale parameter, $\hat{x}$ is the normalized input, and $\beta$ is the shift parameter.
+  - The scale and shift parameters are learned during the training of the model.
+
+   

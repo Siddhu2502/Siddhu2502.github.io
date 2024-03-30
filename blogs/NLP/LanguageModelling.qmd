@@ -1,0 +1,194 @@
+---
+title: "Language Modelling and Other Concepts"
+author: "Siddharth D"
+date: "2024-02-28"
+categories: [NLP, Course_NLP]
+image: languagemodelling.png
+toc: true
+code-block-bg: true
+code-annotations: true
+code-fold: true
+---
+
+# Introduction 
+
+In this article, we will discuss the concept of language modelling and its importance in the field of Natural Language Processing. We will also discuss some of the other important concepts of NLP
+
+# Language Modelling Intuition
+
+- Langauge Modelling refers to predicting the next word in a sentence. In exact terms **Predicting the next best likely linguistic unit**.
+- Here linugistic unit can be a word, a phrase, a sentence or even a paragraph !! 
+- Model that assigns a probability to a sequence of words, given a context is called a language models.
+- The most basic language model which you can see in your daily life, as of now apart from CHATGPT is the **AutoComplete** feature !! 
+
+:::{.callout-note}
+Try to implement a simple autocomplete feature using the concept of language modelling.
+:::
+
+# Language Modelling Fundamentals
+
+The basic idea of LM is to compute the probablity of a word given its content. Mathematically, it can be represented as: 
+$$ P(w|h) $$
+Where, 
+
+- $w$ is the word
+- $h$ is the history or the context of the word
+  - Here history is nothing but the sequence of words that are already seen (total occurances of that particular word in the corpus)
+- $P(w|h)$ is the probability of the word given the context
+
+
+The proper representation of this is mathematically given by 
+$$ P(w|h) = \frac{Count(h,w)}{Count(h)} $$
+
+Where,
+
+- $Count(h,w)$ is the number of times the word $w$ has appeared after the context $h$
+- $Count(h)$ is the number of times the context $h$ has appeared in the corpus
+- $P(w|h)$ is the probability of the word given the context
+- The above formula is also known as the **Maximum Likelihood Estimation** or **Conditional Probability**
+
+:::{.callout-note}
+
+Example:
+
+text = "I am a good"
+- $P(good|I am a)$ = $\frac{Count(I am a, good)}{Count(I am a)}$
+- $P(good|I am a)$ = $\frac{1}{1}$ = 1
+:::
+
+
+:::{.callout-warning}
+The main issue or draw back with this approach is that the number of possible sequences of words is very large and it is not possible to store all the sequences in the memory.
+:::
+
+# N-gram Language Model
+
+As we have seen above the main issue with the basic language model is that it is not possible to store all the sequences in the memory. To overcome this issue, we use the concept of N-gram language model. 
+
+- N-gram language model is a probabilistic language model that is based on the probability of the occurrence of a sequence of words.
+- It is a simple and effective language model that assigns a probability to a sequence of N words, given a history of (N-1) words. 
+
+We generally use 3 types of N-gram models:
+
+- Unigram Model
+- Bigram Model
+- Trigram Model
+
+The intuition behind these models is that the probability of a word depends only on the previous N-1 words. 
+
+:::{.callout-note}
+The main advantage of N-gram models is that they are simple and easy to implement. They are also computationally efficient and can be used to predict the next word in a sentence.
+:::
+
+## Unigram Model
+
+- In the unigram model, the probability of a word depends only on the word itself and not on any other words.
+- The probability of a word is given by the formula:
+- $$ P(w) = \frac{Count(w)}{N} $$
+- Where, 
+  - $Count(w)$ is the number of times the word $w$ has appeared in the corpus
+  - $N$ is the total number of words in the corpus
+- The unigram model is the simplest language model and is used as a baseline for comparison with other language models.
+
+```python
+# Example of Unigram Model
+text = "What are your aspirations in life"
+
+# Tokenize the text
+tokens = text.split()
+
+# Count the frequency of each word
+word_freq = {}
+for word in tokens:
+    if word in word_freq:
+        word_freq[word] += 1
+    else:
+        word_freq[word] = 1
+
+# Calculate the probability of each word
+prob_word = {}
+for word in word_freq:
+    prob_word[word] = word_freq[word] / len(tokens)
+
+# Print the probability of each word
+for word in prob_word:
+    print(word, prob_word[word])
+```
+
+## Bigram Model
+
+- In the bigram model, the probability of a word depends only on the previous word.
+- The probability of a word is given by the formula:
+- $$ P(w_i|w_{i-1}) = \frac{Count(w_{i-1},w_i)}{Count(w_{i-1})} $$
+- Where, 
+  - $Count(w_{i-1},w_i)$ is the number of times the word $w_i$ has appeared after the word $w_{i-1}$
+  - $Count(w_{i-1})$ is the number of times the word $w_{i-1}$ has appeared in the corpus
+- $P(w_i|w_{i-1})$ is the probability of the word $w_i$ given the word $w_{i-1}$
+
+```python
+# Example of Bigram Model
+text = "What are your aspirations in life"
+
+# Tokenize the text
+tokens = text.split()
+
+# Create bigrams
+bigrams = [(tokens[i], tokens[i+1]) for i in range(len(tokens)-1)]
+
+# Count the frequency of each bigram
+bigram_freq = {}
+
+for bigram in bigrams:
+    if bigram in bigram_freq:
+        bigram_freq[bigram] += 1
+    else:
+        bigram_freq[bigram] = 1
+
+# Calculate the probability of each bigram
+prob_bigram = {}
+for bigram in bigram_freq:
+    prob_bigram[bigram] = bigram_freq[bigram] / tokens.count(bigram[0])
+
+# Print the probability of each bigram
+for bigram in prob_bigram:
+    print(bigram, prob_bigram[bigram])
+```
+
+## Trigram Model
+
+- In the trigram model, the probability of a word depends on the previous two words.
+- The probability of a word is given by the formula:
+- $$ P(w_i|w_{i-2},w_{i-1}) = \frac{Count(w_{i-2},w_{i-1},w_i)}{Count(w_{i-2},w_{i-1})} $$
+- Where, 
+  - $Count(w_{i-2},w_{i-1},w_i)$ is the number of times the word $w_i$ has appeared after the words $w_{i-2}$ and $w_{i-1}$
+  - $Count(w_{i-2},w_{i-1})$ is the number of times the words $w_{i-2}$ and $w_{i-1}$ have appeared in the corpus
+- $P(w_i|w_{i-2},w_{i-1})$ is the probability of the word $w_i$ given the words $w_{i-2}$ and $w_{i-1}$
+
+```python
+# Example of Trigram Model
+text = "What are your aspirations in life"
+
+# Tokenize the text
+tokens = text.split()
+
+# Create trigrams
+trigrams = [(tokens[i], tokens[i+1], tokens[i+2]) for i in range(len(tokens)-2)]
+
+# Count the frequency of each trigram
+trigram_freq = {}
+
+for trigram in trigrams:
+    if trigram in trigram_freq:
+        trigram_freq[trigram] += 1
+    else:
+        trigram_freq[trigram] = 1
+
+# Calculate the probability of each trigram
+prob_trigram = {}
+for trigram in trigram_freq:
+    prob_trigram[trigram] = trigram_freq[trigram] / bigrams.count((trigram[0], trigram[1]))
+
+# Print the probability of each trigram
+for trigram in prob_trigram:
+    print(trigram, prob_trigram[trigram])
+```

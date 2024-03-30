@@ -1,369 +1,5 @@
 [
   {
-    "objectID": "posts/DSA/Recursion DSA/index.html",
-    "href": "posts/DSA/Recursion DSA/index.html",
-    "title": "Topic 1 -> Recursion",
-    "section": "",
-    "text": "One way to describe repetition within a computer program is the use of loops, such as Python’s while-loop and for-loop, but an entire way of approach is using Recrusions which brings us to today’s topic on learning stuff daily for 100 days\n\nTest for base cases. We begin by testing for a set of base cases (there should be at least one). These base cases should be defined so that every possible chain of recursive calls will eventually reach a base case, and the handling ofeach base case should not use recursion.\nRecur. If not a base case, we perform one or more recursive calls. This recursive step may involve a test that decides which of several possible recursive calls to make. We should define each possible recursive call so that it makes progress towards a base case.\nImportant Point here is that if this base case is not met then we fall into a infinite recursion and kaboom 💥\n\ndef fib(n):\n    if n &lt;= 1:         # -----&gt; this part (remember this)\n        return 0\n    # ... rest of the function here \nThis function has this fib(n) so that “n” is what that has to be satisfied … by now you would have got the grip of the step 1 of recursion\nthe next step is to lay out your logic and write the rest of the function\ndef fib(n):\n    if n &lt;= 1:\n        return 0\n    else:\n        return fib(n-1) + fib(n-2)  # --&gt; go back 2 steps and sum then up\nCertainly! Let’s add examples for binary recursion and multiple recursion:"
-  },
-  {
-    "objectID": "posts/DSA/Recursion DSA/index.html#linear-recursion",
-    "href": "posts/DSA/Recursion DSA/index.html#linear-recursion",
-    "title": "Topic 1 -> Recursion",
-    "section": "Linear Recursion",
-    "text": "Linear Recursion\nIf a recursive function is designed so that each invocation of the body makes at most one new recursive call, this is known as linear recursion.\nExample:\ndef reversearr(array, start, stop):\n    if start &lt; stop-1: # -----&gt; base case baked right into the recursion itself\n        array[start], array[stop-1] = array[stop-1], array[start]\n        reversearr(array, start+1, stop-1)\n    return array"
-  },
-  {
-    "objectID": "posts/DSA/Recursion DSA/index.html#binary-recursion",
-    "href": "posts/DSA/Recursion DSA/index.html#binary-recursion",
-    "title": "Topic 1 -> Recursion",
-    "section": "Binary Recursion",
-    "text": "Binary Recursion\nIn binary recursion, each recursive call results in two new recursive calls. This often occurs in problems that can be divided into two sub-problems.\nExample (Binary Recursion):\ndef binary_sum(arr, start, end):\n    if start == end:  # base case when there's only one element\n        return arr[start]\n    else:\n        mid = (start + end) // 2\n        left_sum = binary_sum(arr, start, mid)\n        right_sum = binary_sum(arr, mid+1, end)\n        return left_sum + right_sum\nExplanation: This function recursively divides the array into two halves and calculates the sum of each half. The base case is when the array has only one element, and the sum is returned. The overall sum is then calculated by adding the sums of the left and right halves."
-  },
-  {
-    "objectID": "posts/DSA/Recursion DSA/index.html#multiple-recursion",
-    "href": "posts/DSA/Recursion DSA/index.html#multiple-recursion",
-    "title": "Topic 1 -> Recursion",
-    "section": "Multiple Recursion",
-    "text": "Multiple Recursion\nMultiple recursion involves a recursive function making more than two calls. It can be a bit complex but is a powerful technique for solving certain types of problems.\nExample (Multiple Recursion):\ndef multiply_elements(arr, start, end):\n    if start == end:  # base case when there's only one element\n        return arr[start]\n    else:\n        mid = (start + end) // 2\n        left_product = multiply_elements(arr, start, mid)\n        right_product = multiply_elements(arr, mid+1, end)\n        current_product = arr[start] * arr[end]  # additional recursive call\n        return left_product * right_product * current_product\nExplanation: This function recursively multiplies the elements in the array. In addition to the recursive calls for the left and right halves, there is an extra recursive call to multiply the first and last elements of the current segment. The base case is when the array has only one element.\n\nFeel free to experiment with these examples and observe their behavior. Understanding binary and multiple recursion is essential for tackling a wide range of algorithmic problems. Happy coding! 💻🚀"
-  },
-  {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "This is the first post of my blog. Welcome!\nHello guys welcome to my portfolio website. Looking forward to have a great time with you all.\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "posts/NLP/NLPIntro.html",
-    "href": "posts/NLP/NLPIntro.html",
-    "title": "Introduction to NLP",
-    "section": "",
-    "text": "NLP is branch of AI that helps computers understand, interpret and manipulate human language.\nThe goal is to completely capture the context of human langage and understand the meaning behind it."
-  },
-  {
-    "objectID": "posts/NLP/NLPIntro.html#phonetics",
-    "href": "posts/NLP/NLPIntro.html#phonetics",
-    "title": "Introduction to NLP",
-    "section": "Phonetics",
-    "text": "Phonetics\nIt is the branch that studies how humans produce and perceive speech sounds. It is the study of the physical sounds of human speech."
-  },
-  {
-    "objectID": "posts/NLP/NLPIntro.html#phonology",
-    "href": "posts/NLP/NLPIntro.html#phonology",
-    "title": "Introduction to NLP",
-    "section": "Phonology",
-    "text": "Phonology\nIt is the branch that studies the sound patterns of human language. They linguists study the languages or dialects and organize their sounds (phonemes) into a system of relationships."
-  },
-  {
-    "objectID": "posts/NLP/NLPIntro.html#morphology",
-    "href": "posts/NLP/NLPIntro.html#morphology",
-    "title": "Introduction to NLP",
-    "section": "Morphology",
-    "text": "Morphology\nIt deals with the words are formed and the relationship of words with each other. It is the study of the structure of words. It analyses the structure of words and parts of words, such as\n\nstems: the core part of a word\nroot words: the basic part of a word\nprefixes: the part of a word that comes before the root word\nsuffixes: the part of a word that comes after the root word"
-  },
-  {
-    "objectID": "posts/NLP/NLPIntro.html#syntax",
-    "href": "posts/NLP/NLPIntro.html#syntax",
-    "title": "Introduction to NLP",
-    "section": "Syntax",
-    "text": "Syntax\nIt is the study of the structure of sentences. It is the study of the principles and rules for constructing sentences in natural languages."
-  },
-  {
-    "objectID": "posts/NLP/NLPIntro.html#semantics",
-    "href": "posts/NLP/NLPIntro.html#semantics",
-    "title": "Introduction to NLP",
-    "section": "Semantics",
-    "text": "Semantics\nIt is the study of meaning in language. It is the study of meaning in language. It focuses on the relation between signifiers, such as words, phrases, signs, and symbols, and what they stand for, their denotation."
-  },
-  {
-    "objectID": "posts/NLP/NLPIntro.html#pragmatics",
-    "href": "posts/NLP/NLPIntro.html#pragmatics",
-    "title": "Introduction to NLP",
-    "section": "Pragmatics",
-    "text": "Pragmatics\nIt is the study of how context influences the interpretation of meaning. It studies the aspects of meaning and language use that are dependent on the speaker, the addressee, and other features of the context of utterance."
-  },
-  {
-    "objectID": "posts/NLP/NLPIntro.html#data-aspect",
-    "href": "posts/NLP/NLPIntro.html#data-aspect",
-    "title": "Introduction to NLP",
-    "section": "Data aspect",
-    "text": "Data aspect\n\nCorpus: It is a collection of text. It is a large and structured set of texts. They are used to do statistical analysis and hypothesis testing, checking occurrences or validating linguistic rules within a specific language territory.\nVocabulary: It is a list of words in a language. It is a set of familiar words within a person’s language. It is the set of words known to a person or other entity.\nAnnotation: It is the process of adding information to a text. It is the process of adding metadata to a text. It is the process of marking up a document with additional information.\nLexicon: It refers to the words and thier meaning (sort of real dictionary)."
-  },
-  {
-    "objectID": "posts/NLP/NLPIntro.html#algorithms-aspect",
-    "href": "posts/NLP/NLPIntro.html#algorithms-aspect",
-    "title": "Introduction to NLP",
-    "section": "Algorithms aspect",
-    "text": "Algorithms aspect\n\nTokens: It is the pieces of data such as words, characters, subwords etc:-\nTokenization:\n\nIt is the initial step in modell the content of the text.\nIt is the process of breaking a stream of text up into words, phrases, symbols, or other meaningful elements called tokens.\n\n\n\nTokenization and its types\nThere are many types of tokenization such as\n\nWord tokenization\nSentence tokenization\nSubword tokenization\nCharacter tokenization\n\n\nWord Level Tokenization\nIts the most commonly used tokenization method. It splits the words based on the space or any specific delimeter\n\n# using nltk library\n\nimport nltk\nfrom nltk.tokenize import word_tokenize\ntext = \"I am learning NLP\"\nword_tokenize(text)\n\n# using python inbuilt split method\n\nvocabulary = []\ntext = \"I am learning NLP\"\nvocabulary = text.split(\" \")\nprint(vocabulary)\n\n\n\n\n\n\nWhat are some issues with word level tokenization?\n\n\n\n\n\nHere we will discuss few issues with word level tokenization\n\nContractions\nOOV (Out of Vocabulary) words\nPunctuations\n\nTry to find more issues if you can!! (note: there are actually many) .. That is one of the reason why we dont just split with space and call it a day.\n\n\n\n\n\nSentence Level Tokenization\nSentence tokenization, also known as sentence segmentation, is the process of dividing text into sentences. This is typically done using punctuation and capitalization cues.\n# using nltk library\n\nimport nltk\nfrom nltk.tokenize import sent_tokenize\ntext = \"I am learning NLP. It is very interesting.\"\nsent_tokenize(text)\n\n\nSubword Level Tokenization\nSubword tokenization splits words into smaller units (or subwords). This can help to handle the problem of out-of-vocabulary words.\n# using BPEmb library for Byte Pair Encoding\n\nfrom bpemb import BPEmb\nbpemb_en = BPEmb(lang=\"en\", dim=50)\ntext = \"I am learning NLP\"\nbpemb_en.encode(text)\n\n\nCharacter Level Tokenization\nCharacter tokenization splits text into characters. This can be useful for languages where words are not separated by spaces, like Chinese and Japanese.\ntext = \"I am learning NLP\"\nlist(text)\n\n\n\n\n\n\nIssues with Other Types of Tokenization\n\n\n\n\n\n\nSentence Tokenization: Sentence tokenization can be tricky when dealing with abbreviations, email addresses, websites, etc. where periods are used but do not indicate the end of a sentence.\nSubword Tokenization: While subword tokenization can help with out-of-vocabulary words, it can lead to an explosion in the number of tokens for very large texts.\nCharacter Tokenization: Character tokenization can lead to very long sequences for longer texts and may lose the meaning carried by specific words or phrases.\n\nCan you find more issues with other types of tokenization? (note: there are actually many)"
-  },
-  {
-    "objectID": "posts/CLOUDCOMPUTING/basiccloudqa.html",
-    "href": "posts/CLOUDCOMPUTING/basiccloudqa.html",
-    "title": "Some basic Cloud Computing QA",
-    "section": "",
-    "text": "In this article we are going to see some of the common cloud computing questions and answers. This will help you to prepare for your cloud computing interviews."
-  },
-  {
-    "objectID": "posts/CLOUDCOMPUTING/basiccloudqa.html#what-is-cloud-computing-and-explin-its-properties-and-characteristics",
-    "href": "posts/CLOUDCOMPUTING/basiccloudqa.html#what-is-cloud-computing-and-explin-its-properties-and-characteristics",
-    "title": "Some basic Cloud Computing QA",
-    "section": "1. What is Cloud Computing and explin its properties and characteristics?",
-    "text": "1. What is Cloud Computing and explin its properties and characteristics?\nCloud computing is the delivery of computing services over the internet. It offers faster innovation, flexible resources, and economies of scale. You typically pay only for cloud services you use, helping you lower your operating costs, run your infrastructure more efficiently, and scale as your business needs change.\n\nProperties and Characteristics\n\n\n\n\n\n\nProperties and Characteristics\n\n\n\n\n\nThere is a subtle difference between properties and characteristics.\nProperties are the high level features of cloud computing, whereas Characteristics are the detailed features of cloud computing.\n\n\n\n\nProperties\n\nUser centric\nUbiquitous network access\nLocation independent resource pooling\nTask centric\nProgrammatic control\nQuality of service\nResource optimization\n\n\n\nCharacteristics\n\non-demand self-service\nBroad network access\nResource pooling\nRapid elasticity\nMeasured service\nMulti-tenancy\nScalability\nSecurity\nAutomation\nSustainability"
-  },
-  {
-    "objectID": "posts/CLOUDCOMPUTING/basiccloudqa.html#what-is-parallel-processing-and-load-balancing-in-performance-optimization",
-    "href": "posts/CLOUDCOMPUTING/basiccloudqa.html#what-is-parallel-processing-and-load-balancing-in-performance-optimization",
-    "title": "Some basic Cloud Computing QA",
-    "section": "2. What is parallel processing and load balancing in performance optimization?",
-    "text": "2. What is parallel processing and load balancing in performance optimization?\nParallel processing is a method in computing of running two or more processors (CPUs) to handle separate parts of an overall task. - This is done to reduce the overall time taken to complete the task. But doing every task in parallel is not always efficient. Hence its up to the developer to decide which tasks can be done in parallel and which cannot.\nLoad balancing is the process of distributing the load among various pool computing resources, such as computers, a computer cluster, network links, central processing units, or disk drives. This is done so that the incomming load does not get queued up and all the resources are utilized efficiently."
-  },
-  {
-    "objectID": "posts/CLOUDCOMPUTING/basiccloudqa.html#how-do-users-access-cloud-services",
-    "href": "posts/CLOUDCOMPUTING/basiccloudqa.html#how-do-users-access-cloud-services",
-    "title": "Some basic Cloud Computing QA",
-    "section": "3. How do users access cloud services?",
-    "text": "3. How do users access cloud services?\n\nUsers can access cloud services through a web browser after logging into the cloud service provider’s website.\nThey can also access cloud services through a software application that connects to the cloud service provider’s API. This software application can be a mobile app, a desktop app, or a command-line interface.\nUsers can also access cloud services through a virtual private network (VPN) connection to the cloud service provider’s network.\n\nThese are some of the common ways in which users can access cloud services."
-  },
-  {
-    "objectID": "posts/CLOUDCOMPUTING/basiccloudqa.html#what-is-accessiblity-and-portability",
-    "href": "posts/CLOUDCOMPUTING/basiccloudqa.html#what-is-accessiblity-and-portability",
-    "title": "Some basic Cloud Computing QA",
-    "section": "4. What is accessiblity and portability ?",
-    "text": "4. What is accessiblity and portability ?\nAccessibility refers to the ability of users to access cloud services from anywhere in the world using any device with an internet connection. It ensures that users can access their data and applications whenever they need them.\nPortability refers to the ability of users to move their data and applications between different cloud service providers. It ensures that users are not locked into a single cloud service provider and can switch providers if needed."
-  },
-  {
-    "objectID": "posts/CLOUDCOMPUTING/basiccloudqa.html#how-do-we-achieve-accessiblity-and-portability-properties-in-cloud-computing",
-    "href": "posts/CLOUDCOMPUTING/basiccloudqa.html#how-do-we-achieve-accessiblity-and-portability-properties-in-cloud-computing",
-    "title": "Some basic Cloud Computing QA",
-    "section": "5. How do we achieve accessiblity and portability properties in cloud computing?",
-    "text": "5. How do we achieve accessiblity and portability properties in cloud computing?\nTo acheive accessiblity and portability properties in cloud computing, we need to follow the below practices:\n\nStandardization: Standardize the interfaces and protocols used by cloud service providers to ensure that users can access and move their data and applications between different providers.\nInteroperability: Ensure that cloud service providers can work together to provide users with seamless access to their data and applications.\nData portability: Provide users with tools and services that allow them to easily move their data between different cloud service providers.\nOpen standards: Use open standards and open-source software to ensure that users are not locked into a single cloud service provider.\nAPIs: Provide users with APIs that allow them to access and manage their data and applications from any device or platform.\nSecurity: Ensure that users’ data and applications are secure and protected from unauthorized access or data breaches.\nCompliance: Ensure that cloud service providers comply with industry standards and regulations to protect users’ data and applications.\n\nBy following these practices, we can achieve accessiblity and portability properties in cloud computing."
-  },
-  {
-    "objectID": "posts/CLOUDCOMPUTING/basiccloudqa.html#what-is-soa-and-sla-in-cloud-computing-explain-them",
-    "href": "posts/CLOUDCOMPUTING/basiccloudqa.html#what-is-soa-and-sla-in-cloud-computing-explain-them",
-    "title": "Some basic Cloud Computing QA",
-    "section": "6. What is SOA and SLA in cloud computing, explain them?",
-    "text": "6. What is SOA and SLA in cloud computing, explain them?\nSOA (Service-Oriented Architecture) is a software design approach that focuses on building software applications as a collection of loosely coupled services. These services are designed to be reusable, interoperable, and independent of the underlying technology.\n\nSOA allows organizations to build flexible and scalable software applications that can be easily integrated with other systems and services.\nIt also enables organizations to respond quickly to changing business requirements and market conditions.\n\n\nComponents of SOA\n\nservice implementation\nservice contract\nservice interface\nservice provider\nservice consumer\nservice registry\n\n\n\nWorking of SOA\n\nIn SOA, services are designed to be self-contained and independent of other services.\nEach service has a well-defined interface that specifies how it can be accessed and what it can do.\nServices communicate with each other using standard protocols and data formats.\nServices can be combined and orchestrated to create complex business processes.\nServices can be reused across different applications and organizations.\n\nSLA (Service Level Agreement) is a contract between a cloud service provider and a customer that defines the level of service that the provider will deliver. It specifies the performance metrics, availability, and support that the provider will provide to the customer.\n\nSLAs are used to ensure that cloud service providers meet the expectations of their customers and deliver the services that they have promised.\nSLAs also help to establish trust between the provider and the customer and provide a framework for resolving disputes and issues that may arise during the course of the service.\n\n\n\nComponents of SLA\n\nService scope\nService availability\nService performance\nService support\nService security"
-  },
-  {
-    "objectID": "posts/CLOUDCOMPUTING/basiccloudqa.html#explain-about-problems-in-traditional-computing-and-how-does-dynamic-provisioning-overcome-these-problems",
-    "href": "posts/CLOUDCOMPUTING/basiccloudqa.html#explain-about-problems-in-traditional-computing-and-how-does-dynamic-provisioning-overcome-these-problems",
-    "title": "Some basic Cloud Computing QA",
-    "section": "7. Explain about problems in traditional computing and how does Dynamic provisioning overcome these problems?",
-    "text": "7. Explain about problems in traditional computing and how does Dynamic provisioning overcome these problems?\n\nProblems in traditional computing\n\nUnderutilization of resources: In traditional computing, resources are provisioned statically, which can lead to underutilization of resources.\nScalability issues: Traditional computing environments are not easily scalable, there are lot of manual interventions required to scale up or down the resources.\nLimited flexibility: Traditional computing environments are not very flexible and cannot easily adapt to changing business requirements.\nHigh costs: Traditional computing environments are expensive to set up and maintain, as they require a lot of hardware and software resources.\n\n\n\nDynamic provisioning\nDynamic provisioning is a cloud computing feature that allows users to automatically provision and deprovision resources based on demand. It enables users to scale their resources up or down as needed, without any manual intervention.\n\nDynamic provisioning helps to overcome the problems of underutilization of resources, scalability issues, limited flexibility, and high costs that are associated with traditional computing environments.\nIt allows users to optimize their resource usage, reduce costs, and improve the performance of their applications.\n\n\n\nHow they overcome the problems?\n\nBy automatically provisioning and deprovisioning resources based on demand.\nBy enabling users to scale their resources up or down as needed.\nBy optimizing resource usage and reducing costs.\nBy improving the performance of applications.\nBy providing users with the flexibility to adapt to changing business requirements.\nBy reducing the manual intervention required to manage resources.\n\nBy using dynamic provisioning, users can overcome the problems associated with traditional computing environments and take advantage of the benefits of cloud computing."
-  },
-  {
-    "objectID": "posts/CLOUDCOMPUTING/basiccloudqa.html#explain-about-qos-and-sla",
-    "href": "posts/CLOUDCOMPUTING/basiccloudqa.html#explain-about-qos-and-sla",
-    "title": "Some basic Cloud Computing QA",
-    "section": "8. Explain about QOS and SLA",
-    "text": "8. Explain about QOS and SLA\nQuality of Service (QoS) is all about prioritizing network traffic flows as per defined policies and rules.\n\nIt allows classification and marking of different data streams.\nHigher priority traffic gets preferential treatment over lower priority flows during congestion.\nThis ensures critical apps/services get the bandwidth and low latency they need.\n\nService Level Agreements (SLAs) are contractual commitments made by service providers.\n\nThey specify measurable performance metrics like uptime, throughput, latency, etc.\nClearly outline the expected quality of service the customer should receive.\nFailure to meet SLA terms may lead to penalties, credits or termination of contract.\n\nIn essence, QoS is the technical mechanism to optimize network performance, while SLAs are the commercial/legal guidelines that hold service providers accountable to deliver a guaranteed experience to users. A well-designed QoS policy complemented by a stringent SLA ensures your critical applications get the network love they deserve, you feel me?"
-  },
-  {
-    "objectID": "posts/CLOUDCOMPUTING/basiccloudqa.html#what-is-multi-tenant-design-in-cloud-computing",
-    "href": "posts/CLOUDCOMPUTING/basiccloudqa.html#what-is-multi-tenant-design-in-cloud-computing",
-    "title": "Some basic Cloud Computing QA",
-    "section": "9. What is Multi-Tenant Design in Cloud computing?",
-    "text": "9. What is Multi-Tenant Design in Cloud computing?\nMultitenancy means that multiple customers of a cloud vendor are using the same computing resources. Despite the fact that they share resources, cloud customers are not aware of each other, and their data is kept totally separate.\nThe main advantage of multitenancy is\n\nbetter usage of resources\nlower costs for the cloud vendor, which can then be passed on to the customer.\nfaster deployment of new features and updates."
-  },
-  {
-    "objectID": "posts/CLOUDCOMPUTING/basiccloudqa.html#explain-about-availability-and-reliability-and-how-to-achieve-them",
-    "href": "posts/CLOUDCOMPUTING/basiccloudqa.html#explain-about-availability-and-reliability-and-how-to-achieve-them",
-    "title": "Some basic Cloud Computing QA",
-    "section": "10. Explain about Availability and Reliability and how to achieve them?",
-    "text": "10. Explain about Availability and Reliability and how to achieve them?\nAvailability is the measure of the time a system is up and running. It is usually expressed as a percentage of uptime over a given period of time. For example, a system with 99.9% availability is up and running 99.9% of the time.\nReliability is the measure of how well a system performs its intended functions. It is usually expressed as a percentage of successful operations over a given period of time. For example, a system with 99.9% reliability performs its intended functions 99.9% of the time.\nTo achieve availability and reliability in cloud computing, you can follow these best practices:\n\nRedundancy: Use redundant components to ensure that if one component fails, another component can take over.\nLoad balancing: Distribute the load across multiple servers\nMonitoring: Monitor your system and take corrective actions when needed.\nBackup and recovery: Regularly backup your data and have a recovery plan in place.\n\nBy following these best practices, you can achieve availability and reliability in cloud computing."
-  },
-  {
-    "objectID": "posts/CLOUDCOMPUTING/basiccloudqa.html#what-is-fault-tolerance-and-its-characteristics-and-why-do-we-need-it",
-    "href": "posts/CLOUDCOMPUTING/basiccloudqa.html#what-is-fault-tolerance-and-its-characteristics-and-why-do-we-need-it",
-    "title": "Some basic Cloud Computing QA",
-    "section": "11. What is fault Tolerance and its characteristics and why do we need it?",
-    "text": "11. What is fault Tolerance and its characteristics and why do we need it?\nFault tolerance refers to a system’s ability to continue operating properly in the event of failures or faults with its components. It is a crucial characteristic for mission-critical systems and applications. (the bold part is keyword)\nCharacteristics of fault-tolerant systems:\n\nRedundancy: Having redundant components that can take over when others fail.\nFailover: Automatic switching to redundant components or systems when a failure occurs.\nFault detection: Mechanisms to detect and isolate faults in real-time.\nFault containment: Preventing faults from cascading and affecting the entire system.\n\nWe need fault tolerance because:\n\nIt ensures high availability and reliability, minimizing downtime.\nIt maintains data integrity and prevents data loss in case of failures.\nIt provides business continuity and meets service level agreements (SLAs).\nIt enhances system resilience, especially in mission-critical applications (e.g., healthcare, finance).\n\nFault tolerance is achieved through various techniques like redundant hardware, software failover mechanisms, error handling, and fault-tolerant system design principles like graceful degradation and self-healing capabilities."
-  },
-  {
-    "objectID": "posts/CLOUDCOMPUTING/basiccloudqa.html#what-is-the-system-secutiry-and-issues-in-it",
-    "href": "posts/CLOUDCOMPUTING/basiccloudqa.html#what-is-the-system-secutiry-and-issues-in-it",
-    "title": "Some basic Cloud Computing QA",
-    "section": "12. What is the system secutiry and issues in it?",
-    "text": "12. What is the system secutiry and issues in it?\nSystem security refers to the measures taken to protect computer systems and data from unauthorized access, cyberattacks, and other security threats. It encompasses various aspects of security, including:\n\nAuthentication\nAuthorization\nEncryption\nFirewalls\n\nCommon issues in system security are:\n\nData breaches: Unauthorized access to sensitive data.\nMalware attacks: Viruses, worms, ransomware, etc.\nPhishing: Social engineering attacks to steal sensitive information.\nDenial of Service (DoS): Overloading systems to disrupt services.\nInsider threats: Malicious actions by authorized users.\nWeak passwords: Vulnerable to brute-force attacks."
-  },
-  {
-    "objectID": "posts/CLOUDCOMPUTING/basiccloudqa.html#what-are-the-traditional-local-computing-power-requirements-and-its-problems-also-explain-how-does-cloud-computing-solve-these-problems",
-    "href": "posts/CLOUDCOMPUTING/basiccloudqa.html#what-are-the-traditional-local-computing-power-requirements-and-its-problems-also-explain-how-does-cloud-computing-solve-these-problems",
-    "title": "Some basic Cloud Computing QA",
-    "section": "13. What are the traditional local computing power requirements and its problems, also explain how does cloud computing solve these problems?",
-    "text": "13. What are the traditional local computing power requirements and its problems, also explain how does cloud computing solve these problems?\nTraditional local computing power requirements include:\n\nHigh upfront costs: Purchasing hardware, software, and infrastructure.\nLimited scalability: Difficulty in scaling resources up or down.\nMaintenance and management: Regular updates, patches, and backups.\nSecurity risks: Vulnerabilities and data breaches.\n\nThe cloud architecture solves all of these problems because the same amout of resources are being used by multiple users. As multiple users use the same resources, the cost is shared among them. This reduces the cost for each user.\nAlso, the cloud provider takes care of the maintenance and management of the resources, which reduces the burden on the user. The cloud provider also takes care of the secure issues apart from that having many number of users will make the cloud provider or the system user to identify and report the detected security issues and provid a fix ot them faster."
-  },
-  {
-    "objectID": "posts/CLOUDCOMPUTING/basiccloudqa.html#to-achieve-what-we-need-system-control-automation-and-system-state-monitoring-and-explain-about-both-of-them",
-    "href": "posts/CLOUDCOMPUTING/basiccloudqa.html#to-achieve-what-we-need-system-control-automation-and-system-state-monitoring-and-explain-about-both-of-them",
-    "title": "Some basic Cloud Computing QA",
-    "section": "14. To achieve what we need System control automation and system state monitoring? And explain about both of them",
-    "text": "14. To achieve what we need System control automation and system state monitoring? And explain about both of them\nTo acheive falut tolerance, high availability and reliability we need system control automation and system state monitoring.\nSystem Control Automation:\n\nAutomating system control tasks like resource provisioning, configuration management, and scaling.\nIt enables self-healing and self-recovery mechanisms to mitagate and recover form faults automatically (generally some script)\nIt reduces manual intervention, human errors, and response time to incidents.\n\nSystem State Monitoring:\n\nCntinious monitoring and tracking of system components, performance metrics, and health status.\nIt helps in detecting anomalies, predicting failures, and taking proactive actions.\nIt detects these anaomalies / issues by checking the data from the system and comparing it with the expected data.\n\nBy combining system control automation and system state monitoring, organizations can ensure that their systems are resilient, responsive, and reliable in dynamic cloud environments."
-  },
-  {
-    "objectID": "posts/CLOUDCOMPUTING/basiccloudqa.html#what-are-the-advantages-and-disadvantages-of-cloud-computing",
-    "href": "posts/CLOUDCOMPUTING/basiccloudqa.html#what-are-the-advantages-and-disadvantages-of-cloud-computing",
-    "title": "Some basic Cloud Computing QA",
-    "section": "15. What are the advantages and disadvantages of cloud computing?",
-    "text": "15. What are the advantages and disadvantages of cloud computing?\n\n\n\n\nAdvantages\nDisadvantages\n\n\n\n\nCost-effective\nSecurity concerns\n\n\nScalability\nDowntime risks\n\n\nFlexibility\nData privacy risks\n\n\nAccessibility\nVendor lock-in\n\n\nReliability\nCompliance challenges\n\n\n\n\n\n\n\n\n\nExercise for readers\n\n\n\n\n\nCan you think of more advantages and disadvantages of cloud computing? Since its very basic quetsion its left to the reader to think and answer."
-  },
-  {
-    "objectID": "posts/CLOUDCOMPUTING/basiccloudqa.html#explain-about-iaas",
-    "href": "posts/CLOUDCOMPUTING/basiccloudqa.html#explain-about-iaas",
-    "title": "Some basic Cloud Computing QA",
-    "section": "16. Explain about IaaS",
-    "text": "16. Explain about IaaS\nInfrastructure as a Service (IaaS) is a cloud computing model that provides virtualized computing resources over the internet. It allows users to rent virtual servers, storage, and networking infrastructure on a pay-as-you-go basis.\n\nUsers can deploy and manage their applications on the cloud infrastructure without having to worry about the underlying hardware.\nIaaS providers take care of the maintenance, security, and scalability of the infrastructure\n\nexample: a person can rent a virtual server from a cloud provider and deploy their application on it."
-  },
-  {
-    "objectID": "posts/CLOUDCOMPUTING/basiccloudqa.html#explain-about-paas",
-    "href": "posts/CLOUDCOMPUTING/basiccloudqa.html#explain-about-paas",
-    "title": "Some basic Cloud Computing QA",
-    "section": "17. Explain about PaaS",
-    "text": "17. Explain about PaaS\nPlatform as a Service (PaaS) is a cloud computing model that provides a platform for developing, testing, and deploying applications over the internet. It allows users to build and run applications without having to manage the underlying infrastructure.\n\nPaaS providers offer a complete development environment, including tools, libraries, and frameworks, to help users build and deploy applications quickly.\nUsers can focus on developing their applications, while the PaaS provider takes care of the infrastructure, security, and scalability.\n\nexample: a person can use a PaaS provider to build and deploy a web application without having to worry about the underlying infrastructure like servers, storage, and networking."
-  },
-  {
-    "objectID": "posts/CLOUDCOMPUTING/basiccloudqa.html#explain-about-saas",
-    "href": "posts/CLOUDCOMPUTING/basiccloudqa.html#explain-about-saas",
-    "title": "Some basic Cloud Computing QA",
-    "section": "18. Explain about SaaS",
-    "text": "18. Explain about SaaS\nSoftware as a Service (SaaS) is a cloud computing model that provides software applications over the internet. It allows users to access and use software applications without having to install or maintain them on their local devices.\n\nSaaS providers host and manage the software applications on their servers and deliver them to users over the internet.\nUsers can access the software applications through a web browser or a software client, and pay for them on a subscription basis.\n\nexample: a person can use a SaaS provider to access and use a customer relationship management (CRM) software application over the internet. which in simple terms means that the user can use the software without installing it on their local machine."
-  },
-  {
-    "objectID": "posts/CLOUDCOMPUTING/basiccloudqa.html#how-to-deploy-a-cloud-system",
-    "href": "posts/CLOUDCOMPUTING/basiccloudqa.html#how-to-deploy-a-cloud-system",
-    "title": "Some basic Cloud Computing QA",
-    "section": "19. How to deploy a cloud system?",
-    "text": "19. How to deploy a cloud system?\nTo deploy a cloud system, you need to follow these steps:\n\nDefine requirements: Identify the business needs, technical requirements, and goals of the cloud system.\nSelect a cloud model: Choose between IaaS, PaaS, or SaaS based on your requirements.\nSelect a cloud provider: Choose a cloud service provider that meets your needs and budget.\nDesign the architecture: Design the cloud system architecture, including the infrastructure, networking, security, and scalability.\nDevelop and test: Develop and test the applications and services that will run on the cloud system.\nDeploy: Deploy the applications and services on the cloud system.\n\nBy following these steps, you can successfully deploy a cloud system that meets your business needs and goals."
-  },
-  {
-    "objectID": "posts/CLOUDCOMPUTING/basiccloudqa.html#difference-between-private-and-public-cloud",
-    "href": "posts/CLOUDCOMPUTING/basiccloudqa.html#difference-between-private-and-public-cloud",
-    "title": "Some basic Cloud Computing QA",
-    "section": "20. Difference between private and public cloud",
-    "text": "20. Difference between private and public cloud\n\n\n\n\n\n\n\nPrivate Cloud\nPublic Cloud\n\n\n\n\nOwned and operated by a single organization\nOwned and operated by a third-party cloud provider\n\n\nProvides dedicated resources for the organization\nShares resources among multiple users\n\n\nOffers more control over security and compliance\nOffers less control over security and compliance\n\n\nRequires higher upfront costs and maintenance\nRequires lower upfront costs and maintenance\n\n\nSuitable for organizations with strict security requirements\nSuitable for organizations with cost and scalability requirements"
-  },
-  {
-    "objectID": "posts/CLOUDCOMPUTING/basiccloudqa.html#what-are-community-cloud-and-hybrid-cloud",
-    "href": "posts/CLOUDCOMPUTING/basiccloudqa.html#what-are-community-cloud-and-hybrid-cloud",
-    "title": "Some basic Cloud Computing QA",
-    "section": "21. What are Community Cloud and Hybrid Cloud?",
-    "text": "21. What are Community Cloud and Hybrid Cloud?\nCommunity Cloud is a cloud computing model that is shared among several organizations with similar interests, such as industry-specific requirements, compliance needs, or security concerns. It allows organizations to share resources and collaborate on common goals while maintaining their own data and applications.\nHybrid Cloud is a cloud computing model that combines public and private cloud environments. It allows organizations to use a mix of on-premises, private cloud, and public cloud resources to meet their specific needs. Hybrid cloud provides flexibility, scalability, and cost-effectiveness by allowing organizations to leverage the benefits of both public and private clouds."
-  },
-  {
-    "objectID": "posts/CLOUDCOMPUTING/basiccloudqa.html#diagrammatically-represent-the-cloud-ecosystem",
-    "href": "posts/CLOUDCOMPUTING/basiccloudqa.html#diagrammatically-represent-the-cloud-ecosystem",
-    "title": "Some basic Cloud Computing QA",
-    "section": "22. Diagrammatically represent the cloud ecosystem",
-    "text": "22. Diagrammatically represent the cloud ecosystem\n\n\n\n\n\nflowchart LR\n    CloudEcosystem[Cloud Ecosystem]\n\n    subgraph ServiceModels [Service Models]\n        IaaS[Infrastructure as a Service]\n        PaaS[Platform as a Service]\n        SaaS[Software as a Service]\n    end\n\n    subgraph DeploymentModels [Deployment Models]\n        PublicCloud(Public Cloud)\n        PrivateCloud(Private Cloud)\n        HybridCloud(Hybrid Cloud)\n    end\n\n    subgraph CloudComponents [Cloud Components]\n        Compute[/Compute/]\n        Storage[/Storage/]\n        Networking[/Networking/]\n        Databases[/Databases/]\n        Security[/Security/]\n        Management[/Management/]\n    end\n\n    CloudEcosystem --&gt; ServiceModels\n    CloudEcosystem --&gt; DeploymentModels\n    CloudEcosystem --&gt; CloudComponents\n\n    ServiceModels --&gt; IaaS\n    ServiceModels --&gt; PaaS\n    ServiceModels --&gt; SaaS\n\n    DeploymentModels --&gt; PublicCloud\n    DeploymentModels --&gt; PrivateCloud\n    DeploymentModels --&gt; HybridCloud\n\n    CloudComponents --&gt; Compute\n    CloudComponents --&gt; Storage\n    CloudComponents --&gt; Networking\n    CloudComponents --&gt; Databases\n    CloudComponents --&gt; Security\n    CloudComponents --&gt; Management\n\n    classDef blueFill fill:#e6f2ff,stroke:#1e90ff\n    classDef greenFill fill:#e6ffe6,stroke:#00cd00\n    classDef orangeFill fill:#ffe6e6,stroke:#ff6347\n\n    class CloudEcosystem blueFill\n    class ServiceModels greenFill\n    class DeploymentModels orangeFill\n    class CloudComponents greenFill"
-  },
-  {
-    "objectID": "posts/CLOUDCOMPUTING/basiccloudqa.html#discuss-the-key-characteristics-and-advantages-of-cluster-computing-and-provide-examples-of-real-world-applications-where-cluster-computing-is-beneficial.",
-    "href": "posts/CLOUDCOMPUTING/basiccloudqa.html#discuss-the-key-characteristics-and-advantages-of-cluster-computing-and-provide-examples-of-real-world-applications-where-cluster-computing-is-beneficial.",
-    "title": "Some basic Cloud Computing QA",
-    "section": "23. Discuss the key characteristics and advantages of cluster computing, and provide examples of real-world applications where cluster computing is beneficial.",
-    "text": "23. Discuss the key characteristics and advantages of cluster computing, and provide examples of real-world applications where cluster computing is beneficial.\n\nKey characteristics of cluster computing:\n\nScalability: Cluster computing allows organizations to scale their computing resources up or down based on demand.\nHigh availability: Clusters provide redundancy and fault tolerance to ensure continuous operation.\nPerformance: Clusters can distribute workloads across multiple nodes to improve performance.\nCost-effectiveness: Clusters can be more cost-effective than traditional computing environments due to shared resources.\n\n\n\nAdvantages of cluster computing:\n\nParallel processing: Clusters can process large datasets and complex computations in parallel.\nResource pooling: Clusters can pool resources to optimize utilization and reduce costs.\nFlexibility: Clusters can be customized to meet specific requirements and workloads.\n\n\n\nReal-world applications of cluster computing:\n\nBig data analytics: Clusters are used to process and analyze large volumes of data in real-time.\nScientific research: Clusters are used for simulations, modeling, and data analysis in fields like genomics, physics, and climate science.\nHigh-performance computing: Clusters are used for complex computations in areas like finance, engineering, and healthcare.\nWeb services: Clusters are used to host and scale web applications, e-commerce platforms, and content delivery networks.\nMachine learning: Clusters are used to train and deploy machine learning models for predictive analytics and AI applications."
-  },
-  {
-    "objectID": "posts/CLOUDCOMPUTING/basiccloudqa.html#compare-and-contrast-cluster-computing-grid-computing-and-p2p-computing-paradigms-highlighting-their-key-differences-in-architecture-resource-management-and-scalability",
-    "href": "posts/CLOUDCOMPUTING/basiccloudqa.html#compare-and-contrast-cluster-computing-grid-computing-and-p2p-computing-paradigms-highlighting-their-key-differences-in-architecture-resource-management-and-scalability",
-    "title": "Some basic Cloud Computing QA",
-    "section": "24. Compare and contrast cluster computing, grid computing, and P2P computing paradigms, highlighting their key differences in architecture, resource management, and scalability",
-    "text": "24. Compare and contrast cluster computing, grid computing, and P2P computing paradigms, highlighting their key differences in architecture, resource management, and scalability\nThis tabular format provides a side-by-side comparison of the key differences between cluster computing, grid computing, and P2P computing paradigms in terms of architecture, resource management, scalability, failure handling, security, use cases, and examples.\n\n\n\n\n\n\n\n\n\nAspect\nCluster Computing\nGrid Computing\nP2P Computing\n\n\n\n\nArchitecture\nTightly coupled homogeneous nodes within a single administrative domain\nLoosely coupled heterogeneous resources across multiple administrative domains\nDecentralized network of peer nodes acting as clients and servers\n\n\nCoupling\nTight coupling through high-speed interconnects\nLoose coupling across geographically distributed resources\nPeer-to-peer connections\n\n\nResource Management\nCentralized resource manager or scheduler\nDistributed resource management system with middleware\nDecentralized, self-organizing resource management\n\n\nResource Allocation\nCentral allocation of resources within the cluster\nResource pooling and allocation based on policies and agreements\nPeers contribute and consume resources as needed\n\n\nScalability\nLimited scalability within a single administrative domain\nBetter scalability by integrating resources across domains\nPotentially massive scalability by adding more peers\n\n\nFailure Handling\nSingle point of failure can affect the entire cluster\nFailures can be isolated to specific resources or domains\nFailures of individual peers have minimal impact\n\n\nSecurity\nCentralized security management within the cluster\nSecurity policies and agreements across multiple domains\nDecentralized security mechanisms, potential vulnerabilities\n\n\nUse Cases\nHigh-performance computing, parallel processing, tightly coupled applications\nScientific computing, data-intensive applications, resource sharing across organizations\nFile sharing, content distribution, distributed computing\n\n\nExamples\nBeowulf clusters, High-Performance Computing (HPC) clusters\nEGEE, TeraGrid, Open Science Grid\nBitTorrent, Skype\n\n\n\n(Be sure with any 4) if you guys find it very big"
-  },
-  {
-    "objectID": "posts/CLOUDCOMPUTING/basiccloudqa.html#how-does-utility-computing-differ-from-other-computing-paradigms-and-what-are-its-advantages-and-disadvantages-in-comparison-to-traditional-hosting-models",
-    "href": "posts/CLOUDCOMPUTING/basiccloudqa.html#how-does-utility-computing-differ-from-other-computing-paradigms-and-what-are-its-advantages-and-disadvantages-in-comparison-to-traditional-hosting-models",
-    "title": "Some basic Cloud Computing QA",
-    "section": "25. How does utility computing differ from other computing paradigms, and what are its advantages and disadvantages in comparison to traditional hosting models",
-    "text": "25. How does utility computing differ from other computing paradigms, and what are its advantages and disadvantages in comparison to traditional hosting models\n\nAspectsAdvantagesDisadvantages\n\n\n\n\n\n\n\n\n\n\nAspect\nUtility Computing\nTraditional Hosting Models\n\n\n\n\nResource Allocation\nDynamic, on-demand resource allocation\nStatic resource allocation\n\n\nOwnership and Maintenance\nService provider manages infrastructure\nOrganization owns and maintains infrastructure\n\n\nPricing Model\nPay-as-you-go or subscription-based\nUpfront capital expenditures and ongoing operational costs\n\n\n\n\n\n\n\n\n\n\n\n\n\nAdvantage\nUtility Computing\nTraditional Hosting Models\n\n\n\n\nCost Efficiency\nPay only for resources consumed\nNeed to invest in infrastructure upfront\n\n\nScalability\nEasy to scale resources up or down\nLimited scalability based on owned infrastructure\n\n\nFlexibility\nAccess to diverse computing resources and services\nLimited to owned resources and technologies\n\n\nAccessibility\nAccess resources from anywhere with internet\nAccess limited to on-premises infrastructure\n\n\nReduced Maintenance\nProvider handles maintenance and updates\nOrganization responsible for maintenance\n\n\n\n\n\n\n\n\n\n\n\n\n\nDisadvantage\nUtility Computing\nTraditional Hosting Models\n\n\n\n\nInternet Dependency\nRelies heavily on stable internet connection\nLess dependent on internet connectivity\n\n\nData Security and Privacy\nPotential concerns with third-party infrastructure\nHigher control over data security and privacy\n\n\nVendor Lock-in\nPotential challenges in migrating between providers\nNo vendor lock-in concerns\n\n\nPerformance Variability\nShared resources can lead to performance fluctuations\nDedicated resources, more predictable performance\n\n\nLimited Control\nLess control over underlying infrastructure\nFull control over infrastructure\n\n\n\n\n\n\nComparison of Utility Computing and Traditional Hosting Models {#utility-vs-traditional}"
-  },
-  {
-    "objectID": "posts/CLOUDCOMPUTING/basiccloudqa.html#explain-the-concepts-of-edge-computing-and-fog-computing-and-discuss-their-respective-roles-in-enhancing-the-performance-and-efficiency-of-distributed-systems.",
-    "href": "posts/CLOUDCOMPUTING/basiccloudqa.html#explain-the-concepts-of-edge-computing-and-fog-computing-and-discuss-their-respective-roles-in-enhancing-the-performance-and-efficiency-of-distributed-systems.",
-    "title": "Some basic Cloud Computing QA",
-    "section": "26. Explain the concepts of edge computing and fog computing, and discuss their respective roles in enhancing the performance and efficiency of distributed systems.",
-    "text": "26. Explain the concepts of edge computing and fog computing, and discuss their respective roles in enhancing the performance and efficiency of distributed systems.\n\n\n\n\n\n\n\n\nAspect\nEdge Computing\nFog Computing\n\n\n\n\nLocation\nClose to data source or device\nBetween data source and cloud\n\n\nLatency\nLow latency for real-time processing\nLower latency than cloud, higher than edge\n\n\nScalability\nLimited scalability due to proximity\nScalable for distributed processing\n\n\nResource Constraints\nLimited resources, constrained environment\nMore resources, less constrained environment\n\n\nData Processing\nReal-time processing at the edge\nProcessing closer to data source\n\n\n\n\nEdge Computing\nEdge computing is a paradigm that involves processing data at or near the source, rather than transmitting it to a centralized cloud or data center for processing. In edge computing, computational resources (such as processors, storage, and networking capabilities) are placed at the edge of the network, closer to the devices or sensors generating the data.\n\n\nFog Computing\nFog computing is an extension of the edge computing paradigm, where a higher level of computation and storage resources is distributed across the network, creating a “fog” between the edge devices and the cloud. Fog computing involves a hierarchical architecture, with fog nodes placed at various points along the network path, providing intermediate processing and storage capabilities.\n\n\n\n\n\n\nNote\n\n\n\nEdge computing focuses on processing data at the extreme edge of the network, while fog computing introduces an intermediate layer with more powerful computing resources between the edge and the cloud."
-  },
-  {
-    "objectID": "posts/CLOUDCOMPUTING/basiccloudqa.html#describe-the-various-cloud-delivery-models-xaas-and-their-applications-in-different-industries-providing-examples-of-how-each-model-can-be-utilized-effectively.",
-    "href": "posts/CLOUDCOMPUTING/basiccloudqa.html#describe-the-various-cloud-delivery-models-xaas-and-their-applications-in-different-industries-providing-examples-of-how-each-model-can-be-utilized-effectively.",
-    "title": "Some basic Cloud Computing QA",
-    "section": "27. Describe the various cloud delivery models (XaaS) and their applications in different industries, providing examples of how each model can be utilized effectively.",
-    "text": "27. Describe the various cloud delivery models (XaaS) and their applications in different industries, providing examples of how each model can be utilized effectively.\n\nCloud Delivery Models (XaaS)\nCertainly, here are the various cloud delivery models (XaaS) along with examples of their applications in different industries:\n\nSoftware as a Service (SaaS): Applications delivered over the internet.\n\nExamples: Google Workspace, Microsoft Office 365, Salesforce CRM, Dropbox, Zoom.\n\nPlatform as a Service (PaaS): Provides a platform for developing, testing, and deploying applications.\n\nExamples: AWS Elastic Beanstalk, Google App Engine, Heroku, Microsoft Azure Web Apps.\n\nInfrastructure as a Service (IaaS): Delivers virtualized computing resources (servers, storage, networking).\n\nExamples: Amazon Web Services (EC2, S3), Microsoft Azure, Google Cloud Platform, DigitalOcean.\n\nDatabase as a Service (DBaaS): Offers database management systems as a cloud service.\n\nExamples: Amazon RDS, Microsoft Azure SQL Database, Google Cloud SQL.\n\nBackend as a Service (BaaS): Provides backend cloud services for mobile and web applications.\n\nExamples: Firebase, AWS Amplify, Azure Mobile Apps.\n\nMonitoring as a Service (MonaaS): Offers monitoring and logging services for applications and infrastructure.\n\nExamples: AWS CloudWatch, Azure Monitor, Google Cloud Operations.\n\nSecurity as a Service (SECaaS): Provides security services like firewalls, antivirus, and intrusion detection.\n\nExamples: Zscaler, Cisco Umbrella, Palo Alto Networks GlobalProtect.\n\n\n\n\nApplications in Different Industries\nThese cloud delivery models (XaaS) are utilized across various industries, including technology, finance, healthcare, e-commerce, education, and more, enabling organizations to access and leverage various services and resources on-demand, without the need for extensive infrastructure investments."
-  },
-  {
-    "objectID": "posts/CLOUDCOMPUTING/basiccloudqa.html#compare-the-private-public-and-hybrid-cloud-deployment-models-discussing-the-key-considerations-for-organizations-when-choosing-between-them",
-    "href": "posts/CLOUDCOMPUTING/basiccloudqa.html#compare-the-private-public-and-hybrid-cloud-deployment-models-discussing-the-key-considerations-for-organizations-when-choosing-between-them",
-    "title": "Some basic Cloud Computing QA",
-    "section": "28. Compare the private, public, and hybrid cloud deployment models, discussing the key considerations for organizations when choosing between them",
-    "text": "28. Compare the private, public, and hybrid cloud deployment models, discussing the key considerations for organizations when choosing between them\n\n\n\n\n\n\n\n\n\nAspect\nPrivate Cloud\nPublic Cloud\nHybrid Cloud\n\n\n\n\nOwnership\nOwned and managed by the organization\nOwned and managed by a third-party cloud provider\nCombination of private and public cloud resources\n\n\nLocation\nOn-premises or hosted by a third-party\nOff-premises, hosted by the cloud provider\nPart on-premises, part off-premises\n\n\nSecurity and Control\nHigh level of control and security\nLower level of control and security compared to private cloud\nControl and security split between private and public components\n\n\nScalability\nLimited scalability based on available resources\nHighly scalable with on-demand resource provisioning\nScalability benefits of public cloud for variable workloads\n\n\nCost\nHigh upfront capital and operational costs\nPay-as-you-go pricing model, lower upfront costs\nCost optimization by leveraging public cloud for variable workloads\n\n\nCustomization\nHighly customizable to meet specific requirements\nLimited customization options, based on provider’s offerings\nCustomization options for private cloud component\n\n\nResponsibility\nOrganization is responsible for management and maintenance\nCloud provider manages and maintains the infrastructure\nShared responsibility between organization and provider\n\n\n\nKey Considerations:\n\nData Sensitivity and Compliance: Private cloud may be preferred for sensitive data or strict compliance requirements, while public cloud othewise\nCost and Budget: Public cloud offers a pay-as-you-go model, reducing upfront costs, while private cloud requires significant capital investment. Hybrid cloud can optimize costs by leveraging both models.\nControl and Customization: Private cloud provides maximum control and customization, while public cloud offers limited customization options.\nExpertise and Resources: Public cloud requires less technical expertise and resources compared to private cloud, which requires specialized skills and resources for management and maintenance.\nScalability and Flexibility: Public cloud offers high scalability and flexibility, while private cloud scalability is limited by available resources. Hybrid cloud combines the benefits of both models.\nVendor Lock-in: Public cloud may lead to vendor lock-in, while private cloud eliminates this concern. Hybrid cloud can mitigate vendor lock-in risks by using multiple providers."
-  },
-  {
-    "objectID": "about.html#experience",
-    "href": "about.html#experience",
-    "title": "About Me",
-    "section": "Experience",
-    "text": "Experience\n\nGoogle Developer Students Club\n\nMay 2023 - Present\n\nGDSC Amrita | Coimbatore, TN\n\nActively participated in GDSC (AI/ML)\nOrganized and facilitated an interactive Android workshop\nConducted a seminar on AI/ML deployment\n\n\n\n\nAnokha (Web dev)\n\nJune 2022 - June 2022\n\nAnokha Amrita | Coimbatore, TN\nDeveloped website for college department AIE\nShowcased participant’s code outputs and reports from training sessions and hackathons\nLive conversion of MD files into a neat HTML, Hosted in Github Pages\n\n\n\n\nAssociation of Students of Computer Science for Information Interchange (ASCII)\n\nJune 2022 - June 2023\n\nASCII Amrita | Coimbatore, TN\n\nPart of the Organization committee for a workshop on AI/ML basics using TensorFlow and PyTorch.\nActively maintaining of ACII github.\n\n\n\n\nIntel IOT/AI Club\n\nJune 2023 - Present\n\nIntel IOT Club | Coimbatore, TN\n\nActive team member of AI/ML club wing of the Intel IOT/AI club\nCreated basic ML model based on classification and image processing using Intel one API"
-  },
-  {
-    "objectID": "about.html#tech-stack-and-workflow",
-    "href": "about.html#tech-stack-and-workflow",
-    "title": "About Me",
-    "section": "Tech Stack and Workflow",
-    "text": "Tech Stack and Workflow\n\nBackend Development: Django, Flask, RestAPI\nMachine Learning: TensorFlow, PyTorch, Scikit-learn\nComputer Vision: OpenCV, Roboflow, Dlib\nCloud Platforms: Microsoft Azure\nContainerization: Docker\nProgramming Languages: Python, Scala, Java (basic knowledge), MATLAB\nCompetitive Programming: Proficient in Python (Leetcode, Codechef)"
-  },
-  {
-    "objectID": "contact.html",
-    "href": "contact.html",
-    "title": "Contact",
-    "section": "",
-    "text": "Hello! If you wish to contact me, please use the following methods:"
-  },
-  {
-    "objectID": "contact.html#email",
-    "href": "contact.html#email",
-    "title": "Contact",
-    "section": "Email",
-    "text": "Email\nYou can reach me at: dsiddharth25@gmail.com"
-  },
-  {
-    "objectID": "contact.html#phone",
-    "href": "contact.html#phone",
-    "title": "Contact",
-    "section": "Phone",
-    "text": "Phone\nYou can call me at: +91 73311-37182"
-  },
-  {
-    "objectID": "contact.html#social-media",
-    "href": "contact.html#social-media",
-    "title": "Contact",
-    "section": "Social Media",
-    "text": "Social Media\n\nLinkedIn\nWhatsapp\n\nNote: Please allow me 24-48 hours to respond to your messages. Thank you for understanding!"
-  },
-  {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "Projects",
-    "section": "",
-    "text": "QuadCopter Reinforcement learning Bot\n\n\n\n\n\n\n\n\n\n\n\nJan 5, 2024\n\n\nSiddharth D\n\n\n12 min\n\n\n\n\n\n\nNo matching items\n\n Back to top"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Siddharth D",
-    "section": "",
-    "text": "My Personal Website\n\n\n\n\nWelcome to My Personal Website!\n\n\n\n\nAbout Me\n\n\nProjects\n\n\nBlogs\n\n\nContact\n\n\n\n\n\n\n\nAbout This Site\n\n\nThis is my personal website where you can learn more about me, see my projects, read my blogs, and get in touch with me.\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "blogs.html",
-    "href": "blogs.html",
-    "title": "Blogs",
-    "section": "",
-    "text": "Some basic Cloud Computing QA\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n24 min\n\n\n\n\n\n\n\n\n\n\n\n\nMathematics for intelligent system\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to NLP\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n5 min\n\n\n\n\n\n\n\n\n\n\n\n\nLanguage Modelling and Other Concepts\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n6 min\n\n\n\n\n\n\n\n\n\n\n\n\nTopic 1 -&gt; Array\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\nTopic 1 -&gt; Recursion\n\n\n\n\n\n\n\n\n\n\n\nJan 6, 2024\n\n\nSiddharth D\n\n\n4 min\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\n\n\nJan 1, 2024\n\n\nSiddharth D\n\n\n1 min\n\n\n\n\n\n\nNo matching items\n\n Back to top"
-  },
-  {
     "objectID": "project_posts/RL_proj/index.html",
     "href": "project_posts/RL_proj/index.html",
     "title": "QuadCopter Reinforcement learning Bot",
@@ -476,59 +112,423 @@
     "text": "Simple overview"
   },
   {
-    "objectID": "posts/DEEP LEARNING/basics.html#l1-regularization",
-    "href": "posts/DEEP LEARNING/basics.html#l1-regularization",
-    "title": "Mathematics for intelligent system",
-    "section": "L1 Regularization",
-    "text": "L1 Regularization\nThe L1 regularization is calculated as:\n\\[\nL1 = \\lambda \\sum_{i=1}^{n} |w_i|\n\\]\nWhere \\(\\lambda\\) is the regularization strength and \\(w_i\\) is the weight of the \\(i^{th}\\) feature.\nThe main use of the L1 regularization with respect to the pane of the weights of the model is that it can be used to select the most important features of the model. This is because the L1 regularization tends to shrink the weights of the less important features to zero. This is because the L1 regularization is not differentiable at zero, and hence the weights of the less important features are shrunk to zero.\nThe region where the L1 regularization is not differentiable is shown in the figure below:"
+    "objectID": "blogs.html",
+    "href": "blogs.html",
+    "title": "Blogs",
+    "section": "",
+    "text": "Some basic Cloud Computing QA\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n24 min\n\n\n\n\n\n\n\n\n\n\n\n\nMathematics for intelligent system\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to NLP\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n5 min\n\n\n\n\n\n\n\n\n\n\n\n\nLanguage Modelling and Other Concepts\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n6 min\n\n\n\n\n\n\n\n\n\n\n\n\nTopic 1 -&gt; Array\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\nTopic 1 -&gt; Recursion\n\n\n\n\n\n\n\n\n\n\n\nJan 6, 2024\n\n\nSiddharth D\n\n\n4 min\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\n\n\nJan 1, 2024\n\n\nSiddharth D\n\n\n1 min\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
-    "objectID": "posts/DEEP LEARNING/basics.html#l2-regularization",
-    "href": "posts/DEEP LEARNING/basics.html#l2-regularization",
-    "title": "Mathematics for intelligent system",
-    "section": "L2 Regularization",
-    "text": "L2 Regularization\nThe L2 regularization is calculated as:\n\\[\nL2 = \\lambda \\sum_{i=1}^{n} w_i^2\n\\]\nWhere \\(\\lambda\\) is the regularization strength and \\(w_i\\) is the weight of the \\(i^{th}\\) feature.\nThe main use of the L2 regularization with respect to the pane of the weights of the model is that it can be used to prevent the weights from becoming too large. This is because the L2 regularization tends to shrink the weights of the model. This is because the L2 regularization is differentiable everywhere, and hence the weights of the model are shrunk towards zero.\nThe shape of the L2 regularization is a circle in the weight space"
+    "objectID": "blogs/DSA/Array DSA/index.html",
+    "href": "blogs/DSA/Array DSA/index.html",
+    "title": "Topic 1 -> Array",
+    "section": "",
+    "text": "Python’s Array Module\nThe array module in Python is used to store homogeneous data types such as integers, floats, etc. It is similar to lists in Python, but with the added advantage of being more efficient in terms of memory and performance for certain operations.\nWhen to use the array module? You should consider using the array module when you need to store a large amount of homogeneous data. This is because arrays are more memory efficient than lists. They also provide faster access in some cases because they store data in contiguous memory blocks, unlike lists.\nComparing array module with normal list Here are some key differences between the array module and a normal list in Python:\nHomogeneity: Arrays can only store elements of the same type, while lists can store elements of different types.\nMemory and Performance: Arrays are more memory efficient and can provide faster access and manipulation for large amounts of data.\nFunctionality: Lists come with a variety of built-in methods for manipulation like append, remove, pop, etc. Arrays have fewer methods but are more specialized for numerical and computational tasks.\nIn the provided code snippet, an array of type ‘h’ (short integers) is created to store prime numbers. This is a good use case for the array module because we are dealing with a large amount of homogeneous numerical data.\nIn this code, the array is more memory efficient than a list would be, and it provides fast and efficient access to the prime numbers stored within it.\n\n\n\n\n Back to top"
   },
   {
-    "objectID": "posts/DEEP LEARNING/basics.html#batch-normalization",
-    "href": "posts/DEEP LEARNING/basics.html#batch-normalization",
-    "title": "Mathematics for intelligent system",
-    "section": "Batch Normalization",
-    "text": "Batch Normalization\nThe batch normalization is a technique used to normalize the input of the hidden layers of the model. This is done to reduce the internal covariate shift. The internal covariate shift is the change in the distribution of the input of the hidden layers of the model. This is because the input of the hidden layers of the model changes as the weights of the model are updated. This is because the input of the hidden layers of the model is a function of the weights of the model.\nThe batch normalization is calculated as:\n\\[\n\\hat{x} = \\frac{x - \\mu}{\\sqrt{\\sigma^2 + \\epsilon}}\n\\]\nWhere \\(\\hat{x}\\) is the normalized input, \\(x\\) is the input, \\(\\mu\\) is the mean of the input, \\(\\sigma^2\\) is the variance of the input, and \\(\\epsilon\\) is a small number to prevent division by zero.\nThe steps inculded in\n\nCompute the mean and variance of the vectors in the mini-batch\n\nMean = \\(\\mu = \\frac{1}{m} \\sum_{i=1}^{m} x_i\\)\nVariance = \\(\\sigma^2 = \\frac{1}{m} \\sum_{i=1}^{m} (x_i - \\mu)^2\\)\n\nNormalize the input\n\n\\(\\hat{x} = \\frac{x - \\mu}{\\sqrt{\\sigma^2 + \\epsilon}}\\)\nWhere \\(\\hat{x}\\) is the normalized input, \\(x\\) is the input, \\(\\mu\\) is the mean of the input, \\(\\sigma^2\\) is the variance of the input, and \\(\\epsilon\\) is a small number to prevent division by zero.\n\nScale and shift the normalized input\n\n\\(y = \\gamma \\hat{x} + \\beta\\)\nWhere \\(y\\) is the output, \\(\\gamma\\) is the scale parameter, \\(\\hat{x}\\) is the normalized input, and \\(\\beta\\) is the shift parameter.\nThe scale and shift parameters are learned during the training of the model."
-  },
-  {
-    "objectID": "posts/NLP/LanguageModelling.html",
-    "href": "posts/NLP/LanguageModelling.html",
+    "objectID": "blogs/NLP/LanguageModelling.html",
+    "href": "blogs/NLP/LanguageModelling.html",
     "title": "Language Modelling and Other Concepts",
     "section": "",
     "text": "In this article, we will discuss the concept of language modelling and its importance in the field of Natural Language Processing. We will also discuss some of the other important concepts of NLP"
   },
   {
-    "objectID": "posts/NLP/LanguageModelling.html#unigram-model",
-    "href": "posts/NLP/LanguageModelling.html#unigram-model",
+    "objectID": "blogs/NLP/LanguageModelling.html#unigram-model",
+    "href": "blogs/NLP/LanguageModelling.html#unigram-model",
     "title": "Language Modelling and Other Concepts",
     "section": "Unigram Model",
     "text": "Unigram Model\n\nIn the unigram model, the probability of a word depends only on the word itself and not on any other words.\nThe probability of a word is given by the formula:\n\\[ P(w) = \\frac{Count(w)}{N} \\]\nWhere,\n\n\\(Count(w)\\) is the number of times the word \\(w\\) has appeared in the corpus\n\\(N\\) is the total number of words in the corpus\n\nThe unigram model is the simplest language model and is used as a baseline for comparison with other language models.\n\n# Example of Unigram Model\ntext = \"What are your aspirations in life\"\n\n# Tokenize the text\ntokens = text.split()\n\n# Count the frequency of each word\nword_freq = {}\nfor word in tokens:\n    if word in word_freq:\n        word_freq[word] += 1\n    else:\n        word_freq[word] = 1\n\n# Calculate the probability of each word\nprob_word = {}\nfor word in word_freq:\n    prob_word[word] = word_freq[word] / len(tokens)\n\n# Print the probability of each word\nfor word in prob_word:\n    print(word, prob_word[word])"
   },
   {
-    "objectID": "posts/NLP/LanguageModelling.html#bigram-model",
-    "href": "posts/NLP/LanguageModelling.html#bigram-model",
+    "objectID": "blogs/NLP/LanguageModelling.html#bigram-model",
+    "href": "blogs/NLP/LanguageModelling.html#bigram-model",
     "title": "Language Modelling and Other Concepts",
     "section": "Bigram Model",
     "text": "Bigram Model\n\nIn the bigram model, the probability of a word depends only on the previous word.\nThe probability of a word is given by the formula:\n\\[ P(w_i|w_{i-1}) = \\frac{Count(w_{i-1},w_i)}{Count(w_{i-1})} \\]\nWhere,\n\n\\(Count(w_{i-1},w_i)\\) is the number of times the word \\(w_i\\) has appeared after the word \\(w_{i-1}\\)\n\\(Count(w_{i-1})\\) is the number of times the word \\(w_{i-1}\\) has appeared in the corpus\n\n\\(P(w_i|w_{i-1})\\) is the probability of the word \\(w_i\\) given the word \\(w_{i-1}\\)\n\n# Example of Bigram Model\ntext = \"What are your aspirations in life\"\n\n# Tokenize the text\ntokens = text.split()\n\n# Create bigrams\nbigrams = [(tokens[i], tokens[i+1]) for i in range(len(tokens)-1)]\n\n# Count the frequency of each bigram\nbigram_freq = {}\n\nfor bigram in bigrams:\n    if bigram in bigram_freq:\n        bigram_freq[bigram] += 1\n    else:\n        bigram_freq[bigram] = 1\n\n# Calculate the probability of each bigram\nprob_bigram = {}\nfor bigram in bigram_freq:\n    prob_bigram[bigram] = bigram_freq[bigram] / tokens.count(bigram[0])\n\n# Print the probability of each bigram\nfor bigram in prob_bigram:\n    print(bigram, prob_bigram[bigram])"
   },
   {
-    "objectID": "posts/NLP/LanguageModelling.html#trigram-model",
-    "href": "posts/NLP/LanguageModelling.html#trigram-model",
+    "objectID": "blogs/NLP/LanguageModelling.html#trigram-model",
+    "href": "blogs/NLP/LanguageModelling.html#trigram-model",
     "title": "Language Modelling and Other Concepts",
     "section": "Trigram Model",
     "text": "Trigram Model\n\nIn the trigram model, the probability of a word depends on the previous two words.\nThe probability of a word is given by the formula:\n\\[ P(w_i|w_{i-2},w_{i-1}) = \\frac{Count(w_{i-2},w_{i-1},w_i)}{Count(w_{i-2},w_{i-1})} \\]\nWhere,\n\n\\(Count(w_{i-2},w_{i-1},w_i)\\) is the number of times the word \\(w_i\\) has appeared after the words \\(w_{i-2}\\) and \\(w_{i-1}\\)\n\\(Count(w_{i-2},w_{i-1})\\) is the number of times the words \\(w_{i-2}\\) and \\(w_{i-1}\\) have appeared in the corpus\n\n\\(P(w_i|w_{i-2},w_{i-1})\\) is the probability of the word \\(w_i\\) given the words \\(w_{i-2}\\) and \\(w_{i-1}\\)\n\n# Example of Trigram Model\ntext = \"What are your aspirations in life\"\n\n# Tokenize the text\ntokens = text.split()\n\n# Create trigrams\ntrigrams = [(tokens[i], tokens[i+1], tokens[i+2]) for i in range(len(tokens)-2)]\n\n# Count the frequency of each trigram\ntrigram_freq = {}\n\nfor trigram in trigrams:\n    if trigram in trigram_freq:\n        trigram_freq[trigram] += 1\n    else:\n        trigram_freq[trigram] = 1\n\n# Calculate the probability of each trigram\nprob_trigram = {}\nfor trigram in trigram_freq:\n    prob_trigram[trigram] = trigram_freq[trigram] / bigrams.count((trigram[0], trigram[1]))\n\n# Print the probability of each trigram\nfor trigram in prob_trigram:\n    print(trigram, prob_trigram[trigram])"
   },
   {
-    "objectID": "posts/DSA/Array DSA/index.html",
-    "href": "posts/DSA/Array DSA/index.html",
-    "title": "Topic 1 -> Array",
+    "objectID": "blogs/DEEP LEARNING/basics.html#l1-regularization",
+    "href": "blogs/DEEP LEARNING/basics.html#l1-regularization",
+    "title": "Mathematics for intelligent system",
+    "section": "L1 Regularization",
+    "text": "L1 Regularization\nThe L1 regularization is calculated as:\n\\[\nL1 = \\lambda \\sum_{i=1}^{n} |w_i|\n\\]\nWhere \\(\\lambda\\) is the regularization strength and \\(w_i\\) is the weight of the \\(i^{th}\\) feature.\nThe main use of the L1 regularization with respect to the pane of the weights of the model is that it can be used to select the most important features of the model. This is because the L1 regularization tends to shrink the weights of the less important features to zero. This is because the L1 regularization is not differentiable at zero, and hence the weights of the less important features are shrunk to zero.\nThe region where the L1 regularization is not differentiable is shown in the figure below:"
+  },
+  {
+    "objectID": "blogs/DEEP LEARNING/basics.html#l2-regularization",
+    "href": "blogs/DEEP LEARNING/basics.html#l2-regularization",
+    "title": "Mathematics for intelligent system",
+    "section": "L2 Regularization",
+    "text": "L2 Regularization\nThe L2 regularization is calculated as:\n\\[\nL2 = \\lambda \\sum_{i=1}^{n} w_i^2\n\\]\nWhere \\(\\lambda\\) is the regularization strength and \\(w_i\\) is the weight of the \\(i^{th}\\) feature.\nThe main use of the L2 regularization with respect to the pane of the weights of the model is that it can be used to prevent the weights from becoming too large. This is because the L2 regularization tends to shrink the weights of the model. This is because the L2 regularization is differentiable everywhere, and hence the weights of the model are shrunk towards zero.\nThe shape of the L2 regularization is a circle in the weight space"
+  },
+  {
+    "objectID": "blogs/DEEP LEARNING/basics.html#batch-normalization",
+    "href": "blogs/DEEP LEARNING/basics.html#batch-normalization",
+    "title": "Mathematics for intelligent system",
+    "section": "Batch Normalization",
+    "text": "Batch Normalization\nThe batch normalization is a technique used to normalize the input of the hidden layers of the model. This is done to reduce the internal covariate shift. The internal covariate shift is the change in the distribution of the input of the hidden layers of the model. This is because the input of the hidden layers of the model changes as the weights of the model are updated. This is because the input of the hidden layers of the model is a function of the weights of the model.\nThe batch normalization is calculated as:\n\\[\n\\hat{x} = \\frac{x - \\mu}{\\sqrt{\\sigma^2 + \\epsilon}}\n\\]\nWhere \\(\\hat{x}\\) is the normalized input, \\(x\\) is the input, \\(\\mu\\) is the mean of the input, \\(\\sigma^2\\) is the variance of the input, and \\(\\epsilon\\) is a small number to prevent division by zero.\nThe steps inculded in\n\nCompute the mean and variance of the vectors in the mini-batch\n\nMean = \\(\\mu = \\frac{1}{m} \\sum_{i=1}^{m} x_i\\)\nVariance = \\(\\sigma^2 = \\frac{1}{m} \\sum_{i=1}^{m} (x_i - \\mu)^2\\)\n\nNormalize the input\n\n\\(\\hat{x} = \\frac{x - \\mu}{\\sqrt{\\sigma^2 + \\epsilon}}\\)\nWhere \\(\\hat{x}\\) is the normalized input, \\(x\\) is the input, \\(\\mu\\) is the mean of the input, \\(\\sigma^2\\) is the variance of the input, and \\(\\epsilon\\) is a small number to prevent division by zero.\n\nScale and shift the normalized input\n\n\\(y = \\gamma \\hat{x} + \\beta\\)\nWhere \\(y\\) is the output, \\(\\gamma\\) is the scale parameter, \\(\\hat{x}\\) is the normalized input, and \\(\\beta\\) is the shift parameter.\nThe scale and shift parameters are learned during the training of the model."
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
     "section": "",
-    "text": "Python’s Array Module\nThe array module in Python is used to store homogeneous data types such as integers, floats, etc. It is similar to lists in Python, but with the added advantage of being more efficient in terms of memory and performance for certain operations.\nWhen to use the array module? You should consider using the array module when you need to store a large amount of homogeneous data. This is because arrays are more memory efficient than lists. They also provide faster access in some cases because they store data in contiguous memory blocks, unlike lists.\nComparing array module with normal list Here are some key differences between the array module and a normal list in Python:\nHomogeneity: Arrays can only store elements of the same type, while lists can store elements of different types.\nMemory and Performance: Arrays are more memory efficient and can provide faster access and manipulation for large amounts of data.\nFunctionality: Lists come with a variety of built-in methods for manipulation like append, remove, pop, etc. Arrays have fewer methods but are more specialized for numerical and computational tasks.\nIn the provided code snippet, an array of type ‘h’ (short integers) is created to store prime numbers. This is a good use case for the array module because we are dealing with a large amount of homogeneous numerical data.\nIn this code, the array is more memory efficient than a list would be, and it provides fast and efficient access to the prime numbers stored within it.\n\n\n\n\n Back to top"
+    "text": "Hello! If you wish to contact me, please use the following methods:"
+  },
+  {
+    "objectID": "contact.html#email",
+    "href": "contact.html#email",
+    "title": "Contact",
+    "section": "Email",
+    "text": "Email\nYou can reach me at: dsiddharth25@gmail.com"
+  },
+  {
+    "objectID": "contact.html#phone",
+    "href": "contact.html#phone",
+    "title": "Contact",
+    "section": "Phone",
+    "text": "Phone\nYou can call me at: +91 73311-37182"
+  },
+  {
+    "objectID": "contact.html#social-media",
+    "href": "contact.html#social-media",
+    "title": "Contact",
+    "section": "Social Media",
+    "text": "Social Media\n\nLinkedIn\nWhatsapp\n\nNote: Please allow me 24-48 hours to respond to your messages. Thank you for understanding!"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "QuadCopter Reinforcement learning Bot\n\n\n\n\n\n\n\n\n\n\n\nJan 5, 2024\n\n\nSiddharth D\n\n\n12 min\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Siddharth D",
+    "section": "",
+    "text": "My Personal Website\n\n\n\n\nWelcome to My Personal Website!\n\n\n\n\nAbout Me\n\n\nProjects\n\n\nBlogs\n\n\nContact\n\n\n\n\n\n\n\nAbout This Site\n\n\nThis is my personal website where you can learn more about me, see my projects, read my blogs, and get in touch with me.\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "blogs/CLOUDCOMPUTING/basiccloudqa.html",
+    "href": "blogs/CLOUDCOMPUTING/basiccloudqa.html",
+    "title": "Some basic Cloud Computing QA",
+    "section": "",
+    "text": "In this article we are going to see some of the common cloud computing questions and answers. This will help you to prepare for your cloud computing interviews."
+  },
+  {
+    "objectID": "blogs/CLOUDCOMPUTING/basiccloudqa.html#what-is-cloud-computing-and-explin-its-properties-and-characteristics",
+    "href": "blogs/CLOUDCOMPUTING/basiccloudqa.html#what-is-cloud-computing-and-explin-its-properties-and-characteristics",
+    "title": "Some basic Cloud Computing QA",
+    "section": "1. What is Cloud Computing and explin its properties and characteristics?",
+    "text": "1. What is Cloud Computing and explin its properties and characteristics?\nCloud computing is the delivery of computing services over the internet. It offers faster innovation, flexible resources, and economies of scale. You typically pay only for cloud services you use, helping you lower your operating costs, run your infrastructure more efficiently, and scale as your business needs change.\n\nProperties and Characteristics\n\n\n\n\n\n\nProperties and Characteristics\n\n\n\n\n\nThere is a subtle difference between properties and characteristics.\nProperties are the high level features of cloud computing, whereas Characteristics are the detailed features of cloud computing.\n\n\n\n\nProperties\n\nUser centric\nUbiquitous network access\nLocation independent resource pooling\nTask centric\nProgrammatic control\nQuality of service\nResource optimization\n\n\n\nCharacteristics\n\non-demand self-service\nBroad network access\nResource pooling\nRapid elasticity\nMeasured service\nMulti-tenancy\nScalability\nSecurity\nAutomation\nSustainability"
+  },
+  {
+    "objectID": "blogs/CLOUDCOMPUTING/basiccloudqa.html#what-is-parallel-processing-and-load-balancing-in-performance-optimization",
+    "href": "blogs/CLOUDCOMPUTING/basiccloudqa.html#what-is-parallel-processing-and-load-balancing-in-performance-optimization",
+    "title": "Some basic Cloud Computing QA",
+    "section": "2. What is parallel processing and load balancing in performance optimization?",
+    "text": "2. What is parallel processing and load balancing in performance optimization?\nParallel processing is a method in computing of running two or more processors (CPUs) to handle separate parts of an overall task. - This is done to reduce the overall time taken to complete the task. But doing every task in parallel is not always efficient. Hence its up to the developer to decide which tasks can be done in parallel and which cannot.\nLoad balancing is the process of distributing the load among various pool computing resources, such as computers, a computer cluster, network links, central processing units, or disk drives. This is done so that the incomming load does not get queued up and all the resources are utilized efficiently."
+  },
+  {
+    "objectID": "blogs/CLOUDCOMPUTING/basiccloudqa.html#how-do-users-access-cloud-services",
+    "href": "blogs/CLOUDCOMPUTING/basiccloudqa.html#how-do-users-access-cloud-services",
+    "title": "Some basic Cloud Computing QA",
+    "section": "3. How do users access cloud services?",
+    "text": "3. How do users access cloud services?\n\nUsers can access cloud services through a web browser after logging into the cloud service provider’s website.\nThey can also access cloud services through a software application that connects to the cloud service provider’s API. This software application can be a mobile app, a desktop app, or a command-line interface.\nUsers can also access cloud services through a virtual private network (VPN) connection to the cloud service provider’s network.\n\nThese are some of the common ways in which users can access cloud services."
+  },
+  {
+    "objectID": "blogs/CLOUDCOMPUTING/basiccloudqa.html#what-is-accessiblity-and-portability",
+    "href": "blogs/CLOUDCOMPUTING/basiccloudqa.html#what-is-accessiblity-and-portability",
+    "title": "Some basic Cloud Computing QA",
+    "section": "4. What is accessiblity and portability ?",
+    "text": "4. What is accessiblity and portability ?\nAccessibility refers to the ability of users to access cloud services from anywhere in the world using any device with an internet connection. It ensures that users can access their data and applications whenever they need them.\nPortability refers to the ability of users to move their data and applications between different cloud service providers. It ensures that users are not locked into a single cloud service provider and can switch providers if needed."
+  },
+  {
+    "objectID": "blogs/CLOUDCOMPUTING/basiccloudqa.html#how-do-we-achieve-accessiblity-and-portability-properties-in-cloud-computing",
+    "href": "blogs/CLOUDCOMPUTING/basiccloudqa.html#how-do-we-achieve-accessiblity-and-portability-properties-in-cloud-computing",
+    "title": "Some basic Cloud Computing QA",
+    "section": "5. How do we achieve accessiblity and portability properties in cloud computing?",
+    "text": "5. How do we achieve accessiblity and portability properties in cloud computing?\nTo acheive accessiblity and portability properties in cloud computing, we need to follow the below practices:\n\nStandardization: Standardize the interfaces and protocols used by cloud service providers to ensure that users can access and move their data and applications between different providers.\nInteroperability: Ensure that cloud service providers can work together to provide users with seamless access to their data and applications.\nData portability: Provide users with tools and services that allow them to easily move their data between different cloud service providers.\nOpen standards: Use open standards and open-source software to ensure that users are not locked into a single cloud service provider.\nAPIs: Provide users with APIs that allow them to access and manage their data and applications from any device or platform.\nSecurity: Ensure that users’ data and applications are secure and protected from unauthorized access or data breaches.\nCompliance: Ensure that cloud service providers comply with industry standards and regulations to protect users’ data and applications.\n\nBy following these practices, we can achieve accessiblity and portability properties in cloud computing."
+  },
+  {
+    "objectID": "blogs/CLOUDCOMPUTING/basiccloudqa.html#what-is-soa-and-sla-in-cloud-computing-explain-them",
+    "href": "blogs/CLOUDCOMPUTING/basiccloudqa.html#what-is-soa-and-sla-in-cloud-computing-explain-them",
+    "title": "Some basic Cloud Computing QA",
+    "section": "6. What is SOA and SLA in cloud computing, explain them?",
+    "text": "6. What is SOA and SLA in cloud computing, explain them?\nSOA (Service-Oriented Architecture) is a software design approach that focuses on building software applications as a collection of loosely coupled services. These services are designed to be reusable, interoperable, and independent of the underlying technology.\n\nSOA allows organizations to build flexible and scalable software applications that can be easily integrated with other systems and services.\nIt also enables organizations to respond quickly to changing business requirements and market conditions.\n\n\nComponents of SOA\n\nservice implementation\nservice contract\nservice interface\nservice provider\nservice consumer\nservice registry\n\n\n\nWorking of SOA\n\nIn SOA, services are designed to be self-contained and independent of other services.\nEach service has a well-defined interface that specifies how it can be accessed and what it can do.\nServices communicate with each other using standard protocols and data formats.\nServices can be combined and orchestrated to create complex business processes.\nServices can be reused across different applications and organizations.\n\nSLA (Service Level Agreement) is a contract between a cloud service provider and a customer that defines the level of service that the provider will deliver. It specifies the performance metrics, availability, and support that the provider will provide to the customer.\n\nSLAs are used to ensure that cloud service providers meet the expectations of their customers and deliver the services that they have promised.\nSLAs also help to establish trust between the provider and the customer and provide a framework for resolving disputes and issues that may arise during the course of the service.\n\n\n\nComponents of SLA\n\nService scope\nService availability\nService performance\nService support\nService security"
+  },
+  {
+    "objectID": "blogs/CLOUDCOMPUTING/basiccloudqa.html#explain-about-problems-in-traditional-computing-and-how-does-dynamic-provisioning-overcome-these-problems",
+    "href": "blogs/CLOUDCOMPUTING/basiccloudqa.html#explain-about-problems-in-traditional-computing-and-how-does-dynamic-provisioning-overcome-these-problems",
+    "title": "Some basic Cloud Computing QA",
+    "section": "7. Explain about problems in traditional computing and how does Dynamic provisioning overcome these problems?",
+    "text": "7. Explain about problems in traditional computing and how does Dynamic provisioning overcome these problems?\n\nProblems in traditional computing\n\nUnderutilization of resources: In traditional computing, resources are provisioned statically, which can lead to underutilization of resources.\nScalability issues: Traditional computing environments are not easily scalable, there are lot of manual interventions required to scale up or down the resources.\nLimited flexibility: Traditional computing environments are not very flexible and cannot easily adapt to changing business requirements.\nHigh costs: Traditional computing environments are expensive to set up and maintain, as they require a lot of hardware and software resources.\n\n\n\nDynamic provisioning\nDynamic provisioning is a cloud computing feature that allows users to automatically provision and deprovision resources based on demand. It enables users to scale their resources up or down as needed, without any manual intervention.\n\nDynamic provisioning helps to overcome the problems of underutilization of resources, scalability issues, limited flexibility, and high costs that are associated with traditional computing environments.\nIt allows users to optimize their resource usage, reduce costs, and improve the performance of their applications.\n\n\n\nHow they overcome the problems?\n\nBy automatically provisioning and deprovisioning resources based on demand.\nBy enabling users to scale their resources up or down as needed.\nBy optimizing resource usage and reducing costs.\nBy improving the performance of applications.\nBy providing users with the flexibility to adapt to changing business requirements.\nBy reducing the manual intervention required to manage resources.\n\nBy using dynamic provisioning, users can overcome the problems associated with traditional computing environments and take advantage of the benefits of cloud computing."
+  },
+  {
+    "objectID": "blogs/CLOUDCOMPUTING/basiccloudqa.html#explain-about-qos-and-sla",
+    "href": "blogs/CLOUDCOMPUTING/basiccloudqa.html#explain-about-qos-and-sla",
+    "title": "Some basic Cloud Computing QA",
+    "section": "8. Explain about QOS and SLA",
+    "text": "8. Explain about QOS and SLA\nQuality of Service (QoS) is all about prioritizing network traffic flows as per defined policies and rules.\n\nIt allows classification and marking of different data streams.\nHigher priority traffic gets preferential treatment over lower priority flows during congestion.\nThis ensures critical apps/services get the bandwidth and low latency they need.\n\nService Level Agreements (SLAs) are contractual commitments made by service providers.\n\nThey specify measurable performance metrics like uptime, throughput, latency, etc.\nClearly outline the expected quality of service the customer should receive.\nFailure to meet SLA terms may lead to penalties, credits or termination of contract.\n\nIn essence, QoS is the technical mechanism to optimize network performance, while SLAs are the commercial/legal guidelines that hold service providers accountable to deliver a guaranteed experience to users. A well-designed QoS policy complemented by a stringent SLA ensures your critical applications get the network love they deserve, you feel me?"
+  },
+  {
+    "objectID": "blogs/CLOUDCOMPUTING/basiccloudqa.html#what-is-multi-tenant-design-in-cloud-computing",
+    "href": "blogs/CLOUDCOMPUTING/basiccloudqa.html#what-is-multi-tenant-design-in-cloud-computing",
+    "title": "Some basic Cloud Computing QA",
+    "section": "9. What is Multi-Tenant Design in Cloud computing?",
+    "text": "9. What is Multi-Tenant Design in Cloud computing?\nMultitenancy means that multiple customers of a cloud vendor are using the same computing resources. Despite the fact that they share resources, cloud customers are not aware of each other, and their data is kept totally separate.\nThe main advantage of multitenancy is\n\nbetter usage of resources\nlower costs for the cloud vendor, which can then be passed on to the customer.\nfaster deployment of new features and updates."
+  },
+  {
+    "objectID": "blogs/CLOUDCOMPUTING/basiccloudqa.html#explain-about-availability-and-reliability-and-how-to-achieve-them",
+    "href": "blogs/CLOUDCOMPUTING/basiccloudqa.html#explain-about-availability-and-reliability-and-how-to-achieve-them",
+    "title": "Some basic Cloud Computing QA",
+    "section": "10. Explain about Availability and Reliability and how to achieve them?",
+    "text": "10. Explain about Availability and Reliability and how to achieve them?\nAvailability is the measure of the time a system is up and running. It is usually expressed as a percentage of uptime over a given period of time. For example, a system with 99.9% availability is up and running 99.9% of the time.\nReliability is the measure of how well a system performs its intended functions. It is usually expressed as a percentage of successful operations over a given period of time. For example, a system with 99.9% reliability performs its intended functions 99.9% of the time.\nTo achieve availability and reliability in cloud computing, you can follow these best practices:\n\nRedundancy: Use redundant components to ensure that if one component fails, another component can take over.\nLoad balancing: Distribute the load across multiple servers\nMonitoring: Monitor your system and take corrective actions when needed.\nBackup and recovery: Regularly backup your data and have a recovery plan in place.\n\nBy following these best practices, you can achieve availability and reliability in cloud computing."
+  },
+  {
+    "objectID": "blogs/CLOUDCOMPUTING/basiccloudqa.html#what-is-fault-tolerance-and-its-characteristics-and-why-do-we-need-it",
+    "href": "blogs/CLOUDCOMPUTING/basiccloudqa.html#what-is-fault-tolerance-and-its-characteristics-and-why-do-we-need-it",
+    "title": "Some basic Cloud Computing QA",
+    "section": "11. What is fault Tolerance and its characteristics and why do we need it?",
+    "text": "11. What is fault Tolerance and its characteristics and why do we need it?\nFault tolerance refers to a system’s ability to continue operating properly in the event of failures or faults with its components. It is a crucial characteristic for mission-critical systems and applications. (the bold part is keyword)\nCharacteristics of fault-tolerant systems:\n\nRedundancy: Having redundant components that can take over when others fail.\nFailover: Automatic switching to redundant components or systems when a failure occurs.\nFault detection: Mechanisms to detect and isolate faults in real-time.\nFault containment: Preventing faults from cascading and affecting the entire system.\n\nWe need fault tolerance because:\n\nIt ensures high availability and reliability, minimizing downtime.\nIt maintains data integrity and prevents data loss in case of failures.\nIt provides business continuity and meets service level agreements (SLAs).\nIt enhances system resilience, especially in mission-critical applications (e.g., healthcare, finance).\n\nFault tolerance is achieved through various techniques like redundant hardware, software failover mechanisms, error handling, and fault-tolerant system design principles like graceful degradation and self-healing capabilities."
+  },
+  {
+    "objectID": "blogs/CLOUDCOMPUTING/basiccloudqa.html#what-is-the-system-secutiry-and-issues-in-it",
+    "href": "blogs/CLOUDCOMPUTING/basiccloudqa.html#what-is-the-system-secutiry-and-issues-in-it",
+    "title": "Some basic Cloud Computing QA",
+    "section": "12. What is the system secutiry and issues in it?",
+    "text": "12. What is the system secutiry and issues in it?\nSystem security refers to the measures taken to protect computer systems and data from unauthorized access, cyberattacks, and other security threats. It encompasses various aspects of security, including:\n\nAuthentication\nAuthorization\nEncryption\nFirewalls\n\nCommon issues in system security are:\n\nData breaches: Unauthorized access to sensitive data.\nMalware attacks: Viruses, worms, ransomware, etc.\nPhishing: Social engineering attacks to steal sensitive information.\nDenial of Service (DoS): Overloading systems to disrupt services.\nInsider threats: Malicious actions by authorized users.\nWeak passwords: Vulnerable to brute-force attacks."
+  },
+  {
+    "objectID": "blogs/CLOUDCOMPUTING/basiccloudqa.html#what-are-the-traditional-local-computing-power-requirements-and-its-problems-also-explain-how-does-cloud-computing-solve-these-problems",
+    "href": "blogs/CLOUDCOMPUTING/basiccloudqa.html#what-are-the-traditional-local-computing-power-requirements-and-its-problems-also-explain-how-does-cloud-computing-solve-these-problems",
+    "title": "Some basic Cloud Computing QA",
+    "section": "13. What are the traditional local computing power requirements and its problems, also explain how does cloud computing solve these problems?",
+    "text": "13. What are the traditional local computing power requirements and its problems, also explain how does cloud computing solve these problems?\nTraditional local computing power requirements include:\n\nHigh upfront costs: Purchasing hardware, software, and infrastructure.\nLimited scalability: Difficulty in scaling resources up or down.\nMaintenance and management: Regular updates, patches, and backups.\nSecurity risks: Vulnerabilities and data breaches.\n\nThe cloud architecture solves all of these problems because the same amout of resources are being used by multiple users. As multiple users use the same resources, the cost is shared among them. This reduces the cost for each user.\nAlso, the cloud provider takes care of the maintenance and management of the resources, which reduces the burden on the user. The cloud provider also takes care of the secure issues apart from that having many number of users will make the cloud provider or the system user to identify and report the detected security issues and provid a fix ot them faster."
+  },
+  {
+    "objectID": "blogs/CLOUDCOMPUTING/basiccloudqa.html#to-achieve-what-we-need-system-control-automation-and-system-state-monitoring-and-explain-about-both-of-them",
+    "href": "blogs/CLOUDCOMPUTING/basiccloudqa.html#to-achieve-what-we-need-system-control-automation-and-system-state-monitoring-and-explain-about-both-of-them",
+    "title": "Some basic Cloud Computing QA",
+    "section": "14. To achieve what we need System control automation and system state monitoring? And explain about both of them",
+    "text": "14. To achieve what we need System control automation and system state monitoring? And explain about both of them\nTo acheive falut tolerance, high availability and reliability we need system control automation and system state monitoring.\nSystem Control Automation:\n\nAutomating system control tasks like resource provisioning, configuration management, and scaling.\nIt enables self-healing and self-recovery mechanisms to mitagate and recover form faults automatically (generally some script)\nIt reduces manual intervention, human errors, and response time to incidents.\n\nSystem State Monitoring:\n\nCntinious monitoring and tracking of system components, performance metrics, and health status.\nIt helps in detecting anomalies, predicting failures, and taking proactive actions.\nIt detects these anaomalies / issues by checking the data from the system and comparing it with the expected data.\n\nBy combining system control automation and system state monitoring, organizations can ensure that their systems are resilient, responsive, and reliable in dynamic cloud environments."
+  },
+  {
+    "objectID": "blogs/CLOUDCOMPUTING/basiccloudqa.html#what-are-the-advantages-and-disadvantages-of-cloud-computing",
+    "href": "blogs/CLOUDCOMPUTING/basiccloudqa.html#what-are-the-advantages-and-disadvantages-of-cloud-computing",
+    "title": "Some basic Cloud Computing QA",
+    "section": "15. What are the advantages and disadvantages of cloud computing?",
+    "text": "15. What are the advantages and disadvantages of cloud computing?\n\n\n\n\nAdvantages\nDisadvantages\n\n\n\n\nCost-effective\nSecurity concerns\n\n\nScalability\nDowntime risks\n\n\nFlexibility\nData privacy risks\n\n\nAccessibility\nVendor lock-in\n\n\nReliability\nCompliance challenges\n\n\n\n\n\n\n\n\n\nExercise for readers\n\n\n\n\n\nCan you think of more advantages and disadvantages of cloud computing? Since its very basic quetsion its left to the reader to think and answer."
+  },
+  {
+    "objectID": "blogs/CLOUDCOMPUTING/basiccloudqa.html#explain-about-iaas",
+    "href": "blogs/CLOUDCOMPUTING/basiccloudqa.html#explain-about-iaas",
+    "title": "Some basic Cloud Computing QA",
+    "section": "16. Explain about IaaS",
+    "text": "16. Explain about IaaS\nInfrastructure as a Service (IaaS) is a cloud computing model that provides virtualized computing resources over the internet. It allows users to rent virtual servers, storage, and networking infrastructure on a pay-as-you-go basis.\n\nUsers can deploy and manage their applications on the cloud infrastructure without having to worry about the underlying hardware.\nIaaS providers take care of the maintenance, security, and scalability of the infrastructure\n\nexample: a person can rent a virtual server from a cloud provider and deploy their application on it."
+  },
+  {
+    "objectID": "blogs/CLOUDCOMPUTING/basiccloudqa.html#explain-about-paas",
+    "href": "blogs/CLOUDCOMPUTING/basiccloudqa.html#explain-about-paas",
+    "title": "Some basic Cloud Computing QA",
+    "section": "17. Explain about PaaS",
+    "text": "17. Explain about PaaS\nPlatform as a Service (PaaS) is a cloud computing model that provides a platform for developing, testing, and deploying applications over the internet. It allows users to build and run applications without having to manage the underlying infrastructure.\n\nPaaS providers offer a complete development environment, including tools, libraries, and frameworks, to help users build and deploy applications quickly.\nUsers can focus on developing their applications, while the PaaS provider takes care of the infrastructure, security, and scalability.\n\nexample: a person can use a PaaS provider to build and deploy a web application without having to worry about the underlying infrastructure like servers, storage, and networking."
+  },
+  {
+    "objectID": "blogs/CLOUDCOMPUTING/basiccloudqa.html#explain-about-saas",
+    "href": "blogs/CLOUDCOMPUTING/basiccloudqa.html#explain-about-saas",
+    "title": "Some basic Cloud Computing QA",
+    "section": "18. Explain about SaaS",
+    "text": "18. Explain about SaaS\nSoftware as a Service (SaaS) is a cloud computing model that provides software applications over the internet. It allows users to access and use software applications without having to install or maintain them on their local devices.\n\nSaaS providers host and manage the software applications on their servers and deliver them to users over the internet.\nUsers can access the software applications through a web browser or a software client, and pay for them on a subscription basis.\n\nexample: a person can use a SaaS provider to access and use a customer relationship management (CRM) software application over the internet. which in simple terms means that the user can use the software without installing it on their local machine."
+  },
+  {
+    "objectID": "blogs/CLOUDCOMPUTING/basiccloudqa.html#how-to-deploy-a-cloud-system",
+    "href": "blogs/CLOUDCOMPUTING/basiccloudqa.html#how-to-deploy-a-cloud-system",
+    "title": "Some basic Cloud Computing QA",
+    "section": "19. How to deploy a cloud system?",
+    "text": "19. How to deploy a cloud system?\nTo deploy a cloud system, you need to follow these steps:\n\nDefine requirements: Identify the business needs, technical requirements, and goals of the cloud system.\nSelect a cloud model: Choose between IaaS, PaaS, or SaaS based on your requirements.\nSelect a cloud provider: Choose a cloud service provider that meets your needs and budget.\nDesign the architecture: Design the cloud system architecture, including the infrastructure, networking, security, and scalability.\nDevelop and test: Develop and test the applications and services that will run on the cloud system.\nDeploy: Deploy the applications and services on the cloud system.\n\nBy following these steps, you can successfully deploy a cloud system that meets your business needs and goals."
+  },
+  {
+    "objectID": "blogs/CLOUDCOMPUTING/basiccloudqa.html#difference-between-private-and-public-cloud",
+    "href": "blogs/CLOUDCOMPUTING/basiccloudqa.html#difference-between-private-and-public-cloud",
+    "title": "Some basic Cloud Computing QA",
+    "section": "20. Difference between private and public cloud",
+    "text": "20. Difference between private and public cloud\n\n\n\n\n\n\n\nPrivate Cloud\nPublic Cloud\n\n\n\n\nOwned and operated by a single organization\nOwned and operated by a third-party cloud provider\n\n\nProvides dedicated resources for the organization\nShares resources among multiple users\n\n\nOffers more control over security and compliance\nOffers less control over security and compliance\n\n\nRequires higher upfront costs and maintenance\nRequires lower upfront costs and maintenance\n\n\nSuitable for organizations with strict security requirements\nSuitable for organizations with cost and scalability requirements"
+  },
+  {
+    "objectID": "blogs/CLOUDCOMPUTING/basiccloudqa.html#what-are-community-cloud-and-hybrid-cloud",
+    "href": "blogs/CLOUDCOMPUTING/basiccloudqa.html#what-are-community-cloud-and-hybrid-cloud",
+    "title": "Some basic Cloud Computing QA",
+    "section": "21. What are Community Cloud and Hybrid Cloud?",
+    "text": "21. What are Community Cloud and Hybrid Cloud?\nCommunity Cloud is a cloud computing model that is shared among several organizations with similar interests, such as industry-specific requirements, compliance needs, or security concerns. It allows organizations to share resources and collaborate on common goals while maintaining their own data and applications.\nHybrid Cloud is a cloud computing model that combines public and private cloud environments. It allows organizations to use a mix of on-premises, private cloud, and public cloud resources to meet their specific needs. Hybrid cloud provides flexibility, scalability, and cost-effectiveness by allowing organizations to leverage the benefits of both public and private clouds."
+  },
+  {
+    "objectID": "blogs/CLOUDCOMPUTING/basiccloudqa.html#diagrammatically-represent-the-cloud-ecosystem",
+    "href": "blogs/CLOUDCOMPUTING/basiccloudqa.html#diagrammatically-represent-the-cloud-ecosystem",
+    "title": "Some basic Cloud Computing QA",
+    "section": "22. Diagrammatically represent the cloud ecosystem",
+    "text": "22. Diagrammatically represent the cloud ecosystem\n\n\n\n\n\nflowchart LR\n    CloudEcosystem[Cloud Ecosystem]\n\n    subgraph ServiceModels [Service Models]\n        IaaS[Infrastructure as a Service]\n        PaaS[Platform as a Service]\n        SaaS[Software as a Service]\n    end\n\n    subgraph DeploymentModels [Deployment Models]\n        PublicCloud(Public Cloud)\n        PrivateCloud(Private Cloud)\n        HybridCloud(Hybrid Cloud)\n    end\n\n    subgraph CloudComponents [Cloud Components]\n        Compute[/Compute/]\n        Storage[/Storage/]\n        Networking[/Networking/]\n        Databases[/Databases/]\n        Security[/Security/]\n        Management[/Management/]\n    end\n\n    CloudEcosystem --&gt; ServiceModels\n    CloudEcosystem --&gt; DeploymentModels\n    CloudEcosystem --&gt; CloudComponents\n\n    ServiceModels --&gt; IaaS\n    ServiceModels --&gt; PaaS\n    ServiceModels --&gt; SaaS\n\n    DeploymentModels --&gt; PublicCloud\n    DeploymentModels --&gt; PrivateCloud\n    DeploymentModels --&gt; HybridCloud\n\n    CloudComponents --&gt; Compute\n    CloudComponents --&gt; Storage\n    CloudComponents --&gt; Networking\n    CloudComponents --&gt; Databases\n    CloudComponents --&gt; Security\n    CloudComponents --&gt; Management\n\n    classDef blueFill fill:#e6f2ff,stroke:#1e90ff\n    classDef greenFill fill:#e6ffe6,stroke:#00cd00\n    classDef orangeFill fill:#ffe6e6,stroke:#ff6347\n\n    class CloudEcosystem blueFill\n    class ServiceModels greenFill\n    class DeploymentModels orangeFill\n    class CloudComponents greenFill"
+  },
+  {
+    "objectID": "blogs/CLOUDCOMPUTING/basiccloudqa.html#discuss-the-key-characteristics-and-advantages-of-cluster-computing-and-provide-examples-of-real-world-applications-where-cluster-computing-is-beneficial.",
+    "href": "blogs/CLOUDCOMPUTING/basiccloudqa.html#discuss-the-key-characteristics-and-advantages-of-cluster-computing-and-provide-examples-of-real-world-applications-where-cluster-computing-is-beneficial.",
+    "title": "Some basic Cloud Computing QA",
+    "section": "23. Discuss the key characteristics and advantages of cluster computing, and provide examples of real-world applications where cluster computing is beneficial.",
+    "text": "23. Discuss the key characteristics and advantages of cluster computing, and provide examples of real-world applications where cluster computing is beneficial.\n\nKey characteristics of cluster computing:\n\nScalability: Cluster computing allows organizations to scale their computing resources up or down based on demand.\nHigh availability: Clusters provide redundancy and fault tolerance to ensure continuous operation.\nPerformance: Clusters can distribute workloads across multiple nodes to improve performance.\nCost-effectiveness: Clusters can be more cost-effective than traditional computing environments due to shared resources.\n\n\n\nAdvantages of cluster computing:\n\nParallel processing: Clusters can process large datasets and complex computations in parallel.\nResource pooling: Clusters can pool resources to optimize utilization and reduce costs.\nFlexibility: Clusters can be customized to meet specific requirements and workloads.\n\n\n\nReal-world applications of cluster computing:\n\nBig data analytics: Clusters are used to process and analyze large volumes of data in real-time.\nScientific research: Clusters are used for simulations, modeling, and data analysis in fields like genomics, physics, and climate science.\nHigh-performance computing: Clusters are used for complex computations in areas like finance, engineering, and healthcare.\nWeb services: Clusters are used to host and scale web applications, e-commerce platforms, and content delivery networks.\nMachine learning: Clusters are used to train and deploy machine learning models for predictive analytics and AI applications."
+  },
+  {
+    "objectID": "blogs/CLOUDCOMPUTING/basiccloudqa.html#compare-and-contrast-cluster-computing-grid-computing-and-p2p-computing-paradigms-highlighting-their-key-differences-in-architecture-resource-management-and-scalability",
+    "href": "blogs/CLOUDCOMPUTING/basiccloudqa.html#compare-and-contrast-cluster-computing-grid-computing-and-p2p-computing-paradigms-highlighting-their-key-differences-in-architecture-resource-management-and-scalability",
+    "title": "Some basic Cloud Computing QA",
+    "section": "24. Compare and contrast cluster computing, grid computing, and P2P computing paradigms, highlighting their key differences in architecture, resource management, and scalability",
+    "text": "24. Compare and contrast cluster computing, grid computing, and P2P computing paradigms, highlighting their key differences in architecture, resource management, and scalability\nThis tabular format provides a side-by-side comparison of the key differences between cluster computing, grid computing, and P2P computing paradigms in terms of architecture, resource management, scalability, failure handling, security, use cases, and examples.\n\n\n\n\n\n\n\n\n\nAspect\nCluster Computing\nGrid Computing\nP2P Computing\n\n\n\n\nArchitecture\nTightly coupled homogeneous nodes within a single administrative domain\nLoosely coupled heterogeneous resources across multiple administrative domains\nDecentralized network of peer nodes acting as clients and servers\n\n\nCoupling\nTight coupling through high-speed interconnects\nLoose coupling across geographically distributed resources\nPeer-to-peer connections\n\n\nResource Management\nCentralized resource manager or scheduler\nDistributed resource management system with middleware\nDecentralized, self-organizing resource management\n\n\nResource Allocation\nCentral allocation of resources within the cluster\nResource pooling and allocation based on policies and agreements\nPeers contribute and consume resources as needed\n\n\nScalability\nLimited scalability within a single administrative domain\nBetter scalability by integrating resources across domains\nPotentially massive scalability by adding more peers\n\n\nFailure Handling\nSingle point of failure can affect the entire cluster\nFailures can be isolated to specific resources or domains\nFailures of individual peers have minimal impact\n\n\nSecurity\nCentralized security management within the cluster\nSecurity policies and agreements across multiple domains\nDecentralized security mechanisms, potential vulnerabilities\n\n\nUse Cases\nHigh-performance computing, parallel processing, tightly coupled applications\nScientific computing, data-intensive applications, resource sharing across organizations\nFile sharing, content distribution, distributed computing\n\n\nExamples\nBeowulf clusters, High-Performance Computing (HPC) clusters\nEGEE, TeraGrid, Open Science Grid\nBitTorrent, Skype\n\n\n\n(Be sure with any 4) if you guys find it very big"
+  },
+  {
+    "objectID": "blogs/CLOUDCOMPUTING/basiccloudqa.html#how-does-utility-computing-differ-from-other-computing-paradigms-and-what-are-its-advantages-and-disadvantages-in-comparison-to-traditional-hosting-models",
+    "href": "blogs/CLOUDCOMPUTING/basiccloudqa.html#how-does-utility-computing-differ-from-other-computing-paradigms-and-what-are-its-advantages-and-disadvantages-in-comparison-to-traditional-hosting-models",
+    "title": "Some basic Cloud Computing QA",
+    "section": "25. How does utility computing differ from other computing paradigms, and what are its advantages and disadvantages in comparison to traditional hosting models",
+    "text": "25. How does utility computing differ from other computing paradigms, and what are its advantages and disadvantages in comparison to traditional hosting models\n\nAspectsAdvantagesDisadvantages\n\n\n\n\n\n\n\n\n\n\nAspect\nUtility Computing\nTraditional Hosting Models\n\n\n\n\nResource Allocation\nDynamic, on-demand resource allocation\nStatic resource allocation\n\n\nOwnership and Maintenance\nService provider manages infrastructure\nOrganization owns and maintains infrastructure\n\n\nPricing Model\nPay-as-you-go or subscription-based\nUpfront capital expenditures and ongoing operational costs\n\n\n\n\n\n\n\n\n\n\n\n\n\nAdvantage\nUtility Computing\nTraditional Hosting Models\n\n\n\n\nCost Efficiency\nPay only for resources consumed\nNeed to invest in infrastructure upfront\n\n\nScalability\nEasy to scale resources up or down\nLimited scalability based on owned infrastructure\n\n\nFlexibility\nAccess to diverse computing resources and services\nLimited to owned resources and technologies\n\n\nAccessibility\nAccess resources from anywhere with internet\nAccess limited to on-premises infrastructure\n\n\nReduced Maintenance\nProvider handles maintenance and updates\nOrganization responsible for maintenance\n\n\n\n\n\n\n\n\n\n\n\n\n\nDisadvantage\nUtility Computing\nTraditional Hosting Models\n\n\n\n\nInternet Dependency\nRelies heavily on stable internet connection\nLess dependent on internet connectivity\n\n\nData Security and Privacy\nPotential concerns with third-party infrastructure\nHigher control over data security and privacy\n\n\nVendor Lock-in\nPotential challenges in migrating between providers\nNo vendor lock-in concerns\n\n\nPerformance Variability\nShared resources can lead to performance fluctuations\nDedicated resources, more predictable performance\n\n\nLimited Control\nLess control over underlying infrastructure\nFull control over infrastructure\n\n\n\n\n\n\nComparison of Utility Computing and Traditional Hosting Models {#utility-vs-traditional}"
+  },
+  {
+    "objectID": "blogs/CLOUDCOMPUTING/basiccloudqa.html#explain-the-concepts-of-edge-computing-and-fog-computing-and-discuss-their-respective-roles-in-enhancing-the-performance-and-efficiency-of-distributed-systems.",
+    "href": "blogs/CLOUDCOMPUTING/basiccloudqa.html#explain-the-concepts-of-edge-computing-and-fog-computing-and-discuss-their-respective-roles-in-enhancing-the-performance-and-efficiency-of-distributed-systems.",
+    "title": "Some basic Cloud Computing QA",
+    "section": "26. Explain the concepts of edge computing and fog computing, and discuss their respective roles in enhancing the performance and efficiency of distributed systems.",
+    "text": "26. Explain the concepts of edge computing and fog computing, and discuss their respective roles in enhancing the performance and efficiency of distributed systems.\n\n\n\n\n\n\n\n\nAspect\nEdge Computing\nFog Computing\n\n\n\n\nLocation\nClose to data source or device\nBetween data source and cloud\n\n\nLatency\nLow latency for real-time processing\nLower latency than cloud, higher than edge\n\n\nScalability\nLimited scalability due to proximity\nScalable for distributed processing\n\n\nResource Constraints\nLimited resources, constrained environment\nMore resources, less constrained environment\n\n\nData Processing\nReal-time processing at the edge\nProcessing closer to data source\n\n\n\n\nEdge Computing\nEdge computing is a paradigm that involves processing data at or near the source, rather than transmitting it to a centralized cloud or data center for processing. In edge computing, computational resources (such as processors, storage, and networking capabilities) are placed at the edge of the network, closer to the devices or sensors generating the data.\n\n\nFog Computing\nFog computing is an extension of the edge computing paradigm, where a higher level of computation and storage resources is distributed across the network, creating a “fog” between the edge devices and the cloud. Fog computing involves a hierarchical architecture, with fog nodes placed at various points along the network path, providing intermediate processing and storage capabilities.\n\n\n\n\n\n\nNote\n\n\n\nEdge computing focuses on processing data at the extreme edge of the network, while fog computing introduces an intermediate layer with more powerful computing resources between the edge and the cloud."
+  },
+  {
+    "objectID": "blogs/CLOUDCOMPUTING/basiccloudqa.html#describe-the-various-cloud-delivery-models-xaas-and-their-applications-in-different-industries-providing-examples-of-how-each-model-can-be-utilized-effectively.",
+    "href": "blogs/CLOUDCOMPUTING/basiccloudqa.html#describe-the-various-cloud-delivery-models-xaas-and-their-applications-in-different-industries-providing-examples-of-how-each-model-can-be-utilized-effectively.",
+    "title": "Some basic Cloud Computing QA",
+    "section": "27. Describe the various cloud delivery models (XaaS) and their applications in different industries, providing examples of how each model can be utilized effectively.",
+    "text": "27. Describe the various cloud delivery models (XaaS) and their applications in different industries, providing examples of how each model can be utilized effectively.\n\nCloud Delivery Models (XaaS)\nCertainly, here are the various cloud delivery models (XaaS) along with examples of their applications in different industries:\n\nSoftware as a Service (SaaS): Applications delivered over the internet.\n\nExamples: Google Workspace, Microsoft Office 365, Salesforce CRM, Dropbox, Zoom.\n\nPlatform as a Service (PaaS): Provides a platform for developing, testing, and deploying applications.\n\nExamples: AWS Elastic Beanstalk, Google App Engine, Heroku, Microsoft Azure Web Apps.\n\nInfrastructure as a Service (IaaS): Delivers virtualized computing resources (servers, storage, networking).\n\nExamples: Amazon Web Services (EC2, S3), Microsoft Azure, Google Cloud Platform, DigitalOcean.\n\nDatabase as a Service (DBaaS): Offers database management systems as a cloud service.\n\nExamples: Amazon RDS, Microsoft Azure SQL Database, Google Cloud SQL.\n\nBackend as a Service (BaaS): Provides backend cloud services for mobile and web applications.\n\nExamples: Firebase, AWS Amplify, Azure Mobile Apps.\n\nMonitoring as a Service (MonaaS): Offers monitoring and logging services for applications and infrastructure.\n\nExamples: AWS CloudWatch, Azure Monitor, Google Cloud Operations.\n\nSecurity as a Service (SECaaS): Provides security services like firewalls, antivirus, and intrusion detection.\n\nExamples: Zscaler, Cisco Umbrella, Palo Alto Networks GlobalProtect.\n\n\n\n\nApplications in Different Industries\nThese cloud delivery models (XaaS) are utilized across various industries, including technology, finance, healthcare, e-commerce, education, and more, enabling organizations to access and leverage various services and resources on-demand, without the need for extensive infrastructure investments."
+  },
+  {
+    "objectID": "blogs/CLOUDCOMPUTING/basiccloudqa.html#compare-the-private-public-and-hybrid-cloud-deployment-models-discussing-the-key-considerations-for-organizations-when-choosing-between-them",
+    "href": "blogs/CLOUDCOMPUTING/basiccloudqa.html#compare-the-private-public-and-hybrid-cloud-deployment-models-discussing-the-key-considerations-for-organizations-when-choosing-between-them",
+    "title": "Some basic Cloud Computing QA",
+    "section": "28. Compare the private, public, and hybrid cloud deployment models, discussing the key considerations for organizations when choosing between them",
+    "text": "28. Compare the private, public, and hybrid cloud deployment models, discussing the key considerations for organizations when choosing between them\n\n\n\n\n\n\n\n\n\nAspect\nPrivate Cloud\nPublic Cloud\nHybrid Cloud\n\n\n\n\nOwnership\nOwned and managed by the organization\nOwned and managed by a third-party cloud provider\nCombination of private and public cloud resources\n\n\nLocation\nOn-premises or hosted by a third-party\nOff-premises, hosted by the cloud provider\nPart on-premises, part off-premises\n\n\nSecurity and Control\nHigh level of control and security\nLower level of control and security compared to private cloud\nControl and security split between private and public components\n\n\nScalability\nLimited scalability based on available resources\nHighly scalable with on-demand resource provisioning\nScalability benefits of public cloud for variable workloads\n\n\nCost\nHigh upfront capital and operational costs\nPay-as-you-go pricing model, lower upfront costs\nCost optimization by leveraging public cloud for variable workloads\n\n\nCustomization\nHighly customizable to meet specific requirements\nLimited customization options, based on provider’s offerings\nCustomization options for private cloud component\n\n\nResponsibility\nOrganization is responsible for management and maintenance\nCloud provider manages and maintains the infrastructure\nShared responsibility between organization and provider\n\n\n\nKey Considerations:\n\nData Sensitivity and Compliance: Private cloud may be preferred for sensitive data or strict compliance requirements, while public cloud othewise\nCost and Budget: Public cloud offers a pay-as-you-go model, reducing upfront costs, while private cloud requires significant capital investment. Hybrid cloud can optimize costs by leveraging both models.\nControl and Customization: Private cloud provides maximum control and customization, while public cloud offers limited customization options.\nExpertise and Resources: Public cloud requires less technical expertise and resources compared to private cloud, which requires specialized skills and resources for management and maintenance.\nScalability and Flexibility: Public cloud offers high scalability and flexibility, while private cloud scalability is limited by available resources. Hybrid cloud combines the benefits of both models.\nVendor Lock-in: Public cloud may lead to vendor lock-in, while private cloud eliminates this concern. Hybrid cloud can mitigate vendor lock-in risks by using multiple providers."
+  },
+  {
+    "objectID": "blogs/NLP/NLPIntro.html",
+    "href": "blogs/NLP/NLPIntro.html",
+    "title": "Introduction to NLP",
+    "section": "",
+    "text": "NLP is branch of AI that helps computers understand, interpret and manipulate human language.\nThe goal is to completely capture the context of human langage and understand the meaning behind it."
+  },
+  {
+    "objectID": "blogs/NLP/NLPIntro.html#phonetics",
+    "href": "blogs/NLP/NLPIntro.html#phonetics",
+    "title": "Introduction to NLP",
+    "section": "Phonetics",
+    "text": "Phonetics\nIt is the branch that studies how humans produce and perceive speech sounds. It is the study of the physical sounds of human speech."
+  },
+  {
+    "objectID": "blogs/NLP/NLPIntro.html#phonology",
+    "href": "blogs/NLP/NLPIntro.html#phonology",
+    "title": "Introduction to NLP",
+    "section": "Phonology",
+    "text": "Phonology\nIt is the branch that studies the sound patterns of human language. They linguists study the languages or dialects and organize their sounds (phonemes) into a system of relationships."
+  },
+  {
+    "objectID": "blogs/NLP/NLPIntro.html#morphology",
+    "href": "blogs/NLP/NLPIntro.html#morphology",
+    "title": "Introduction to NLP",
+    "section": "Morphology",
+    "text": "Morphology\nIt deals with the words are formed and the relationship of words with each other. It is the study of the structure of words. It analyses the structure of words and parts of words, such as\n\nstems: the core part of a word\nroot words: the basic part of a word\nprefixes: the part of a word that comes before the root word\nsuffixes: the part of a word that comes after the root word"
+  },
+  {
+    "objectID": "blogs/NLP/NLPIntro.html#syntax",
+    "href": "blogs/NLP/NLPIntro.html#syntax",
+    "title": "Introduction to NLP",
+    "section": "Syntax",
+    "text": "Syntax\nIt is the study of the structure of sentences. It is the study of the principles and rules for constructing sentences in natural languages."
+  },
+  {
+    "objectID": "blogs/NLP/NLPIntro.html#semantics",
+    "href": "blogs/NLP/NLPIntro.html#semantics",
+    "title": "Introduction to NLP",
+    "section": "Semantics",
+    "text": "Semantics\nIt is the study of meaning in language. It is the study of meaning in language. It focuses on the relation between signifiers, such as words, phrases, signs, and symbols, and what they stand for, their denotation."
+  },
+  {
+    "objectID": "blogs/NLP/NLPIntro.html#pragmatics",
+    "href": "blogs/NLP/NLPIntro.html#pragmatics",
+    "title": "Introduction to NLP",
+    "section": "Pragmatics",
+    "text": "Pragmatics\nIt is the study of how context influences the interpretation of meaning. It studies the aspects of meaning and language use that are dependent on the speaker, the addressee, and other features of the context of utterance."
+  },
+  {
+    "objectID": "blogs/NLP/NLPIntro.html#data-aspect",
+    "href": "blogs/NLP/NLPIntro.html#data-aspect",
+    "title": "Introduction to NLP",
+    "section": "Data aspect",
+    "text": "Data aspect\n\nCorpus: It is a collection of text. It is a large and structured set of texts. They are used to do statistical analysis and hypothesis testing, checking occurrences or validating linguistic rules within a specific language territory.\nVocabulary: It is a list of words in a language. It is a set of familiar words within a person’s language. It is the set of words known to a person or other entity.\nAnnotation: It is the process of adding information to a text. It is the process of adding metadata to a text. It is the process of marking up a document with additional information.\nLexicon: It refers to the words and thier meaning (sort of real dictionary)."
+  },
+  {
+    "objectID": "blogs/NLP/NLPIntro.html#algorithms-aspect",
+    "href": "blogs/NLP/NLPIntro.html#algorithms-aspect",
+    "title": "Introduction to NLP",
+    "section": "Algorithms aspect",
+    "text": "Algorithms aspect\n\nTokens: It is the pieces of data such as words, characters, subwords etc:-\nTokenization:\n\nIt is the initial step in modell the content of the text.\nIt is the process of breaking a stream of text up into words, phrases, symbols, or other meaningful elements called tokens.\n\n\n\nTokenization and its types\nThere are many types of tokenization such as\n\nWord tokenization\nSentence tokenization\nSubword tokenization\nCharacter tokenization\n\n\nWord Level Tokenization\nIts the most commonly used tokenization method. It splits the words based on the space or any specific delimeter\n\n# using nltk library\n\nimport nltk\nfrom nltk.tokenize import word_tokenize\ntext = \"I am learning NLP\"\nword_tokenize(text)\n\n# using python inbuilt split method\n\nvocabulary = []\ntext = \"I am learning NLP\"\nvocabulary = text.split(\" \")\nprint(vocabulary)\n\n\n\n\n\n\nWhat are some issues with word level tokenization?\n\n\n\n\n\nHere we will discuss few issues with word level tokenization\n\nContractions\nOOV (Out of Vocabulary) words\nPunctuations\n\nTry to find more issues if you can!! (note: there are actually many) .. That is one of the reason why we dont just split with space and call it a day.\n\n\n\n\n\nSentence Level Tokenization\nSentence tokenization, also known as sentence segmentation, is the process of dividing text into sentences. This is typically done using punctuation and capitalization cues.\n# using nltk library\n\nimport nltk\nfrom nltk.tokenize import sent_tokenize\ntext = \"I am learning NLP. It is very interesting.\"\nsent_tokenize(text)\n\n\nSubword Level Tokenization\nSubword tokenization splits words into smaller units (or subwords). This can help to handle the problem of out-of-vocabulary words.\n# using BPEmb library for Byte Pair Encoding\n\nfrom bpemb import BPEmb\nbpemb_en = BPEmb(lang=\"en\", dim=50)\ntext = \"I am learning NLP\"\nbpemb_en.encode(text)\n\n\nCharacter Level Tokenization\nCharacter tokenization splits text into characters. This can be useful for languages where words are not separated by spaces, like Chinese and Japanese.\ntext = \"I am learning NLP\"\nlist(text)\n\n\n\n\n\n\nIssues with Other Types of Tokenization\n\n\n\n\n\n\nSentence Tokenization: Sentence tokenization can be tricky when dealing with abbreviations, email addresses, websites, etc. where periods are used but do not indicate the end of a sentence.\nSubword Tokenization: While subword tokenization can help with out-of-vocabulary words, it can lead to an explosion in the number of tokens for very large texts.\nCharacter Tokenization: Character tokenization can lead to very long sequences for longer texts and may lose the meaning carried by specific words or phrases.\n\nCan you find more issues with other types of tokenization? (note: there are actually many)"
+  },
+  {
+    "objectID": "blogs/welcome/index.html",
+    "href": "blogs/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post of my blog. Welcome!\nHello guys welcome to my portfolio website. Looking forward to have a great time with you all.\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "blogs/DSA/Recursion DSA/index.html",
+    "href": "blogs/DSA/Recursion DSA/index.html",
+    "title": "Topic 1 -> Recursion",
+    "section": "",
+    "text": "One way to describe repetition within a computer program is the use of loops, such as Python’s while-loop and for-loop, but an entire way of approach is using Recrusions which brings us to today’s topic on learning stuff daily for 100 days\n\nTest for base cases. We begin by testing for a set of base cases (there should be at least one). These base cases should be defined so that every possible chain of recursive calls will eventually reach a base case, and the handling ofeach base case should not use recursion.\nRecur. If not a base case, we perform one or more recursive calls. This recursive step may involve a test that decides which of several possible recursive calls to make. We should define each possible recursive call so that it makes progress towards a base case.\nImportant Point here is that if this base case is not met then we fall into a infinite recursion and kaboom 💥\n\ndef fib(n):\n    if n &lt;= 1:         # -----&gt; this part (remember this)\n        return 0\n    # ... rest of the function here \nThis function has this fib(n) so that “n” is what that has to be satisfied … by now you would have got the grip of the step 1 of recursion\nthe next step is to lay out your logic and write the rest of the function\ndef fib(n):\n    if n &lt;= 1:\n        return 0\n    else:\n        return fib(n-1) + fib(n-2)  # --&gt; go back 2 steps and sum then up\nCertainly! Let’s add examples for binary recursion and multiple recursion:"
+  },
+  {
+    "objectID": "blogs/DSA/Recursion DSA/index.html#linear-recursion",
+    "href": "blogs/DSA/Recursion DSA/index.html#linear-recursion",
+    "title": "Topic 1 -> Recursion",
+    "section": "Linear Recursion",
+    "text": "Linear Recursion\nIf a recursive function is designed so that each invocation of the body makes at most one new recursive call, this is known as linear recursion.\nExample:\ndef reversearr(array, start, stop):\n    if start &lt; stop-1: # -----&gt; base case baked right into the recursion itself\n        array[start], array[stop-1] = array[stop-1], array[start]\n        reversearr(array, start+1, stop-1)\n    return array"
+  },
+  {
+    "objectID": "blogs/DSA/Recursion DSA/index.html#binary-recursion",
+    "href": "blogs/DSA/Recursion DSA/index.html#binary-recursion",
+    "title": "Topic 1 -> Recursion",
+    "section": "Binary Recursion",
+    "text": "Binary Recursion\nIn binary recursion, each recursive call results in two new recursive calls. This often occurs in problems that can be divided into two sub-problems.\nExample (Binary Recursion):\ndef binary_sum(arr, start, end):\n    if start == end:  # base case when there's only one element\n        return arr[start]\n    else:\n        mid = (start + end) // 2\n        left_sum = binary_sum(arr, start, mid)\n        right_sum = binary_sum(arr, mid+1, end)\n        return left_sum + right_sum\nExplanation: This function recursively divides the array into two halves and calculates the sum of each half. The base case is when the array has only one element, and the sum is returned. The overall sum is then calculated by adding the sums of the left and right halves."
+  },
+  {
+    "objectID": "blogs/DSA/Recursion DSA/index.html#multiple-recursion",
+    "href": "blogs/DSA/Recursion DSA/index.html#multiple-recursion",
+    "title": "Topic 1 -> Recursion",
+    "section": "Multiple Recursion",
+    "text": "Multiple Recursion\nMultiple recursion involves a recursive function making more than two calls. It can be a bit complex but is a powerful technique for solving certain types of problems.\nExample (Multiple Recursion):\ndef multiply_elements(arr, start, end):\n    if start == end:  # base case when there's only one element\n        return arr[start]\n    else:\n        mid = (start + end) // 2\n        left_product = multiply_elements(arr, start, mid)\n        right_product = multiply_elements(arr, mid+1, end)\n        current_product = arr[start] * arr[end]  # additional recursive call\n        return left_product * right_product * current_product\nExplanation: This function recursively multiplies the elements in the array. In addition to the recursive calls for the left and right halves, there is an extra recursive call to multiply the first and last elements of the current segment. The base case is when the array has only one element.\n\nFeel free to experiment with these examples and observe their behavior. Understanding binary and multiple recursion is essential for tackling a wide range of algorithmic problems. Happy coding! 💻🚀"
+  },
+  {
+    "objectID": "about.html#experience",
+    "href": "about.html#experience",
+    "title": "About Me",
+    "section": "Experience",
+    "text": "Experience\n\nGoogle Developer Students Club\n\nMay 2023 - Present\n\nGDSC Amrita | Coimbatore, TN\n\nActively participated in GDSC (AI/ML)\nOrganized and facilitated an interactive Android workshop\nConducted a seminar on AI/ML deployment\n\n\n\n\nAnokha (Web dev)\n\nJune 2022 - June 2022\n\nAnokha Amrita | Coimbatore, TN\nDeveloped website for college department AIE\nShowcased participant’s code outputs and reports from training sessions and hackathons\nLive conversion of MD files into a neat HTML, Hosted in Github Pages\n\n\n\n\nAssociation of Students of Computer Science for Information Interchange (ASCII)\n\nJune 2022 - June 2023\n\nASCII Amrita | Coimbatore, TN\n\nPart of the Organization committee for a workshop on AI/ML basics using TensorFlow and PyTorch.\nActively maintaining of ACII github.\n\n\n\n\nIntel IOT/AI Club\n\nJune 2023 - Present\n\nIntel IOT Club | Coimbatore, TN\n\nActive team member of AI/ML club wing of the Intel IOT/AI club\nCreated basic ML model based on classification and image processing using Intel one API"
+  },
+  {
+    "objectID": "about.html#tech-stack-and-workflow",
+    "href": "about.html#tech-stack-and-workflow",
+    "title": "About Me",
+    "section": "Tech Stack and Workflow",
+    "text": "Tech Stack and Workflow\n\nBackend Development: Django, Flask, RestAPI\nMachine Learning: TensorFlow, PyTorch, Scikit-learn\nComputer Vision: OpenCV, Roboflow, Dlib\nCloud Platforms: Microsoft Azure\nContainerization: Docker\nProgramming Languages: Python, Scala, Java (basic knowledge), MATLAB\nCompetitive Programming: Proficient in Python (Leetcode, Codechef)"
   }
 ]

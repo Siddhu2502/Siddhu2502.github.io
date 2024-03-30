@@ -1,20 +1,20 @@
 [
   {
-    "listing": "/projects.html",
+    "listing": "/blogs.html",
     "items": [
-      "/project_posts/RL_proj/index.html"
+      "/blogs/CLOUDCOMPUTING/basiccloudqa.html",
+      "/blogs/DEEP LEARNING/basics.html",
+      "/blogs/NLP/NLPIntro.html",
+      "/blogs/NLP/LanguageModelling.html",
+      "/blogs/DSA/Array DSA/index.html",
+      "/blogs/DSA/Recursion DSA/index.html",
+      "/blogs/welcome/index.html"
     ]
   },
   {
-    "listing": "/blogs.html",
+    "listing": "/projects.html",
     "items": [
-      "/posts/CLOUDCOMPUTING/basiccloudqa.html",
-      "/posts/DEEP LEARNING/basics.html",
-      "/posts/NLP/NLPIntro.html",
-      "/posts/NLP/LanguageModelling.html",
-      "/posts/DSA/Array DSA/index.html",
-      "/posts/DSA/Recursion DSA/index.html",
-      "/posts/welcome/index.html"
+      "/project_posts/RL_proj/index.html"
     ]
   }
 ]

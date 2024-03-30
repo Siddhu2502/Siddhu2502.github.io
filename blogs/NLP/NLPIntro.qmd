@@ -1,0 +1,184 @@
+---
+title: "Introduction to NLP"
+author: "Siddharth D"
+date: "2024-02-28"
+categories: [NLP, Course_NLP]
+image: introductiontonlp.png
+toc: true
+toc-depth: 3
+code-block-bg: true
+code-annotations: true
+code-fold: true
+---
+
+# Natural Language Processing (NLP)
+
+- NLP is branch of AI that helps computers understand, interpret and manipulate human language.
+- The goal is to completely capture the context of human langage and understand the meaning behind it.
+
+# Linguistics and NLP 
+
+Linguistics is the scientific study of language and its structure, including the study of grammar, syntax, and phonetics. NLP is the application of computational techniques to the analysis and synthesis of natural language and speech.
+
+Computational linguistics is the scientific study of language from a computational perspective. 
+
+The lingustics are divided into 6 categories namely 
+
+- Phonetics
+- Phonology
+- Morphology
+- Syntax
+- Semantics
+- Pragmatics
+
+## Phonetics
+
+It is the branch that studies how humans produce and perceive speech sounds. It is the study of the physical sounds of human speech.
+
+## Phonology
+
+It is the branch that studies the sound patterns of human language. They linguists study the **languages** or **dialects** and organize their sounds (phonemes) into a system of relationships.
+
+## Morphology
+
+It deals with the words are formed and the relationship of words with each other. It is the study of the structure of words. It analyses the structure of words and parts of words, such as 
+
+- **stems**: the core part of a word
+- **root words**: the basic part of a word
+- **prefixes**: the part of a word that comes before the root word
+- **suffixes**: the part of a word that comes after the root word
+
+## Syntax
+
+It is the study of the structure of sentences. It is the study of the principles and rules for **constructing** sentences in natural languages.
+
+## Semantics
+
+It is the study of meaning in language. It is the study of meaning in language. It focuses on the **relation between signifiers**, such as words, phrases, signs, and symbols, and what they stand for, their denotation.
+
+## Pragmatics
+
+It is the study of how context **influences** the **interpretation** of meaning. It studies the aspects of meaning and language use that are dependent on the speaker, the addressee, and other features of the context of utterance.
+
+# Computational concepts of NLP 
+
+The computational part of NLP includes data (vocab, corpus, etc), algorithms (tokenization, stemming, etc), and models (word2vec, BERT, etc).
+
+## Data aspect
+
+- Corpus: It is a collection of text. It is a large and structured set of texts. They are used to do statistical analysis and hypothesis testing, checking occurrences or validating linguistic rules within a specific language territory.
+- Vocabulary: It is a list of words in a language. It is a set of familiar words within a person's language. It is the set of words known to a person or other entity.
+- Annotation: It is the process of adding information to a text. It is the process of adding metadata to a text. It is the process of marking up a document with additional information.
+- Lexicon: It refers to the words and thier meaning (sort of real dictionary).
+
+## Algorithms aspect
+
+- Tokens: It is the pieces of data such as words, characters, subwords etc:-
+- Tokenization: 
+  - It is the initial step in modell the content of the text. 
+  - It is the process of breaking a stream of text up into words, phrases, symbols, or other meaningful elements called tokens. 
+
+### Tokenization and its types
+
+There are many types of tokenization such as 
+
+- Word tokenization
+- Sentence tokenization
+- Subword tokenization
+- Character tokenization
+
+#### Word Level Tokenization
+
+Its the most commonly used tokenization method. It splits the words based on the space or any specific delimeter
+
+```python
+
+# using nltk library
+
+import nltk
+from nltk.tokenize import word_tokenize
+text = "I am learning NLP"
+word_tokenize(text)
+```
+
+```python 
+
+# using python inbuilt split method
+
+vocabulary = []
+text = "I am learning NLP"
+vocabulary = text.split(" ")
+print(vocabulary)
+```
+
+::: {.callout-caution collapse="true"}
+## What are some issues with word level tokenization?
+
+Here we will discuss few issues with word level tokenization
+
+- **Contractions**
+- **OOV (Out of Vocabulary) words**
+- **Punctuations**
+
+Try to find more issues if you can!! (note: there are actually many) .. That is one of the reason why we dont just split with space and call it a day.
+:::
+
+#### Sentence Level Tokenization
+
+Sentence tokenization, also known as sentence segmentation, is the process of dividing text into sentences. This is typically done using punctuation and capitalization cues.
+
+```python
+# using nltk library
+
+import nltk
+from nltk.tokenize import sent_tokenize
+text = "I am learning NLP. It is very interesting."
+sent_tokenize(text)
+```
+
+#### Subword Level Tokenization
+
+Subword tokenization splits words into smaller units (or subwords). This can help to handle the problem of out-of-vocabulary words.
+
+```python
+# using BPEmb library for Byte Pair Encoding
+
+from bpemb import BPEmb
+bpemb_en = BPEmb(lang="en", dim=50)
+text = "I am learning NLP"
+bpemb_en.encode(text)
+```
+
+#### Character Level Tokenization
+
+Character tokenization splits text into characters. This can be useful for languages where words are not separated by spaces, like Chinese and Japanese.
+
+```python
+text = "I am learning NLP"
+list(text)
+```
+
+::: {.callout-note collapse="true"}
+## Issues with Other Types of Tokenization
+
+- **Sentence Tokenization**: Sentence tokenization can be tricky when dealing with abbreviations, email addresses, websites, etc. where periods are used but do not indicate the end of a sentence.
+- **Subword Tokenization**: While subword tokenization can help with out-of-vocabulary words, it can lead to an explosion in the number of tokens for very large texts.
+- **Character Tokenization**: Character tokenization can lead to very long sequences for longer texts and may lose the meaning carried by specific words or phrases.
+
+Can you find more issues with other types of tokenization? (note: there are actually many) 
+:::
+
+# Challenges in NLP
+
+- **Ambiguity**: Words can have multiple meanings.
+  - Syntactic Ambiguity: It is the ambiguity that occurs when a sentence can have two (or more) different meanings because of the structure of the sentence.
+  - Semantic Ambiguity: It is the ambiguity that occurs when a word can have two (or more) different meanings.
+  - Lexical Ambiguity: It is the ambiguity that occurs when a word can have two (or more) different meanings.
+- **Sarcasm**
+- **Negation**
+- **Anaphora**: It is difficult to detect the meaning of pronouns.
+- **Named Entity Recognition**: It is difficult to detect the named entities in text.
+
+# Conclusion
+
+In this article, we have discussed the introduction to NLP, the computational concepts of NLP, and the challenges in NLP. We have also discussed the linguistic concepts of NLP.
