@@ -224,6 +224,69 @@
     "text": "Algorithms aspect\n\nTokens: It is the pieces of data such as words, characters, subwords etc:-\nTokenization:\n\nIt is the initial step in modell the content of the text.\nIt is the process of breaking a stream of text up into words, phrases, symbols, or other meaningful elements called tokens.\n\n\n\nTokenization and its types\nThere are many types of tokenization such as\n\nWord tokenization\nSentence tokenization\nSubword tokenization\nCharacter tokenization\n\n\nWord Level Tokenization\nIts the most commonly used tokenization method. It splits the words based on the space or any specific delimeter\n\n# using nltk library\n\nimport nltk\nfrom nltk.tokenize import word_tokenize\ntext = \"I am learning NLP\"\nword_tokenize(text)\n\n# using python inbuilt split method\n\nvocabulary = []\ntext = \"I am learning NLP\"\nvocabulary = text.split(\" \")\nprint(vocabulary)\n\n\n\n\n\n\nWhat are some issues with word level tokenization?\n\n\n\n\n\nHere we will discuss few issues with word level tokenization\n\nContractions\nOOV (Out of Vocabulary) words\nPunctuations\n\nTry to find more issues if you can!! (note: there are actually many) .. That is one of the reason why we dont just split with space and call it a day.\n\n\n\n\n\nSentence Level Tokenization\nSentence tokenization, also known as sentence segmentation, is the process of dividing text into sentences. This is typically done using punctuation and capitalization cues.\n# using nltk library\n\nimport nltk\nfrom nltk.tokenize import sent_tokenize\ntext = \"I am learning NLP. It is very interesting.\"\nsent_tokenize(text)\n\n\nSubword Level Tokenization\nSubword tokenization splits words into smaller units (or subwords). This can help to handle the problem of out-of-vocabulary words.\n# using BPEmb library for Byte Pair Encoding\n\nfrom bpemb import BPEmb\nbpemb_en = BPEmb(lang=\"en\", dim=50)\ntext = \"I am learning NLP\"\nbpemb_en.encode(text)\n\n\nCharacter Level Tokenization\nCharacter tokenization splits text into characters. This can be useful for languages where words are not separated by spaces, like Chinese and Japanese.\ntext = \"I am learning NLP\"\nlist(text)\n\n\n\n\n\n\nIssues with Other Types of Tokenization\n\n\n\n\n\n\nSentence Tokenization: Sentence tokenization can be tricky when dealing with abbreviations, email addresses, websites, etc. where periods are used but do not indicate the end of a sentence.\nSubword Tokenization: While subword tokenization can help with out-of-vocabulary words, it can lead to an explosion in the number of tokens for very large texts.\nCharacter Tokenization: Character tokenization can lead to very long sequences for longer texts and may lose the meaning carried by specific words or phrases.\n\nCan you find more issues with other types of tokenization? (note: there are actually many)"
   },
   {
+    "objectID": "blogs/DEEP LEARNING/basics.html#l1-regularization",
+    "href": "blogs/DEEP LEARNING/basics.html#l1-regularization",
+    "title": "Mathematics for intelligent system",
+    "section": "L1 Regularization",
+    "text": "L1 Regularization\nThe L1 regularization is calculated as:\n\\[\nL1 = \\lambda \\sum_{i=1}^{n} |w_i|\n\\]\nWhere \\(\\lambda\\) is the regularization strength and \\(w_i\\) is the weight of the \\(i^{th}\\) feature.\nThe main use of the L1 regularization with respect to the pane of the weights of the model is that it can be used to select the most important features of the model. This is because the L1 regularization tends to shrink the weights of the less important features to zero. This is because the L1 regularization is not differentiable at zero, and hence the weights of the less important features are shrunk to zero.\nThe region where the L1 regularization is not differentiable is shown in the figure below:"
+  },
+  {
+    "objectID": "blogs/DEEP LEARNING/basics.html#l2-regularization",
+    "href": "blogs/DEEP LEARNING/basics.html#l2-regularization",
+    "title": "Mathematics for intelligent system",
+    "section": "L2 Regularization",
+    "text": "L2 Regularization\nThe L2 regularization is calculated as:\n\\[\nL2 = \\lambda \\sum_{i=1}^{n} w_i^2\n\\]\nWhere \\(\\lambda\\) is the regularization strength and \\(w_i\\) is the weight of the \\(i^{th}\\) feature.\nThe main use of the L2 regularization with respect to the pane of the weights of the model is that it can be used to prevent the weights from becoming too large. This is because the L2 regularization tends to shrink the weights of the model. This is because the L2 regularization is differentiable everywhere, and hence the weights of the model are shrunk towards zero.\nThe shape of the L2 regularization is a circle in the weight space"
+  },
+  {
+    "objectID": "blogs/DEEP LEARNING/basics.html#batch-normalization",
+    "href": "blogs/DEEP LEARNING/basics.html#batch-normalization",
+    "title": "Mathematics for intelligent system",
+    "section": "Batch Normalization",
+    "text": "Batch Normalization\nThe batch normalization is a technique used to normalize the input of the hidden layers of the model. This is done to reduce the internal covariate shift. The internal covariate shift is the change in the distribution of the input of the hidden layers of the model. This is because the input of the hidden layers of the model changes as the weights of the model are updated. This is because the input of the hidden layers of the model is a function of the weights of the model.\nThe batch normalization is calculated as:\n\\[\n\\hat{x} = \\frac{x - \\mu}{\\sqrt{\\sigma^2 + \\epsilon}}\n\\]\nWhere \\(\\hat{x}\\) is the normalized input, \\(x\\) is the input, \\(\\mu\\) is the mean of the input, \\(\\sigma^2\\) is the variance of the input, and \\(\\epsilon\\) is a small number to prevent division by zero.\nThe steps inculded in\n\nCompute the mean and variance of the vectors in the mini-batch\n\nMean = \\(\\mu = \\frac{1}{m} \\sum_{i=1}^{m} x_i\\)\nVariance = \\(\\sigma^2 = \\frac{1}{m} \\sum_{i=1}^{m} (x_i - \\mu)^2\\)\n\nNormalize the input\n\n\\(\\hat{x} = \\frac{x - \\mu}{\\sqrt{\\sigma^2 + \\epsilon}}\\)\nWhere \\(\\hat{x}\\) is the normalized input, \\(x\\) is the input, \\(\\mu\\) is the mean of the input, \\(\\sigma^2\\) is the variance of the input, and \\(\\epsilon\\) is a small number to prevent division by zero.\n\nScale and shift the normalized input\n\n\\(y = \\gamma \\hat{x} + \\beta\\)\nWhere \\(y\\) is the output, \\(\\gamma\\) is the scale parameter, \\(\\hat{x}\\) is the normalized input, and \\(\\beta\\) is the shift parameter.\nThe scale and shift parameters are learned during the training of the model."
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
+    "section": "",
+    "text": "Hello! If you wish to contact me, please use the following methods:"
+  },
+  {
+    "objectID": "contact.html#email",
+    "href": "contact.html#email",
+    "title": "Contact",
+    "section": "Email",
+    "text": "Email\nYou can reach me at: dsiddharth25@gmail.com"
+  },
+  {
+    "objectID": "contact.html#phone",
+    "href": "contact.html#phone",
+    "title": "Contact",
+    "section": "Phone",
+    "text": "Phone\nYou can call me at: +91 73311-37182"
+  },
+  {
+    "objectID": "contact.html#social-media",
+    "href": "contact.html#social-media",
+    "title": "Contact",
+    "section": "Social Media",
+    "text": "Social Media\n\nLinkedIn\nWhatsapp\n\nNote: Please allow me 24-48 hours to respond to your messages. Thank you for understanding!"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Computer Network\n\n\n\n\n\n\n\n\n\n\n\nOct 7, 2025\n\n\nSiddharth D\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\nQuadCopter Reinforcement learning Bot\n\n\n\n\n\n\n\n\n\n\n\nJan 5, 2024\n\n\nSiddharth D\n\n\n12 min\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Siddharth D",
+    "section": "",
+    "text": "My Personal Website\n\n\n\n\nWelcome to My Personal Website!\n\n\n\n\nAbout Me\n\n\nProjects\n\n\nBlogs\n\n\nContact\n\n\n\n\n\n\n\nAbout This Site\n\n\nThis is my personal website where you can learn more about me, see my projects, read my blogs, and get in touch with me.\n\n\n\n\n\n Back to top"
+  },
+  {
     "objectID": "blogs/CLOUDCOMPUTING/basiccloudqa.html",
     "href": "blogs/CLOUDCOMPUTING/basiccloudqa.html",
     "title": "Some basic Cloud Computing QA",
@@ -581,67 +644,39 @@
     "text": "51. What are some common examples of cognitive services offered by major cloud providers\n\nMicrosoft Azure Cognitive Services:\n\nComputer Vision: Image recognition, object detection, and OCR.\nLanguage Understanding: Natural language processing and sentiment analysis.\nSpeech Services: Speech-to-text, text-to-speech, and speaker recognition.\nDecision: Personalized recommendations and decision support.\n\nAmazon Web Services (AWS) AI Services:\n\nRekognition: Image and video analysis for object detection and facial recognition.\nPolly: Text-to-speech service for generating lifelike speech from text.\nLex: Conversational interfaces for building chatbots and virtual assistants.\nComprehend: Natural language processing for sentiment analysis and entity recognition.\nForecast: Time series forecasting for predicting future trends.\n\nGoogle Cloud AI Services:\n\nVision AI: Image analysis for object detection, OCR, and content moderation.\nSpeech-to-Text: Speech recognition for transcribing audio to text.\nText-to-Speech: Convert text into natural-sounding speech.\nNatural Language: NLP for sentiment analysis, entity recognition, and language translation.\nRecommendations: Personalized recommendations based on user behavior and preferences."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Siddharth D",
+    "objectID": "blogs/misc/rlonramp.html",
+    "href": "blogs/misc/rlonramp.html",
+    "title": "RL on Ramp",
     "section": "",
-    "text": "My Personal Website\n\n\n\n\nWelcome to My Personal Website!\n\n\n\n\nAbout Me\n\n\nProjects\n\n\nBlogs\n\n\nContact\n\n\n\n\n\n\n\nAbout This Site\n\n\nThis is my personal website where you can learn more about me, see my projects, read my blogs, and get in touch with me.\n\n\n\n\n\n Back to top"
+    "text": "This page is a brief introduction to Reinforcement Learning (RL) and its applications in matlab. It has all the solutions to the exercises and quizzes that are present in the course."
   },
   {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "Projects",
-    "section": "",
-    "text": "Computer Network\n\n\n\n\n\n\n\n\n\n\n\nOct 7, 2025\n\n\nSiddharth D\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\nQuadCopter Reinforcement learning Bot\n\n\n\n\n\n\n\n\n\n\n\nJan 5, 2024\n\n\nSiddharth D\n\n\n12 min\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "objectID": "blogs/misc/rlonramp.html#defining-an-environment-interface",
+    "href": "blogs/misc/rlonramp.html#defining-an-environment-interface",
+    "title": "RL on Ramp",
+    "section": "Defining an Environment Interface",
+    "text": "Defining an Environment Interface\n\nDefine an Environment with Discrete Variables\nd = [1 1 1 5 5 8;2 2 3 3 6 6;1 4 4 4 5 7;2 2 6 6 7 8;3 4 5 7 8 8];\n\n% the colon operator (:) to create a vector called states that contains the integer values 0, 1, ..., 20.\nstates = 0:20;\n\n% Use the colon operator to create a vector called choices that contains the integer values 1, 2, 3, 4, 5.\nchoics = 1:5;\n\n% Use the rlFiniteSetSpec function to create a variable called obsInfo that represents \n% the possible observations in the dice game (stored in the vector states).\nobsInfo = rlFiniteSetSpec(states)\n\n% Use the rlFiniteSetSpec function to create a variable called actInfo that represents \n% the possible actions in the dice game (stored in the vector choices).\nactInfo = rlFiniteSetSpec(choices)\n\n% Use the rlSimulinkEnv function to create a variable called slEnv that represents the \n% environment in the Simulink model targetDice.slx. The RL agent is defined in the block \n% called \"RL die chooser\" (in the targetDice model).\nslEnv = rlSimulinkEnv(\"targetDice\",\"targetDice/RL die chooser\",obsInfo,actInfo);\n\n% Use the commands\n% load premadeagents\n% agent = trainedagent\n% [n,win] = playdice(agent,slEnv)\n% to simulate playing the dice game, with a pretrained agent choosing which die to roll.\n\nload premadeagents\nagent = trainedagent\n[n,win] = playdice(agent,slEnv)\n\n% ---------------------------------------------------------------------------------- %\nd = [1 1 1 5 5 8;2 2 3 3 6 6;1 4 4 4 5 7;2 2 6 6 7 8;3 4 5 7 8 8]\nload premadeagents.mat\nagent = trainedagent\nstates = 0:20;\nchoices = 1:5;\nobsInfo = rlFiniteSetSpec(states);\nactInfo = rlFiniteSetSpec(choices);\nslEnv = rlSimulinkEnv(\"targetDice\",\"targetDice/RL die chooser\",obsInfo,actInfo)\n% ---------------------------------------------------------------------------------- %\n\n\nAdd Random Variation to the Environment\n\n% Set the reset function for the environment slEnv to the function randomstart. \n% This local function is defined at the end of the script. It currently has no effect.\nslEnv.ResetFcn = @randomstart\n\n% Use the example code to modify the randomstart function to set the seed variable to randi(1e5) \n% (a random integer value) in the workspace of the targetDice model.\n% siminput = setVariable(siminput,\"varname\",value,\"Workspace\",\"modelname\");\n\nfunction siminput = randomstart(siminput)\n    siminput = setVariable(siminput,\"seed\",randi(1e5),\"Workspace\",\"targetDice\");\nend\n\n% Use the command [n,win] = playdice(agent,slEnv) to simulate playing the \ndice game, with the pretrained agent agent choosing which die to roll.\n[n, win] = playdice(agent, slEnv)\n\n% ---------------------------------------------------------------------------------- %\nslEnv.ResetFcn = @randomstart\nfunction siminput = randomstart(siminput)\n    siminput = setVariable(siminput,\"seed\",randi(1e5),\"Workspace\",\"targetDice\");\nend\n[n, win] = playdice(agent, slEnv)\n% ---------------------------------------------------------------------------------- %\n\n\nDefine an Environment with Continuous Variables\n\n% Use the rlNumericSpec function to create a variable called obsInfo that represents \n% the warehouse robot's observations. The robot observes 6 variables, in the form of a 6-by-1 numeric vector.\nobsInfo = rlNumericSpec([6 1])\n\n% Use the rlNumericSpec function to create a variable called actInfo that represents \n% the warehouse robot's actions, in the form of a 2-by-1 vector of forces in the range [-1 1].\nactInfo = rlNumericSpec([2 1],\"LowerLimit\",-1,\"UpperLimit\",1)\n\n% Use the rlSimulinkEnv function to create a variable called env that represents the robot \n% environment in the Simulink model whrobot.slx. The RL agent is defined in the block called \n% \"controller\" (in the whrobot model).\nenv = rlSimulinkEnv(\"whrobot\",\"whrobot/controller\",obsInfo,actInfo)\n\n% Use dot notation to set the reset function for the environment env to the \n% function randomstart (which is defined at the end of the script).\nenv.ResetFcn = @randomstart\n\n%% function given in the code itself\nfunction in = randomstart(in)\n    mdl = \"whrobot\";\n    in = setVariable(in,\"x0\",((-1)^randi([0 1]))*(2.5 + 3.5*rand),\"Workspace\",mdl);\n    in = setVariable(in,\"y0\",2.6 + 3.4*rand,\"Workspace\",mdl);\n    in = setVariable(in,\"theta0\",pi*(2*rand-1),\"Workspace\",mdl);\n    in = setVariable(in,\"v0\",randn/3,\"Workspace\",mdl);\n    in = setVariable(in,\"w0\",randn/3,\"Workspace\",mdl);\nend\n\n% ---------------------------------------------------------------------------------- %\nobsInfo = rlNumericSpec([6 1])\nactInfo = rlNumericSpec([2 1],\"LowerLimit\",-1,\"UpperLimit\",1)\nenv = rlSimulinkEnv(\"whrobot\",\"whrobot/controller\",obsInfo,actInfo)\nenv.ResetFcn = @randomstart\n% ---------------------------------------------------------------------------------- %"
   },
   {
-    "objectID": "contact.html",
-    "href": "contact.html",
-    "title": "Contact",
-    "section": "",
-    "text": "Hello! If you wish to contact me, please use the following methods:"
+    "objectID": "blogs/misc/rlonramp.html#providing-rewards",
+    "href": "blogs/misc/rlonramp.html#providing-rewards",
+    "title": "RL on Ramp",
+    "section": "Providing Rewards",
+    "text": "Providing Rewards\n\nShape a continuous reward\n\n% Use the matrices x and y to calculate r according to the formula r = exp(-8*x.^2) + exp(-3*y)\nr = exp(-8*x.^2) + exp(-3*y);\n\n% Use the contourf function to create a filled contour plot of the reward r,\n% as a function of location ((x,y) position). To plot the reward contours in the \n% original coordinate values, use xvec and yvec as the (x,y) coordinates.\ncontourf(xvec,yvec,r)\n\n% Use the colorbar function to add a colorbar to show the reward function values.\ncolorbar(r)\n\n% ---------------------------------------------------------------------------------- %\nr = exp(-8*x.^2) + exp(-3*y);\ncontourf(xvec,yvec,r)\ncolorbar(r)\n% ---------------------------------------------------------------------------------- %\n\n\nWrite a Reward Function\n\n% Use the first input (state) to calculate r according to the formula \n% r = 0.05*exp(-8*x^2) + 0.06*exp(-3*y) - 0.14\n\nfunction r = rewardfun(state,madeit,collided)\nx = state(1)/10;\ny = state(2)/10;\nr = 0.05*exp(-8*x^2) + 0.06*exp(-3*y) - 0.14;\n\n% Add the penalty term −0.001ω^2 to the reward calculation. Recall that the \n% angular velocity, ω, is the 6th observed variabl\nfunction r = rewardfun(state,madeit,collided)\nx = state(1)/10;\ny = state(2)/10;\nomega = state(6);\nr = 0.05*exp(-8*x^2) + 0.06*exp(-3*y) - 0.14 - 0.001*omega^2;\n\n% Use the logical variables madeit and collided to add a 5-point reward (+5) for reaching the goal \n% and a 2-point penalty (-2) for colliding with the shelves. Recall that logical variables take only \n% the values false (0) or true (1), indicating that the terminal states have not or have occurred, respectively.\nfunction r = rewardfun(state,madeit,collided)\nx = state(1)/10;\ny = state(2)/10;\np = state(6);\nr = 0.05*exp(-8*x^2) + 0.06*exp(-3*y) - 0.14 + p + 5*madeit - 2*collided;\n\n% ---------------------------------------------------------------------------------- %\nfunction r = rewardfun(state,madeit,collided)\n\nx = state(1)/10;\ny = state(2)/10;\nomega = state(6);\n\nr = 0.05*exp(-8*x^2) + 0.06*exp(-3*y) - 0.14 ...\n     - 0.001*omega^2 + 5*madeit - 2*collided;\n% ---------------------------------------------------------------------------------- %"
   },
   {
-    "objectID": "contact.html#email",
-    "href": "contact.html#email",
-    "title": "Contact",
-    "section": "Email",
-    "text": "Email\nYou can reach me at: dsiddharth25@gmail.com"
+    "objectID": "blogs/misc/rlonramp.html#including-actions-in-the-reward",
+    "href": "blogs/misc/rlonramp.html#including-actions-in-the-reward",
+    "title": "RL on Ramp",
+    "section": "Including Actions in the Reward",
+    "text": "Including Actions in the Reward\n\nWrite a Reward Function with an Action\n\nUse the action input to include a penalty of 0.01(F^2_trans + F^2_rot ) in the reward.\n\nfunction r = rewardfun(state,action,madeit,collided)\n\nx = state(1)/10;\ny = state(2)/10;\nomega = state(6);\n\nr = 0.05*exp(-8*x^2) + 0.06*exp(-3*y) - 0.14 - 0.001*omega^2 ...\n    + 5*madeit - 2*collided - 0.01*sum(action.^2);"
   },
   {
-    "objectID": "contact.html#phone",
-    "href": "contact.html#phone",
-    "title": "Contact",
-    "section": "Phone",
-    "text": "Phone\nYou can call me at: +91 73311-37182"
-  },
-  {
-    "objectID": "contact.html#social-media",
-    "href": "contact.html#social-media",
-    "title": "Contact",
-    "section": "Social Media",
-    "text": "Social Media\n\nLinkedIn\nWhatsapp\n\nNote: Please allow me 24-48 hours to respond to your messages. Thank you for understanding!"
-  },
-  {
-    "objectID": "blogs/DEEP LEARNING/basics.html#l1-regularization",
-    "href": "blogs/DEEP LEARNING/basics.html#l1-regularization",
-    "title": "Mathematics for intelligent system",
-    "section": "L1 Regularization",
-    "text": "L1 Regularization\nThe L1 regularization is calculated as:\n\\[\nL1 = \\lambda \\sum_{i=1}^{n} |w_i|\n\\]\nWhere \\(\\lambda\\) is the regularization strength and \\(w_i\\) is the weight of the \\(i^{th}\\) feature.\nThe main use of the L1 regularization with respect to the pane of the weights of the model is that it can be used to select the most important features of the model. This is because the L1 regularization tends to shrink the weights of the less important features to zero. This is because the L1 regularization is not differentiable at zero, and hence the weights of the less important features are shrunk to zero.\nThe region where the L1 regularization is not differentiable is shown in the figure below:"
-  },
-  {
-    "objectID": "blogs/DEEP LEARNING/basics.html#l2-regularization",
-    "href": "blogs/DEEP LEARNING/basics.html#l2-regularization",
-    "title": "Mathematics for intelligent system",
-    "section": "L2 Regularization",
-    "text": "L2 Regularization\nThe L2 regularization is calculated as:\n\\[\nL2 = \\lambda \\sum_{i=1}^{n} w_i^2\n\\]\nWhere \\(\\lambda\\) is the regularization strength and \\(w_i\\) is the weight of the \\(i^{th}\\) feature.\nThe main use of the L2 regularization with respect to the pane of the weights of the model is that it can be used to prevent the weights from becoming too large. This is because the L2 regularization tends to shrink the weights of the model. This is because the L2 regularization is differentiable everywhere, and hence the weights of the model are shrunk towards zero.\nThe shape of the L2 regularization is a circle in the weight space"
-  },
-  {
-    "objectID": "blogs/DEEP LEARNING/basics.html#batch-normalization",
-    "href": "blogs/DEEP LEARNING/basics.html#batch-normalization",
-    "title": "Mathematics for intelligent system",
-    "section": "Batch Normalization",
-    "text": "Batch Normalization\nThe batch normalization is a technique used to normalize the input of the hidden layers of the model. This is done to reduce the internal covariate shift. The internal covariate shift is the change in the distribution of the input of the hidden layers of the model. This is because the input of the hidden layers of the model changes as the weights of the model are updated. This is because the input of the hidden layers of the model is a function of the weights of the model.\nThe batch normalization is calculated as:\n\\[\n\\hat{x} = \\frac{x - \\mu}{\\sqrt{\\sigma^2 + \\epsilon}}\n\\]\nWhere \\(\\hat{x}\\) is the normalized input, \\(x\\) is the input, \\(\\mu\\) is the mean of the input, \\(\\sigma^2\\) is the variance of the input, and \\(\\epsilon\\) is a small number to prevent division by zero.\nThe steps inculded in\n\nCompute the mean and variance of the vectors in the mini-batch\n\nMean = \\(\\mu = \\frac{1}{m} \\sum_{i=1}^{m} x_i\\)\nVariance = \\(\\sigma^2 = \\frac{1}{m} \\sum_{i=1}^{m} (x_i - \\mu)^2\\)\n\nNormalize the input\n\n\\(\\hat{x} = \\frac{x - \\mu}{\\sqrt{\\sigma^2 + \\epsilon}}\\)\nWhere \\(\\hat{x}\\) is the normalized input, \\(x\\) is the input, \\(\\mu\\) is the mean of the input, \\(\\sigma^2\\) is the variance of the input, and \\(\\epsilon\\) is a small number to prevent division by zero.\n\nScale and shift the normalized input\n\n\\(y = \\gamma \\hat{x} + \\beta\\)\nWhere \\(y\\) is the output, \\(\\gamma\\) is the scale parameter, \\(\\hat{x}\\) is the normalized input, and \\(\\beta\\) is the shift parameter.\nThe scale and shift parameters are learned during the training of the model."
+    "objectID": "blogs/misc/rlonramp.html#critics-and-q-values",
+    "href": "blogs/misc/rlonramp.html#critics-and-q-values",
+    "title": "RL on Ramp",
+    "section": "Critics and Q-values",
+    "text": "Critics and Q-values\n\nCreate a Q-Table\n```matlab\n% Use the rlTable function to create a Q table called T for the dice game. % The observable states are stored in the variable obsInfo. % The action choices are stored in the variable actInfo. T = rlTable(obsInfo,actInfo)\n% Use dot notation to extract the Table property of T to a matrix called Qvals Qvals = T.Table\n% Use the rand function to create a 21-by-5 matrix of random Q values. % Store this matrix in a variable called randQvals. randQvals = rand(21,5)\n% Use dot notation to set the Table property of T equal to the matrix randQvals. randQvals = T.Table\n% Use rlQValueFunction to create a Q-value critic called critic from the table T. % Recall that the observable states are stored in the variable obsInfo. % The action choices are stored in the variable actInfo. critic = rlQValueFunction(T,obsInfo,actInfo)\n% Use the rlQAgent function to create a Q-learning agent called agent from critic. agent = rlQAgent(critic)\n%Use the command [n,win] = playdice(agent,slEnv) to simulate playing the dice game, with the agent you just created. [n,win] = playdice(agent,slEnv)\n% ———————————————————————————- % T = rlTable(obsInfo,actInfo) Qvals = T.Table randQvals = rand(21,5) T.Table = randQvals critic = rlQValueFunction(T,obsInfo,actInfo) agent = rlQAgent(critic) [n,win] = playdice(agent,slEnv) % ———————————————————————————- %"
   },
   {
     "objectID": "blogs/NLP/LanguageModelling.html",
@@ -683,7 +718,7 @@
     "href": "blogs.html",
     "title": "Blogs",
     "section": "",
-    "text": "RL on Ramp\n\n\n\n\n\n\n\n\n\n\n\nSep 16, 2024\n\n\nSiddharth D\n\n\n5 min\n\n\n\n\n\n\n\n\n\n\n\n\nSome basic Cloud Computing QA\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n46 min\n\n\n\n\n\n\n\n\n\n\n\n\nMathematics for intelligent system\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to NLP\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n5 min\n\n\n\n\n\n\n\n\n\n\n\n\nLanguage Modelling and Other Concepts\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n6 min\n\n\n\n\n\n\n\n\n\n\n\n\nTopic 1 -&gt; Array\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\nTopic 1 -&gt; Recursion\n\n\n\n\n\n\n\n\n\n\n\nJan 6, 2024\n\n\nSiddharth D\n\n\n4 min\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\n\n\nJan 1, 2024\n\n\nSiddharth D\n\n\n1 min\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "RL on Ramp\n\n\n\n\n\n\n\n\n\n\n\nSep 16, 2024\n\n\nSiddharth D\n\n\n6 min\n\n\n\n\n\n\n\n\n\n\n\n\nSome basic Cloud Computing QA\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n46 min\n\n\n\n\n\n\n\n\n\n\n\n\nMathematics for intelligent system\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to NLP\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n5 min\n\n\n\n\n\n\n\n\n\n\n\n\nLanguage Modelling and Other Concepts\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n6 min\n\n\n\n\n\n\n\n\n\n\n\n\nTopic 1 -&gt; Array\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\nTopic 1 -&gt; Recursion\n\n\n\n\n\n\n\n\n\n\n\nJan 6, 2024\n\n\nSiddharth D\n\n\n4 min\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\n\n\nJan 1, 2024\n\n\nSiddharth D\n\n\n1 min\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
     "objectID": "project_posts/ComputerNetwork/index.html",
@@ -719,26 +754,5 @@
     "title": "Computer Network",
     "section": "Why do we need IP address when the MAC address is unique? Can’t we communicate only with MAC address?",
     "text": "Why do we need IP address when the MAC address is unique? Can’t we communicate only with MAC address?\nWe need IP addresses alongside MAC addresses because:\n\nMAC addresses are only meaningful within a local network.\nIP addresses enable global routing across different networks.\nIP provides a hierarchical addressing scheme for efficient routing.\nMAC addresses don’t scale for internet-wide communication.\nIP allows for logical network organization independent of hardware.\n\n\n\n\n\n\n\nFollow up question\n\n\n\n\n\nHow does ARP help bridge the gap between IP and MAC addresses?\n\nARP resolves IP addresses to MAC addresses for local network communication.\nIt enables devices to communicate using IP addresses while handling the underlying MAC addressing.\nARP is essential for routing packets between IP networks based on MAC addresses.\nARP maintains a mapping table (ARP cache) for efficient address resolution."
-  },
-  {
-    "objectID": "blogs/misc/rlonramp.html",
-    "href": "blogs/misc/rlonramp.html",
-    "title": "RL on Ramp",
-    "section": "",
-    "text": "This page is a brief introduction to Reinforcement Learning (RL) and its applications in matlab. It has all the solutions to the exercises and quizzes that are present in the course."
-  },
-  {
-    "objectID": "blogs/misc/rlonramp.html#defining-an-environment-interface",
-    "href": "blogs/misc/rlonramp.html#defining-an-environment-interface",
-    "title": "RL on Ramp",
-    "section": "Defining an Environment Interface",
-    "text": "Defining an Environment Interface\n\nDefine an Environment with Discrete Variables\nd = [1 1 1 5 5 8;2 2 3 3 6 6;1 4 4 4 5 7;2 2 6 6 7 8;3 4 5 7 8 8];\n\n% the colon operator (:) to create a vector called states that contains the integer values 0, 1, ..., 20.\nstates = 0:20;\n\n% Use the colon operator to create a vector called choices that contains the integer values 1, 2, 3, 4, 5.\nchoics = 1:5;\n\n% Use the rlFiniteSetSpec function to create a variable called obsInfo that represents \n% the possible observations in the dice game (stored in the vector states).\nobsInfo = rlFiniteSetSpec(states)\n\n% Use the rlFiniteSetSpec function to create a variable called actInfo that represents \n% the possible actions in the dice game (stored in the vector choices).\nactInfo = rlFiniteSetSpec(choices)\n\n% Use the rlSimulinkEnv function to create a variable called slEnv that represents the \n% environment in the Simulink model targetDice.slx. The RL agent is defined in the block \n% called \"RL die chooser\" (in the targetDice model).\nslEnv = rlSimulinkEnv(\"targetDice\",\"targetDice/RL die chooser\",obsInfo,actInfo);\n\n% Use the commands\n% load premadeagents\n% agent = trainedagent\n% [n,win] = playdice(agent,slEnv)\n% to simulate playing the dice game, with a pretrained agent choosing which die to roll.\n\nload premadeagents\nagent = trainedagent\n[n,win] = playdice(agent,slEnv)\n\n% ---------------------------------------------------------------------------------- %\nd = [1 1 1 5 5 8;2 2 3 3 6 6;1 4 4 4 5 7;2 2 6 6 7 8;3 4 5 7 8 8]\nload premadeagents.mat\nagent = trainedagent\nstates = 0:20;\nchoices = 1:5;\nobsInfo = rlFiniteSetSpec(states);\nactInfo = rlFiniteSetSpec(choices);\nslEnv = rlSimulinkEnv(\"targetDice\",\"targetDice/RL die chooser\",obsInfo,actInfo)\n% ---------------------------------------------------------------------------------- %\n\n\nAdd Random Variation to the Environment\n\n% Set the reset function for the environment slEnv to the function randomstart. \n% This local function is defined at the end of the script. It currently has no effect.\nslEnv.ResetFcn = @randomstart\n\n% Use the example code to modify the randomstart function to set the seed variable to randi(1e5) \n% (a random integer value) in the workspace of the targetDice model.\n% siminput = setVariable(siminput,\"varname\",value,\"Workspace\",\"modelname\");\n\nfunction siminput = randomstart(siminput)\n    siminput = setVariable(siminput,\"seed\",randi(1e5),\"Workspace\",\"targetDice\");\nend\n\n% Use the command [n,win] = playdice(agent,slEnv) to simulate playing the \ndice game, with the pretrained agent agent choosing which die to roll.\n[n, win] = playdice(agent, slEnv)\n\n% ---------------------------------------------------------------------------------- %\nslEnv.ResetFcn = @randomstart\nfunction siminput = randomstart(siminput)\n    siminput = setVariable(siminput,\"seed\",randi(1e5),\"Workspace\",\"targetDice\");\nend\n[n, win] = playdice(agent, slEnv)\n% ---------------------------------------------------------------------------------- %\n\n\nDefine an Environment with Continuous Variables\n\n% Use the rlNumericSpec function to create a variable called obsInfo that represents \n% the warehouse robot's observations. The robot observes 6 variables, in the form of a 6-by-1 numeric vector.\nobsInfo = rlNumericSpec([6 1])\n\n% Use the rlNumericSpec function to create a variable called actInfo that represents \n% the warehouse robot's actions, in the form of a 2-by-1 vector of forces in the range [-1 1].\nactInfo = rlNumericSpec([2 1],\"LowerLimit\",-1,\"UpperLimit\",1)\n\n% Use the rlSimulinkEnv function to create a variable called env that represents the robot \n% environment in the Simulink model whrobot.slx. The RL agent is defined in the block called \n% \"controller\" (in the whrobot model).\nenv = rlSimulinkEnv(\"whrobot\",\"whrobot/controller\",obsInfo,actInfo)\n\n% Use dot notation to set the reset function for the environment env to the \n% function randomstart (which is defined at the end of the script).\nenv.ResetFcn = @randomstart\n\n%% function given in the code itself\nfunction in = randomstart(in)\n    mdl = \"whrobot\";\n    in = setVariable(in,\"x0\",((-1)^randi([0 1]))*(2.5 + 3.5*rand),\"Workspace\",mdl);\n    in = setVariable(in,\"y0\",2.6 + 3.4*rand,\"Workspace\",mdl);\n    in = setVariable(in,\"theta0\",pi*(2*rand-1),\"Workspace\",mdl);\n    in = setVariable(in,\"v0\",randn/3,\"Workspace\",mdl);\n    in = setVariable(in,\"w0\",randn/3,\"Workspace\",mdl);\nend\n\n% ---------------------------------------------------------------------------------- %\nobsInfo = rlNumericSpec([6 1])\nactInfo = rlNumericSpec([2 1],\"LowerLimit\",-1,\"UpperLimit\",1)\nenv = rlSimulinkEnv(\"whrobot\",\"whrobot/controller\",obsInfo,actInfo)\nenv.ResetFcn = @randomstart\n% ---------------------------------------------------------------------------------- %"
-  },
-  {
-    "objectID": "blogs/misc/rlonramp.html#providing-rewards",
-    "href": "blogs/misc/rlonramp.html#providing-rewards",
-    "title": "RL on Ramp",
-    "section": "Providing Rewards",
-    "text": "Providing Rewards\n\nShape a continuous reward\n\n% Use the matrices x and y to calculate r according to the formula r = exp(-8*x.^2) + exp(-3*y)\nr = exp(-8*x.^2) + exp(-3*y);\n\n% Use the contourf function to create a filled contour plot of the reward r,\n% as a function of location ((x,y) position). To plot the reward contours in the \n% original coordinate values, use xvec and yvec as the (x,y) coordinates.\ncontourf(xvec,yvec,r)\n\n% Use the colorbar function to add a colorbar to show the reward function values.\ncolorbar(r)\n\n% ---------------------------------------------------------------------------------- %\nr = exp(-8*x.^2) + exp(-3*y);\ncontourf(xvec,yvec,r)\ncolorbar(r)\n% ---------------------------------------------------------------------------------- %\n\n\nWrite a Reward Function\n\n% Use the first input (state) to calculate r according to the formula \n% r = 0.05*exp(-8*x^2) + 0.06*exp(-3*y) - 0.14\n\nfunction r = rewardfun(state,madeit,collided)\nx = state(1)/10;\ny = state(2)/10;\nr = 0.05*exp(-8*x^2) + 0.06*exp(-3*y) - 0.14;\n\n% Add the penalty term −0.001ω^2 to the reward calculation. Recall that the \n% angular velocity, ω, is the 6th observed variabl\nfunction r = rewardfun(state,madeit,collided)\nx = state(1)/10;\ny = state(2)/10;\nomega = state(6);\nr = 0.05*exp(-8*x^2) + 0.06*exp(-3*y) - 0.14 - 0.001*omega^2;\n\n% Use the logical variables madeit and collided to add a 5-point reward (+5) for reaching the goal \n% and a 2-point penalty (-2) for colliding with the shelves. Recall that logical variables take only \n% the values false (0) or true (1), indicating that the terminal states have not or have occurred, respectively.\nfunction r = rewardfun(state,madeit,collided)\nx = state(1)/10;\ny = state(2)/10;\np = state(6);\nr = 0.05*exp(-8*x^2) + 0.06*exp(-3*y) - 0.14 + p + 5*madeit - 2*collided;\n\n% ---------------------------------------------------------------------------------- %\nfunction r = rewardfun(state,madeit,collided)\n\nx = state(1)/10;\ny = state(2)/10;\nomega = state(6);\n\nr = 0.05*exp(-8*x^2) + 0.06*exp(-3*y) - 0.14 ...\n     - 0.001*omega^2 + 5*madeit - 2*collided;\n% ---------------------------------------------------------------------------------- %"
   }
 ]

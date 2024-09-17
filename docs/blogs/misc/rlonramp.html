@@ -235,7 +235,17 @@ cookieconsent.run({
   <li><a href="#shape-a-continuous-reward" id="toc-shape-a-continuous-reward" class="nav-link" data-scroll-target="#shape-a-continuous-reward">Shape a continuous reward</a></li>
   <li><a href="#write-a-reward-function" id="toc-write-a-reward-function" class="nav-link" data-scroll-target="#write-a-reward-function">Write a Reward Function</a></li>
   </ul></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#including-actions-in-the-reward" id="toc-including-actions-in-the-reward" class="nav-link" data-scroll-target="#including-actions-in-the-reward">Including Actions in the Reward</a>
+  <ul class="collapse">
+  <li><a href="#write-a-reward-function-with-an-action" id="toc-write-a-reward-function-with-an-action" class="nav-link" data-scroll-target="#write-a-reward-function-with-an-action">Write a Reward Function with an Action</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#define-agent" id="toc-define-agent" class="nav-link" data-scroll-target="#define-agent">Define Agent</a>
+  <ul class="collapse">
+  <li><a href="#critics-and-q-values" id="toc-critics-and-q-values" class="nav-link" data-scroll-target="#critics-and-q-values">Critics and Q-values</a>
+  <ul class="collapse">
+  <li><a href="#create-a-q-table" id="toc-create-a-q-table" class="nav-link" data-scroll-target="#create-a-q-table">Create a Q-Table</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -423,10 +433,42 @@ cookieconsent.run({
 <span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a><span class="co">% ---------------------------------------------------------------------------------- %</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section"></h2>
+<section id="including-actions-in-the-reward" class="level2">
+<h2 class="anchored" data-anchor-id="including-actions-in-the-reward">Including Actions in the Reward</h2>
+<section id="write-a-reward-function-with-an-action" class="level3">
+<h3 class="anchored" data-anchor-id="write-a-reward-function-with-an-action">Write a Reward Function with an Action</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="va">Use</span> <span class="va">the</span> <span class="va">action</span> <span class="va">input</span> <span class="va">to</span> <span class="va">include</span> <span class="va">a</span> <span class="va">penalty</span> <span class="va">of</span> <span class="fl">0.01</span>(<span class="va">F</span><span class="op">^</span><span class="fl">2</span>_<span class="va">trans</span> <span class="op">+</span> <span class="va">F</span><span class="op">^</span><span class="fl">2</span>_<span class="va">rot</span> ) <span class="va">in</span> <span class="va">the</span> <span class="va">reward</span>.</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="va">r</span> <span class="op">=</span> <span class="va">rewardfun</span>(<span class="va">state</span><span class="op">,</span><span class="va">action</span><span class="op">,</span><span class="va">madeit</span><span class="op">,</span><span class="va">collided</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="va">x</span> <span class="op">=</span> <span class="va">state</span>(<span class="fl">1</span>)<span class="op">/</span><span class="fl">10</span><span class="op">;</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="va">y</span> <span class="op">=</span> <span class="va">state</span>(<span class="fl">2</span>)<span class="op">/</span><span class="fl">10</span><span class="op">;</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="va">omega</span> <span class="op">=</span> <span class="va">state</span>(<span class="fl">6</span>)<span class="op">;</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="va">r</span> <span class="op">=</span> <span class="fl">0.05</span><span class="op">*</span><span class="va">exp</span>(<span class="op">-</span><span class="fl">8</span><span class="op">*</span><span class="va">x</span><span class="op">^</span><span class="fl">2</span>) <span class="op">+</span> <span class="fl">0.06</span><span class="op">*</span><span class="va">exp</span>(<span class="op">-</span><span class="fl">3</span><span class="op">*</span><span class="va">y</span>) <span class="op">-</span> <span class="fl">0.14</span> <span class="op">-</span> <span class="fl">0.001</span><span class="op">*</span><span class="va">omega</span><span class="op">^</span><span class="fl">2</span> <span class="op">...</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">+</span> <span class="fl">5</span><span class="op">*</span><span class="va">madeit</span> <span class="op">-</span> <span class="fl">2</span><span class="op">*</span><span class="va">collided</span> <span class="op">-</span> <span class="fl">0.01</span><span class="op">*</span><span class="va">sum</span>(<span class="va">action</span><span class="op">.^</span><span class="fl">2</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+</section>
+<section id="define-agent" class="level1">
+<h1>Define Agent</h1>
+<section id="critics-and-q-values" class="level2">
+<h2 class="anchored" data-anchor-id="critics-and-q-values">Critics and Q-values</h2>
+<section id="create-a-q-table" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-q-table">Create a Q-Table</h3>
+<p>```matlab</p>
+<p>% Use the rlTable function to create a Q table called T for the dice game. % The observable states are stored in the variable obsInfo. % The action choices are stored in the variable actInfo. T = rlTable(obsInfo,actInfo)</p>
+<p>% Use dot notation to extract the Table property of T to a matrix called Qvals Qvals = T.Table</p>
+<p>% Use the rand function to create a 21-by-5 matrix of random Q values. % Store this matrix in a variable called randQvals. randQvals = rand(21,5)</p>
+<p>% Use dot notation to set the Table property of T equal to the matrix randQvals. randQvals = T.Table</p>
+<p>% Use rlQValueFunction to create a Q-value critic called critic from the table T. % Recall that the observable states are stored in the variable obsInfo. % The action choices are stored in the variable actInfo. critic = rlQValueFunction(T,obsInfo,actInfo)</p>
+<p>% Use the rlQAgent function to create a Q-learning agent called agent from critic. agent = rlQAgent(critic)</p>
+<p>%Use the command [n,win] = playdice(agent,slEnv) to simulate playing the dice game, with the agent you just created. [n,win] = playdice(agent,slEnv)</p>
+<p>% ———————————————————————————- % T = rlTable(obsInfo,actInfo) Qvals = T.Table randQvals = rand(21,5) T.Table = randQvals critic = rlQValueFunction(T,obsInfo,actInfo) agent = rlQAgent(critic) [n,win] = playdice(agent,slEnv) % ———————————————————————————- %</p>
 
 
+</section>
 </section>
 </section>
 
