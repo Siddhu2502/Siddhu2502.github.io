@@ -112,109 +112,116 @@
     "text": "Simple overview"
   },
   {
-    "objectID": "blogs.html",
-    "href": "blogs.html",
-    "title": "Blogs",
+    "objectID": "about.html#experience",
+    "href": "about.html#experience",
+    "title": "About Me",
+    "section": "Experience",
+    "text": "Experience\n\nGoogle Developer Students Club\n\nMay 2023 - Present\n\nGDSC Amrita | Coimbatore, TN\n\nActively participated in GDSC (AI/ML)\nOrganized and facilitated an interactive Android workshop\nConducted a seminar on AI/ML deployment\n\n\n\n\nAnokha (Web dev)\n\nJune 2022 - June 2022\n\nAnokha Amrita | Coimbatore, TN\nDeveloped website for college department AIE\nShowcased participant’s code outputs and reports from training sessions and hackathons\nLive conversion of MD files into a neat HTML, Hosted in Github Pages\n\n\n\n\nAssociation of Students of Computer Science for Information Interchange (ASCII)\n\nJune 2022 - June 2023\n\nASCII Amrita | Coimbatore, TN\n\nPart of the Organization committee for a workshop on AI/ML basics using TensorFlow and PyTorch.\nActively maintaining of ACII github.\n\n\n\n\nIntel IOT/AI Club\n\nJune 2023 - Present\n\nIntel IOT Club | Coimbatore, TN\n\nActive team member of AI/ML club wing of the Intel IOT/AI club\nCreated basic ML model based on classification and image processing using Intel one API"
+  },
+  {
+    "objectID": "about.html#tech-stack-and-workflow",
+    "href": "about.html#tech-stack-and-workflow",
+    "title": "About Me",
+    "section": "Tech Stack and Workflow",
+    "text": "Tech Stack and Workflow\n\nBackend Development: Django, Flask, RestAPI\nMachine Learning: TensorFlow, PyTorch, Scikit-learn\nComputer Vision: OpenCV, Roboflow, Dlib\nCloud Platforms: Microsoft Azure\nContainerization: Docker\nProgramming Languages: Python, Scala, Java (basic knowledge), MATLAB\nCompetitive Programming: Proficient in Python (Leetcode, Codechef)"
+  },
+  {
+    "objectID": "blogs/DSA/Recursion DSA/index.html",
+    "href": "blogs/DSA/Recursion DSA/index.html",
+    "title": "Topic 1 -> Recursion",
     "section": "",
-    "text": "Some basic Cloud Computing QA\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n46 min\n\n\n\n\n\n\n\n\n\n\n\n\nMathematics for intelligent system\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to NLP\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n5 min\n\n\n\n\n\n\n\n\n\n\n\n\nLanguage Modelling and Other Concepts\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n6 min\n\n\n\n\n\n\n\n\n\n\n\n\nTopic 1 -&gt; Array\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\nTopic 1 -&gt; Recursion\n\n\n\n\n\n\n\n\n\n\n\nJan 6, 2024\n\n\nSiddharth D\n\n\n4 min\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\n\n\nJan 1, 2024\n\n\nSiddharth D\n\n\n1 min\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "One way to describe repetition within a computer program is the use of loops, such as Python’s while-loop and for-loop, but an entire way of approach is using Recrusions which brings us to today’s topic on learning stuff daily for 100 days\n\nTest for base cases. We begin by testing for a set of base cases (there should be at least one). These base cases should be defined so that every possible chain of recursive calls will eventually reach a base case, and the handling ofeach base case should not use recursion.\nRecur. If not a base case, we perform one or more recursive calls. This recursive step may involve a test that decides which of several possible recursive calls to make. We should define each possible recursive call so that it makes progress towards a base case.\nImportant Point here is that if this base case is not met then we fall into a infinite recursion and kaboom 💥\n\ndef fib(n):\n    if n &lt;= 1:         # -----&gt; this part (remember this)\n        return 0\n    # ... rest of the function here \nThis function has this fib(n) so that “n” is what that has to be satisfied … by now you would have got the grip of the step 1 of recursion\nthe next step is to lay out your logic and write the rest of the function\ndef fib(n):\n    if n &lt;= 1:\n        return 0\n    else:\n        return fib(n-1) + fib(n-2)  # --&gt; go back 2 steps and sum then up\nCertainly! Let’s add examples for binary recursion and multiple recursion:"
   },
   {
-    "objectID": "blogs/DSA/Array DSA/index.html",
-    "href": "blogs/DSA/Array DSA/index.html",
-    "title": "Topic 1 -> Array",
+    "objectID": "blogs/DSA/Recursion DSA/index.html#linear-recursion",
+    "href": "blogs/DSA/Recursion DSA/index.html#linear-recursion",
+    "title": "Topic 1 -> Recursion",
+    "section": "Linear Recursion",
+    "text": "Linear Recursion\nIf a recursive function is designed so that each invocation of the body makes at most one new recursive call, this is known as linear recursion.\nExample:\ndef reversearr(array, start, stop):\n    if start &lt; stop-1: # -----&gt; base case baked right into the recursion itself\n        array[start], array[stop-1] = array[stop-1], array[start]\n        reversearr(array, start+1, stop-1)\n    return array"
+  },
+  {
+    "objectID": "blogs/DSA/Recursion DSA/index.html#binary-recursion",
+    "href": "blogs/DSA/Recursion DSA/index.html#binary-recursion",
+    "title": "Topic 1 -> Recursion",
+    "section": "Binary Recursion",
+    "text": "Binary Recursion\nIn binary recursion, each recursive call results in two new recursive calls. This often occurs in problems that can be divided into two sub-problems.\nExample (Binary Recursion):\ndef binary_sum(arr, start, end):\n    if start == end:  # base case when there's only one element\n        return arr[start]\n    else:\n        mid = (start + end) // 2\n        left_sum = binary_sum(arr, start, mid)\n        right_sum = binary_sum(arr, mid+1, end)\n        return left_sum + right_sum\nExplanation: This function recursively divides the array into two halves and calculates the sum of each half. The base case is when the array has only one element, and the sum is returned. The overall sum is then calculated by adding the sums of the left and right halves."
+  },
+  {
+    "objectID": "blogs/DSA/Recursion DSA/index.html#multiple-recursion",
+    "href": "blogs/DSA/Recursion DSA/index.html#multiple-recursion",
+    "title": "Topic 1 -> Recursion",
+    "section": "Multiple Recursion",
+    "text": "Multiple Recursion\nMultiple recursion involves a recursive function making more than two calls. It can be a bit complex but is a powerful technique for solving certain types of problems.\nExample (Multiple Recursion):\ndef multiply_elements(arr, start, end):\n    if start == end:  # base case when there's only one element\n        return arr[start]\n    else:\n        mid = (start + end) // 2\n        left_product = multiply_elements(arr, start, mid)\n        right_product = multiply_elements(arr, mid+1, end)\n        current_product = arr[start] * arr[end]  # additional recursive call\n        return left_product * right_product * current_product\nExplanation: This function recursively multiplies the elements in the array. In addition to the recursive calls for the left and right halves, there is an extra recursive call to multiply the first and last elements of the current segment. The base case is when the array has only one element.\n\nFeel free to experiment with these examples and observe their behavior. Understanding binary and multiple recursion is essential for tackling a wide range of algorithmic problems. Happy coding! 💻🚀"
+  },
+  {
+    "objectID": "blogs/welcome/index.html",
+    "href": "blogs/welcome/index.html",
+    "title": "Welcome To My Blog",
     "section": "",
-    "text": "Python’s Array Module\nThe array module in Python is used to store homogeneous data types such as integers, floats, etc. It is similar to lists in Python, but with the added advantage of being more efficient in terms of memory and performance for certain operations.\nWhen to use the array module? You should consider using the array module when you need to store a large amount of homogeneous data. This is because arrays are more memory efficient than lists. They also provide faster access in some cases because they store data in contiguous memory blocks, unlike lists.\nComparing array module with normal list Here are some key differences between the array module and a normal list in Python:\nHomogeneity: Arrays can only store elements of the same type, while lists can store elements of different types.\nMemory and Performance: Arrays are more memory efficient and can provide faster access and manipulation for large amounts of data.\nFunctionality: Lists come with a variety of built-in methods for manipulation like append, remove, pop, etc. Arrays have fewer methods but are more specialized for numerical and computational tasks.\nIn the provided code snippet, an array of type ‘h’ (short integers) is created to store prime numbers. This is a good use case for the array module because we are dealing with a large amount of homogeneous numerical data.\nIn this code, the array is more memory efficient than a list would be, and it provides fast and efficient access to the prime numbers stored within it.\n\n\n\n\n Back to top"
+    "text": "This is the first post of my blog. Welcome!\nHello guys welcome to my portfolio website. Looking forward to have a great time with you all.\n\n\n\n Back to top"
   },
   {
-    "objectID": "blogs/NLP/LanguageModelling.html",
-    "href": "blogs/NLP/LanguageModelling.html",
-    "title": "Language Modelling and Other Concepts",
+    "objectID": "blogs/NLP/NLPIntro.html",
+    "href": "blogs/NLP/NLPIntro.html",
+    "title": "Introduction to NLP",
     "section": "",
-    "text": "In this article, we will discuss the concept of language modelling and its importance in the field of Natural Language Processing. We will also discuss some of the other important concepts of NLP"
+    "text": "NLP is branch of AI that helps computers understand, interpret and manipulate human language.\nThe goal is to completely capture the context of human langage and understand the meaning behind it."
   },
   {
-    "objectID": "blogs/NLP/LanguageModelling.html#unigram-model",
-    "href": "blogs/NLP/LanguageModelling.html#unigram-model",
-    "title": "Language Modelling and Other Concepts",
-    "section": "Unigram Model",
-    "text": "Unigram Model\n\nIn the unigram model, the probability of a word depends only on the word itself and not on any other words.\nThe probability of a word is given by the formula:\n\\[ P(w) = \\frac{Count(w)}{N} \\]\nWhere,\n\n\\(Count(w)\\) is the number of times the word \\(w\\) has appeared in the corpus\n\\(N\\) is the total number of words in the corpus\n\nThe unigram model is the simplest language model and is used as a baseline for comparison with other language models.\n\n# Example of Unigram Model\ntext = \"What are your aspirations in life\"\n\n# Tokenize the text\ntokens = text.split()\n\n# Count the frequency of each word\nword_freq = {}\nfor word in tokens:\n    if word in word_freq:\n        word_freq[word] += 1\n    else:\n        word_freq[word] = 1\n\n# Calculate the probability of each word\nprob_word = {}\nfor word in word_freq:\n    prob_word[word] = word_freq[word] / len(tokens)\n\n# Print the probability of each word\nfor word in prob_word:\n    print(word, prob_word[word])"
+    "objectID": "blogs/NLP/NLPIntro.html#phonetics",
+    "href": "blogs/NLP/NLPIntro.html#phonetics",
+    "title": "Introduction to NLP",
+    "section": "Phonetics",
+    "text": "Phonetics\nIt is the branch that studies how humans produce and perceive speech sounds. It is the study of the physical sounds of human speech."
   },
   {
-    "objectID": "blogs/NLP/LanguageModelling.html#bigram-model",
-    "href": "blogs/NLP/LanguageModelling.html#bigram-model",
-    "title": "Language Modelling and Other Concepts",
-    "section": "Bigram Model",
-    "text": "Bigram Model\n\nIn the bigram model, the probability of a word depends only on the previous word.\nThe probability of a word is given by the formula:\n\\[ P(w_i|w_{i-1}) = \\frac{Count(w_{i-1},w_i)}{Count(w_{i-1})} \\]\nWhere,\n\n\\(Count(w_{i-1},w_i)\\) is the number of times the word \\(w_i\\) has appeared after the word \\(w_{i-1}\\)\n\\(Count(w_{i-1})\\) is the number of times the word \\(w_{i-1}\\) has appeared in the corpus\n\n\\(P(w_i|w_{i-1})\\) is the probability of the word \\(w_i\\) given the word \\(w_{i-1}\\)\n\n# Example of Bigram Model\ntext = \"What are your aspirations in life\"\n\n# Tokenize the text\ntokens = text.split()\n\n# Create bigrams\nbigrams = [(tokens[i], tokens[i+1]) for i in range(len(tokens)-1)]\n\n# Count the frequency of each bigram\nbigram_freq = {}\n\nfor bigram in bigrams:\n    if bigram in bigram_freq:\n        bigram_freq[bigram] += 1\n    else:\n        bigram_freq[bigram] = 1\n\n# Calculate the probability of each bigram\nprob_bigram = {}\nfor bigram in bigram_freq:\n    prob_bigram[bigram] = bigram_freq[bigram] / tokens.count(bigram[0])\n\n# Print the probability of each bigram\nfor bigram in prob_bigram:\n    print(bigram, prob_bigram[bigram])"
+    "objectID": "blogs/NLP/NLPIntro.html#phonology",
+    "href": "blogs/NLP/NLPIntro.html#phonology",
+    "title": "Introduction to NLP",
+    "section": "Phonology",
+    "text": "Phonology\nIt is the branch that studies the sound patterns of human language. They linguists study the languages or dialects and organize their sounds (phonemes) into a system of relationships."
   },
   {
-    "objectID": "blogs/NLP/LanguageModelling.html#trigram-model",
-    "href": "blogs/NLP/LanguageModelling.html#trigram-model",
-    "title": "Language Modelling and Other Concepts",
-    "section": "Trigram Model",
-    "text": "Trigram Model\n\nIn the trigram model, the probability of a word depends on the previous two words.\nThe probability of a word is given by the formula:\n\\[ P(w_i|w_{i-2},w_{i-1}) = \\frac{Count(w_{i-2},w_{i-1},w_i)}{Count(w_{i-2},w_{i-1})} \\]\nWhere,\n\n\\(Count(w_{i-2},w_{i-1},w_i)\\) is the number of times the word \\(w_i\\) has appeared after the words \\(w_{i-2}\\) and \\(w_{i-1}\\)\n\\(Count(w_{i-2},w_{i-1})\\) is the number of times the words \\(w_{i-2}\\) and \\(w_{i-1}\\) have appeared in the corpus\n\n\\(P(w_i|w_{i-2},w_{i-1})\\) is the probability of the word \\(w_i\\) given the words \\(w_{i-2}\\) and \\(w_{i-1}\\)\n\n# Example of Trigram Model\ntext = \"What are your aspirations in life\"\n\n# Tokenize the text\ntokens = text.split()\n\n# Create trigrams\ntrigrams = [(tokens[i], tokens[i+1], tokens[i+2]) for i in range(len(tokens)-2)]\n\n# Count the frequency of each trigram\ntrigram_freq = {}\n\nfor trigram in trigrams:\n    if trigram in trigram_freq:\n        trigram_freq[trigram] += 1\n    else:\n        trigram_freq[trigram] = 1\n\n# Calculate the probability of each trigram\nprob_trigram = {}\nfor trigram in trigram_freq:\n    prob_trigram[trigram] = trigram_freq[trigram] / bigrams.count((trigram[0], trigram[1]))\n\n# Print the probability of each trigram\nfor trigram in prob_trigram:\n    print(trigram, prob_trigram[trigram])"
+    "objectID": "blogs/NLP/NLPIntro.html#morphology",
+    "href": "blogs/NLP/NLPIntro.html#morphology",
+    "title": "Introduction to NLP",
+    "section": "Morphology",
+    "text": "Morphology\nIt deals with the words are formed and the relationship of words with each other. It is the study of the structure of words. It analyses the structure of words and parts of words, such as\n\nstems: the core part of a word\nroot words: the basic part of a word\nprefixes: the part of a word that comes before the root word\nsuffixes: the part of a word that comes after the root word"
   },
   {
-    "objectID": "blogs/DEEP LEARNING/basics.html#l1-regularization",
-    "href": "blogs/DEEP LEARNING/basics.html#l1-regularization",
-    "title": "Mathematics for intelligent system",
-    "section": "L1 Regularization",
-    "text": "L1 Regularization\nThe L1 regularization is calculated as:\n\\[\nL1 = \\lambda \\sum_{i=1}^{n} |w_i|\n\\]\nWhere \\(\\lambda\\) is the regularization strength and \\(w_i\\) is the weight of the \\(i^{th}\\) feature.\nThe main use of the L1 regularization with respect to the pane of the weights of the model is that it can be used to select the most important features of the model. This is because the L1 regularization tends to shrink the weights of the less important features to zero. This is because the L1 regularization is not differentiable at zero, and hence the weights of the less important features are shrunk to zero.\nThe region where the L1 regularization is not differentiable is shown in the figure below:"
+    "objectID": "blogs/NLP/NLPIntro.html#syntax",
+    "href": "blogs/NLP/NLPIntro.html#syntax",
+    "title": "Introduction to NLP",
+    "section": "Syntax",
+    "text": "Syntax\nIt is the study of the structure of sentences. It is the study of the principles and rules for constructing sentences in natural languages."
   },
   {
-    "objectID": "blogs/DEEP LEARNING/basics.html#l2-regularization",
-    "href": "blogs/DEEP LEARNING/basics.html#l2-regularization",
-    "title": "Mathematics for intelligent system",
-    "section": "L2 Regularization",
-    "text": "L2 Regularization\nThe L2 regularization is calculated as:\n\\[\nL2 = \\lambda \\sum_{i=1}^{n} w_i^2\n\\]\nWhere \\(\\lambda\\) is the regularization strength and \\(w_i\\) is the weight of the \\(i^{th}\\) feature.\nThe main use of the L2 regularization with respect to the pane of the weights of the model is that it can be used to prevent the weights from becoming too large. This is because the L2 regularization tends to shrink the weights of the model. This is because the L2 regularization is differentiable everywhere, and hence the weights of the model are shrunk towards zero.\nThe shape of the L2 regularization is a circle in the weight space"
+    "objectID": "blogs/NLP/NLPIntro.html#semantics",
+    "href": "blogs/NLP/NLPIntro.html#semantics",
+    "title": "Introduction to NLP",
+    "section": "Semantics",
+    "text": "Semantics\nIt is the study of meaning in language. It is the study of meaning in language. It focuses on the relation between signifiers, such as words, phrases, signs, and symbols, and what they stand for, their denotation."
   },
   {
-    "objectID": "blogs/DEEP LEARNING/basics.html#batch-normalization",
-    "href": "blogs/DEEP LEARNING/basics.html#batch-normalization",
-    "title": "Mathematics for intelligent system",
-    "section": "Batch Normalization",
-    "text": "Batch Normalization\nThe batch normalization is a technique used to normalize the input of the hidden layers of the model. This is done to reduce the internal covariate shift. The internal covariate shift is the change in the distribution of the input of the hidden layers of the model. This is because the input of the hidden layers of the model changes as the weights of the model are updated. This is because the input of the hidden layers of the model is a function of the weights of the model.\nThe batch normalization is calculated as:\n\\[\n\\hat{x} = \\frac{x - \\mu}{\\sqrt{\\sigma^2 + \\epsilon}}\n\\]\nWhere \\(\\hat{x}\\) is the normalized input, \\(x\\) is the input, \\(\\mu\\) is the mean of the input, \\(\\sigma^2\\) is the variance of the input, and \\(\\epsilon\\) is a small number to prevent division by zero.\nThe steps inculded in\n\nCompute the mean and variance of the vectors in the mini-batch\n\nMean = \\(\\mu = \\frac{1}{m} \\sum_{i=1}^{m} x_i\\)\nVariance = \\(\\sigma^2 = \\frac{1}{m} \\sum_{i=1}^{m} (x_i - \\mu)^2\\)\n\nNormalize the input\n\n\\(\\hat{x} = \\frac{x - \\mu}{\\sqrt{\\sigma^2 + \\epsilon}}\\)\nWhere \\(\\hat{x}\\) is the normalized input, \\(x\\) is the input, \\(\\mu\\) is the mean of the input, \\(\\sigma^2\\) is the variance of the input, and \\(\\epsilon\\) is a small number to prevent division by zero.\n\nScale and shift the normalized input\n\n\\(y = \\gamma \\hat{x} + \\beta\\)\nWhere \\(y\\) is the output, \\(\\gamma\\) is the scale parameter, \\(\\hat{x}\\) is the normalized input, and \\(\\beta\\) is the shift parameter.\nThe scale and shift parameters are learned during the training of the model."
+    "objectID": "blogs/NLP/NLPIntro.html#pragmatics",
+    "href": "blogs/NLP/NLPIntro.html#pragmatics",
+    "title": "Introduction to NLP",
+    "section": "Pragmatics",
+    "text": "Pragmatics\nIt is the study of how context influences the interpretation of meaning. It studies the aspects of meaning and language use that are dependent on the speaker, the addressee, and other features of the context of utterance."
   },
   {
-    "objectID": "contact.html",
-    "href": "contact.html",
-    "title": "Contact",
-    "section": "",
-    "text": "Hello! If you wish to contact me, please use the following methods:"
+    "objectID": "blogs/NLP/NLPIntro.html#data-aspect",
+    "href": "blogs/NLP/NLPIntro.html#data-aspect",
+    "title": "Introduction to NLP",
+    "section": "Data aspect",
+    "text": "Data aspect\n\nCorpus: It is a collection of text. It is a large and structured set of texts. They are used to do statistical analysis and hypothesis testing, checking occurrences or validating linguistic rules within a specific language territory.\nVocabulary: It is a list of words in a language. It is a set of familiar words within a person’s language. It is the set of words known to a person or other entity.\nAnnotation: It is the process of adding information to a text. It is the process of adding metadata to a text. It is the process of marking up a document with additional information.\nLexicon: It refers to the words and thier meaning (sort of real dictionary)."
   },
   {
-    "objectID": "contact.html#email",
-    "href": "contact.html#email",
-    "title": "Contact",
-    "section": "Email",
-    "text": "Email\nYou can reach me at: dsiddharth25@gmail.com"
-  },
-  {
-    "objectID": "contact.html#phone",
-    "href": "contact.html#phone",
-    "title": "Contact",
-    "section": "Phone",
-    "text": "Phone\nYou can call me at: +91 73311-37182"
-  },
-  {
-    "objectID": "contact.html#social-media",
-    "href": "contact.html#social-media",
-    "title": "Contact",
-    "section": "Social Media",
-    "text": "Social Media\n\nLinkedIn\nWhatsapp\n\nNote: Please allow me 24-48 hours to respond to your messages. Thank you for understanding!"
-  },
-  {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "Projects",
-    "section": "",
-    "text": "QuadCopter Reinforcement learning Bot\n\n\n\n\n\n\n\n\n\n\n\nJan 5, 2024\n\n\nSiddharth D\n\n\n12 min\n\n\n\n\n\n\nNo matching items\n\n Back to top"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Siddharth D",
-    "section": "",
-    "text": "My Personal Website\n\n\n\n\nWelcome to My Personal Website!\n\n\n\n\nAbout Me\n\n\nProjects\n\n\nBlogs\n\n\nContact\n\n\n\n\n\n\n\nAbout This Site\n\n\nThis is my personal website where you can learn more about me, see my projects, read my blogs, and get in touch with me.\n\n\n\n\n\n Back to top"
+    "objectID": "blogs/NLP/NLPIntro.html#algorithms-aspect",
+    "href": "blogs/NLP/NLPIntro.html#algorithms-aspect",
+    "title": "Introduction to NLP",
+    "section": "Algorithms aspect",
+    "text": "Algorithms aspect\n\nTokens: It is the pieces of data such as words, characters, subwords etc:-\nTokenization:\n\nIt is the initial step in modell the content of the text.\nIt is the process of breaking a stream of text up into words, phrases, symbols, or other meaningful elements called tokens.\n\n\n\nTokenization and its types\nThere are many types of tokenization such as\n\nWord tokenization\nSentence tokenization\nSubword tokenization\nCharacter tokenization\n\n\nWord Level Tokenization\nIts the most commonly used tokenization method. It splits the words based on the space or any specific delimeter\n\n# using nltk library\n\nimport nltk\nfrom nltk.tokenize import word_tokenize\ntext = \"I am learning NLP\"\nword_tokenize(text)\n\n# using python inbuilt split method\n\nvocabulary = []\ntext = \"I am learning NLP\"\nvocabulary = text.split(\" \")\nprint(vocabulary)\n\n\n\n\n\n\nWhat are some issues with word level tokenization?\n\n\n\n\n\nHere we will discuss few issues with word level tokenization\n\nContractions\nOOV (Out of Vocabulary) words\nPunctuations\n\nTry to find more issues if you can!! (note: there are actually many) .. That is one of the reason why we dont just split with space and call it a day.\n\n\n\n\n\nSentence Level Tokenization\nSentence tokenization, also known as sentence segmentation, is the process of dividing text into sentences. This is typically done using punctuation and capitalization cues.\n# using nltk library\n\nimport nltk\nfrom nltk.tokenize import sent_tokenize\ntext = \"I am learning NLP. It is very interesting.\"\nsent_tokenize(text)\n\n\nSubword Level Tokenization\nSubword tokenization splits words into smaller units (or subwords). This can help to handle the problem of out-of-vocabulary words.\n# using BPEmb library for Byte Pair Encoding\n\nfrom bpemb import BPEmb\nbpemb_en = BPEmb(lang=\"en\", dim=50)\ntext = \"I am learning NLP\"\nbpemb_en.encode(text)\n\n\nCharacter Level Tokenization\nCharacter tokenization splits text into characters. This can be useful for languages where words are not separated by spaces, like Chinese and Japanese.\ntext = \"I am learning NLP\"\nlist(text)\n\n\n\n\n\n\nIssues with Other Types of Tokenization\n\n\n\n\n\n\nSentence Tokenization: Sentence tokenization can be tricky when dealing with abbreviations, email addresses, websites, etc. where periods are used but do not indicate the end of a sentence.\nSubword Tokenization: While subword tokenization can help with out-of-vocabulary words, it can lead to an explosion in the number of tokens for very large texts.\nCharacter Tokenization: Character tokenization can lead to very long sequences for longer texts and may lose the meaning carried by specific words or phrases.\n\nCan you find more issues with other types of tokenization? (note: there are actually many)"
   },
   {
     "objectID": "blogs/CLOUDCOMPUTING/basiccloudqa.html",
@@ -574,115 +581,164 @@
     "text": "51. What are some common examples of cognitive services offered by major cloud providers\n\nMicrosoft Azure Cognitive Services:\n\nComputer Vision: Image recognition, object detection, and OCR.\nLanguage Understanding: Natural language processing and sentiment analysis.\nSpeech Services: Speech-to-text, text-to-speech, and speaker recognition.\nDecision: Personalized recommendations and decision support.\n\nAmazon Web Services (AWS) AI Services:\n\nRekognition: Image and video analysis for object detection and facial recognition.\nPolly: Text-to-speech service for generating lifelike speech from text.\nLex: Conversational interfaces for building chatbots and virtual assistants.\nComprehend: Natural language processing for sentiment analysis and entity recognition.\nForecast: Time series forecasting for predicting future trends.\n\nGoogle Cloud AI Services:\n\nVision AI: Image analysis for object detection, OCR, and content moderation.\nSpeech-to-Text: Speech recognition for transcribing audio to text.\nText-to-Speech: Convert text into natural-sounding speech.\nNatural Language: NLP for sentiment analysis, entity recognition, and language translation.\nRecommendations: Personalized recommendations based on user behavior and preferences."
   },
   {
-    "objectID": "blogs/NLP/NLPIntro.html",
-    "href": "blogs/NLP/NLPIntro.html",
-    "title": "Introduction to NLP",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Siddharth D",
     "section": "",
-    "text": "NLP is branch of AI that helps computers understand, interpret and manipulate human language.\nThe goal is to completely capture the context of human langage and understand the meaning behind it."
+    "text": "My Personal Website\n\n\n\n\nWelcome to My Personal Website!\n\n\n\n\nAbout Me\n\n\nProjects\n\n\nBlogs\n\n\nContact\n\n\n\n\n\n\n\nAbout This Site\n\n\nThis is my personal website where you can learn more about me, see my projects, read my blogs, and get in touch with me.\n\n\n\n\n\n Back to top"
   },
   {
-    "objectID": "blogs/NLP/NLPIntro.html#phonetics",
-    "href": "blogs/NLP/NLPIntro.html#phonetics",
-    "title": "Introduction to NLP",
-    "section": "Phonetics",
-    "text": "Phonetics\nIt is the branch that studies how humans produce and perceive speech sounds. It is the study of the physical sounds of human speech."
-  },
-  {
-    "objectID": "blogs/NLP/NLPIntro.html#phonology",
-    "href": "blogs/NLP/NLPIntro.html#phonology",
-    "title": "Introduction to NLP",
-    "section": "Phonology",
-    "text": "Phonology\nIt is the branch that studies the sound patterns of human language. They linguists study the languages or dialects and organize their sounds (phonemes) into a system of relationships."
-  },
-  {
-    "objectID": "blogs/NLP/NLPIntro.html#morphology",
-    "href": "blogs/NLP/NLPIntro.html#morphology",
-    "title": "Introduction to NLP",
-    "section": "Morphology",
-    "text": "Morphology\nIt deals with the words are formed and the relationship of words with each other. It is the study of the structure of words. It analyses the structure of words and parts of words, such as\n\nstems: the core part of a word\nroot words: the basic part of a word\nprefixes: the part of a word that comes before the root word\nsuffixes: the part of a word that comes after the root word"
-  },
-  {
-    "objectID": "blogs/NLP/NLPIntro.html#syntax",
-    "href": "blogs/NLP/NLPIntro.html#syntax",
-    "title": "Introduction to NLP",
-    "section": "Syntax",
-    "text": "Syntax\nIt is the study of the structure of sentences. It is the study of the principles and rules for constructing sentences in natural languages."
-  },
-  {
-    "objectID": "blogs/NLP/NLPIntro.html#semantics",
-    "href": "blogs/NLP/NLPIntro.html#semantics",
-    "title": "Introduction to NLP",
-    "section": "Semantics",
-    "text": "Semantics\nIt is the study of meaning in language. It is the study of meaning in language. It focuses on the relation between signifiers, such as words, phrases, signs, and symbols, and what they stand for, their denotation."
-  },
-  {
-    "objectID": "blogs/NLP/NLPIntro.html#pragmatics",
-    "href": "blogs/NLP/NLPIntro.html#pragmatics",
-    "title": "Introduction to NLP",
-    "section": "Pragmatics",
-    "text": "Pragmatics\nIt is the study of how context influences the interpretation of meaning. It studies the aspects of meaning and language use that are dependent on the speaker, the addressee, and other features of the context of utterance."
-  },
-  {
-    "objectID": "blogs/NLP/NLPIntro.html#data-aspect",
-    "href": "blogs/NLP/NLPIntro.html#data-aspect",
-    "title": "Introduction to NLP",
-    "section": "Data aspect",
-    "text": "Data aspect\n\nCorpus: It is a collection of text. It is a large and structured set of texts. They are used to do statistical analysis and hypothesis testing, checking occurrences or validating linguistic rules within a specific language territory.\nVocabulary: It is a list of words in a language. It is a set of familiar words within a person’s language. It is the set of words known to a person or other entity.\nAnnotation: It is the process of adding information to a text. It is the process of adding metadata to a text. It is the process of marking up a document with additional information.\nLexicon: It refers to the words and thier meaning (sort of real dictionary)."
-  },
-  {
-    "objectID": "blogs/NLP/NLPIntro.html#algorithms-aspect",
-    "href": "blogs/NLP/NLPIntro.html#algorithms-aspect",
-    "title": "Introduction to NLP",
-    "section": "Algorithms aspect",
-    "text": "Algorithms aspect\n\nTokens: It is the pieces of data such as words, characters, subwords etc:-\nTokenization:\n\nIt is the initial step in modell the content of the text.\nIt is the process of breaking a stream of text up into words, phrases, symbols, or other meaningful elements called tokens.\n\n\n\nTokenization and its types\nThere are many types of tokenization such as\n\nWord tokenization\nSentence tokenization\nSubword tokenization\nCharacter tokenization\n\n\nWord Level Tokenization\nIts the most commonly used tokenization method. It splits the words based on the space or any specific delimeter\n\n# using nltk library\n\nimport nltk\nfrom nltk.tokenize import word_tokenize\ntext = \"I am learning NLP\"\nword_tokenize(text)\n\n# using python inbuilt split method\n\nvocabulary = []\ntext = \"I am learning NLP\"\nvocabulary = text.split(\" \")\nprint(vocabulary)\n\n\n\n\n\n\nWhat are some issues with word level tokenization?\n\n\n\n\n\nHere we will discuss few issues with word level tokenization\n\nContractions\nOOV (Out of Vocabulary) words\nPunctuations\n\nTry to find more issues if you can!! (note: there are actually many) .. That is one of the reason why we dont just split with space and call it a day.\n\n\n\n\n\nSentence Level Tokenization\nSentence tokenization, also known as sentence segmentation, is the process of dividing text into sentences. This is typically done using punctuation and capitalization cues.\n# using nltk library\n\nimport nltk\nfrom nltk.tokenize import sent_tokenize\ntext = \"I am learning NLP. It is very interesting.\"\nsent_tokenize(text)\n\n\nSubword Level Tokenization\nSubword tokenization splits words into smaller units (or subwords). This can help to handle the problem of out-of-vocabulary words.\n# using BPEmb library for Byte Pair Encoding\n\nfrom bpemb import BPEmb\nbpemb_en = BPEmb(lang=\"en\", dim=50)\ntext = \"I am learning NLP\"\nbpemb_en.encode(text)\n\n\nCharacter Level Tokenization\nCharacter tokenization splits text into characters. This can be useful for languages where words are not separated by spaces, like Chinese and Japanese.\ntext = \"I am learning NLP\"\nlist(text)\n\n\n\n\n\n\nIssues with Other Types of Tokenization\n\n\n\n\n\n\nSentence Tokenization: Sentence tokenization can be tricky when dealing with abbreviations, email addresses, websites, etc. where periods are used but do not indicate the end of a sentence.\nSubword Tokenization: While subword tokenization can help with out-of-vocabulary words, it can lead to an explosion in the number of tokens for very large texts.\nCharacter Tokenization: Character tokenization can lead to very long sequences for longer texts and may lose the meaning carried by specific words or phrases.\n\nCan you find more issues with other types of tokenization? (note: there are actually many)"
-  },
-  {
-    "objectID": "blogs/welcome/index.html",
-    "href": "blogs/welcome/index.html",
-    "title": "Welcome To My Blog",
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
     "section": "",
-    "text": "This is the first post of my blog. Welcome!\nHello guys welcome to my portfolio website. Looking forward to have a great time with you all.\n\n\n\n Back to top"
+    "text": "Computer Network\n\n\n\n\n\n\n\n\n\n\n\nOct 7, 2025\n\n\nSiddharth D\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\nQuadCopter Reinforcement learning Bot\n\n\n\n\n\n\n\n\n\n\n\nJan 5, 2024\n\n\nSiddharth D\n\n\n12 min\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
-    "objectID": "blogs/DSA/Recursion DSA/index.html",
-    "href": "blogs/DSA/Recursion DSA/index.html",
-    "title": "Topic 1 -> Recursion",
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
     "section": "",
-    "text": "One way to describe repetition within a computer program is the use of loops, such as Python’s while-loop and for-loop, but an entire way of approach is using Recrusions which brings us to today’s topic on learning stuff daily for 100 days\n\nTest for base cases. We begin by testing for a set of base cases (there should be at least one). These base cases should be defined so that every possible chain of recursive calls will eventually reach a base case, and the handling ofeach base case should not use recursion.\nRecur. If not a base case, we perform one or more recursive calls. This recursive step may involve a test that decides which of several possible recursive calls to make. We should define each possible recursive call so that it makes progress towards a base case.\nImportant Point here is that if this base case is not met then we fall into a infinite recursion and kaboom 💥\n\ndef fib(n):\n    if n &lt;= 1:         # -----&gt; this part (remember this)\n        return 0\n    # ... rest of the function here \nThis function has this fib(n) so that “n” is what that has to be satisfied … by now you would have got the grip of the step 1 of recursion\nthe next step is to lay out your logic and write the rest of the function\ndef fib(n):\n    if n &lt;= 1:\n        return 0\n    else:\n        return fib(n-1) + fib(n-2)  # --&gt; go back 2 steps and sum then up\nCertainly! Let’s add examples for binary recursion and multiple recursion:"
+    "text": "Hello! If you wish to contact me, please use the following methods:"
   },
   {
-    "objectID": "blogs/DSA/Recursion DSA/index.html#linear-recursion",
-    "href": "blogs/DSA/Recursion DSA/index.html#linear-recursion",
-    "title": "Topic 1 -> Recursion",
-    "section": "Linear Recursion",
-    "text": "Linear Recursion\nIf a recursive function is designed so that each invocation of the body makes at most one new recursive call, this is known as linear recursion.\nExample:\ndef reversearr(array, start, stop):\n    if start &lt; stop-1: # -----&gt; base case baked right into the recursion itself\n        array[start], array[stop-1] = array[stop-1], array[start]\n        reversearr(array, start+1, stop-1)\n    return array"
+    "objectID": "contact.html#email",
+    "href": "contact.html#email",
+    "title": "Contact",
+    "section": "Email",
+    "text": "Email\nYou can reach me at: dsiddharth25@gmail.com"
   },
   {
-    "objectID": "blogs/DSA/Recursion DSA/index.html#binary-recursion",
-    "href": "blogs/DSA/Recursion DSA/index.html#binary-recursion",
-    "title": "Topic 1 -> Recursion",
-    "section": "Binary Recursion",
-    "text": "Binary Recursion\nIn binary recursion, each recursive call results in two new recursive calls. This often occurs in problems that can be divided into two sub-problems.\nExample (Binary Recursion):\ndef binary_sum(arr, start, end):\n    if start == end:  # base case when there's only one element\n        return arr[start]\n    else:\n        mid = (start + end) // 2\n        left_sum = binary_sum(arr, start, mid)\n        right_sum = binary_sum(arr, mid+1, end)\n        return left_sum + right_sum\nExplanation: This function recursively divides the array into two halves and calculates the sum of each half. The base case is when the array has only one element, and the sum is returned. The overall sum is then calculated by adding the sums of the left and right halves."
+    "objectID": "contact.html#phone",
+    "href": "contact.html#phone",
+    "title": "Contact",
+    "section": "Phone",
+    "text": "Phone\nYou can call me at: +91 73311-37182"
   },
   {
-    "objectID": "blogs/DSA/Recursion DSA/index.html#multiple-recursion",
-    "href": "blogs/DSA/Recursion DSA/index.html#multiple-recursion",
-    "title": "Topic 1 -> Recursion",
-    "section": "Multiple Recursion",
-    "text": "Multiple Recursion\nMultiple recursion involves a recursive function making more than two calls. It can be a bit complex but is a powerful technique for solving certain types of problems.\nExample (Multiple Recursion):\ndef multiply_elements(arr, start, end):\n    if start == end:  # base case when there's only one element\n        return arr[start]\n    else:\n        mid = (start + end) // 2\n        left_product = multiply_elements(arr, start, mid)\n        right_product = multiply_elements(arr, mid+1, end)\n        current_product = arr[start] * arr[end]  # additional recursive call\n        return left_product * right_product * current_product\nExplanation: This function recursively multiplies the elements in the array. In addition to the recursive calls for the left and right halves, there is an extra recursive call to multiply the first and last elements of the current segment. The base case is when the array has only one element.\n\nFeel free to experiment with these examples and observe their behavior. Understanding binary and multiple recursion is essential for tackling a wide range of algorithmic problems. Happy coding! 💻🚀"
+    "objectID": "contact.html#social-media",
+    "href": "contact.html#social-media",
+    "title": "Contact",
+    "section": "Social Media",
+    "text": "Social Media\n\nLinkedIn\nWhatsapp\n\nNote: Please allow me 24-48 hours to respond to your messages. Thank you for understanding!"
   },
   {
-    "objectID": "about.html#experience",
-    "href": "about.html#experience",
-    "title": "About Me",
-    "section": "Experience",
-    "text": "Experience\n\nGoogle Developer Students Club\n\nMay 2023 - Present\n\nGDSC Amrita | Coimbatore, TN\n\nActively participated in GDSC (AI/ML)\nOrganized and facilitated an interactive Android workshop\nConducted a seminar on AI/ML deployment\n\n\n\n\nAnokha (Web dev)\n\nJune 2022 - June 2022\n\nAnokha Amrita | Coimbatore, TN\nDeveloped website for college department AIE\nShowcased participant’s code outputs and reports from training sessions and hackathons\nLive conversion of MD files into a neat HTML, Hosted in Github Pages\n\n\n\n\nAssociation of Students of Computer Science for Information Interchange (ASCII)\n\nJune 2022 - June 2023\n\nASCII Amrita | Coimbatore, TN\n\nPart of the Organization committee for a workshop on AI/ML basics using TensorFlow and PyTorch.\nActively maintaining of ACII github.\n\n\n\n\nIntel IOT/AI Club\n\nJune 2023 - Present\n\nIntel IOT Club | Coimbatore, TN\n\nActive team member of AI/ML club wing of the Intel IOT/AI club\nCreated basic ML model based on classification and image processing using Intel one API"
+    "objectID": "blogs/DEEP LEARNING/basics.html#l1-regularization",
+    "href": "blogs/DEEP LEARNING/basics.html#l1-regularization",
+    "title": "Mathematics for intelligent system",
+    "section": "L1 Regularization",
+    "text": "L1 Regularization\nThe L1 regularization is calculated as:\n\\[\nL1 = \\lambda \\sum_{i=1}^{n} |w_i|\n\\]\nWhere \\(\\lambda\\) is the regularization strength and \\(w_i\\) is the weight of the \\(i^{th}\\) feature.\nThe main use of the L1 regularization with respect to the pane of the weights of the model is that it can be used to select the most important features of the model. This is because the L1 regularization tends to shrink the weights of the less important features to zero. This is because the L1 regularization is not differentiable at zero, and hence the weights of the less important features are shrunk to zero.\nThe region where the L1 regularization is not differentiable is shown in the figure below:"
   },
   {
-    "objectID": "about.html#tech-stack-and-workflow",
-    "href": "about.html#tech-stack-and-workflow",
-    "title": "About Me",
-    "section": "Tech Stack and Workflow",
-    "text": "Tech Stack and Workflow\n\nBackend Development: Django, Flask, RestAPI\nMachine Learning: TensorFlow, PyTorch, Scikit-learn\nComputer Vision: OpenCV, Roboflow, Dlib\nCloud Platforms: Microsoft Azure\nContainerization: Docker\nProgramming Languages: Python, Scala, Java (basic knowledge), MATLAB\nCompetitive Programming: Proficient in Python (Leetcode, Codechef)"
+    "objectID": "blogs/DEEP LEARNING/basics.html#l2-regularization",
+    "href": "blogs/DEEP LEARNING/basics.html#l2-regularization",
+    "title": "Mathematics for intelligent system",
+    "section": "L2 Regularization",
+    "text": "L2 Regularization\nThe L2 regularization is calculated as:\n\\[\nL2 = \\lambda \\sum_{i=1}^{n} w_i^2\n\\]\nWhere \\(\\lambda\\) is the regularization strength and \\(w_i\\) is the weight of the \\(i^{th}\\) feature.\nThe main use of the L2 regularization with respect to the pane of the weights of the model is that it can be used to prevent the weights from becoming too large. This is because the L2 regularization tends to shrink the weights of the model. This is because the L2 regularization is differentiable everywhere, and hence the weights of the model are shrunk towards zero.\nThe shape of the L2 regularization is a circle in the weight space"
+  },
+  {
+    "objectID": "blogs/DEEP LEARNING/basics.html#batch-normalization",
+    "href": "blogs/DEEP LEARNING/basics.html#batch-normalization",
+    "title": "Mathematics for intelligent system",
+    "section": "Batch Normalization",
+    "text": "Batch Normalization\nThe batch normalization is a technique used to normalize the input of the hidden layers of the model. This is done to reduce the internal covariate shift. The internal covariate shift is the change in the distribution of the input of the hidden layers of the model. This is because the input of the hidden layers of the model changes as the weights of the model are updated. This is because the input of the hidden layers of the model is a function of the weights of the model.\nThe batch normalization is calculated as:\n\\[\n\\hat{x} = \\frac{x - \\mu}{\\sqrt{\\sigma^2 + \\epsilon}}\n\\]\nWhere \\(\\hat{x}\\) is the normalized input, \\(x\\) is the input, \\(\\mu\\) is the mean of the input, \\(\\sigma^2\\) is the variance of the input, and \\(\\epsilon\\) is a small number to prevent division by zero.\nThe steps inculded in\n\nCompute the mean and variance of the vectors in the mini-batch\n\nMean = \\(\\mu = \\frac{1}{m} \\sum_{i=1}^{m} x_i\\)\nVariance = \\(\\sigma^2 = \\frac{1}{m} \\sum_{i=1}^{m} (x_i - \\mu)^2\\)\n\nNormalize the input\n\n\\(\\hat{x} = \\frac{x - \\mu}{\\sqrt{\\sigma^2 + \\epsilon}}\\)\nWhere \\(\\hat{x}\\) is the normalized input, \\(x\\) is the input, \\(\\mu\\) is the mean of the input, \\(\\sigma^2\\) is the variance of the input, and \\(\\epsilon\\) is a small number to prevent division by zero.\n\nScale and shift the normalized input\n\n\\(y = \\gamma \\hat{x} + \\beta\\)\nWhere \\(y\\) is the output, \\(\\gamma\\) is the scale parameter, \\(\\hat{x}\\) is the normalized input, and \\(\\beta\\) is the shift parameter.\nThe scale and shift parameters are learned during the training of the model."
+  },
+  {
+    "objectID": "blogs/NLP/LanguageModelling.html",
+    "href": "blogs/NLP/LanguageModelling.html",
+    "title": "Language Modelling and Other Concepts",
+    "section": "",
+    "text": "In this article, we will discuss the concept of language modelling and its importance in the field of Natural Language Processing. We will also discuss some of the other important concepts of NLP"
+  },
+  {
+    "objectID": "blogs/NLP/LanguageModelling.html#unigram-model",
+    "href": "blogs/NLP/LanguageModelling.html#unigram-model",
+    "title": "Language Modelling and Other Concepts",
+    "section": "Unigram Model",
+    "text": "Unigram Model\n\nIn the unigram model, the probability of a word depends only on the word itself and not on any other words.\nThe probability of a word is given by the formula:\n\\[ P(w) = \\frac{Count(w)}{N} \\]\nWhere,\n\n\\(Count(w)\\) is the number of times the word \\(w\\) has appeared in the corpus\n\\(N\\) is the total number of words in the corpus\n\nThe unigram model is the simplest language model and is used as a baseline for comparison with other language models.\n\n# Example of Unigram Model\ntext = \"What are your aspirations in life\"\n\n# Tokenize the text\ntokens = text.split()\n\n# Count the frequency of each word\nword_freq = {}\nfor word in tokens:\n    if word in word_freq:\n        word_freq[word] += 1\n    else:\n        word_freq[word] = 1\n\n# Calculate the probability of each word\nprob_word = {}\nfor word in word_freq:\n    prob_word[word] = word_freq[word] / len(tokens)\n\n# Print the probability of each word\nfor word in prob_word:\n    print(word, prob_word[word])"
+  },
+  {
+    "objectID": "blogs/NLP/LanguageModelling.html#bigram-model",
+    "href": "blogs/NLP/LanguageModelling.html#bigram-model",
+    "title": "Language Modelling and Other Concepts",
+    "section": "Bigram Model",
+    "text": "Bigram Model\n\nIn the bigram model, the probability of a word depends only on the previous word.\nThe probability of a word is given by the formula:\n\\[ P(w_i|w_{i-1}) = \\frac{Count(w_{i-1},w_i)}{Count(w_{i-1})} \\]\nWhere,\n\n\\(Count(w_{i-1},w_i)\\) is the number of times the word \\(w_i\\) has appeared after the word \\(w_{i-1}\\)\n\\(Count(w_{i-1})\\) is the number of times the word \\(w_{i-1}\\) has appeared in the corpus\n\n\\(P(w_i|w_{i-1})\\) is the probability of the word \\(w_i\\) given the word \\(w_{i-1}\\)\n\n# Example of Bigram Model\ntext = \"What are your aspirations in life\"\n\n# Tokenize the text\ntokens = text.split()\n\n# Create bigrams\nbigrams = [(tokens[i], tokens[i+1]) for i in range(len(tokens)-1)]\n\n# Count the frequency of each bigram\nbigram_freq = {}\n\nfor bigram in bigrams:\n    if bigram in bigram_freq:\n        bigram_freq[bigram] += 1\n    else:\n        bigram_freq[bigram] = 1\n\n# Calculate the probability of each bigram\nprob_bigram = {}\nfor bigram in bigram_freq:\n    prob_bigram[bigram] = bigram_freq[bigram] / tokens.count(bigram[0])\n\n# Print the probability of each bigram\nfor bigram in prob_bigram:\n    print(bigram, prob_bigram[bigram])"
+  },
+  {
+    "objectID": "blogs/NLP/LanguageModelling.html#trigram-model",
+    "href": "blogs/NLP/LanguageModelling.html#trigram-model",
+    "title": "Language Modelling and Other Concepts",
+    "section": "Trigram Model",
+    "text": "Trigram Model\n\nIn the trigram model, the probability of a word depends on the previous two words.\nThe probability of a word is given by the formula:\n\\[ P(w_i|w_{i-2},w_{i-1}) = \\frac{Count(w_{i-2},w_{i-1},w_i)}{Count(w_{i-2},w_{i-1})} \\]\nWhere,\n\n\\(Count(w_{i-2},w_{i-1},w_i)\\) is the number of times the word \\(w_i\\) has appeared after the words \\(w_{i-2}\\) and \\(w_{i-1}\\)\n\\(Count(w_{i-2},w_{i-1})\\) is the number of times the words \\(w_{i-2}\\) and \\(w_{i-1}\\) have appeared in the corpus\n\n\\(P(w_i|w_{i-2},w_{i-1})\\) is the probability of the word \\(w_i\\) given the words \\(w_{i-2}\\) and \\(w_{i-1}\\)\n\n# Example of Trigram Model\ntext = \"What are your aspirations in life\"\n\n# Tokenize the text\ntokens = text.split()\n\n# Create trigrams\ntrigrams = [(tokens[i], tokens[i+1], tokens[i+2]) for i in range(len(tokens)-2)]\n\n# Count the frequency of each trigram\ntrigram_freq = {}\n\nfor trigram in trigrams:\n    if trigram in trigram_freq:\n        trigram_freq[trigram] += 1\n    else:\n        trigram_freq[trigram] = 1\n\n# Calculate the probability of each trigram\nprob_trigram = {}\nfor trigram in trigram_freq:\n    prob_trigram[trigram] = trigram_freq[trigram] / bigrams.count((trigram[0], trigram[1]))\n\n# Print the probability of each trigram\nfor trigram in prob_trigram:\n    print(trigram, prob_trigram[trigram])"
+  },
+  {
+    "objectID": "blogs/DSA/Array DSA/index.html",
+    "href": "blogs/DSA/Array DSA/index.html",
+    "title": "Topic 1 -> Array",
+    "section": "",
+    "text": "Python’s Array Module\nThe array module in Python is used to store homogeneous data types such as integers, floats, etc. It is similar to lists in Python, but with the added advantage of being more efficient in terms of memory and performance for certain operations.\nWhen to use the array module? You should consider using the array module when you need to store a large amount of homogeneous data. This is because arrays are more memory efficient than lists. They also provide faster access in some cases because they store data in contiguous memory blocks, unlike lists.\nComparing array module with normal list Here are some key differences between the array module and a normal list in Python:\nHomogeneity: Arrays can only store elements of the same type, while lists can store elements of different types.\nMemory and Performance: Arrays are more memory efficient and can provide faster access and manipulation for large amounts of data.\nFunctionality: Lists come with a variety of built-in methods for manipulation like append, remove, pop, etc. Arrays have fewer methods but are more specialized for numerical and computational tasks.\nIn the provided code snippet, an array of type ‘h’ (short integers) is created to store prime numbers. This is a good use case for the array module because we are dealing with a large amount of homogeneous numerical data.\nIn this code, the array is more memory efficient than a list would be, and it provides fast and efficient access to the prime numbers stored within it.\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "blogs.html",
+    "href": "blogs.html",
+    "title": "Blogs",
+    "section": "",
+    "text": "RL on Ramp\n\n\n\n\n\n\n\n\n\n\n\nSep 16, 2024\n\n\nSiddharth D\n\n\n5 min\n\n\n\n\n\n\n\n\n\n\n\n\nSome basic Cloud Computing QA\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n46 min\n\n\n\n\n\n\n\n\n\n\n\n\nMathematics for intelligent system\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n3 min\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to NLP\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n5 min\n\n\n\n\n\n\n\n\n\n\n\n\nLanguage Modelling and Other Concepts\n\n\n\n\n\n\n\n\n\n\n\nFeb 28, 2024\n\n\nSiddharth D\n\n\n6 min\n\n\n\n\n\n\n\n\n\n\n\n\nTopic 1 -&gt; Array\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2024\n\n\nSiddharth D\n\n\n2 min\n\n\n\n\n\n\n\n\n\n\n\n\nTopic 1 -&gt; Recursion\n\n\n\n\n\n\n\n\n\n\n\nJan 6, 2024\n\n\nSiddharth D\n\n\n4 min\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\n\n\nJan 1, 2024\n\n\nSiddharth D\n\n\n1 min\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+  },
+  {
+    "objectID": "project_posts/ComputerNetwork/index.html",
+    "href": "project_posts/ComputerNetwork/index.html",
+    "title": "Computer Network",
+    "section": "",
+    "text": "A core understanding about the concepts of Computer Network is essential for any IT professional. This series will cover the following topics\n\n\n\n\nTopic\nDescription\n\n\n\n\nOSI Model -\n\n\n\nApplication Layer -\n\n\n\nPresentation Layer -\n\n\n\nSession Layer -\n\n\n\nTransport Layer -\n\n\n\nNetwork Layer -\n\n\n\nData Link Layer -\n\n\n\nPhysical Layer -\n\n\n\nTCP -\n\n\n\nUDP -\n\n\n\nIP Addressing -\n\n\n\nSubnetting -\n\n\n\nSupernetting -\n\n\n\nPing -\n\n\n\nTrace Route -\n\n\n\nnslookup -\n\n\n\nFTP/TFTP/SFTP -\n\n\n\nTelnet -\n\n\n\nSMTP -\n\n\n\nSNMP -\n\n\n\nICMP -\n\n\n\nChecksum -\n\n\n\nCRC -\n\n\n\nFlow Control -\n\n\n\nCongestion Control -\n\n\n\nError Detection -\n\n\n\nError Correction -\n\n\n\nTCP Header -\n\n\n\nUDP Header -\n\n\n\nIP Header -\n\n\n\nFrame Header -\n\n\n\nLogical Link Control -\n\n\n\nMedia Access Control -\n\n\n\nEthernet -\n\n\n\nSequence Number -\n\n\n\nAcknowledgement Number -\n\n\n\nSliding Window Protocol -\n\n\n\nARP/RARP -\n\n\n\nNAT -\n\n\n\nDHCP -\n\n\n\nDNS -\n\n\n\nHub -\n\n\n\nSwitch -\n\n\n\nBridge -\n\n\n\nRouter -\n\n\n\nGateway -\n\n\n\nSubnet Mask -\n\n\n\nPublic Vs Private IP Address -\n\n\n\nMAC Address -"
+  },
+  {
+    "objectID": "project_posts/ComputerNetwork/index.html#what-is-arp-and-why-is-it-important-in-routing",
+    "href": "project_posts/ComputerNetwork/index.html#what-is-arp-and-why-is-it-important-in-routing",
+    "title": "Computer Network",
+    "section": "What is ARP and why is it important in routing?",
+    "text": "What is ARP and why is it important in routing?\nARP (Address Resolution Protocol) is crucial for routing because:\n\nIt maps IP addresses to MAC addresses in local networks.\nEnables devices to communicate on the data link layer.\nAllows routers to forward packets to the correct destination.\nMaintains an ARP cache for efficient address resolution.\nEssential for proper functioning of IP networks.\n\n\n\n\n\n\n\nFollow up question\n\n\n\n\n\nWhich layer of the OSI model does ARP operate on?\n\nARP operates on the data link layer (Layer 2) of the OSI model."
+  },
+  {
+    "objectID": "project_posts/ComputerNetwork/index.html#what-is-proxy-arp-why-is-the-term-proxy-used-here",
+    "href": "project_posts/ComputerNetwork/index.html#what-is-proxy-arp-why-is-the-term-proxy-used-here",
+    "title": "Computer Network",
+    "section": "What is proxy ARP? Why is the term proxy used here?",
+    "text": "What is proxy ARP? Why is the term proxy used here?\nProxy ARP is:\n\nA technique where a device answers ARP requests on behalf of another.\nUsually implemented by routers to facilitate communication between subnets.\n“Proxy” refers to the router acting as an intermediary or representative.\nIt responds with its own MAC address for IP addresses it can route to.\nHelps in scenarios where devices can’t directly communicate due to network segmentation.\n\n\n\n\n\n\n\nFollow up question\n\n\n\n\n\nHow does proxy ARP differ from traditional ARP?\n\nProxy ARP is used for routing between networks, while ARP is for local address resolution.\nProxy ARP responds with its own MAC address, while ARP responds with the target’s MAC address."
+  },
+  {
+    "objectID": "project_posts/ComputerNetwork/index.html#why-is-sequence-numbering-in-tcp-essential",
+    "href": "project_posts/ComputerNetwork/index.html#why-is-sequence-numbering-in-tcp-essential",
+    "title": "Computer Network",
+    "section": "Why is sequence numbering in TCP essential?",
+    "text": "Why is sequence numbering in TCP essential?\nSequence numbering in TCP is essential because:\n\nIt ensures data is delivered in the correct order.\nAllows for detection of lost or duplicate packets.\nEnables reliable data reassembly at the receiving end.\nFacilitates efficient retransmission of lost segments.\nHelps manage flow control and congestion control mechanisms.\n\n\n\n\n\n\n\nFollow up question\n\n\n\n\n\nHow does TCP use sequence numbers to handle out-of-order packets?\n\nTCP uses sequence numbers to reorder out-of-order packets at the receiving end.\nIt buffers incoming packets until all preceding segments are received, then delivers them in the correct order."
+  },
+  {
+    "objectID": "project_posts/ComputerNetwork/index.html#why-do-we-need-ip-address-when-the-mac-address-is-unique-cant-we-communicate-only-with-mac-address",
+    "href": "project_posts/ComputerNetwork/index.html#why-do-we-need-ip-address-when-the-mac-address-is-unique-cant-we-communicate-only-with-mac-address",
+    "title": "Computer Network",
+    "section": "Why do we need IP address when the MAC address is unique? Can’t we communicate only with MAC address?",
+    "text": "Why do we need IP address when the MAC address is unique? Can’t we communicate only with MAC address?\nWe need IP addresses alongside MAC addresses because:\n\nMAC addresses are only meaningful within a local network.\nIP addresses enable global routing across different networks.\nIP provides a hierarchical addressing scheme for efficient routing.\nMAC addresses don’t scale for internet-wide communication.\nIP allows for logical network organization independent of hardware.\n\n\n\n\n\n\n\nFollow up question\n\n\n\n\n\nHow does ARP help bridge the gap between IP and MAC addresses?\n\nARP resolves IP addresses to MAC addresses for local network communication.\nIt enables devices to communicate using IP addresses while handling the underlying MAC addressing.\nARP is essential for routing packets between IP networks based on MAC addresses.\nARP maintains a mapping table (ARP cache) for efficient address resolution."
+  },
+  {
+    "objectID": "blogs/misc/rlonramp.html",
+    "href": "blogs/misc/rlonramp.html",
+    "title": "RL on Ramp",
+    "section": "",
+    "text": "This page is a brief introduction to Reinforcement Learning (RL) and its applications in matlab. It has all the solutions to the exercises and quizzes that are present in the course."
+  },
+  {
+    "objectID": "blogs/misc/rlonramp.html#defining-an-environment-interface",
+    "href": "blogs/misc/rlonramp.html#defining-an-environment-interface",
+    "title": "RL on Ramp",
+    "section": "Defining an Environment Interface",
+    "text": "Defining an Environment Interface\n\nDefine an Environment with Discrete Variables\nd = [1 1 1 5 5 8;2 2 3 3 6 6;1 4 4 4 5 7;2 2 6 6 7 8;3 4 5 7 8 8];\n\n% the colon operator (:) to create a vector called states that contains the integer values 0, 1, ..., 20.\nstates = 0:20;\n\n% Use the colon operator to create a vector called choices that contains the integer values 1, 2, 3, 4, 5.\nchoics = 1:5;\n\n% Use the rlFiniteSetSpec function to create a variable called obsInfo that represents \n% the possible observations in the dice game (stored in the vector states).\nobsInfo = rlFiniteSetSpec(states)\n\n% Use the rlFiniteSetSpec function to create a variable called actInfo that represents \n% the possible actions in the dice game (stored in the vector choices).\nactInfo = rlFiniteSetSpec(choices)\n\n% Use the rlSimulinkEnv function to create a variable called slEnv that represents the \n% environment in the Simulink model targetDice.slx. The RL agent is defined in the block \n% called \"RL die chooser\" (in the targetDice model).\nslEnv = rlSimulinkEnv(\"targetDice\",\"targetDice/RL die chooser\",obsInfo,actInfo);\n\n% Use the commands\n% load premadeagents\n% agent = trainedagent\n% [n,win] = playdice(agent,slEnv)\n% to simulate playing the dice game, with a pretrained agent choosing which die to roll.\n\nload premadeagents\nagent = trainedagent\n[n,win] = playdice(agent,slEnv)\n\n% ---------------------------------------------------------------------------------- %\nd = [1 1 1 5 5 8;2 2 3 3 6 6;1 4 4 4 5 7;2 2 6 6 7 8;3 4 5 7 8 8]\nload premadeagents.mat\nagent = trainedagent\nstates = 0:20;\nchoices = 1:5;\nobsInfo = rlFiniteSetSpec(states);\nactInfo = rlFiniteSetSpec(choices);\nslEnv = rlSimulinkEnv(\"targetDice\",\"targetDice/RL die chooser\",obsInfo,actInfo)\n% ---------------------------------------------------------------------------------- %\n\n\nAdd Random Variation to the Environment\n\n% Set the reset function for the environment slEnv to the function randomstart. \n% This local function is defined at the end of the script. It currently has no effect.\nslEnv.ResetFcn = @randomstart\n\n% Use the example code to modify the randomstart function to set the seed variable to randi(1e5) \n% (a random integer value) in the workspace of the targetDice model.\n% siminput = setVariable(siminput,\"varname\",value,\"Workspace\",\"modelname\");\n\nfunction siminput = randomstart(siminput)\n    siminput = setVariable(siminput,\"seed\",randi(1e5),\"Workspace\",\"targetDice\");\nend\n\n% Use the command [n,win] = playdice(agent,slEnv) to simulate playing the \ndice game, with the pretrained agent agent choosing which die to roll.\n[n, win] = playdice(agent, slEnv)\n\n% ---------------------------------------------------------------------------------- %\nslEnv.ResetFcn = @randomstart\nfunction siminput = randomstart(siminput)\n    siminput = setVariable(siminput,\"seed\",randi(1e5),\"Workspace\",\"targetDice\");\nend\n[n, win] = playdice(agent, slEnv)\n% ---------------------------------------------------------------------------------- %\n\n\nDefine an Environment with Continuous Variables\n\n% Use the rlNumericSpec function to create a variable called obsInfo that represents \n% the warehouse robot's observations. The robot observes 6 variables, in the form of a 6-by-1 numeric vector.\nobsInfo = rlNumericSpec([6 1])\n\n% Use the rlNumericSpec function to create a variable called actInfo that represents \n% the warehouse robot's actions, in the form of a 2-by-1 vector of forces in the range [-1 1].\nactInfo = rlNumericSpec([2 1],\"LowerLimit\",-1,\"UpperLimit\",1)\n\n% Use the rlSimulinkEnv function to create a variable called env that represents the robot \n% environment in the Simulink model whrobot.slx. The RL agent is defined in the block called \n% \"controller\" (in the whrobot model).\nenv = rlSimulinkEnv(\"whrobot\",\"whrobot/controller\",obsInfo,actInfo)\n\n% Use dot notation to set the reset function for the environment env to the \n% function randomstart (which is defined at the end of the script).\nenv.ResetFcn = @randomstart\n\n%% function given in the code itself\nfunction in = randomstart(in)\n    mdl = \"whrobot\";\n    in = setVariable(in,\"x0\",((-1)^randi([0 1]))*(2.5 + 3.5*rand),\"Workspace\",mdl);\n    in = setVariable(in,\"y0\",2.6 + 3.4*rand,\"Workspace\",mdl);\n    in = setVariable(in,\"theta0\",pi*(2*rand-1),\"Workspace\",mdl);\n    in = setVariable(in,\"v0\",randn/3,\"Workspace\",mdl);\n    in = setVariable(in,\"w0\",randn/3,\"Workspace\",mdl);\nend\n\n% ---------------------------------------------------------------------------------- %\nobsInfo = rlNumericSpec([6 1])\nactInfo = rlNumericSpec([2 1],\"LowerLimit\",-1,\"UpperLimit\",1)\nenv = rlSimulinkEnv(\"whrobot\",\"whrobot/controller\",obsInfo,actInfo)\nenv.ResetFcn = @randomstart\n% ---------------------------------------------------------------------------------- %"
+  },
+  {
+    "objectID": "blogs/misc/rlonramp.html#providing-rewards",
+    "href": "blogs/misc/rlonramp.html#providing-rewards",
+    "title": "RL on Ramp",
+    "section": "Providing Rewards",
+    "text": "Providing Rewards\n\nShape a continuous reward\n\n% Use the matrices x and y to calculate r according to the formula r = exp(-8*x.^2) + exp(-3*y)\nr = exp(-8*x.^2) + exp(-3*y);\n\n% Use the contourf function to create a filled contour plot of the reward r,\n% as a function of location ((x,y) position). To plot the reward contours in the \n% original coordinate values, use xvec and yvec as the (x,y) coordinates.\ncontourf(xvec,yvec,r)\n\n% Use the colorbar function to add a colorbar to show the reward function values.\ncolorbar(r)\n\n% ---------------------------------------------------------------------------------- %\nr = exp(-8*x.^2) + exp(-3*y);\ncontourf(xvec,yvec,r)\ncolorbar(r)\n% ---------------------------------------------------------------------------------- %\n\n\nWrite a Reward Function\n\n% Use the first input (state) to calculate r according to the formula \n% r = 0.05*exp(-8*x^2) + 0.06*exp(-3*y) - 0.14\n\nfunction r = rewardfun(state,madeit,collided)\nx = state(1)/10;\ny = state(2)/10;\nr = 0.05*exp(-8*x^2) + 0.06*exp(-3*y) - 0.14;\n\n% Add the penalty term −0.001ω^2 to the reward calculation. Recall that the \n% angular velocity, ω, is the 6th observed variabl\nfunction r = rewardfun(state,madeit,collided)\nx = state(1)/10;\ny = state(2)/10;\nomega = state(6);\nr = 0.05*exp(-8*x^2) + 0.06*exp(-3*y) - 0.14 - 0.001*omega^2;\n\n% Use the logical variables madeit and collided to add a 5-point reward (+5) for reaching the goal \n% and a 2-point penalty (-2) for colliding with the shelves. Recall that logical variables take only \n% the values false (0) or true (1), indicating that the terminal states have not or have occurred, respectively.\nfunction r = rewardfun(state,madeit,collided)\nx = state(1)/10;\ny = state(2)/10;\np = state(6);\nr = 0.05*exp(-8*x^2) + 0.06*exp(-3*y) - 0.14 + p + 5*madeit - 2*collided;\n\n% ---------------------------------------------------------------------------------- %\nfunction r = rewardfun(state,madeit,collided)\n\nx = state(1)/10;\ny = state(2)/10;\nomega = state(6);\n\nr = 0.05*exp(-8*x^2) + 0.06*exp(-3*y) - 0.14 ...\n     - 0.001*omega^2 + 5*madeit - 2*collided;\n% ---------------------------------------------------------------------------------- %"
   }
 ]

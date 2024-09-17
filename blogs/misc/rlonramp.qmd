@@ -1,0 +1,261 @@
+---
+title: "RL on Ramp"
+author: "Siddharth D"
+date: "2024-09-16"
+categories: [RL, Course_RL]
+image: rlonramp.png
+toc: true
+toc-depth: 3
+code-block-bg: true
+code-annotations: true
+code-fold: true
+---
+
+This page is a brief introduction to Reinforcement Learning (RL) and its applications in matlab.
+It has all the solutions to the exercises and quizzes that are present in the course.
+
+# Defining Environment
+
+## Defining an Environment Interface 
+
+###  Define an Environment with Discrete Variables
+
+```matlab
+d = [1 1 1 5 5 8;2 2 3 3 6 6;1 4 4 4 5 7;2 2 6 6 7 8;3 4 5 7 8 8];
+
+% the colon operator (:) to create a vector called states that contains the integer values 0, 1, ..., 20.
+states = 0:20;
+
+% Use the colon operator to create a vector called choices that contains the integer values 1, 2, 3, 4, 5.
+choics = 1:5;
+
+% Use the rlFiniteSetSpec function to create a variable called obsInfo that represents 
+% the possible observations in the dice game (stored in the vector states).
+obsInfo = rlFiniteSetSpec(states)
+
+% Use the rlFiniteSetSpec function to create a variable called actInfo that represents 
+% the possible actions in the dice game (stored in the vector choices).
+actInfo = rlFiniteSetSpec(choices)
+
+% Use the rlSimulinkEnv function to create a variable called slEnv that represents the 
+% environment in the Simulink model targetDice.slx. The RL agent is defined in the block 
+% called "RL die chooser" (in the targetDice model).
+slEnv = rlSimulinkEnv("targetDice","targetDice/RL die chooser",obsInfo,actInfo);
+
+% Use the commands
+% load premadeagents
+% agent = trainedagent
+% [n,win] = playdice(agent,slEnv)
+% to simulate playing the dice game, with a pretrained agent choosing which die to roll.
+
+load premadeagents
+agent = trainedagent
+[n,win] = playdice(agent,slEnv)
+
+% ---------------------------------------------------------------------------------- %
+d = [1 1 1 5 5 8;2 2 3 3 6 6;1 4 4 4 5 7;2 2 6 6 7 8;3 4 5 7 8 8]
+load premadeagents.mat
+agent = trainedagent
+states = 0:20;
+choices = 1:5;
+obsInfo = rlFiniteSetSpec(states);
+actInfo = rlFiniteSetSpec(choices);
+slEnv = rlSimulinkEnv("targetDice","targetDice/RL die chooser",obsInfo,actInfo)
+% ---------------------------------------------------------------------------------- %
+```
+
+### Add Random Variation to the Environment
+
+```matlab
+
+% Set the reset function for the environment slEnv to the function randomstart. 
+% This local function is defined at the end of the script. It currently has no effect.
+slEnv.ResetFcn = @randomstart
+
+% Use the example code to modify the randomstart function to set the seed variable to randi(1e5) 
+% (a random integer value) in the workspace of the targetDice model.
+% siminput = setVariable(siminput,"varname",value,"Workspace","modelname");
+
+function siminput = randomstart(siminput)
+    siminput = setVariable(siminput,"seed",randi(1e5),"Workspace","targetDice");
+end
+
+% Use the command [n,win] = playdice(agent,slEnv) to simulate playing the 
+dice game, with the pretrained agent agent choosing which die to roll.
+[n, win] = playdice(agent, slEnv)
+
+% ---------------------------------------------------------------------------------- %
+slEnv.ResetFcn = @randomstart
+function siminput = randomstart(siminput)
+    siminput = setVariable(siminput,"seed",randi(1e5),"Workspace","targetDice");
+end
+[n, win] = playdice(agent, slEnv)
+% ---------------------------------------------------------------------------------- %
+```
+
+### Define an Environment with Continuous Variables
+
+```matlab
+
+% Use the rlNumericSpec function to create a variable called obsInfo that represents 
+% the warehouse robot's observations. The robot observes 6 variables, in the form of a 6-by-1 numeric vector.
+obsInfo = rlNumericSpec([6 1])
+
+% Use the rlNumericSpec function to create a variable called actInfo that represents 
+% the warehouse robot's actions, in the form of a 2-by-1 vector of forces in the range [-1 1].
+actInfo = rlNumericSpec([2 1],"LowerLimit",-1,"UpperLimit",1)
+
+% Use the rlSimulinkEnv function to create a variable called env that represents the robot 
+% environment in the Simulink model whrobot.slx. The RL agent is defined in the block called 
+% "controller" (in the whrobot model).
+env = rlSimulinkEnv("whrobot","whrobot/controller",obsInfo,actInfo)
+
+% Use dot notation to set the reset function for the environment env to the 
+% function randomstart (which is defined at the end of the script).
+env.ResetFcn = @randomstart
+
+%% function given in the code itself
+function in = randomstart(in)
+    mdl = "whrobot";
+    in = setVariable(in,"x0",((-1)^randi([0 1]))*(2.5 + 3.5*rand),"Workspace",mdl);
+    in = setVariable(in,"y0",2.6 + 3.4*rand,"Workspace",mdl);
+    in = setVariable(in,"theta0",pi*(2*rand-1),"Workspace",mdl);
+    in = setVariable(in,"v0",randn/3,"Workspace",mdl);
+    in = setVariable(in,"w0",randn/3,"Workspace",mdl);
+end
+
+% ---------------------------------------------------------------------------------- %
+obsInfo = rlNumericSpec([6 1])
+actInfo = rlNumericSpec([2 1],"LowerLimit",-1,"UpperLimit",1)
+env = rlSimulinkEnv("whrobot","whrobot/controller",obsInfo,actInfo)
+env.ResetFcn = @randomstart
+% ---------------------------------------------------------------------------------- %
+```
+
+## Providing Rewards
+
+### Shape a continuous reward
+
+```matlab
+
+% Use the matrices x and y to calculate r according to the formula r = exp(-8*x.^2) + exp(-3*y)
+r = exp(-8*x.^2) + exp(-3*y);
+
+% Use the contourf function to create a filled contour plot of the reward r,
+% as a function of location ((x,y) position). To plot the reward contours in the 
+% original coordinate values, use xvec and yvec as the (x,y) coordinates.
+contourf(xvec,yvec,r)
+
+% Use the colorbar function to add a colorbar to show the reward function values.
+colorbar(r)
+
+% ---------------------------------------------------------------------------------- %
+r = exp(-8*x.^2) + exp(-3*y);
+contourf(xvec,yvec,r)
+colorbar(r)
+% ---------------------------------------------------------------------------------- %
+```
+
+### Write a Reward Function
+
+```matlab
+
+% Use the first input (state) to calculate r according to the formula 
+% r = 0.05*exp(-8*x^2) + 0.06*exp(-3*y) - 0.14
+
+function r = rewardfun(state,madeit,collided)
+x = state(1)/10;
+y = state(2)/10;
+r = 0.05*exp(-8*x^2) + 0.06*exp(-3*y) - 0.14;
+
+% Add the penalty term −0.001ω^2 to the reward calculation. Recall that the 
+% angular velocity, ω, is the 6th observed variabl
+function r = rewardfun(state,madeit,collided)
+x = state(1)/10;
+y = state(2)/10;
+omega = state(6);
+r = 0.05*exp(-8*x^2) + 0.06*exp(-3*y) - 0.14 - 0.001*omega^2;
+
+% Use the logical variables madeit and collided to add a 5-point reward (+5) for reaching the goal 
+% and a 2-point penalty (-2) for colliding with the shelves. Recall that logical variables take only 
+% the values false (0) or true (1), indicating that the terminal states have not or have occurred, respectively.
+function r = rewardfun(state,madeit,collided)
+x = state(1)/10;
+y = state(2)/10;
+p = state(6);
+r = 0.05*exp(-8*x^2) + 0.06*exp(-3*y) - 0.14 + p + 5*madeit - 2*collided;
+
+% ---------------------------------------------------------------------------------- %
+function r = rewardfun(state,madeit,collided)
+
+x = state(1)/10;
+y = state(2)/10;
+omega = state(6);
+
+r = 0.05*exp(-8*x^2) + 0.06*exp(-3*y) - 0.14 ...
+     - 0.001*omega^2 + 5*madeit - 2*collided;
+% ---------------------------------------------------------------------------------- %
+```
+
+## Including Actions in the Reward
+
+### Write a Reward Function with an Action
+
+```matlab
+
+Use the action input to include a penalty of 0.01(F^2_trans + F^2_rot ) in the reward.
+
+function r = rewardfun(state,action,madeit,collided)
+
+x = state(1)/10;
+y = state(2)/10;
+omega = state(6);
+
+r = 0.05*exp(-8*x^2) + 0.06*exp(-3*y) - 0.14 - 0.001*omega^2 ...
+    + 5*madeit - 2*collided - 0.01*sum(action.^2);
+
+```
+
+# Define Agent
+
+## Critics and Q-values
+
+### Create a Q-Table
+
+```matlab
+
+% Use the rlTable function to create a Q table called T for the dice game. 
+% The observable states are stored in the variable obsInfo. 
+% The action choices are stored in the variable actInfo.
+T = rlTable(obsInfo,actInfo)
+
+% Use dot notation to extract the Table property of T to a matrix called Qvals
+Qvals = T.Table
+
+% Use the rand function to create a 21-by-5 matrix of random Q values. 
+% Store this matrix in a variable called randQvals.
+randQvals = rand(21,5)
+
+% Use dot notation to set the Table property of T equal to the matrix randQvals.
+randQvals = T.Table
+
+% Use rlQValueFunction to create a Q-value critic called critic from the table T.
+% Recall that the observable states are stored in the variable obsInfo.
+% The action choices are stored in the variable actInfo.
+critic = rlQValueFunction(T,obsInfo,actInfo)
+
+% Use the rlQAgent function to create a Q-learning agent called agent from critic.
+agent = rlQAgent(critic)
+
+%Use the command [n,win] = playdice(agent,slEnv) to simulate playing the dice game, with the agent you just created.
+[n,win] = playdice(agent,slEnv)
+
+% ---------------------------------------------------------------------------------- %
+T = rlTable(obsInfo,actInfo)
+Qvals = T.Table
+randQvals = rand(21,5)
+T.Table = randQvals
+critic = rlQValueFunction(T,obsInfo,actInfo)
+agent = rlQAgent(critic)
+[n,win] = playdice(agent,slEnv)
+% ---------------------------------------------------------------------------------- %

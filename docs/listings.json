@@ -1,7 +1,15 @@
 [
   {
+    "listing": "/projects.html",
+    "items": [
+      "/project_posts/ComputerNetwork/index.html",
+      "/project_posts/RL_proj/index.html"
+    ]
+  },
+  {
     "listing": "/blogs.html",
     "items": [
+      "/blogs/misc/rlonramp.html",
       "/blogs/CLOUDCOMPUTING/basiccloudqa.html",
       "/blogs/DEEP LEARNING/basics.html",
       "/blogs/NLP/NLPIntro.html",
@@ -9,12 +17,6 @@
       "/blogs/DSA/Array DSA/index.html",
       "/blogs/DSA/Recursion DSA/index.html",
       "/blogs/welcome/index.html"
-    ]
-  },
-  {
-    "listing": "/projects.html",
-    "items": [
-      "/project_posts/RL_proj/index.html"
     ]
   }
 ]
